@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Demo Item 1",
+        "description": "This is the first demo item."
+    },
+    {
+        "name": "Demo Item 2",
+        "description": "This is the second demo item."
+    },
+    {
+        "name": "Demo Item 3",
+        "description": "This is the third demo item."
+    }
+]
