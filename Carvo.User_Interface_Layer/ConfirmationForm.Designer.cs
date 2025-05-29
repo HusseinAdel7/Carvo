@@ -104,7 +104,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1221, 66);
+            pictureBox1.Location = new Point(1221, 76);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(163, 85);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -125,7 +125,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(946, 66);
+            pictureBox2.Location = new Point(946, 76);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(163, 85);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -135,7 +135,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(140, 66);
+            pictureBox3.Location = new Point(140, 76);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(163, 85);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -145,7 +145,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(397, 66);
+            pictureBox4.Location = new Point(397, 76);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(163, 85);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -155,7 +155,7 @@
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(671, 66);
+            pictureBox5.Location = new Point(671, 76);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(163, 85);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
