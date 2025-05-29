@@ -58,7 +58,7 @@ namespace Carvo.User_Interface_Layer
 
             // شغّل الفورم من DI
             var mainForm = host.Services.GetRequiredService<MainWindow>();
-            Application.Run(mainForm);
+            Application.Run(new InvoiceForm());
         }
     }
 }
