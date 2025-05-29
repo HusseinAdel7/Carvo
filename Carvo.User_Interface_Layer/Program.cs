@@ -25,8 +25,8 @@ namespace Carvo.User_Interface_Layer
                          options.UseSqlServer(context.Configuration.GetConnectionString("DefaultConnection")));
                      // سجل الفورم الرئيسي
                      services.AddTransient<MainWindow>();
+                     services.AddTransient<InvoiceForm>();
 
-                     // سجل أي خدمات أخرى تحتاجها
                  })
                  .Build();
 
@@ -57,8 +57,9 @@ namespace Carvo.User_Interface_Layer
             Application.SetCompatibleTextRenderingDefault(false);
 
             // شغّل الفورم من DI
-            var mainForm = host.Services.GetRequiredService<MainWindow>();
-            Application.Run(new InvoiceForm());
+            var mainFrom = host.Services.GetRequiredService<MainWindow>();
+            var InvoiceFrom = host.Services.GetRequiredService<InvoiceForm>();
+            Application.Run(InvoiceFrom);
         }
     }
 }

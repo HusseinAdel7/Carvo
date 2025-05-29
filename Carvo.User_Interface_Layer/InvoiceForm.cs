@@ -11,9 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Carvo.Data_Access_Layer.Entities;
-using iText.IO.Image;
-using iText.Kernel.Pdf;
-using iText.Layout;
 
 
 namespace Carvo.User_Interface_Layer
