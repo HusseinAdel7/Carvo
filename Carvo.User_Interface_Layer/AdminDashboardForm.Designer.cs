@@ -63,7 +63,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.logoadmin;
-            pictureBox1.Location = new Point(143, 22);
+            pictureBox1.Location = new Point(133, 22);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(60, 52);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
