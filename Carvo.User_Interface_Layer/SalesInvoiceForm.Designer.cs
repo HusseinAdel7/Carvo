@@ -86,7 +86,7 @@
             button2.BackColor = Color.FromArgb(244, 244, 244);
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 178);
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(33, 28);
+            button2.Location = new Point(12, 15);
             button2.Name = "button2";
             button2.Size = new Size(60, 60);
             button2.TabIndex = 2;
