@@ -26,6 +26,9 @@ namespace Carvo.User_Interface_Layer
                      // سجل الفورم الرئيسي
                      services.AddTransient<MainWindow>();
                      services.AddTransient<InvoiceForm>();
+                     services.AddTransient<LoginForm>();
+                     services.AddTransient<SalesInvoiceForm>();
+                     services.AddTransient<RepairInvoiceForm>();
 
                  })
                  .Build();
@@ -58,8 +61,11 @@ namespace Carvo.User_Interface_Layer
 
             // شغّل الفورم من DI
             var mainFrom = host.Services.GetRequiredService<MainWindow>();
+            var loginFrom = host.Services.GetRequiredService<LoginForm>();
             var InvoiceFrom = host.Services.GetRequiredService<InvoiceForm>();
-            Application.Run(new LoginForm());
+            var repairInvoiceFrom = host.Services.GetRequiredService<RepairInvoiceForm>();
+            var salesInvoiceFrom = host.Services.GetRequiredService<SalesInvoiceForm>();
+            Application.Run(loginFrom);
         }
     }
 }
