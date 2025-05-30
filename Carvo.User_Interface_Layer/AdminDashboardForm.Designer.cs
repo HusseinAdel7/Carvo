@@ -74,7 +74,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.WhatsApp_Image_2025_05_30_at_15_44_56_39a826ab;
-            pictureBox2.Location = new Point(1015, 138);
+            pictureBox2.Location = new Point(1035, 138);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(100, 80);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -85,7 +85,7 @@
             // 
             button2.BackColor = Color.Silver;
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button2.Location = new Point(1015, 244);
+            button2.Location = new Point(1035, 244);
             button2.Name = "button2";
             button2.Size = new Size(100, 45);
             button2.TabIndex = 3;
@@ -95,7 +95,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.تصنيفات1;
-            pictureBox3.Location = new Point(703, 138);
+            pictureBox3.Location = new Point(717, 138);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(100, 80);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -106,7 +106,7 @@
             // 
             button3.BackColor = Color.Silver;
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button3.Location = new Point(703, 244);
+            button3.Location = new Point(717, 244);
             button3.Name = "button3";
             button3.Size = new Size(100, 45);
             button3.TabIndex = 5;
@@ -116,7 +116,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.المنتجات;
-            pictureBox4.Location = new Point(391, 138);
+            pictureBox4.Location = new Point(412, 138);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(100, 80);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -127,7 +127,7 @@
             // 
             button4.BackColor = Color.Silver;
             button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button4.Location = new Point(391, 244);
+            button4.Location = new Point(412, 244);
             button4.Name = "button4";
             button4.Size = new Size(100, 45);
             button4.TabIndex = 7;
@@ -137,7 +137,7 @@
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources.page_banner;
-            pictureBox5.Location = new Point(133, 138);
+            pictureBox5.Location = new Point(143, 138);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(100, 82);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -148,7 +148,7 @@
             // 
             button5.BackColor = Color.Silver;
             button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button5.Location = new Point(133, 244);
+            button5.Location = new Point(143, 244);
             button5.Name = "button5";
             button5.Size = new Size(100, 45);
             button5.TabIndex = 9;
@@ -158,7 +158,7 @@
             // pictureBox6
             // 
             pictureBox6.Image = Properties.Resources.png_clipart_two_men_in_red_overalls_illustration_car_automobile_repair_shop_maintenance_repair_and_operations_motor_vehicle_service_car_repair_station_car_accident_repair_thumbnail;
-            pictureBox6.Location = new Point(391, 316);
+            pictureBox6.Location = new Point(412, 316);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(100, 82);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -169,7 +169,7 @@
             // 
             button6.BackColor = Color.Silver;
             button6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button6.Location = new Point(391, 430);
+            button6.Location = new Point(412, 430);
             button6.Name = "button6";
             button6.Size = new Size(100, 45);
             button6.TabIndex = 11;
@@ -179,7 +179,7 @@
             // pictureBox7
             // 
             pictureBox7.Image = Properties.Resources.pngtree_global_report_icon_for_your_project_png_image_1572748;
-            pictureBox7.Location = new Point(133, 316);
+            pictureBox7.Location = new Point(143, 316);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(100, 82);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
@@ -190,7 +190,7 @@
             // 
             button7.BackColor = Color.Silver;
             button7.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button7.Location = new Point(133, 430);
+            button7.Location = new Point(143, 430);
             button7.Name = "button7";
             button7.Size = new Size(100, 45);
             button7.TabIndex = 14;
@@ -200,7 +200,7 @@
             // pictureBox8
             // 
             pictureBox8.Image = Properties.Resources.download__1_;
-            pictureBox8.Location = new Point(1015, 316);
+            pictureBox8.Location = new Point(1035, 305);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(100, 83);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
@@ -211,7 +211,7 @@
             // 
             button8.BackColor = Color.Silver;
             button8.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button8.Location = new Point(1015, 430);
+            button8.Location = new Point(1035, 430);
             button8.Name = "button8";
             button8.Size = new Size(100, 45);
             button8.TabIndex = 16;
@@ -221,7 +221,7 @@
             // pictureBox9
             // 
             pictureBox9.Image = Properties.Resources.download;
-            pictureBox9.Location = new Point(703, 305);
+            pictureBox9.Location = new Point(717, 305);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(100, 93);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
@@ -232,7 +232,7 @@
             // 
             button9.BackColor = Color.FromArgb(224, 224, 224);
             button9.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button9.Location = new Point(703, 430);
+            button9.Location = new Point(717, 430);
             button9.Name = "button9";
             button9.Size = new Size(100, 45);
             button9.TabIndex = 18;
