@@ -43,6 +43,7 @@ namespace Carvo.User_Interface_Layer
             InvoicesGridView.Columns[0].HeaderText = "الاسم";
             InvoicesGridView.Columns[1].HeaderText = "الوصف";
             InvoicesGridView.Columns[2].HeaderText = "سعر الوحدة";
+
         }
 
         private void InvoicesGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
