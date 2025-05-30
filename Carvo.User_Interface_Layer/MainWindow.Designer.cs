@@ -47,7 +47,7 @@
             // 
             // textBox1
             // 
-            textBox1.BackColor = SystemColors.InactiveBorder;
+            textBox1.BackColor = SystemColors.ButtonHighlight;
             textBox1.Font = new Font("Segoe UI", 18F);
             textBox1.Location = new Point(793, 30);
             textBox1.Name = "textBox1";
@@ -57,7 +57,7 @@
             // 
             // textBox2
             // 
-            textBox2.BackColor = SystemColors.InactiveBorder;
+            textBox2.BackColor = SystemColors.ButtonFace;
             textBox2.Font = new Font("Segoe UI", 18F);
             textBox2.Location = new Point(235, 157);
             textBox2.Name = "textBox2";
@@ -67,7 +67,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Silver;
+            button1.BackColor = Color.FromArgb(244, 244, 244, 244);
             button1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             button1.Location = new Point(507, 289);
             button1.Name = "button1";
@@ -78,7 +78,7 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.Silver;
+            button2.BackColor = Color.FromArgb(244, 244, 244, 244);
             button2.Font = new Font("Segoe UI", 18F);
             button2.Location = new Point(1025, 285);
             button2.Name = "button2";
@@ -91,7 +91,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(0, 0, 64);
+            BackColor = Color.FromArgb(48, 67, 87);
             ClientSize = new Size(1370, 522);
             Controls.Add(button2);
             Controls.Add(button1);
