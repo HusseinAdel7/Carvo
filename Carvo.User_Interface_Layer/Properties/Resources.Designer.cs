@@ -59,15 +59,5 @@ namespace Carvo.User_Interface_Layer.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ph_jpj {
-            get {
-                object obj = ResourceManager.GetObject("ph.jpj", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

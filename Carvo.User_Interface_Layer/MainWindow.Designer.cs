@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
-            // 
+
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
+
             Margin = new Padding(3, 2, 3, 2);
             Name = "MainWindow";
             StartPosition = FormStartPosition.CenterScreen;
