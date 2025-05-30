@@ -50,9 +50,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(91, 81);
+            pictureBox2.Location = new Point(119, 98);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(163, 85);
+            pictureBox2.Size = new Size(108, 85);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 15;
             pictureBox2.TabStop = false;
