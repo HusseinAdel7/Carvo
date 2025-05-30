@@ -130,8 +130,8 @@
   <data name="WhatsApp Image 2025-05-30 at 15.44.56_39a826ab" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WhatsApp Image 2025-05-30 at 15.44.56_39a826ab.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="png-clipart-two-men-in-red-overalls-illustration-car-automobile-repair-shop-maintenance-repair-and-operations-motor-vehicle-service-car-repair-station-car-accident-repair-thumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\png-clipart-two-men-in-red-overalls-illustration-car-automobile-repair-shop-maintenance-repair-and-operations-motor-vehicle-service-car-repair-station-car-accident-repair-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngtree-global-report-icon-for-your-project-png-image_1572748" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-global-report-icon-for-your-project-png-image_1572748.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="users" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,19 +139,22 @@
   <data name="download (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="page-banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page-banner.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="log out" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\log out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoadmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoadmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngtree-global-report-icon-for-your-project-png-image_1572748" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-global-report-icon-for-your-project-png-image_1572748.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="log out" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\log out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\download.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="png-clipart-two-men-in-red-overalls-illustration-car-automobile-repair-shop-maintenance-repair-and-operations-motor-vehicle-service-car-repair-station-car-accident-repair-thumbnail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png-clipart-two-men-in-red-overalls-illustration-car-automobile-repair-shop-maintenance-repair-and-operations-motor-vehicle-service-car-repair-station-car-accident-repair-thumbnail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="page-banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\page-banner.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

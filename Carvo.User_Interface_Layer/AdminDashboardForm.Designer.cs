@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboardForm));
             pictureBox1 = new PictureBox();
-            button1 = new Button();
             pictureBox2 = new PictureBox();
             button2 = new Button();
             pictureBox3 = new PictureBox();
@@ -40,13 +40,14 @@
             button5 = new Button();
             pictureBox6 = new PictureBox();
             button6 = new Button();
-            textBox1 = new TextBox();
             pictureBox7 = new PictureBox();
             button7 = new Button();
             pictureBox8 = new PictureBox();
             button8 = new Button();
             pictureBox9 = new PictureBox();
             button9 = new Button();
+            label2 = new Label();
+            pictureBox10 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -56,12 +57,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.logoadmin;
-            pictureBox1.Location = new Point(206, 22);
+            pictureBox1.Location = new Point(143, 22);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(60, 52);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -69,24 +71,10 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(192, 0, 0);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 15F);
-            button1.Image = Properties.Resources.log_out;
-            button1.ImageAlign = ContentAlignment.MiddleRight;
-            button1.Location = new Point(23, 32);
-            button1.Name = "button1";
-            button1.Size = new Size(161, 42);
-            button1.TabIndex = 1;
-            button1.Text = "تسجيل الخروج";
-            button1.UseVisualStyleBackColor = false;
-            // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.WhatsApp_Image_2025_05_30_at_15_44_56_39a826ab;
-            pictureBox2.Location = new Point(813, 148);
+            pictureBox2.Location = new Point(1015, 138);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(100, 80);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -97,7 +85,7 @@
             // 
             button2.BackColor = Color.Silver;
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button2.Location = new Point(813, 244);
+            button2.Location = new Point(1015, 244);
             button2.Name = "button2";
             button2.Size = new Size(100, 45);
             button2.TabIndex = 3;
@@ -107,7 +95,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.تصنيفات1;
-            pictureBox3.Location = new Point(609, 150);
+            pictureBox3.Location = new Point(703, 138);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(100, 80);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -118,7 +106,7 @@
             // 
             button3.BackColor = Color.Silver;
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button3.Location = new Point(618, 244);
+            button3.Location = new Point(703, 244);
             button3.Name = "button3";
             button3.Size = new Size(100, 45);
             button3.TabIndex = 5;
@@ -128,7 +116,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.المنتجات;
-            pictureBox4.Location = new Point(373, 150);
+            pictureBox4.Location = new Point(391, 138);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(100, 80);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -139,7 +127,7 @@
             // 
             button4.BackColor = Color.Silver;
             button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button4.Location = new Point(373, 253);
+            button4.Location = new Point(391, 244);
             button4.Name = "button4";
             button4.Size = new Size(100, 45);
             button4.TabIndex = 7;
@@ -149,7 +137,7 @@
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources.page_banner;
-            pictureBox5.Location = new Point(133, 148);
+            pictureBox5.Location = new Point(133, 138);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(100, 82);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -170,7 +158,7 @@
             // pictureBox6
             // 
             pictureBox6.Image = Properties.Resources.png_clipart_two_men_in_red_overalls_illustration_car_automobile_repair_shop_maintenance_repair_and_operations_motor_vehicle_service_car_repair_station_car_accident_repair_thumbnail;
-            pictureBox6.Location = new Point(373, 338);
+            pictureBox6.Location = new Point(391, 316);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(100, 82);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -181,27 +169,17 @@
             // 
             button6.BackColor = Color.Silver;
             button6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button6.Location = new Point(373, 449);
+            button6.Location = new Point(391, 430);
             button6.Name = "button6";
             button6.Size = new Size(100, 45);
             button6.TabIndex = 11;
             button6.Text = "الموظفين";
             button6.UseVisualStyleBackColor = false;
             // 
-            // textBox1
-            // 
-            textBox1.BackColor = SystemColors.InactiveCaption;
-            textBox1.Font = new Font("Segoe UI", 18F);
-            textBox1.Location = new Point(458, 32);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(226, 39);
-            textBox1.TabIndex = 12;
-            textBox1.Text = "مرحبًا بك، مدير النظام";
-            // 
             // pictureBox7
             // 
             pictureBox7.Image = Properties.Resources.pngtree_global_report_icon_for_your_project_png_image_1572748;
-            pictureBox7.Location = new Point(133, 327);
+            pictureBox7.Location = new Point(133, 316);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(100, 82);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
@@ -212,7 +190,7 @@
             // 
             button7.BackColor = Color.Silver;
             button7.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button7.Location = new Point(133, 449);
+            button7.Location = new Point(133, 430);
             button7.Name = "button7";
             button7.Size = new Size(100, 45);
             button7.TabIndex = 14;
@@ -222,7 +200,7 @@
             // pictureBox8
             // 
             pictureBox8.Image = Properties.Resources.download__1_;
-            pictureBox8.Location = new Point(813, 337);
+            pictureBox8.Location = new Point(1015, 316);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(100, 83);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
@@ -233,7 +211,7 @@
             // 
             button8.BackColor = Color.Silver;
             button8.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button8.Location = new Point(813, 449);
+            button8.Location = new Point(1015, 430);
             button8.Name = "button8";
             button8.Size = new Size(100, 45);
             button8.TabIndex = 16;
@@ -243,7 +221,7 @@
             // pictureBox9
             // 
             pictureBox9.Image = Properties.Resources.download;
-            pictureBox9.Location = new Point(618, 327);
+            pictureBox9.Location = new Point(703, 305);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(100, 93);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
@@ -254,12 +232,33 @@
             // 
             button9.BackColor = Color.FromArgb(224, 224, 224);
             button9.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button9.Location = new Point(618, 449);
+            button9.Location = new Point(703, 430);
             button9.Name = "button9";
-            button9.Size = new Size(100, 35);
+            button9.Size = new Size(100, 45);
             button9.TabIndex = 18;
             button9.Text = "الملاحظات";
             button9.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 22F);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(504, 22);
+            label2.Name = "label2";
+            label2.Size = new Size(287, 41);
+            label2.TabIndex = 20;
+            label2.Text = "مرحبًا بك، مدير النظام";
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
+            pictureBox10.Location = new Point(35, 12);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(71, 62);
+            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox10.TabIndex = 21;
+            pictureBox10.TabStop = false;
             // 
             // AdminDashboardForm
             // 
@@ -267,13 +266,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
             ClientSize = new Size(1370, 515);
+            Controls.Add(pictureBox10);
+            Controls.Add(label2);
             Controls.Add(button9);
             Controls.Add(pictureBox9);
             Controls.Add(button8);
             Controls.Add(pictureBox8);
             Controls.Add(button7);
             Controls.Add(pictureBox7);
-            Controls.Add(textBox1);
             Controls.Add(button6);
             Controls.Add(pictureBox6);
             Controls.Add(button5);
@@ -284,7 +284,6 @@
             Controls.Add(pictureBox3);
             Controls.Add(button2);
             Controls.Add(pictureBox2);
-            Controls.Add(button1);
             Controls.Add(pictureBox1);
             Name = "AdminDashboardForm";
             Text = "AdminDashboardForm";
@@ -298,6 +297,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -305,7 +305,6 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Button button1;
         private PictureBox pictureBox2;
         private Button button2;
         private PictureBox pictureBox3;
@@ -316,12 +315,13 @@
         private Button button5;
         private PictureBox pictureBox6;
         private Button button6;
-        private TextBox textBox1;
         private PictureBox pictureBox7;
         private Button button7;
         private PictureBox pictureBox8;
         private Button button8;
         private PictureBox pictureBox9;
         private Button button9;
+        private Label label2;
+        private PictureBox pictureBox10;
     }
 }
