@@ -72,6 +72,7 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(244, 244, 244);
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 178);
             button1.Location = new Point(547, 46);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
@@ -82,7 +83,8 @@
             // button2
             // 
             button2.BackColor = Color.FromArgb(244, 244, 244);
-            button2.Location = new Point(79, 46);
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 178);
+            button2.Location = new Point(63, 46);
             button2.Name = "button2";
             button2.Size = new Size(123, 29);
             button2.TabIndex = 2;
@@ -118,7 +120,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 94);
             panel2.Name = "panel2";
-            panel2.Size = new Size(694, 407);
+            panel2.Size = new Size(694, 348);
             panel2.TabIndex = 4;
             // 
             // label6
@@ -137,7 +139,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
             label5.ForeColor = Color.FromArgb(244, 244, 244);
-            label5.Location = new Point(254, 30);
+            label5.Location = new Point(204, 26);
             label5.Name = "label5";
             label5.Size = new Size(81, 28);
             label5.TabIndex = 9;
@@ -146,7 +148,7 @@
             // numericUpDown2
             // 
             numericUpDown2.BackColor = Color.FromArgb(244, 244, 244);
-            numericUpDown2.Location = new Point(525, 230);
+            numericUpDown2.Location = new Point(525, 218);
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(116, 27);
             numericUpDown2.TabIndex = 8;
@@ -154,7 +156,7 @@
             // button4
             // 
             button4.BackColor = Color.FromArgb(244, 244, 244);
-            button4.Location = new Point(386, 228);
+            button4.Location = new Point(386, 218);
             button4.Name = "button4";
             button4.Size = new Size(94, 29);
             button4.TabIndex = 7;
@@ -164,7 +166,7 @@
             // button3
             // 
             button3.BackColor = Color.FromArgb(244, 244, 244);
-            button3.Location = new Point(135, 230);
+            button3.Location = new Point(191, 218);
             button3.Name = "button3";
             button3.Size = new Size(94, 29);
             button3.TabIndex = 6;
@@ -175,7 +177,7 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.FromArgb(244, 244, 244);
-            label4.Location = new Point(386, 133);
+            label4.Location = new Point(439, 132);
             label4.Name = "label4";
             label4.Size = new Size(41, 20);
             label4.TabIndex = 5;
@@ -184,7 +186,7 @@
             // numericUpDown1
             // 
             numericUpDown1.BackColor = Color.FromArgb(244, 244, 244);
-            numericUpDown1.Location = new Point(79, 130);
+            numericUpDown1.Location = new Point(36, 130);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(150, 27);
             numericUpDown1.TabIndex = 4;
@@ -205,7 +207,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
             label2.ForeColor = Color.FromArgb(244, 244, 244);
-            label2.Location = new Point(260, 129);
+            label2.Location = new Point(210, 125);
             label2.Name = "label2";
             label2.Size = new Size(75, 28);
             label2.TabIndex = 2;
@@ -218,7 +220,7 @@
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "Product1", "Product2", "Product3" });
-            comboBox2.Location = new Point(386, 30);
+            comboBox2.Location = new Point(329, 30);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(151, 28);
             comboBox2.TabIndex = 1;
@@ -229,7 +231,7 @@
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Customer1", "Customer2", "Customer3", "Customer4", "Customer5", "" });
-            comboBox1.Location = new Point(79, 30);
+            comboBox1.Location = new Point(33, 30);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(153, 28);
             comboBox1.TabIndex = 0;
@@ -241,10 +243,10 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { المشتري, المنتج, الكمية, السعر, رقم_المنتج });
             dataGridView1.Dock = DockStyle.Bottom;
             dataGridView1.GridColor = Color.FromArgb(48, 67, 87);
-            dataGridView1.Location = new Point(0, 507);
+            dataGridView1.Location = new Point(0, 448);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(694, 241);
+            dataGridView1.Size = new Size(694, 300);
             dataGridView1.TabIndex = 5;
             // 
             // المشتري
