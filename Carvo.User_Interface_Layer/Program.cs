@@ -30,6 +30,7 @@ namespace Carvo.User_Interface_Layer
                      services.AddTransient<SalesInvoiceForm>();
                      services.AddTransient<RepairInvoiceForm>();
                      services.AddTransient<DashboardForm>();
+                     services.AddTransient<AdminProductsForm>();
 
 
                  })
@@ -68,8 +69,10 @@ namespace Carvo.User_Interface_Layer
             var repairInvoiceFrom = host.Services.GetRequiredService<RepairInvoiceForm>();
             var salesInvoiceFrom = host.Services.GetRequiredService<SalesInvoiceForm>();
             var dashboardForm = host.Services.GetRequiredService<DashboardForm>();
+            var adminProductsForm = host.Services.GetRequiredService<AdminProductsForm>();
 
-            Application.Run(dashboardForm);
+            
+            Application.Run(adminProductsForm);
         }
     }
 }
