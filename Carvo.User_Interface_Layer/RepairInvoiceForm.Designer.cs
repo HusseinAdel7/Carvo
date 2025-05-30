@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RepairInvoiceForm));
             panel2 = new Panel();
             label6 = new Label();
             label5 = new Label();
@@ -143,11 +144,11 @@
             // button2
             // 
             button2.BackColor = Color.FromArgb(244, 244, 244);
-            button2.Location = new Point(79, 46);
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Location = new Point(49, 30);
             button2.Name = "button2";
-            button2.Size = new Size(123, 29);
+            button2.Size = new Size(60, 60);
             button2.TabIndex = 2;
-            button2.Text = "الرجوع للخلف";
             button2.UseVisualStyleBackColor = false;
             // 
             // label1
