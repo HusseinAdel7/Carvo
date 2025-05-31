@@ -37,12 +37,12 @@ namespace Carvo.User_Interface_Layer
 
             var GridView = products.Select(p => new { Name = p.Name, Description = p.Description, Price = p.Price }).ToList();
 
-            InvoicesGridView.AllowUserToAddRows = false;
-            InvoicesGridView.DataSource = GridView;
+            CategoryGridView.AllowUserToAddRows = false;
+            CategoryGridView.DataSource = GridView;
 
-            InvoicesGridView.Columns[0].HeaderText = "الاسم";
-            InvoicesGridView.Columns[1].HeaderText = "الوصف";
-            InvoicesGridView.Columns[2].HeaderText = "سعر الوحدة";
+            CategoryGridView.Columns[0].HeaderText = "الاسم";
+            CategoryGridView.Columns[1].HeaderText = "الوصف";
+            CategoryGridView.Columns[2].HeaderText = "سعر الوحدة";
 
         }
 
@@ -53,14 +53,24 @@ namespace Carvo.User_Interface_Layer
 
         private void ResizeDataGridViewHeight()
         {
-            int totalHeight = InvoicesGridView.ColumnHeadersHeight;
+            int totalHeight = CategoryGridView.ColumnHeadersHeight;
 
-            foreach (DataGridViewRow row in InvoicesGridView.Rows)
+            foreach (DataGridViewRow row in CategoryGridView.Rows)
             {
                 if (row.Visible) totalHeight += row.Height;
             }
 
-            InvoicesGridView.Height = totalHeight + 2; // 2px padding
+            CategoryGridView.Height = totalHeight + 2; // 2px padding
+        }
+
+        private void CloseFormBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizeBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
