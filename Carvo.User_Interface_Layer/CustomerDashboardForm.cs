@@ -61,12 +61,12 @@ namespace Carvo.User_Interface_Layer
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
