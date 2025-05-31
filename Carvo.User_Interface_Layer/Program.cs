@@ -69,6 +69,8 @@ namespace Carvo.User_Interface_Layer
             var dashboardForm = host.Services.GetRequiredService<DashboardForm>();
             Application.Run(new AdminSuppliersForm());
 
+            Application.Run(new AdminProductsForm());
+
         }
     }
 }
