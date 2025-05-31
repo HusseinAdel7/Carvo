@@ -11,9 +11,9 @@ using Carvo.Data_Access_Layer.Entities;
 
 namespace Carvo.User_Interface_Layer
 {
-    public partial class AdminSuppliersForm : Form
+    public partial class AdminCustomersForm : Form
     {
-        public AdminSuppliersForm()
+        public AdminCustomersForm()
         {
             InitializeComponent();
 
@@ -37,12 +37,12 @@ namespace Carvo.User_Interface_Layer
 
             var GridView = products.Select(p => new { Name = p.Name, Description = p.Description, Price = p.Price }).ToList();
 
-            SuppliersGridView.AllowUserToAddRows = false;
-            SuppliersGridView.DataSource = GridView;
+            CustomersGridView.AllowUserToAddRows = false;
+            CustomersGridView.DataSource = GridView;
 
-            SuppliersGridView.Columns[0].HeaderText = "الاسم";
-            SuppliersGridView.Columns[1].HeaderText = "الوصف";
-            SuppliersGridView.Columns[2].HeaderText = "سعر الوحدة";
+            CustomersGridView.Columns[0].HeaderText = "الاسم";
+            CustomersGridView.Columns[1].HeaderText = "الوصف";
+            CustomersGridView.Columns[2].HeaderText = "سعر الوحدة";
 
         }
 
@@ -53,24 +53,14 @@ namespace Carvo.User_Interface_Layer
 
         private void ResizeDataGridViewHeight()
         {
-            int totalHeight = SuppliersGridView.ColumnHeadersHeight;
+            int totalHeight = CustomersGridView.ColumnHeadersHeight;
 
-            foreach (DataGridViewRow row in SuppliersGridView.Rows)
+            foreach (DataGridViewRow row in CustomersGridView.Rows)
             {
                 if (row.Visible) totalHeight += row.Height;
             }
 
-            SuppliersGridView.Height = totalHeight + 2; // 2px padding
-        }
-
-        private void CloseFormBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void MinimizeBtn_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
+            CustomersGridView.Height = totalHeight + 2; // 2px padding
         }
     }
 }

@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminSuppliersForm));
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
+            CloseFormBtn = new PictureBox();
+            MinimizeBtn = new PictureBox();
+            Logoutbtn = new PictureBox();
             PrevImageAsBtn = new PictureBox();
             CategoriesManagement = new Label();
             panel2 = new Panel();
+            textBox1 = new TextBox();
             SupplierPhoneTxt = new TextBox();
             SupplierAddressTxt = new TextBox();
             label3 = new Label();
@@ -53,9 +57,11 @@
             AddSupplierBtn = new Button();
             DeleteSupplierBtn = new Button();
             SuppliersGridView = new DataGridView();
-            textBox1 = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MinimizeBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Logoutbtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PrevImageAsBtn).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -87,6 +93,9 @@
             // 
             panel1.BackColor = Color.FromArgb(48, 67, 87);
             tableLayoutPanel1.SetColumnSpan(panel1, 2);
+            panel1.Controls.Add(CloseFormBtn);
+            panel1.Controls.Add(MinimizeBtn);
+            panel1.Controls.Add(Logoutbtn);
             panel1.Controls.Add(PrevImageAsBtn);
             panel1.Controls.Add(CategoriesManagement);
             panel1.Dock = DockStyle.Fill;
@@ -96,10 +105,42 @@
             panel1.Size = new Size(1502, 127);
             panel1.TabIndex = 0;
             // 
+            // CloseFormBtn
+            // 
+            CloseFormBtn.Image = (Image)resources.GetObject("CloseFormBtn.Image");
+            CloseFormBtn.Location = new Point(1387, 23);
+            CloseFormBtn.Name = "CloseFormBtn";
+            CloseFormBtn.Size = new Size(50, 50);
+            CloseFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            CloseFormBtn.TabIndex = 4;
+            CloseFormBtn.TabStop = false;
+            CloseFormBtn.Click += CloseFormBtn_Click;
+            // 
+            // MinimizeBtn
+            // 
+            MinimizeBtn.Image = (Image)resources.GetObject("MinimizeBtn.Image");
+            MinimizeBtn.Location = new Point(1290, 23);
+            MinimizeBtn.Name = "MinimizeBtn";
+            MinimizeBtn.Size = new Size(50, 50);
+            MinimizeBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            MinimizeBtn.TabIndex = 3;
+            MinimizeBtn.TabStop = false;
+            MinimizeBtn.Click += MinimizeBtn_Click;
+            // 
+            // Logoutbtn
+            // 
+            Logoutbtn.Image = (Image)resources.GetObject("Logoutbtn.Image");
+            Logoutbtn.Location = new Point(63, 23);
+            Logoutbtn.Name = "Logoutbtn";
+            Logoutbtn.Size = new Size(50, 50);
+            Logoutbtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            Logoutbtn.TabIndex = 2;
+            Logoutbtn.TabStop = false;
+            // 
             // PrevImageAsBtn
             // 
             PrevImageAsBtn.Image = (Image)resources.GetObject("PrevImageAsBtn.Image");
-            PrevImageAsBtn.Location = new Point(42, 20);
+            PrevImageAsBtn.Location = new Point(155, 23);
             PrevImageAsBtn.Name = "PrevImageAsBtn";
             PrevImageAsBtn.Size = new Size(50, 50);
             PrevImageAsBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -134,10 +175,20 @@
             panel2.Controls.Add(AddInvoiceImg);
             panel2.Controls.Add(AddSupplierBtn);
             panel2.Controls.Add(DeleteSupplierBtn);
-            panel2.Location = new Point(60, 136);
+            panel2.Location = new Point(3, 136);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1388, 432);
+            panel2.Size = new Size(1502, 432);
             panel2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(85, 143);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(373, 39);
+            textBox1.TabIndex = 20;
+            textBox1.TextAlign = HorizontalAlignment.Right;
             // 
             // SupplierPhoneTxt
             // 
@@ -152,7 +203,7 @@
             // SupplierAddressTxt
             // 
             SupplierAddressTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SupplierAddressTxt.Location = new Point(796, 129);
+            SupplierAddressTxt.Location = new Point(839, 141);
             SupplierAddressTxt.Multiline = true;
             SupplierAddressTxt.Name = "SupplierAddressTxt";
             SupplierAddressTxt.Size = new Size(373, 39);
@@ -162,22 +213,22 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(515, 53);
+            label3.Location = new Point(541, 53);
             label3.Name = "label3";
-            label3.Size = new Size(112, 25);
+            label3.Size = new Size(123, 28);
             label3.TabIndex = 17;
             label3.Text = " : رقم الهاتف ";
             // 
             // SupplierCompanyTxt
             // 
             SupplierCompanyTxt.AutoSize = true;
-            SupplierCompanyTxt.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            SupplierCompanyTxt.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             SupplierCompanyTxt.ForeColor = Color.White;
-            SupplierCompanyTxt.Location = new Point(510, 126);
+            SupplierCompanyTxt.Location = new Point(499, 141);
             SupplierCompanyTxt.Name = "SupplierCompanyTxt";
-            SupplierCompanyTxt.Size = new Size(150, 25);
+            SupplierCompanyTxt.Size = new Size(165, 28);
             SupplierCompanyTxt.TabIndex = 15;
             SupplierCompanyTxt.Text = " : الشركة التابع لها ";
             SupplierCompanyTxt.TextAlign = ContentAlignment.TopRight;
@@ -185,7 +236,7 @@
             // SupplierNameTxt
             // 
             SupplierNameTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SupplierNameTxt.Location = new Point(796, 51);
+            SupplierNameTxt.Location = new Point(839, 52);
             SupplierNameTxt.Multiline = true;
             SupplierNameTxt.Name = "SupplierNameTxt";
             SupplierNameTxt.Size = new Size(373, 39);
@@ -195,29 +246,29 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(1233, 126);
+            label2.Location = new Point(1325, 141);
             label2.Name = "label2";
-            label2.Size = new Size(86, 25);
+            label2.Size = new Size(94, 28);
             label2.TabIndex = 8;
             label2.Text = " : العنوان ";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(1222, 52);
+            label1.Location = new Point(1290, 53);
             label1.Name = "label1";
-            label1.Size = new Size(118, 25);
+            label1.Size = new Size(129, 28);
             label1.TabIndex = 7;
             label1.Text = " : اسم الموزع ";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(712, 290);
+            pictureBox1.Location = new Point(819, 289);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(64, 52);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -228,7 +279,7 @@
             // 
             UpdateSupplierBtn.BackColor = Color.FromArgb(224, 224, 224);
             UpdateSupplierBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            UpdateSupplierBtn.Location = new Point(576, 290);
+            UpdateSupplierBtn.Location = new Point(683, 289);
             UpdateSupplierBtn.Name = "UpdateSupplierBtn";
             UpdateSupplierBtn.Size = new Size(130, 52);
             UpdateSupplierBtn.TabIndex = 5;
@@ -238,7 +289,7 @@
             // DeleteInvoiceImg
             // 
             DeleteInvoiceImg.Image = (Image)resources.GetObject("DeleteInvoiceImg.Image");
-            DeleteInvoiceImg.Location = new Point(327, 290);
+            DeleteInvoiceImg.Location = new Point(434, 289);
             DeleteInvoiceImg.Name = "DeleteInvoiceImg";
             DeleteInvoiceImg.Size = new Size(64, 52);
             DeleteInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -248,7 +299,7 @@
             // AddInvoiceImg
             // 
             AddInvoiceImg.Image = (Image)resources.GetObject("AddInvoiceImg.Image");
-            AddInvoiceImg.Location = new Point(1102, 290);
+            AddInvoiceImg.Location = new Point(1209, 289);
             AddInvoiceImg.Name = "AddInvoiceImg";
             AddInvoiceImg.Size = new Size(64, 52);
             AddInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -259,7 +310,7 @@
             // 
             AddSupplierBtn.BackColor = Color.FromArgb(224, 224, 224);
             AddSupplierBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            AddSupplierBtn.Location = new Point(966, 290);
+            AddSupplierBtn.Location = new Point(1073, 289);
             AddSupplierBtn.Name = "AddSupplierBtn";
             AddSupplierBtn.Size = new Size(130, 52);
             AddSupplierBtn.TabIndex = 2;
@@ -270,7 +321,7 @@
             // 
             DeleteSupplierBtn.BackColor = Color.FromArgb(224, 224, 224);
             DeleteSupplierBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            DeleteSupplierBtn.Location = new Point(191, 290);
+            DeleteSupplierBtn.Location = new Point(298, 289);
             DeleteSupplierBtn.Name = "DeleteSupplierBtn";
             DeleteSupplierBtn.Size = new Size(130, 52);
             DeleteSupplierBtn.TabIndex = 1;
@@ -280,63 +331,53 @@
             // SuppliersGridView
             // 
             SuppliersGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle11.BackColor = SystemColors.ButtonFace;
-            dataGridViewCellStyle11.ForeColor = Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = Color.CornflowerBlue;
-            SuppliersGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = SystemColors.ButtonFace;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.CornflowerBlue;
+            SuppliersGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             SuppliersGridView.Anchor = AnchorStyles.None;
             SuppliersGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             SuppliersGridView.BorderStyle = BorderStyle.None;
             SuppliersGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.BackColor = Color.FromArgb(48, 67, 87);
-            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle12.ForeColor = Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            SuppliersGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 67, 87);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            SuppliersGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             SuppliersGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = Color.White;
-            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle13.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle13.Padding = new Padding(0, 2, 2, 2);
-            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.False;
-            SuppliersGridView.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new Padding(0, 2, 2, 2);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            SuppliersGridView.DefaultCellStyle = dataGridViewCellStyle3;
             SuppliersGridView.EnableHeadersVisualStyles = false;
-            SuppliersGridView.Location = new Point(60, 583);
-            SuppliersGridView.MaximumSize = new Size(1387, 285);
+            SuppliersGridView.Location = new Point(3, 578);
+            SuppliersGridView.MaximumSize = new Size(1502, 243);
             SuppliersGridView.Name = "SuppliersGridView";
             SuppliersGridView.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.BackColor = SystemColors.Control;
-            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle14.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
-            SuppliersGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            SuppliersGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             SuppliersGridView.RowHeadersVisible = false;
             SuppliersGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleRight;
-            SuppliersGridView.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
+            SuppliersGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             SuppliersGridView.ScrollBars = ScrollBars.Vertical;
-            SuppliersGridView.Size = new Size(1387, 234);
+            SuppliersGridView.Size = new Size(1502, 243);
             SuppliersGridView.TabIndex = 2;
             SuppliersGridView.DataBindingComplete += InvoicesGridView_DataBindingComplete;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(85, 129);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(373, 39);
-            textBox1.TabIndex = 20;
-            textBox1.TextAlign = HorizontalAlignment.Right;
             // 
             // AdminSuppliersForm
             // 
@@ -346,12 +387,17 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1508, 829);
             Controls.Add(tableLayoutPanel1);
+            FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(1526, 885);
             Name = "AdminSuppliersForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminInvoicesForm";
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)CloseFormBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MinimizeBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Logoutbtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)PrevImageAsBtn).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -385,5 +431,8 @@
         private TextBox SupplierPhoneTxt;
         private TextBox SupplierAddressTxt;
         private TextBox textBox1;
+        private PictureBox CloseFormBtn;
+        private PictureBox MinimizeBtn;
+        private PictureBox Logoutbtn;
     }
 }
