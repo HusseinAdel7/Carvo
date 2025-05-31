@@ -56,6 +56,8 @@
             AddProductBtn = new Button();
             DeleteProductBtn = new Button();
             ProductsGridView = new DataGridView();
+            label6 = new Label();
+            SupplierNameDropdownList = new ComboBox();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PrevImageAsBtn).BeginInit();
@@ -124,6 +126,8 @@
             // 
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(48, 67, 87);
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(SupplierNameDropdownList);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
@@ -211,7 +215,7 @@
             CategoryDescTxt.Location = new Point(689, 127);
             CategoryDescTxt.Multiline = true;
             CategoryDescTxt.Name = "CategoryDescTxt";
-            CategoryDescTxt.Size = new Size(480, 126);
+            CategoryDescTxt.Size = new Size(480, 172);
             CategoryDescTxt.TabIndex = 10;
             CategoryDescTxt.TextAlign = HorizontalAlignment.Right;
             // 
@@ -361,6 +365,26 @@
             ProductsGridView.TabIndex = 2;
             ProductsGridView.DataBindingComplete += InvoicesGridView_DataBindingComplete;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(459, 268);
+            label6.Name = "label6";
+            label6.Size = new Size(118, 25);
+            label6.TabIndex = 19;
+            label6.Text = " : اسم الموزع ";
+            // 
+            // SupplierNameDropdownList
+            // 
+            SupplierNameDropdownList.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            SupplierNameDropdownList.FormattingEnabled = true;
+            SupplierNameDropdownList.Location = new Point(126, 268);
+            SupplierNameDropdownList.Name = "SupplierNameDropdownList";
+            SupplierNameDropdownList.Size = new Size(281, 31);
+            SupplierNameDropdownList.TabIndex = 18;
+            // 
             // AdminProductsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -412,5 +436,7 @@
         private NumericUpDown ProductQuantityNumeric;
         private ComboBox CategoriesDeopdownList;
         private NumericUpDown ProductPriceNumeric;
+        private Label label6;
+        private ComboBox SupplierNameDropdownList;
     }
 }
