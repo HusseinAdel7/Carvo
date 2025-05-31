@@ -62,5 +62,15 @@ namespace Carvo.User_Interface_Layer
 
             InvoicesGridView.Height = totalHeight + 2; // 2px padding
         }
+
+        private void CloseFormBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizeImgBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
