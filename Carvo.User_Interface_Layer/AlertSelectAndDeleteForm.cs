@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace Carvo.User_Interface_Layer
 {
-    public partial class MainWindow : Form
+    public partial class AlertSelectAndDeleteForm : Form
     {
-        public MainWindow()
+        public AlertSelectAndDeleteForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainWindow_Load(object sender, EventArgs e)
+        private void AlertSelectAndDelete_Load(object sender, EventArgs e)
         {
 
         }
