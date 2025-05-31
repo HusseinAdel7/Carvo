@@ -372,14 +372,15 @@
             pictureBoxProducts.TabStop = false;
             pictureBoxProducts.UseWaitCursor = true;
             // 
-            // MainWindow
+            // DashboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(48, 67, 87);
             ClientSize = new Size(700, 338);
             Controls.Add(tableLayoutPanel1);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "MainWindow";
+            Name = "DashboardForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MainWindow";
             tableLayoutPanel1.ResumeLayout(false);
