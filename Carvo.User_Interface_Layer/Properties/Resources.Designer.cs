@@ -63,9 +63,7 @@ namespace Carvo.User_Interface_Layer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap download {
-            get {
-                object obj = ResourceManager.GetObject("download", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +71,7 @@ namespace Carvo.User_Interface_Layer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap download__1_ {
-            get {
-                object obj = ResourceManager.GetObject("download (1)", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +79,7 @@ namespace Carvo.User_Interface_Layer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap log_out {
-            get {
-                object obj = ResourceManager.GetObject("log out", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +87,7 @@ namespace Carvo.User_Interface_Layer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logoadmin {
-            get {
-                object obj = ResourceManager.GetObject("logoadmin", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,91 +95,7 @@ namespace Carvo.User_Interface_Layer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logout {
-            get {
-                object obj = ResourceManager.GetObject("logout", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_banner {
-            get {
-                object obj = ResourceManager.GetObject("page-banner", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap png_clipart_two_men_in_red_overalls_illustration_car_automobile_repair_shop_maintenance_repair_and_operations_motor_vehicle_service_car_repair_station_car_accident_repair_thumbnail {
-            get {
-                object obj = ResourceManager.GetObject("png-clipart-two-men-in-red-overalls-illustration-car-automobile-repair-shop-maint" +
-                        "enance-repair-and-operations-motor-vehicle-service-car-repair-station-car-accide" +
-                        "nt-repair-thumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngtree_global_report_icon_for_your_project_png_image_1572748 {
-            get {
-                object obj = ResourceManager.GetObject("pngtree-global-report-icon-for-your-project-png-image_1572748", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap users {
-            get {
-                object obj = ResourceManager.GetObject("users", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap WhatsApp_Image_2025_05_30_at_15_44_56_39a826ab {
-            get {
-                object obj = ResourceManager.GetObject("WhatsApp Image 2025-05-30 at 15.44.56_39a826ab", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap المنتجات {
-            get {
-                object obj = ResourceManager.GetObject("المنتجات", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap تصنيفات {
-            get {
-                object obj = ResourceManager.GetObject("تصنيفات", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap تصنيفات1 {
-            get {
-                object obj = ResourceManager.GetObject("تصنيفات1", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
