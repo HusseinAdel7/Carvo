@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Carvo.User_Interface_Layer
 {
-    public partial class MainWindow : Form
+    public partial class AdminDashboardForm : Form
     {
-        public MainWindow()
+        public AdminDashboardForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void MainWindow_Load(object sender, EventArgs e)
+        private void AdminDashboardForm_Load(object sender, EventArgs e)
         {
 
         }

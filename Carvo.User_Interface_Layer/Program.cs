@@ -69,10 +69,7 @@ namespace Carvo.User_Interface_Layer
             var repairInvoiceFrom = host.Services.GetRequiredService<RepairInvoiceForm>();
             var salesInvoiceFrom = host.Services.GetRequiredService<SalesInvoiceForm>();
             var dashboardForm = host.Services.GetRequiredService<DashboardForm>();
-            var adminCategoriesForm = host.Services.GetRequiredService<AdminCategoriesForm>();
 
-
-            Application.Run(adminCategoriesForm);
         }
     }
 }
