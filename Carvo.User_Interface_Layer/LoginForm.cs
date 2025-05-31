@@ -17,7 +17,7 @@ namespace Carvo.User_Interface_Layer
         // enum for user roles
         public enum Role
         {
-            أدمن,
+            مشرف,
             موظف
         }
         public LoginForm()
