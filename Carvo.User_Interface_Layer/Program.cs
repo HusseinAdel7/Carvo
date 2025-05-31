@@ -24,13 +24,11 @@ namespace Carvo.User_Interface_Layer
                      services.AddDbContext<CarvoDbContext>(options =>
                          options.UseSqlServer(context.Configuration.GetConnectionString("DefaultConnection")));
                      // سجل الفورم الرئيسي
-                     services.AddTransient<MainWindow>();
                      services.AddTransient<InvoiceForm>();
                      services.AddTransient<LoginForm>();
                      services.AddTransient<SalesInvoiceForm>();
                      services.AddTransient<RepairInvoiceForm>();
                      services.AddTransient<DashboardForm>();
-                     services.AddTransient<AdminInvoicesForm>();
 
 
 
@@ -64,15 +62,15 @@ namespace Carvo.User_Interface_Layer
             Application.SetCompatibleTextRenderingDefault(false);
 
             // شغّل الفورم من DI
-            var mainFrom = host.Services.GetRequiredService<MainWindow>();
             var loginFrom = host.Services.GetRequiredService<LoginForm>();
             var InvoiceFrom = host.Services.GetRequiredService<InvoiceForm>();
             var repairInvoiceFrom = host.Services.GetRequiredService<RepairInvoiceForm>();
             var salesInvoiceFrom = host.Services.GetRequiredService<SalesInvoiceForm>();
             var dashboardForm = host.Services.GetRequiredService<DashboardForm>();
-            var adminInvoicesForm = host.Services.GetRequiredService<AdminInvoicesForm>();
+            var homeDashboardForm = host.Services.GetRequiredService<HomeDashboardForm>();
+            Application.Run(homeDashboardForm);
 
-            Application.Run(adminInvoicesForm);
+
 
         }
     }

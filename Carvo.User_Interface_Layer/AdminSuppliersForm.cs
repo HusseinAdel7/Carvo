@@ -11,9 +11,9 @@ using Carvo.Data_Access_Layer.Entities;
 
 namespace Carvo.User_Interface_Layer
 {
-    public partial class AdminProductsForm : Form
+    public partial class AdminSuppliersForm : Form
     {
-        public AdminProductsForm()
+        public AdminSuppliersForm()
         {
             InitializeComponent();
 
@@ -37,12 +37,12 @@ namespace Carvo.User_Interface_Layer
 
             var GridView = products.Select(p => new { Name = p.Name, Description = p.Description, Price = p.Price }).ToList();
 
-            ProductsGridView.AllowUserToAddRows = false;
-            ProductsGridView.DataSource = GridView;
+            SuppliersGridView.AllowUserToAddRows = false;
+            SuppliersGridView.DataSource = GridView;
 
-            ProductsGridView.Columns[0].HeaderText = "الاسم";
-            ProductsGridView.Columns[1].HeaderText = "الوصف";
-            ProductsGridView.Columns[2].HeaderText = "سعر الوحدة";
+            SuppliersGridView.Columns[0].HeaderText = "الاسم";
+            SuppliersGridView.Columns[1].HeaderText = "الوصف";
+            SuppliersGridView.Columns[2].HeaderText = "سعر الوحدة";
 
         }
 
@@ -53,14 +53,14 @@ namespace Carvo.User_Interface_Layer
 
         private void ResizeDataGridViewHeight()
         {
-            int totalHeight = ProductsGridView.ColumnHeadersHeight;
+            int totalHeight = SuppliersGridView.ColumnHeadersHeight;
 
-            foreach (DataGridViewRow row in ProductsGridView.Rows)
+            foreach (DataGridViewRow row in SuppliersGridView.Rows)
             {
                 if (row.Visible) totalHeight += row.Height;
             }
 
-            ProductsGridView.Height = totalHeight + 2; // 2px padding
+            SuppliersGridView.Height = totalHeight + 2; // 2px padding
         }
 
         private void CloseFormBtn_Click(object sender, EventArgs e)

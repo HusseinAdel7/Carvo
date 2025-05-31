@@ -92,7 +92,7 @@
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(700, 338);
+            tableLayoutPanel1.Size = new Size(761, 338);
             tableLayoutPanel1.TabIndex = 0;
             tableLayoutPanel1.UseWaitCursor = true;
             // 
@@ -103,7 +103,7 @@
             panelEmployeesCard.Controls.Add(label9);
             panelEmployeesCard.Controls.Add(label10);
             panelEmployeesCard.Controls.Add(pictureBox5);
-            panelEmployeesCard.Location = new Point(34, 172);
+            panelEmployeesCard.Location = new Point(33, 172);
             panelEmployeesCard.Name = "panelEmployeesCard";
             panelEmployeesCard.Padding = new Padding(10);
             panelEmployeesCard.Size = new Size(200, 124);
@@ -149,7 +149,7 @@
             panel4.Controls.Add(label7);
             panel4.Controls.Add(panelInvoicesCard);
             panel4.Controls.Add(pictureBox4);
-            panel4.Location = new Point(255, 172);
+            panel4.Location = new Point(285, 172);
             panel4.Name = "panel4";
             panel4.Padding = new Padding(10);
             panel4.Size = new Size(200, 124);
@@ -195,7 +195,7 @@
             panel3.Controls.Add(label5);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(pictureBox3);
-            panel3.Location = new Point(476, 172);
+            panel3.Location = new Point(537, 172);
             panel3.Name = "panel3";
             panel3.Padding = new Padding(10);
             panel3.Size = new Size(200, 124);
@@ -241,7 +241,7 @@
             panelCategoriesCard.Controls.Add(label3);
             panelCategoriesCard.Controls.Add(label4);
             panelCategoriesCard.Controls.Add(pictureBox2);
-            panelCategoriesCard.Location = new Point(255, 24);
+            panelCategoriesCard.Location = new Point(285, 24);
             panelCategoriesCard.Name = "panelCategoriesCard";
             panelCategoriesCard.Padding = new Padding(10);
             panelCategoriesCard.Size = new Size(200, 124);
@@ -287,7 +287,7 @@
             panelSuppliersCard.Controls.Add(label1);
             panelSuppliersCard.Controls.Add(label2);
             panelSuppliersCard.Controls.Add(pictureBox1);
-            panelSuppliersCard.Location = new Point(476, 24);
+            panelSuppliersCard.Location = new Point(537, 24);
             panelSuppliersCard.Name = "panelSuppliersCard";
             panelSuppliersCard.Padding = new Padding(10);
             panelSuppliersCard.Size = new Size(200, 124);
@@ -333,7 +333,7 @@
             panelProductsCard.Controls.Add(lblProductsCount);
             panelProductsCard.Controls.Add(lblProductsTitle);
             panelProductsCard.Controls.Add(pictureBoxProducts);
-            panelProductsCard.Location = new Point(34, 24);
+            panelProductsCard.Location = new Point(33, 24);
             panelProductsCard.Name = "panelProductsCard";
             panelProductsCard.Padding = new Padding(10);
             panelProductsCard.Size = new Size(200, 124);
@@ -377,12 +377,13 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(761, 338);
             Controls.Add(tableLayoutPanel1);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
             Name = "DashboardForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MainWindow";
+            Text = "DashboardFoarm";
             tableLayoutPanel1.ResumeLayout(false);
             panelEmployeesCard.ResumeLayout(false);
             panelEmployeesCard.PerformLayout();

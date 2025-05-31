@@ -11,9 +11,9 @@ using Carvo.Data_Access_Layer.Entities;
 
 namespace Carvo.User_Interface_Layer
 {
-    public partial class AdminProductsForm : Form
+    public partial class AdminEmployeesForm : Form
     {
-        public AdminProductsForm()
+        public AdminEmployeesForm()
         {
             InitializeComponent();
 
@@ -37,12 +37,12 @@ namespace Carvo.User_Interface_Layer
 
             var GridView = products.Select(p => new { Name = p.Name, Description = p.Description, Price = p.Price }).ToList();
 
-            ProductsGridView.AllowUserToAddRows = false;
-            ProductsGridView.DataSource = GridView;
+            UsersGridView.AllowUserToAddRows = false;
+            UsersGridView.DataSource = GridView;
 
-            ProductsGridView.Columns[0].HeaderText = "الاسم";
-            ProductsGridView.Columns[1].HeaderText = "الوصف";
-            ProductsGridView.Columns[2].HeaderText = "سعر الوحدة";
+            UsersGridView.Columns[0].HeaderText = "الاسم";
+            UsersGridView.Columns[1].HeaderText = "الوصف";
+            UsersGridView.Columns[2].HeaderText = "سعر الوحدة";
 
         }
 
@@ -53,24 +53,14 @@ namespace Carvo.User_Interface_Layer
 
         private void ResizeDataGridViewHeight()
         {
-            int totalHeight = ProductsGridView.ColumnHeadersHeight;
+            int totalHeight = UsersGridView.ColumnHeadersHeight;
 
-            foreach (DataGridViewRow row in ProductsGridView.Rows)
+            foreach (DataGridViewRow row in UsersGridView.Rows)
             {
                 if (row.Visible) totalHeight += row.Height;
             }
 
-            ProductsGridView.Height = totalHeight + 2; // 2px padding
-        }
-
-        private void CloseFormBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void MinimizeBtn_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
+            UsersGridView.Height = totalHeight + 2; // 2px padding
         }
     }
 }
