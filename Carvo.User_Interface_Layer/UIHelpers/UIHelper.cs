@@ -35,5 +35,38 @@ namespace Carvo.User_Interface_Layer.UIHelpers
 
             control.Region = new Region(path);
         }
+
+        public static void SetupDataGridView(DataGridView dataGridView)
+        {
+           
+
+            // جعل الأعمدة تمتد لعرض الجدول بالكامل
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // جعل الصفوف تأخذ ارتفاع المحتوى
+            dataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+            // إلغاء إضافة صف جديد تلقائي (السطر الفاضي تحت)
+            dataGridView.AllowUserToAddRows = false;
+
+            // منع تعديل الأعمدة مباشرة
+            dataGridView.ReadOnly = true;
+
+            // منع المستخدم من تعديل حجم الأعمدة والصفوف
+            dataGridView.AllowUserToResizeColumns = false;
+            dataGridView.AllowUserToResizeRows = false;
+
+            // إلغاء الحدود
+            dataGridView.BorderStyle = BorderStyle.None;
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
+            dataGridView.GridColor = Color.White;
+
+            // تنسيق رأس الجدول (الأعمدة)
+
+            dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+
+        }
+
     }
 }
