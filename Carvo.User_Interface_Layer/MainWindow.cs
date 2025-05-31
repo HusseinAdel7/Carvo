@@ -19,7 +19,12 @@ namespace Carvo.User_Interface_Layer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
