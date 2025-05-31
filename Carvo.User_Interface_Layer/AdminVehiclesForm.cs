@@ -62,5 +62,15 @@ namespace Carvo.User_Interface_Layer
 
             VehiclesGridView.Height = totalHeight + 2; // 2px padding
         }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizeBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
