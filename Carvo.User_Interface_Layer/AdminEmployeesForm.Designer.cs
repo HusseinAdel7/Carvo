@@ -36,6 +36,9 @@
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
+            CloseFormBtn = new PictureBox();
+            MinimizeBtn = new PictureBox();
+            LogoutBtn = new PictureBox();
             PrevImageAsBtn = new PictureBox();
             CategoriesManagement = new Label();
             panel2 = new Panel();
@@ -49,20 +52,23 @@
             UserNameTxt = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            pictureBox1 = new PictureBox();
+            UpdateUserImg = new PictureBox();
             UpdateUserBtn = new Button();
-            DeleteInvoiceImg = new PictureBox();
-            AddInvoiceImg = new PictureBox();
+            DeleteUserImg = new PictureBox();
+            AddUserImg = new PictureBox();
             AddUserBtn = new Button();
             DeleteUserBtn = new Button();
             UsersGridView = new DataGridView();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MinimizeBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LogoutBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PrevImageAsBtn).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DeleteInvoiceImg).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)AddInvoiceImg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)UpdateUserImg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DeleteUserImg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AddUserImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UsersGridView).BeginInit();
             SuspendLayout();
             // 
@@ -89,6 +95,9 @@
             // 
             panel1.BackColor = Color.FromArgb(48, 67, 87);
             tableLayoutPanel1.SetColumnSpan(panel1, 2);
+            panel1.Controls.Add(CloseFormBtn);
+            panel1.Controls.Add(MinimizeBtn);
+            panel1.Controls.Add(LogoutBtn);
             panel1.Controls.Add(PrevImageAsBtn);
             panel1.Controls.Add(CategoriesManagement);
             panel1.Dock = DockStyle.Fill;
@@ -98,10 +107,42 @@
             panel1.Size = new Size(1502, 127);
             panel1.TabIndex = 0;
             // 
+            // CloseFormBtn
+            // 
+            CloseFormBtn.Image = (Image)resources.GetObject("CloseFormBtn.Image");
+            CloseFormBtn.Location = new Point(1398, 23);
+            CloseFormBtn.Name = "CloseFormBtn";
+            CloseFormBtn.Size = new Size(50, 50);
+            CloseFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            CloseFormBtn.TabIndex = 4;
+            CloseFormBtn.TabStop = false;
+            CloseFormBtn.Click += CloseFormBtn_Click;
+            // 
+            // MinimizeBtn
+            // 
+            MinimizeBtn.Image = (Image)resources.GetObject("MinimizeBtn.Image");
+            MinimizeBtn.Location = new Point(1303, 23);
+            MinimizeBtn.Name = "MinimizeBtn";
+            MinimizeBtn.Size = new Size(50, 50);
+            MinimizeBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            MinimizeBtn.TabIndex = 3;
+            MinimizeBtn.TabStop = false;
+            MinimizeBtn.Click += MinimizeBtn_Click;
+            // 
+            // LogoutBtn
+            // 
+            LogoutBtn.Image = (Image)resources.GetObject("LogoutBtn.Image");
+            LogoutBtn.Location = new Point(61, 23);
+            LogoutBtn.Name = "LogoutBtn";
+            LogoutBtn.Size = new Size(50, 50);
+            LogoutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            LogoutBtn.TabIndex = 2;
+            LogoutBtn.TabStop = false;
+            // 
             // PrevImageAsBtn
             // 
             PrevImageAsBtn.Image = (Image)resources.GetObject("PrevImageAsBtn.Image");
-            PrevImageAsBtn.Location = new Point(42, 20);
+            PrevImageAsBtn.Location = new Point(151, 23);
             PrevImageAsBtn.Name = "PrevImageAsBtn";
             PrevImageAsBtn.Size = new Size(50, 50);
             PrevImageAsBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -132,15 +173,15 @@
             panel2.Controls.Add(UserNameTxt);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
-            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(UpdateUserImg);
             panel2.Controls.Add(UpdateUserBtn);
-            panel2.Controls.Add(DeleteInvoiceImg);
-            panel2.Controls.Add(AddInvoiceImg);
+            panel2.Controls.Add(DeleteUserImg);
+            panel2.Controls.Add(AddUserImg);
             panel2.Controls.Add(AddUserBtn);
             panel2.Controls.Add(DeleteUserBtn);
-            panel2.Location = new Point(60, 136);
+            panel2.Location = new Point(3, 136);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1388, 432);
+            panel2.Size = new Size(1502, 432);
             panel2.TabIndex = 1;
             // 
             // UserpassTxt
@@ -248,15 +289,15 @@
             label1.TabIndex = 7;
             label1.Text = " : الاسم ";
             // 
-            // pictureBox1
+            // UpdateUserImg
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(716, 331);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(64, 52);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            UpdateUserImg.Image = (Image)resources.GetObject("UpdateUserImg.Image");
+            UpdateUserImg.Location = new Point(716, 331);
+            UpdateUserImg.Name = "UpdateUserImg";
+            UpdateUserImg.Size = new Size(64, 52);
+            UpdateUserImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            UpdateUserImg.TabIndex = 6;
+            UpdateUserImg.TabStop = false;
             // 
             // UpdateUserBtn
             // 
@@ -269,25 +310,25 @@
             UpdateUserBtn.Text = "تحديث مستخدم";
             UpdateUserBtn.UseVisualStyleBackColor = false;
             // 
-            // DeleteInvoiceImg
+            // DeleteUserImg
             // 
-            DeleteInvoiceImg.Image = (Image)resources.GetObject("DeleteInvoiceImg.Image");
-            DeleteInvoiceImg.Location = new Point(331, 331);
-            DeleteInvoiceImg.Name = "DeleteInvoiceImg";
-            DeleteInvoiceImg.Size = new Size(64, 52);
-            DeleteInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
-            DeleteInvoiceImg.TabIndex = 4;
-            DeleteInvoiceImg.TabStop = false;
+            DeleteUserImg.Image = (Image)resources.GetObject("DeleteUserImg.Image");
+            DeleteUserImg.Location = new Point(331, 331);
+            DeleteUserImg.Name = "DeleteUserImg";
+            DeleteUserImg.Size = new Size(64, 52);
+            DeleteUserImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            DeleteUserImg.TabIndex = 4;
+            DeleteUserImg.TabStop = false;
             // 
-            // AddInvoiceImg
+            // AddUserImg
             // 
-            AddInvoiceImg.Image = (Image)resources.GetObject("AddInvoiceImg.Image");
-            AddInvoiceImg.Location = new Point(1106, 331);
-            AddInvoiceImg.Name = "AddInvoiceImg";
-            AddInvoiceImg.Size = new Size(64, 52);
-            AddInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
-            AddInvoiceImg.TabIndex = 3;
-            AddInvoiceImg.TabStop = false;
+            AddUserImg.Image = (Image)resources.GetObject("AddUserImg.Image");
+            AddUserImg.Location = new Point(1106, 331);
+            AddUserImg.Name = "AddUserImg";
+            AddUserImg.Size = new Size(64, 52);
+            AddUserImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            AddUserImg.TabIndex = 3;
+            AddUserImg.TabStop = false;
             // 
             // AddUserBtn
             // 
@@ -341,8 +382,8 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             UsersGridView.DefaultCellStyle = dataGridViewCellStyle3;
             UsersGridView.EnableHeadersVisualStyles = false;
-            UsersGridView.Location = new Point(60, 583);
-            UsersGridView.MaximumSize = new Size(1387, 285);
+            UsersGridView.Location = new Point(3, 583);
+            UsersGridView.MaximumSize = new Size(1502, 234);
             UsersGridView.Name = "UsersGridView";
             UsersGridView.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -358,7 +399,7 @@
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
             UsersGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             UsersGridView.ScrollBars = ScrollBars.Vertical;
-            UsersGridView.Size = new Size(1387, 234);
+            UsersGridView.Size = new Size(1502, 234);
             UsersGridView.TabIndex = 2;
             UsersGridView.DataBindingComplete += InvoicesGridView_DataBindingComplete;
             // 
@@ -370,18 +411,23 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1508, 829);
             Controls.Add(tableLayoutPanel1);
+            FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(1526, 885);
             Name = "AdminEmployeesForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminInvoicesForm";
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)CloseFormBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MinimizeBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LogoutBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)PrevImageAsBtn).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DeleteInvoiceImg).EndInit();
-            ((System.ComponentModel.ISupportInitialize)AddInvoiceImg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UpdateUserImg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DeleteUserImg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AddUserImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)UsersGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -396,11 +442,11 @@
         private Button AddUserBtn;
         private Button DeleteUserBtn;
         private DataGridView UsersGridView;
-        private PictureBox DeleteInvoiceImg;
-        private PictureBox AddInvoiceImg;
+        private PictureBox DeleteUserImg;
+        private PictureBox AddUserImg;
         private PictureBox PrevImageAsBtn;
         private Label label1;
-        private PictureBox pictureBox1;
+        private PictureBox UpdateUserImg;
         private Button UpdateUserBtn;
         private TextBox UserNameTxt;
         private Label label2;
@@ -411,5 +457,8 @@
         private TextBox UserEmailTxt;
         private TextBox UserpassTxt;
         private Label label5;
+        private PictureBox CloseFormBtn;
+        private PictureBox MinimizeBtn;
+        private PictureBox LogoutBtn;
     }
 }
