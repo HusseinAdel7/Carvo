@@ -1,6 +1,10 @@
 ﻿using System.Configuration;
+using Carvo.Business_Logic_Layer.IServices;
+using Carvo.Business_Logic_Layer.Services;
 using Carvo.Data_Access_Layer.Data.Context;
 using Carvo.Data_Access_Layer.DataSeeding;
+using Carvo.Data_Access_Layer.Repository.GenericRepositories;
+using Carvo.Data_Access_Layer.Repository.IGenericRepositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,12 +27,18 @@ namespace Carvo.User_Interface_Layer
                      // سجل DbContext
                      services.AddDbContext<CarvoDbContext>(options =>
                          options.UseSqlServer(context.Configuration.GetConnectionString("DefaultConnection")));
+                     
                      // سجل الفورم الرئيسي
                      services.AddTransient<InvoiceForm>();
                      services.AddTransient<LoginForm>();
                      services.AddTransient<SalesInvoiceForm>();
                      services.AddTransient<RepairInvoiceForm>();
                      services.AddTransient<DashboardForm>();
+                     services.AddTransient<AdminCategoriesForm>();
+
+
+                     services.AddScoped(typeof(IGenericRepository<,>), typeof(GenericRepository<,>));
+                     services.AddScoped<ICategoryService, CategoryService>();
 
 
 
@@ -64,6 +74,11 @@ namespace Carvo.User_Interface_Layer
             // شغّل الفورم من DI
             var loginFrom = host.Services.GetRequiredService<LoginForm>();
             var InvoiceFrom = host.Services.GetRequiredService<InvoiceForm>();
+            var adminCategoriesForm = host.Services.GetRequiredService<AdminCategoriesForm>();
+         
+            var service = host.Services.GetRequiredService<ICategoryService>();
+
+            Application.Run(adminCategoriesForm);
         }
     }
 }
