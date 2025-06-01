@@ -7,43 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Carvo.Business_Logic_Layer.IServices;
 using Carvo.Data_Access_Layer.Entities;
 
 namespace Carvo.User_Interface_Layer
 {
     public partial class AdminCategoriesForm : Form
     {
-        public AdminCategoriesForm()
+        private ICategoryService categoryService;
+        public AdminCategoriesForm(ICategoryService _categoryService)
         {
+            categoryService = _categoryService;
             InitializeComponent();
-
-            /* Testing Grid View */
-            List<Product> products = new List<Product>()
-            {
-                new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-
-            };
-
-            var GridView = products.Select(p => new { Name = p.Name, Description = p.Description, Price = p.Price }).ToList();
-
-            CategoryGridView.AllowUserToAddRows = false;
-            CategoryGridView.DataSource = GridView;
-
-            CategoryGridView.Columns[0].HeaderText = "الاسم";
-            CategoryGridView.Columns[1].HeaderText = "الوصف";
-            CategoryGridView.Columns[2].HeaderText = "سعر الوحدة";
-
+            this.Load += async (s, e) => await LoadCategoriesAsync();
         }
 
         private void InvoicesGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -71,6 +47,68 @@ namespace Carvo.User_Interface_Layer
         private void MinimizeBtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private async void AddCategoryBtn_Click(object sender, EventArgs e)
+        {
+            string Name = CategoryNameTxt.Text;
+            string Desc = CategoryDescTxt.Text;
+            Category addedCategory = new Category { Name = Name, Description = Desc };
+            await categoryService.AddCategoryAsync(addedCategory);
+            await LoadCategoriesAsync();
+        }
+
+        private async void UpdateCategoryBtn_Click(object sender, EventArgs e)
+        {
+            string Name = CategoryNameTxt.Text;
+            string Desc = CategoryDescTxt.Text;
+
+            var selectedRow = CategoryGridView.SelectedRows[0];
+            int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+
+            Category category = await categoryService.GetCategoryByIdAsync(id);
+
+            category.Name = Name;
+            category.Description = Desc;
+
+            await categoryService.UpdateCategoryAsync(category);
+            await LoadCategoriesAsync();
+
+        }
+
+        private async void DeleteCategoryBtn_Click(object sender, EventArgs e)
+        {
+            var selectedRow = CategoryGridView.SelectedRows[0];
+            int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+            await categoryService.DeleteCategoryAsync(id);
+            await LoadCategoriesAsync();
+        }
+
+        private async Task LoadCategoriesAsync()
+        {
+            var allCategories = await categoryService.GetAllCategoryAsync();
+
+            var categories = allCategories.Select(c => new { ID = c.Id, Description = c.Description , Name = c.Name }).ToList();
+
+            CategoryGridView.DataSource = null;
+            CategoryGridView.DataSource = categories;
+
+            CategoryGridView.Columns["ID"].Visible = false;
+            CategoryGridView.Columns[1].HeaderText = "الوصف";
+            CategoryGridView.Columns[2].HeaderText = "الاسم";
+        }
+
+        private void CategoryGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (CategoryGridView.SelectedRows.Count > 0)
+            {
+                var selectedRow = CategoryGridView.SelectedRows[0];
+                string desc = (string)selectedRow.Cells["Description"].Value;
+                string name = (string)selectedRow.Cells["Name"].Value;
+                CategoryNameTxt.Text = name;
+                CategoryDescTxt.Text = desc;
+            }
+
         }
     }
 }

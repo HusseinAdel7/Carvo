@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminCategoriesForm));
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
             LogoutBtn = new PictureBox();
@@ -41,9 +41,10 @@
             MinimizeBtn = new PictureBox();
             PrevImageAsBtn = new PictureBox();
             CategoriesManagement = new Label();
+            CategoryGridView = new DataGridView();
             panel2 = new Panel();
             CategoryDescTxt = new TextBox();
-            CategorynameTxt = new TextBox();
+            CategoryNameTxt = new TextBox();
             label2 = new Label();
             label1 = new Label();
             UpdateCategoryImg = new PictureBox();
@@ -52,18 +53,17 @@
             AddCategoryImg = new PictureBox();
             AddCategoryBtn = new Button();
             DeleteCategoryBtn = new Button();
-            CategoryGridView = new DataGridView();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoutBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MinimizeBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PrevImageAsBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CategoryGridView).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)UpdateCategoryImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DeleteCategoryImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AddCategoryImg).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)CategoryGridView).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -153,12 +153,64 @@
             CategoriesManagement.TabIndex = 0;
             CategoriesManagement.Text = "ادارة التصنيفات";
             // 
+            // CategoryGridView
+            // 
+            CategoryGridView.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = SystemColors.ButtonFace;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.CornflowerBlue;
+            CategoryGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            CategoryGridView.Anchor = AnchorStyles.None;
+            CategoryGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            CategoryGridView.BorderStyle = BorderStyle.None;
+            CategoryGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 67, 87);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            CategoryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            CategoryGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new Padding(0, 2, 2, 2);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            CategoryGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            CategoryGridView.EnableHeadersVisualStyles = false;
+            CategoryGridView.Location = new Point(3, 404);
+            CategoryGridView.Name = "CategoryGridView";
+            CategoryGridView.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            CategoryGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            CategoryGridView.RowHeadersVisible = false;
+            CategoryGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
+            CategoryGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            CategoryGridView.ScrollBars = ScrollBars.Vertical;
+            CategoryGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            CategoryGridView.Size = new Size(1502, 358);
+            CategoryGridView.TabIndex = 2;
+            CategoryGridView.DataBindingComplete += InvoicesGridView_DataBindingComplete;
+            CategoryGridView.SelectionChanged += CategoryGridView_SelectionChanged;
+            // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(48, 67, 87);
             panel2.Controls.Add(CategoryDescTxt);
-            panel2.Controls.Add(CategorynameTxt);
+            panel2.Controls.Add(CategoryNameTxt);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(UpdateCategoryImg);
@@ -182,15 +234,15 @@
             CategoryDescTxt.TabIndex = 10;
             CategoryDescTxt.TextAlign = HorizontalAlignment.Right;
             // 
-            // CategorynameTxt
+            // CategoryNameTxt
             // 
-            CategorynameTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CategorynameTxt.Location = new Point(674, 49);
-            CategorynameTxt.Multiline = true;
-            CategorynameTxt.Name = "CategorynameTxt";
-            CategorynameTxt.Size = new Size(480, 39);
-            CategorynameTxt.TabIndex = 9;
-            CategorynameTxt.TextAlign = HorizontalAlignment.Right;
+            CategoryNameTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CategoryNameTxt.Location = new Point(674, 49);
+            CategoryNameTxt.Multiline = true;
+            CategoryNameTxt.Name = "CategoryNameTxt";
+            CategoryNameTxt.Size = new Size(480, 39);
+            CategoryNameTxt.TabIndex = 9;
+            CategoryNameTxt.TextAlign = HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -223,6 +275,7 @@
             UpdateCategoryImg.SizeMode = PictureBoxSizeMode.StretchImage;
             UpdateCategoryImg.TabIndex = 6;
             UpdateCategoryImg.TabStop = false;
+            UpdateCategoryImg.Click += UpdateCategoryBtn_Click;
             // 
             // UpdateCategoryBtn
             // 
@@ -234,6 +287,7 @@
             UpdateCategoryBtn.TabIndex = 5;
             UpdateCategoryBtn.Text = "تحديث صنف";
             UpdateCategoryBtn.UseVisualStyleBackColor = false;
+            UpdateCategoryBtn.Click += UpdateCategoryBtn_Click;
             // 
             // DeleteCategoryImg
             // 
@@ -244,6 +298,7 @@
             DeleteCategoryImg.SizeMode = PictureBoxSizeMode.StretchImage;
             DeleteCategoryImg.TabIndex = 4;
             DeleteCategoryImg.TabStop = false;
+            DeleteCategoryImg.Click += DeleteCategoryBtn_Click;
             // 
             // AddCategoryImg
             // 
@@ -254,6 +309,7 @@
             AddCategoryImg.SizeMode = PictureBoxSizeMode.StretchImage;
             AddCategoryImg.TabIndex = 3;
             AddCategoryImg.TabStop = false;
+            AddCategoryImg.Click += AddCategoryBtn_Click;
             // 
             // AddCategoryBtn
             // 
@@ -265,6 +321,7 @@
             AddCategoryBtn.TabIndex = 2;
             AddCategoryBtn.Text = "اضافة صنف ";
             AddCategoryBtn.UseVisualStyleBackColor = false;
+            AddCategoryBtn.Click += AddCategoryBtn_Click;
             // 
             // DeleteCategoryBtn
             // 
@@ -276,56 +333,7 @@
             DeleteCategoryBtn.TabIndex = 1;
             DeleteCategoryBtn.Text = "مسح صنف";
             DeleteCategoryBtn.UseVisualStyleBackColor = false;
-            // 
-            // CategoryGridView
-            // 
-            CategoryGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle11.BackColor = SystemColors.ButtonFace;
-            dataGridViewCellStyle11.ForeColor = Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = Color.CornflowerBlue;
-            CategoryGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
-            CategoryGridView.Anchor = AnchorStyles.None;
-            CategoryGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            CategoryGridView.BorderStyle = BorderStyle.None;
-            CategoryGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.BackColor = Color.FromArgb(48, 67, 87);
-            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle12.ForeColor = Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            CategoryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            CategoryGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = Color.White;
-            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle13.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle13.Padding = new Padding(0, 2, 2, 2);
-            dataGridViewCellStyle13.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.False;
-            CategoryGridView.DefaultCellStyle = dataGridViewCellStyle13;
-            CategoryGridView.EnableHeadersVisualStyles = false;
-            CategoryGridView.Location = new Point(3, 404);
-            CategoryGridView.Name = "CategoryGridView";
-            CategoryGridView.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.BackColor = SystemColors.Control;
-            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle14.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
-            CategoryGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            CategoryGridView.RowHeadersVisible = false;
-            CategoryGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleRight;
-            CategoryGridView.RowsDefaultCellStyle = dataGridViewCellStyle15;
-            CategoryGridView.ScrollBars = ScrollBars.Vertical;
-            CategoryGridView.Size = new Size(1502, 358);
-            CategoryGridView.TabIndex = 2;
-            CategoryGridView.DataBindingComplete += InvoicesGridView_DataBindingComplete;
+            DeleteCategoryBtn.Click += DeleteCategoryBtn_Click;
             // 
             // AdminCategoriesForm
             // 
@@ -346,12 +354,12 @@
             ((System.ComponentModel.ISupportInitialize)CloseFormBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)MinimizeBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)PrevImageAsBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CategoryGridView).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)UpdateCategoryImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)DeleteCategoryImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)AddCategoryImg).EndInit();
-            ((System.ComponentModel.ISupportInitialize)CategoryGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -372,7 +380,7 @@
         private PictureBox UpdateCategoryImg;
         private Button UpdateCategoryBtn;
         private TextBox CategoryDescTxt;
-        private TextBox CategorynameTxt;
+        private TextBox CategoryNameTxt;
         private Label label2;
         private PictureBox LogoutBtn;
         private PictureBox CloseFormBtn;
