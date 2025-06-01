@@ -50,11 +50,16 @@
             button7 = new Button();
             button3 = new Button();
             panel2 = new Panel();
+            pictureBox3 = new PictureBox();
+            button5 = new Button();
+            label2 = new Label();
+            customerCombo = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)vehicleGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -73,7 +78,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(608, 65);
+            label4.Location = new Point(454, 65);
             label4.Name = "label4";
             label4.Size = new Size(109, 28);
             label4.TabIndex = 3;
@@ -82,21 +87,21 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(124, 62);
+            textBox1.Location = new Point(36, 62);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.RightToLeft = RightToLeft.Yes;
-            textBox1.Size = new Size(467, 39);
+            textBox1.Size = new Size(397, 39);
             textBox1.TabIndex = 5;
             // 
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(124, 139);
+            textBox3.Location = new Point(627, 62);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
             textBox3.RightToLeft = RightToLeft.Yes;
-            textBox3.Size = new Size(467, 39);
+            textBox3.Size = new Size(397, 39);
             textBox3.TabIndex = 9;
             // 
             // label3
@@ -104,7 +109,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(608, 142);
+            label3.Location = new Point(1040, 65);
             label3.Name = "label3";
             label3.Size = new Size(127, 28);
             label3.TabIndex = 8;
@@ -113,10 +118,11 @@
             // textBox4
             // 
             textBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(124, 212);
+            textBox4.Location = new Point(36, 188);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(467, 39);
+            textBox4.RightToLeft = RightToLeft.Yes;
+            textBox4.Size = new Size(397, 39);
             textBox4.TabIndex = 11;
             // 
             // label5
@@ -124,7 +130,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(608, 215);
+            label5.Location = new Point(454, 188);
             label5.Name = "label5";
             label5.Size = new Size(97, 28);
             label5.TabIndex = 10;
@@ -137,11 +143,11 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.Black;
-            button1.Location = new Point(963, 65);
+            button1.Location = new Point(1228, 49);
             button1.Name = "button1";
-            button1.Size = new Size(135, 71);
+            button1.Size = new Size(138, 52);
             button1.TabIndex = 12;
-            button1.Text = "اضافة المركبة";
+            button1.Text = "اضافة المركبة ";
             button1.UseVisualStyleBackColor = false;
             // 
             // button2
@@ -151,9 +157,9 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.Black;
-            button2.Location = new Point(963, 164);
+            button2.Location = new Point(1228, 122);
             button2.Name = "button2";
-            button2.Size = new Size(135, 71);
+            button2.Size = new Size(138, 52);
             button2.TabIndex = 13;
             button2.Text = "تعديل المركبة";
             button2.UseVisualStyleBackColor = false;
@@ -206,9 +212,9 @@
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1114, 65);
+            pictureBox1.Location = new Point(1372, 49);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(74, 71);
+            pictureBox1.Size = new Size(64, 52);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 20;
             pictureBox1.TabStop = false;
@@ -217,9 +223,9 @@
             // 
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(1114, 164);
+            pictureBox2.Location = new Point(1372, 122);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(74, 71);
+            pictureBox2.Size = new Size(64, 52);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 21;
             pictureBox2.TabStop = false;
@@ -278,6 +284,10 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(pictureBox3);
+            panel2.Controls.Add(button5);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(customerCombo);
             panel2.Controls.Add(textBox4);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(pictureBox2);
@@ -288,10 +298,56 @@
             panel2.Controls.Add(button2);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(button1);
-            panel2.Location = new Point(72, 153);
+            panel2.Location = new Point(23, 153);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1369, 305);
+            panel2.Size = new Size(1491, 305);
             panel2.TabIndex = 23;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(1372, 195);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(64, 52);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 25;
+            pictureBox3.TabStop = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(244, 244, 244);
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.ForeColor = Color.Black;
+            button5.Location = new Point(1228, 195);
+            button5.Name = "button5";
+            button5.Size = new Size(138, 52);
+            button5.TabIndex = 24;
+            button5.Text = "حذف المركبة";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(1040, 188);
+            label2.Name = "label2";
+            label2.Size = new Size(108, 28);
+            label2.TabIndex = 23;
+            label2.Text = "اسم العميل";
+            // 
+            // customerCombo
+            // 
+            customerCombo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customerCombo.FormattingEnabled = true;
+            customerCombo.Location = new Point(627, 188);
+            customerCombo.Name = "customerCombo";
+            customerCombo.RightToLeft = RightToLeft.Yes;
+            customerCombo.Size = new Size(397, 36);
+            customerCombo.TabIndex = 22;
             // 
             // VehicleDashboardForm
             // 
@@ -313,6 +369,7 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -336,5 +393,9 @@
         private Button button8;
         private Button button7;
         private Button button3;
+        private ComboBox customerCombo;
+        private Label label2;
+        private PictureBox pictureBox3;
+        private Button button5;
     }
 }
