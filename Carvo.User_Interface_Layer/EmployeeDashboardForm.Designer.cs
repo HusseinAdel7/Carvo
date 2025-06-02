@@ -30,48 +30,103 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeDashboardForm));
             panel1 = new Panel();
+
+            pictureBox9 = new PictureBox();
+            pictureBox8 = new PictureBox();
+            pictureBox7 = new PictureBox();
+            pictureBox6 = new PictureBox();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            panel3 = new Panel();
+            pictureBox4 = new PictureBox();
+            panel4 = new Panel();
+            panel2 = new Panel();
+            pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             label2 = new Label();
-            flowLayoutPanel2 = new FlowLayoutPanel();
-            pictureBox3 = new PictureBox();
             label3 = new Label();
-            flowLayoutPanel3 = new FlowLayoutPanel();
-            pictureBox4 = new PictureBox();
             label4 = new Label();
-            pictureBox5 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            flowLayoutPanel3.SuspendLayout();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            panel4.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(pictureBox5);
+            panel1.BackColor = Color.FromArgb(48, 67, 87);
+            panel1.Controls.Add(pictureBox9);
+            panel1.Controls.Add(pictureBox8);
+            panel1.Controls.Add(pictureBox7);
+            panel1.Controls.Add(pictureBox6);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 100);
+            panel1.Size = new Size(1052, 100);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new Point(56, 0);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(50, 50);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 6;
+            pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.Location = new Point(3, 0);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(50, 50);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 5;
+            pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(946, 0);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(50, 50);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 4;
+            pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(1002, 0);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(50, 50);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 3;
+            pictureBox6.TabStop = false;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(70, 12);
+            pictureBox1.Location = new Point(112, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(43, 28);
+            pictureBox1.Size = new Size(50, 50);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -81,7 +136,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(268, 29);
+            label1.Location = new Point(404, 20);
             label1.Name = "label1";
             label1.Size = new Size(215, 30);
             label1.TabIndex = 0;
@@ -94,97 +149,102 @@
             tableLayoutPanel1.ColumnCount = 3;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 39.97599F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60.0240059F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 267F));
-            tableLayoutPanel1.Controls.Add(flowLayoutPanel2, 1, 0);
-            tableLayoutPanel1.Controls.Add(flowLayoutPanel3, 2, 0);
-            tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 0, 0);
-            tableLayoutPanel1.Location = new Point(0, 100);
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 3458F));
+            tableLayoutPanel1.Controls.Add(panel3, 0, 0);
+            tableLayoutPanel1.Controls.Add(panel4, 1, 0);
+            tableLayoutPanel1.Controls.Add(panel2, 2, 0);
+            tableLayoutPanel1.Location = new Point(0, 98);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.Padding = new Padding(20);
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(800, 350);
+            tableLayoutPanel1.Size = new Size(4243, 374);
             tableLayoutPanel1.TabIndex = 1;
             // 
-            // flowLayoutPanel1
+            // panel3
             // 
-            flowLayoutPanel1.BackColor = Color.White;
-            flowLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
-            flowLayoutPanel1.Controls.Add(pictureBox2);
-            flowLayoutPanel1.Controls.Add(label2);
-            flowLayoutPanel1.Cursor = Cursors.Hand;
-            flowLayoutPanel1.Location = new Point(23, 23);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Padding = new Padding(10);
-            flowLayoutPanel1.Size = new Size(150, 150);
-            flowLayoutPanel1.TabIndex = 0;
+            panel3.Controls.Add(label2);
+            panel3.Controls.Add(pictureBox4);
+            panel3.Location = new Point(23, 23);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(291, 328);
+            panel3.TabIndex = 1;
+            panel3.Paint += panel3_Paint;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(44, 26);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(152, 89);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 1;
+            pictureBox4.TabStop = false;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(label3);
+            panel4.Controls.Add(pictureBox3);
+            panel4.Location = new Point(320, 23);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(424, 328);
+            panel4.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(pictureBox2);
+            panel2.Location = new Point(767, 23);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(341, 328);
+            panel2.TabIndex = 0;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(126, 26);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(152, 89);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 2;
+            pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(20, 20);
-            pictureBox2.Margin = new Padding(10);
+            pictureBox2.Location = new Point(88, 26);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(100, 50);
+            pictureBox2.Size = new Size(152, 89);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 0;
+            pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(20, 90);
-            label2.Margin = new Padding(10);
+            label2.Location = new Point(89, 157);
             label2.Name = "label2";
-            label2.Size = new Size(90, 15);
-            label2.TabIndex = 1;
-            label2.Text = "       اضافة فاتورة";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            label2.Click += label2_Click;
-            // 
-            // flowLayoutPanel2
-            // 
-            flowLayoutPanel2.Anchor = AnchorStyles.Top;
-            flowLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            flowLayoutPanel2.BackColor = Color.White;
-            flowLayoutPanel2.BorderStyle = BorderStyle.FixedSingle;
-            flowLayoutPanel2.Controls.Add(pictureBox3);
-            flowLayoutPanel2.Controls.Add(label3);
-            flowLayoutPanel2.Cursor = Cursors.Hand;
-            flowLayoutPanel2.Location = new Point(289, 30);
-            flowLayoutPanel2.Margin = new Padding(10);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Padding = new Padding(10);
-            flowLayoutPanel2.Size = new Size(150, 150);
-            flowLayoutPanel2.TabIndex = 1;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Anchor = AnchorStyles.None;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(20, 20);
-            pictureBox3.Margin = new Padding(10);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(100, 50);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 0;
-            pictureBox3.TabStop = false;
+            label2.Size = new Size(69, 15);
+            label2.TabIndex = 2;
+            label2.Text = "اضافه فاتوره";
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(20, 90);
-            label3.Margin = new Padding(10);
+            label3.Location = new Point(193, 157);
             label3.Name = "label3";
-            label3.Size = new Size(76, 15);
-            label3.TabIndex = 1;
-            label3.Text = "            ألعملاء";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            label3.Size = new Size(40, 15);
+            label3.TabIndex = 3;
+            label3.Text = "العملاء";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(151, 157);
+            label4.Name = "label4";
+            label4.Size = new Size(49, 15);
+            label4.TabIndex = 3;
+            label4.Text = "المركبات";
             // 
             // flowLayoutPanel3
             // 
@@ -242,27 +302,33 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1052, 450);
+            ControlBox = false;
             Controls.Add(tableLayoutPanel1);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "EmployeeDashboardForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "الصفحة الرئيسية للموظف";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            flowLayoutPanel2.ResumeLayout(false);
-            flowLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            flowLayoutPanel3.ResumeLayout(false);
-            flowLayoutPanel3.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();r
             ResumeLayout(false);
             PerformLayout();
         }
@@ -273,15 +339,18 @@
         private PictureBox pictureBox1;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private PictureBox pictureBox9;
+        private PictureBox pictureBox8;
+        private PictureBox pictureBox7;
+        private PictureBox pictureBox6;
+        private Panel panel3;
+        private PictureBox pictureBox4;
+        private Panel panel2;
+        private Panel panel4;
+        private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private Label label2;
-        private FlowLayoutPanel flowLayoutPanel3;
-        private PictureBox pictureBox4;
-        private Label label4;
-        private FlowLayoutPanel flowLayoutPanel2;
-        private PictureBox pictureBox3;
         private Label label3;
-        private PictureBox pictureBox5;
+        private Label label4;
     }
 }
