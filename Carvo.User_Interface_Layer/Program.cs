@@ -35,10 +35,14 @@ namespace Carvo.User_Interface_Layer
                      services.AddTransient<RepairInvoiceForm>();
                      services.AddTransient<DashboardForm>();
                      services.AddTransient<AdminCategoriesForm>();
+                     services.AddTransient<AdminProductsForm>();
+
 
 
                      services.AddScoped(typeof(IGenericRepository<,>), typeof(GenericRepository<,>));
                      services.AddScoped<ICategoryService, CategoryService>();
+                     services.AddScoped<IProductService, ProductService>();
+
 
 
 
@@ -75,10 +79,11 @@ namespace Carvo.User_Interface_Layer
             var loginFrom = host.Services.GetRequiredService<LoginForm>();
             var InvoiceFrom = host.Services.GetRequiredService<InvoiceForm>();
             var adminCategoriesForm = host.Services.GetRequiredService<AdminCategoriesForm>();
-         
+            var adminProductsForm = host.Services.GetRequiredService<AdminProductsForm>();
+
             var service = host.Services.GetRequiredService<ICategoryService>();
 
-            Application.Run(adminCategoriesForm);
+            Application.Run(adminProductsForm);
         }
     }
 }
