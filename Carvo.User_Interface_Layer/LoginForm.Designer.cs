@@ -28,37 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             userNameTxt = new TextBox();
             roleComboBox = new ComboBox();
-            label4 = new Label();
             button1 = new Button();
             passwordTxt = new TextBox();
-            closeBtn = new Button();
-            minimizeBtn = new Button();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            button2 = new Button();
+            button3 = new Button();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(24, 23, 53);
-            label1.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.BackColor = Color.FromArgb(48, 67, 87);
+            label1.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(36, 20);
+            label1.Location = new Point(247, 9);
             label1.Name = "label1";
-            label1.Size = new Size(482, 81);
+            label1.Size = new Size(484, 81);
             label1.TabIndex = 0;
             label1.Text = " تسجيــــل الدخــــول";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(0, 0, 64);
-            label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(92, 111);
+            label2.BackColor = Color.FromArgb(198, 198, 198);
+            label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(242, 33);
             label2.Name = "label2";
             label2.Size = new Size(181, 38);
             label2.TabIndex = 1;
@@ -67,10 +71,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(0, 0, 64);
-            label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(92, 206);
+            label3.BackColor = Color.FromArgb(198, 198, 198);
+            label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(277, 155);
             label3.Name = "label3";
             label3.Size = new Size(146, 38);
             label3.TabIndex = 2;
@@ -80,34 +84,22 @@
             // 
             userNameTxt.BackColor = Color.White;
             userNameTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            userNameTxt.Location = new Point(95, 153);
+            userNameTxt.Location = new Point(44, 74);
             userNameTxt.Multiline = true;
             userNameTxt.Name = "userNameTxt";
             userNameTxt.RightToLeft = RightToLeft.Yes;
-            userNameTxt.Size = new Size(379, 34);
+            userNameTxt.Size = new Size(379, 45);
             userNameTxt.TabIndex = 0;
             // 
             // roleComboBox
             // 
             roleComboBox.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             roleComboBox.FormattingEnabled = true;
-            roleComboBox.Location = new Point(156, 323);
+            roleComboBox.Location = new Point(44, 298);
             roleComboBox.Name = "roleComboBox";
             roleComboBox.RightToLeft = RightToLeft.Yes;
-            roleComboBox.Size = new Size(318, 36);
+            roleComboBox.Size = new Size(382, 36);
             roleComboBox.TabIndex = 2;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.FromArgb(0, 0, 64);
-            label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(91, 323);
-            label4.Name = "label4";
-            label4.Size = new Size(73, 38);
-            label4.TabIndex = 5;
-            label4.Text = "الدور";
             // 
             // button1
             // 
@@ -116,7 +108,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(214, 377);
+            button1.Location = new Point(166, 373);
             button1.Name = "button1";
             button1.Size = new Size(163, 47);
             button1.TabIndex = 4;
@@ -126,62 +118,85 @@
             // passwordTxt
             // 
             passwordTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passwordTxt.Location = new Point(92, 249);
+            passwordTxt.Location = new Point(44, 196);
             passwordTxt.Multiline = true;
             passwordTxt.Name = "passwordTxt";
             passwordTxt.PasswordChar = '*';
             passwordTxt.RightToLeft = RightToLeft.Yes;
-            passwordTxt.Size = new Size(382, 34);
+            passwordTxt.Size = new Size(379, 45);
             passwordTxt.TabIndex = 1;
             // 
-            // closeBtn
+            // panel1
             // 
-            closeBtn.FlatAppearance.BorderSize = 0;
-            closeBtn.FlatStyle = FlatStyle.Flat;
-            closeBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            closeBtn.ForeColor = Color.Red;
-            closeBtn.Location = new Point(1402, 1);
-            closeBtn.Name = "closeBtn";
-            closeBtn.Size = new Size(94, 41);
-            closeBtn.TabIndex = 6;
-            closeBtn.Text = "X";
-            closeBtn.UseVisualStyleBackColor = true;
-            closeBtn.Click += closeBtn_Click;
+            panel1.BackColor = Color.FromArgb(198, 198, 198);
+            panel1.Controls.Add(roleComboBox);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(passwordTxt);
+            panel1.Controls.Add(userNameTxt);
+            panel1.Controls.Add(button1);
+            panel1.Location = new Point(485, 123);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(483, 436);
+            panel1.TabIndex = 8;
             // 
-            // minimizeBtn
+            // pictureBox1
             // 
-            minimizeBtn.FlatAppearance.BorderSize = 0;
-            minimizeBtn.FlatStyle = FlatStyle.Flat;
-            minimizeBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            minimizeBtn.ForeColor = Color.White;
-            minimizeBtn.Location = new Point(1314, 1);
-            minimizeBtn.Name = "minimizeBtn";
-            minimizeBtn.Size = new Size(94, 41);
-            minimizeBtn.TabIndex = 7;
-            minimizeBtn.Text = "-";
-            minimizeBtn.UseVisualStyleBackColor = true;
-            minimizeBtn.Click += minimizeBtn_Click;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(47, 197);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(326, 244);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
+            // button2
+            // 
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(939, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(50, 50);
+            button2.TabIndex = 10;
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Location = new Point(873, 0);
+            button3.Name = "button3";
+            button3.Size = new Size(50, 50);
+            button3.TabIndex = 11;
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(24, 23, 53);
-            ClientSize = new Size(1508, 450);
-            Controls.Add(minimizeBtn);
-            Controls.Add(closeBtn);
-            Controls.Add(passwordTxt);
-            Controls.Add(button1);
-            Controls.Add(label4);
-            Controls.Add(roleComboBox);
-            Controls.Add(userNameTxt);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            BackColor = Color.FromArgb(48, 67, 87);
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(991, 582);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(pictureBox1);
+            Controls.Add(panel1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
             Load += LoginForm_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -193,10 +208,11 @@
         private Label label3;
         private TextBox userNameTxt;
         private ComboBox roleComboBox;
-        private Label label4;
         private Button button1;
         private TextBox passwordTxt;
-        private Button closeBtn;
-        private Button minimizeBtn;
+        private Panel panel1;
+        private PictureBox pictureBox1;
+        private Button button2;
+        private Button button3;
     }
 }

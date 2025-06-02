@@ -29,406 +29,428 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
-            tableLayoutPanel1 = new TableLayoutPanel();
-            panelEmployeesCard = new Panel();
-            label9 = new Label();
-            label10 = new Label();
-            pictureBox5 = new PictureBox();
-            panel4 = new Panel();
-            label7 = new Label();
-            panelInvoicesCard = new Label();
+            panel1 = new Panel();
+            label2 = new Label();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            panel2 = new Panel();
+            label3 = new Label();
+            label4 = new Label();
+            pictureBox6 = new PictureBox();
             panel3 = new Panel();
             label5 = new Label();
             label6 = new Label();
-            pictureBox3 = new PictureBox();
-            panelCategoriesCard = new Panel();
-            label3 = new Label();
-            label4 = new Label();
-            pictureBox2 = new PictureBox();
-            panelSuppliersCard = new Panel();
-            label1 = new Label();
-            label2 = new Label();
-            pictureBox1 = new PictureBox();
-            panelProductsCard = new Panel();
-            lblProductsCount = new Label();
-            lblProductsTitle = new Label();
-            pictureBoxProducts = new PictureBox();
-            tableLayoutPanel1.SuspendLayout();
-            panelEmployeesCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panelCategoriesCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panelSuppliersCard.SuspendLayout();
+            pictureBox7 = new PictureBox();
+            panel4 = new Panel();
+            label7 = new Label();
+            label8 = new Label();
+            pictureBox8 = new PictureBox();
+            panel5 = new Panel();
+            label9 = new Label();
+            label10 = new Label();
+            pictureBox9 = new PictureBox();
+            panel6 = new Panel();
+            label11 = new Label();
+            label12 = new Label();
+            pictureBox10 = new PictureBox();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panelProductsCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxProducts).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
+
             // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.BackColor = Color.Transparent;
-            tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-            tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 215F));
-            tableLayoutPanel1.Controls.Add(panelEmployeesCard, 2, 1);
-            tableLayoutPanel1.Controls.Add(panel4, 1, 1);
-            tableLayoutPanel1.Controls.Add(panel3, 0, 1);
-            tableLayoutPanel1.Controls.Add(panelCategoriesCard, 1, 0);
-            tableLayoutPanel1.Controls.Add(panelSuppliersCard, 0, 0);
-            tableLayoutPanel1.Controls.Add(panelProductsCard, 2, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.Padding = new Padding(20);
-            tableLayoutPanel1.RightToLeft = RightToLeft.Yes;
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(700, 338);
-            tableLayoutPanel1.TabIndex = 0;
-            tableLayoutPanel1.UseWaitCursor = true;
-            // 
-            // panelEmployeesCard
-            // 
-            panelEmployeesCard.BackColor = Color.LightSteelBlue;
-            panelEmployeesCard.BorderStyle = BorderStyle.FixedSingle;
-            panelEmployeesCard.Controls.Add(label9);
-            panelEmployeesCard.Controls.Add(label10);
-            panelEmployeesCard.Controls.Add(pictureBox5);
-            panelEmployeesCard.Location = new Point(34, 172);
-            panelEmployeesCard.Name = "panelEmployeesCard";
-            panelEmployeesCard.Padding = new Padding(10);
-            panelEmployeesCard.Size = new Size(200, 124);
-            panelEmployeesCard.TabIndex = 5;
-            panelEmployeesCard.UseWaitCursor = true;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(59, 107);
-            label9.Name = "label9";
-            label9.Size = new Size(96, 15);
-            label9.TabIndex = 2;
-            label9.Text = "عدد الموظفين: 120";
-            label9.UseWaitCursor = true;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(80, 76);
-            label10.Name = "label10";
-            label10.Size = new Size(55, 15);
-            label10.TabIndex = 1;
-            label10.Text = "الموظفين";
-            label10.TextAlign = ContentAlignment.MiddleCenter;
-            label10.UseWaitCursor = true;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(59, -1);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(64, 64);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 0;
-            pictureBox5.TabStop = false;
-            pictureBox5.UseWaitCursor = true;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.LightSteelBlue;
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(label7);
-            panel4.Controls.Add(panelInvoicesCard);
-            panel4.Controls.Add(pictureBox4);
-            panel4.Location = new Point(255, 172);
-            panel4.Name = "panel4";
-            panel4.Padding = new Padding(10);
-            panel4.Size = new Size(200, 124);
-            panel4.TabIndex = 4;
-            panel4.UseWaitCursor = true;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(59, 107);
-            label7.Name = "label7";
-            label7.Size = new Size(83, 15);
-            label7.TabIndex = 2;
-            label7.Text = "عدد الفواتير: 120";
-            label7.UseWaitCursor = true;
-            // 
-            // panelInvoicesCard
-            // 
-            panelInvoicesCard.AutoSize = true;
-            panelInvoicesCard.Location = new Point(80, 76);
-            panelInvoicesCard.Name = "panelInvoicesCard";
-            panelInvoicesCard.Size = new Size(45, 15);
-            panelInvoicesCard.TabIndex = 1;
-            panelInvoicesCard.Text = "الفواتير ";
-            panelInvoicesCard.TextAlign = ContentAlignment.MiddleCenter;
-            panelInvoicesCard.UseWaitCursor = true;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(59, -1);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(64, 64);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 0;
-            pictureBox4.TabStop = false;
-            pictureBox4.UseWaitCursor = true;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.LightSteelBlue;
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(label5);
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(pictureBox3);
-            panel3.Location = new Point(476, 172);
-            panel3.Name = "panel3";
-            panel3.Padding = new Padding(10);
-            panel3.Size = new Size(200, 124);
-            panel3.TabIndex = 3;
-            panel3.UseWaitCursor = true;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(59, 107);
-            label5.Name = "label5";
-            label5.Size = new Size(91, 15);
-            label5.TabIndex = 2;
-            label5.Text = "عدد المنتجات: 120";
-            label5.UseWaitCursor = true;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(80, 76);
-            label6.Name = "label6";
-            label6.Size = new Size(50, 15);
-            label6.TabIndex = 1;
-            label6.Text = "المنتجات";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
-            label6.UseWaitCursor = true;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(59, -1);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(64, 64);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 0;
-            pictureBox3.TabStop = false;
-            pictureBox3.UseWaitCursor = true;
-            // 
-            // panelCategoriesCard
-            // 
-            panelCategoriesCard.BackColor = Color.LightSteelBlue;
-            panelCategoriesCard.BorderStyle = BorderStyle.FixedSingle;
-            panelCategoriesCard.Controls.Add(label3);
-            panelCategoriesCard.Controls.Add(label4);
-            panelCategoriesCard.Controls.Add(pictureBox2);
-            panelCategoriesCard.Location = new Point(255, 24);
-            panelCategoriesCard.Name = "panelCategoriesCard";
-            panelCategoriesCard.Padding = new Padding(10);
-            panelCategoriesCard.Size = new Size(200, 124);
-            panelCategoriesCard.TabIndex = 2;
-            panelCategoriesCard.UseWaitCursor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(59, 107);
-            label3.Name = "label3";
-            label3.Size = new Size(99, 15);
-            label3.TabIndex = 2;
-            label3.Text = "عدد التصنيفات: 120";
-            label3.UseWaitCursor = true;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(59, 66);
-            label4.Name = "label4";
-            label4.Size = new Size(61, 15);
-            label4.TabIndex = 1;
-            label4.Text = "التصنيفات ";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
-            label4.UseWaitCursor = true;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(59, -1);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(64, 64);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
-            pictureBox2.UseWaitCursor = true;
-            // 
-            // panelSuppliersCard
-            // 
-            panelSuppliersCard.BackColor = Color.LightSteelBlue;
-            panelSuppliersCard.BorderStyle = BorderStyle.FixedSingle;
-            panelSuppliersCard.Controls.Add(label1);
-            panelSuppliersCard.Controls.Add(label2);
-            panelSuppliersCard.Controls.Add(pictureBox1);
-            panelSuppliersCard.Location = new Point(476, 24);
-            panelSuppliersCard.Name = "panelSuppliersCard";
-            panelSuppliersCard.Padding = new Padding(10);
-            panelSuppliersCard.Size = new Size(200, 124);
-            panelSuppliersCard.TabIndex = 1;
-            panelSuppliersCard.UseWaitCursor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(59, 107);
-            label1.Name = "label1";
-            label1.Size = new Size(90, 15);
-            label1.TabIndex = 2;
-            label1.Text = "عدد الموردين: 120";
-            label1.UseWaitCursor = true;
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Location = new Point(-2, 61);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(357, 193);
+            panel1.TabIndex = 0;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(80, 76);
+            label2.BackColor = Color.FromArgb(48, 67, 87);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(145, 131);
             label2.Name = "label2";
-            label2.Size = new Size(52, 15);
-            label2.TabIndex = 1;
-            label2.Text = "الموردين ";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            label2.UseWaitCursor = true;
+            label2.Size = new Size(53, 21);
+            label2.TabIndex = 2;
+            label2.Text = "العملاء";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(126, 164);
+            label1.Name = "label1";
+            label1.Size = new Size(112, 21);
+            label1.TabIndex = 1;
+            label1.Text = "عدد العملاء : 120";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(59, -1);
+            pictureBox1.Location = new Point(90, 39);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(64, 64);
+            pictureBox1.Size = new Size(145, 73);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.UseWaitCursor = true;
             // 
-            // panelProductsCard
+            // pictureBox2
             // 
-            panelProductsCard.BackColor = Color.LightSteelBlue;
-            panelProductsCard.BorderStyle = BorderStyle.FixedSingle;
-            panelProductsCard.Controls.Add(lblProductsCount);
-            panelProductsCard.Controls.Add(lblProductsTitle);
-            panelProductsCard.Controls.Add(pictureBoxProducts);
-            panelProductsCard.Location = new Point(34, 24);
-            panelProductsCard.Name = "panelProductsCard";
-            panelProductsCard.Padding = new Padding(10);
-            panelProductsCard.Size = new Size(200, 124);
-            panelProductsCard.TabIndex = 0;
-            panelProductsCard.UseWaitCursor = true;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(12, 5);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(50, 50);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
             // 
-            // lblProductsCount
+            // pictureBox3
             // 
-            lblProductsCount.AutoSize = true;
-            lblProductsCount.Location = new Point(49, 97);
-            lblProductsCount.Name = "lblProductsCount";
-            lblProductsCount.Size = new Size(91, 15);
-            lblProductsCount.TabIndex = 2;
-            lblProductsCount.Text = "عدد المنتجات: 120";
-            lblProductsCount.UseWaitCursor = true;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(68, 5);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(50, 50);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 2;
+            pictureBox3.TabStop = false;
             // 
-            // lblProductsTitle
+            // pictureBox4
             // 
-            lblProductsTitle.AutoSize = true;
-            lblProductsTitle.Location = new Point(70, 66);
-            lblProductsTitle.Name = "lblProductsTitle";
-            lblProductsTitle.Size = new Size(50, 15);
-            lblProductsTitle.TabIndex = 1;
-            lblProductsTitle.Text = "المنتجات";
-            lblProductsTitle.TextAlign = ContentAlignment.MiddleCenter;
-            lblProductsTitle.UseWaitCursor = true;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(981, 5);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(50, 50);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 3;
+            pictureBox4.TabStop = false;
             // 
-            // pictureBoxProducts
+            // pictureBox5
             // 
-            pictureBoxProducts.Image = (Image)resources.GetObject("pictureBoxProducts.Image");
-            pictureBoxProducts.Location = new Point(59, -1);
-            pictureBoxProducts.Name = "pictureBoxProducts";
-            pictureBoxProducts.Size = new Size(64, 64);
-            pictureBoxProducts.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxProducts.TabIndex = 0;
-            pictureBoxProducts.TabStop = false;
-            pictureBoxProducts.UseWaitCursor = true;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(925, 5);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(50, 50);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 4;
+            pictureBox5.TabStop = false;
             // 
-            // MainWindow
+            // panel2
+            // 
+
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(pictureBox6);
+            panel2.Location = new Point(361, 61);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(357, 193);
+            panel2.TabIndex = 5;
+
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(145, 131);
+            label3.Name = "label3";
+            label3.Size = new Size(66, 21);
+            label3.TabIndex = 2;
+            label3.Text = "الموردين";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(126, 164);
+            label4.Name = "label4";
+            label4.Size = new Size(125, 21);
+            label4.TabIndex = 1;
+            label4.Text = "عدد الموردين : 120";
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(90, 39);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(145, 73);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 0;
+            pictureBox6.TabStop = false;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(label5);
+            panel3.Controls.Add(label6);
+
+            panel3.Controls.Add(pictureBox7);
+            panel3.Location = new Point(724, 61);
+
+            panel3.Name = "panel3";
+            panel3.Size = new Size(357, 193);
+            panel3.TabIndex = 6;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(145, 131);
+            label5.Name = "label5";
+            label5.Size = new Size(56, 21);
+            label5.TabIndex = 2;
+            label5.Text = "الفواتير";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(126, 164);
+            label6.Name = "label6";
+            label6.Size = new Size(115, 21);
+            label6.TabIndex = 1;
+            label6.Text = "عدد الفواتير : 120";
+
+            // 
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(90, 39);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(145, 73);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 0;
+            pictureBox7.TabStop = false;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(label7);
+            panel4.Controls.Add(label8);
+            panel4.Controls.Add(pictureBox8);
+            panel4.Location = new Point(724, 295);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(357, 193);
+            panel4.TabIndex = 7;
+
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(145, 131);
+            label7.Name = "label7";
+            label7.Size = new Size(73, 21);
+            label7.TabIndex = 2;
+            label7.Text = "الموظفين";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(126, 164);
+            label8.Name = "label8";
+            label8.Size = new Size(132, 21);
+            label8.TabIndex = 1;
+            label8.Text = "عدد الموظفين : 120";
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.Location = new Point(90, 39);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(145, 73);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 0;
+            pictureBox8.TabStop = false;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(label9);
+            panel5.Controls.Add(label10);
+            panel5.Controls.Add(pictureBox9);
+            panel5.Location = new Point(352, 295);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(357, 193);
+            panel5.TabIndex = 8;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(145, 131);
+            label9.Name = "label9";
+            label9.Size = new Size(77, 21);
+            label9.TabIndex = 2;
+            label9.Text = "التصنيفات";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(126, 164);
+            label10.Name = "label10";
+            label10.Size = new Size(136, 21);
+            label10.TabIndex = 1;
+            label10.Text = "عدد التصنيفات : 120";
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new Point(90, 39);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(145, 73);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 0;
+            pictureBox9.TabStop = false;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(label11);
+            panel6.Controls.Add(label12);
+            panel6.Controls.Add(pictureBox10);
+            panel6.Location = new Point(-2, 295);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(357, 193);
+            panel6.TabIndex = 9;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(145, 131);
+            label11.Name = "label11";
+            label11.Size = new Size(66, 21);
+            label11.TabIndex = 2;
+            label11.Text = "المنتجات";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(126, 164);
+            label12.Name = "label12";
+            label12.Size = new Size(125, 21);
+            label12.TabIndex = 1;
+            label12.Text = "عدد المنتجات : 120";
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
+            pictureBox10.Location = new Point(90, 39);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(145, 73);
+            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox10.TabIndex = 0;
+            pictureBox10.TabStop = false;
+
+            // 
+            // DashboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
-            Controls.Add(tableLayoutPanel1);
+            BackColor = Color.FromArgb(48, 67, 87);
+
+            ClientSize = new Size(1043, 569);
+            ControlBox = false;
+            Controls.Add(panel6);
+            Controls.Add(panel5);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(pictureBox5);
+            Controls.Add(pictureBox4);
+            Controls.Add(pictureBox3);
+            Controls.Add(pictureBox2);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
-            Name = "MainWindow";
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "DashboardForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MainWindow";
-            tableLayoutPanel1.ResumeLayout(false);
-            panelEmployeesCard.ResumeLayout(false);
-            panelEmployeesCard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panelCategoriesCard.ResumeLayout(false);
-            panelCategoriesCard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panelSuppliersCard.ResumeLayout(false);
-            panelSuppliersCard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panelProductsCard.ResumeLayout(false);
-            panelProductsCard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxProducts).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private TableLayoutPanel tableLayoutPanel1;
-        private Panel panelProductsCard;
-        private PictureBox pictureBoxProducts;
-        private Label lblProductsCount;
-        private Label lblProductsTitle;
-        private Panel panelEmployeesCard;
-        private Label label9;
-        private Label label10;
-        private PictureBox pictureBox5;
-        private Panel panel4;
-        private Label label7;
-        private Label panelInvoicesCard;
+
+        private Panel panel1;
+        private Label label2;
+        private Label label1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
         private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
+        private Panel panel2;
+        private Label label3;
+        private Label label4;
+        private PictureBox pictureBox6;
         private Panel panel3;
         private Label label5;
         private Label label6;
-        private PictureBox pictureBox3;
-        private Panel panelCategoriesCard;
-        private Label label3;
-        private Label label4;
-        private PictureBox pictureBox2;
-        private Panel panelSuppliersCard;
-        private Label label1;
-        private Label label2;
-        private PictureBox pictureBox1;
+        private PictureBox pictureBox7;
+        private Panel panel4;
+        private Label label7;
+        private Label label8;
+        private PictureBox pictureBox8;
+        private Panel panel5;
+        private Label label9;
+        private Label label10;
+        private PictureBox pictureBox9;
+        private Panel panel6;
+        private Label label11;
+        private Label label12;
+        private PictureBox pictureBox10;
     }
 }

@@ -10,16 +10,13 @@ using System.Windows.Forms;
 
 namespace Carvo.User_Interface_Layer
 {
-    public partial class MainWindow : Form
+    public partial class InvoiceTypeForm : Form
     {
-        public MainWindow()
+        public InvoiceTypeForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
+     
     }
 }

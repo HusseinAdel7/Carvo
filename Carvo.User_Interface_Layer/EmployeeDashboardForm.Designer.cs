@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeDashboardForm));
             panel1 = new Panel();
+
             pictureBox9 = new PictureBox();
             pictureBox8 = new PictureBox();
             pictureBox7 = new PictureBox();
@@ -245,6 +246,57 @@
             label4.TabIndex = 3;
             label4.Text = "المركبات";
             // 
+            // flowLayoutPanel3
+            // 
+            flowLayoutPanel3.Anchor = AnchorStyles.Top;
+            flowLayoutPanel3.BackColor = Color.White;
+            flowLayoutPanel3.BorderStyle = BorderStyle.FixedSingle;
+            flowLayoutPanel3.Controls.Add(pictureBox4);
+            flowLayoutPanel3.Controls.Add(label4);
+            flowLayoutPanel3.Cursor = Cursors.Hand;
+            flowLayoutPanel3.Location = new Point(571, 30);
+            flowLayoutPanel3.Margin = new Padding(10);
+            flowLayoutPanel3.Name = "flowLayoutPanel3";
+            flowLayoutPanel3.Padding = new Padding(10);
+            flowLayoutPanel3.Size = new Size(150, 150);
+            flowLayoutPanel3.TabIndex = 2;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Anchor = AnchorStyles.None;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(20, 20);
+            pictureBox4.Margin = new Padding(10);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(100, 50);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 0;
+            pictureBox4.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.None;
+            label4.AutoSize = true;
+            label4.BackColor = Color.White;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(20, 90);
+            label4.Margin = new Padding(10);
+            label4.Name = "label4";
+            label4.Size = new Size(79, 15);
+            label4.TabIndex = 1;
+            label4.Text = "          المركبات";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(12, 12);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(38, 28);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 2;
+            pictureBox5.TabStop = false;
+            // 
             // EmployeeDashboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -276,7 +328,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();r
             ResumeLayout(false);
             PerformLayout();
         }

@@ -35,5 +35,41 @@ namespace Carvo.User_Interface_Layer.UIHelpers
 
             control.Region = new Region(path);
         }
+
+        public static void SetupDataGridView(DataGridView dgv)
+        {
+
+
+            // إزالة الحدود
+            dgv.BorderStyle = BorderStyle.None;
+
+            // تلوين صف الرأس
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(44, 62, 80); // لون أزرق غامق
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgv.ColumnHeadersHeight = 40;
+
+            // تلوين الصفوف
+            dgv.RowsDefaultCellStyle.BackColor = Color.White;
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.White; // لو حابب تضيف لون ثاني متبادل
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            dgv.DefaultCellStyle.ForeColor = Color.Black;
+
+            // محاذاة الأعمدة (اختياري)
+            dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // ضبط الحدود داخل الخلايا
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+
+            // حجم الأعمدة أوتوماتيكي
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // تعطيل تعديل المستخدم على الأعمدة والصفوف
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToResizeRows = false;
+        }
+
     }
 }
