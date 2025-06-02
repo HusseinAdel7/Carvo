@@ -29,13 +29,33 @@ namespace Carvo.User_Interface_Layer
                          options.UseSqlServer(context.Configuration.GetConnectionString("DefaultConnection")));
                      
                      // سجل الفورم الرئيسي
-                     services.AddTransient<InvoiceForm>();
-                     services.AddTransient<LoginForm>();
-                     services.AddTransient<SalesInvoiceForm>();
-                     services.AddTransient<RepairInvoiceForm>();
-                     services.AddTransient<DashboardForm>();
+                     services.AddTransient<AddAlertForm>();
                      services.AddTransient<AdminCategoriesForm>();
+                     services.AddTransient<AdminCustomersForm>();
+                     services.AddTransient<AdminEmployeesForm>();
+                     services.AddTransient<AdminInvoicesForm>();
                      services.AddTransient<AdminProductsForm>();
+                     services.AddTransient<AdminSuppliersForm>();
+                     services.AddTransient<AdminVehiclesForm>();
+                     services.AddTransient<AlertIncompleteInformationForm>();
+                     services.AddTransient<AlertSelectAndDeleteForm>();
+                     services.AddTransient<ConfirmationForm>();
+                     services.AddTransient<CustomerDashboardForm>();
+                     services.AddTransient<DashboardForm>();
+                     services.AddTransient<DeleteAlertForm>();
+                     services.AddTransient<EmployeeDashboardForm>();
+                     services.AddTransient<HomeDashboardForm>();
+                     services.AddTransient<InvoiceForm>();
+                     services.AddTransient<InvoiceTypeForm>();
+                     services.AddTransient<LoginForm>();
+                     services.AddTransient<MainWindowFrom>();
+                     services.AddTransient<RepairInvoiceForm>();
+                     services.AddTransient<SalesInvoiceForm>();
+                     services.AddTransient<UpdateAlertForm>();
+                     services.AddTransient<VehicleDashboardForm>();
+
+
+
 
 
 
@@ -77,13 +97,37 @@ namespace Carvo.User_Interface_Layer
 
             // شغّل الفورم من DI
             var loginFrom = host.Services.GetRequiredService<LoginForm>();
-            var InvoiceFrom = host.Services.GetRequiredService<InvoiceForm>();
             var adminCategoriesForm = host.Services.GetRequiredService<AdminCategoriesForm>();
+            var adminCustomersForm = host.Services.GetRequiredService<AdminCustomersForm>();
+            var adminEmplyeeForm = host.Services.GetRequiredService<AdminEmployeesForm>();
+            var adminInvoicesForm = host.Services.GetRequiredService<AdminInvoicesForm>();
             var adminProductsForm = host.Services.GetRequiredService<AdminProductsForm>();
+            var adminSuppliersForm = host.Services.GetRequiredService<AdminSuppliersForm>();
+            var adminVehiclesForm = host.Services.GetRequiredService<AdminVehiclesForm>();
+            var alertIncompleteInformationForm = host.Services.GetRequiredService<AlertIncompleteInformationForm>();
+            var alertSelectAndDeleteForm = host.Services.GetRequiredService<AlertSelectAndDeleteForm>();
+            var confirmationForm = host.Services.GetRequiredService<ConfirmationForm>();
+            var customerDashboardForm = host.Services.GetRequiredService<CustomerDashboardForm>();
+            var dashboardForm = host.Services.GetRequiredService<DashboardForm>();
+            var deleteAlertForm = host.Services.GetRequiredService<DeleteAlertForm>();
+            var employeeDashboardForm = host.Services.GetRequiredService<EmployeeDashboardForm>();
+            var homeDashboardForm = host.Services.GetRequiredService<HomeDashboardForm>();
+            var invoiceForm = host.Services.GetRequiredService<InvoiceForm>();
+            var invoiceTypeForm = host.Services.GetRequiredService<InvoiceTypeForm>();
+            var invoiceFrom = host.Services.GetRequiredService<LoginForm>();
+            var mainWindowFrom = host.Services.GetRequiredService<MainWindowFrom>();
+            var repairInvoiceForm = host.Services.GetRequiredService<RepairInvoiceForm>();
+            var salesInvoiceForm = host.Services.GetRequiredService<SalesInvoiceForm>();
+            var updateAlertForm = host.Services.GetRequiredService<UpdateAlertForm>();
+            var vehicleDashboardForm = host.Services.GetRequiredService<VehicleDashboardForm>();
+
+
+
+
 
             var service = host.Services.GetRequiredService<ICategoryService>();
 
-            Application.Run(adminProductsForm);
+            Application.Run(vehicleDashboardForm);
         }
     }
 }
