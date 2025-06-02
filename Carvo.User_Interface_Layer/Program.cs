@@ -43,7 +43,6 @@ namespace Carvo.User_Interface_Layer
                      services.AddTransient<CustomerDashboardForm>();
                      services.AddTransient<DashboardForm>();
                      services.AddTransient<DeleteAlertForm>();
-                     services.AddTransient<EmployeeDashboardForm>();
                      services.AddTransient<HomeDashboardForm>();
                      services.AddTransient<InvoiceForm>();
                      services.AddTransient<InvoiceTypeForm>();
@@ -110,11 +109,9 @@ namespace Carvo.User_Interface_Layer
             var customerDashboardForm = host.Services.GetRequiredService<CustomerDashboardForm>();
             var dashboardForm = host.Services.GetRequiredService<DashboardForm>();
             var deleteAlertForm = host.Services.GetRequiredService<DeleteAlertForm>();
-            var employeeDashboardForm = host.Services.GetRequiredService<EmployeeDashboardForm>();
             var homeDashboardForm = host.Services.GetRequiredService<HomeDashboardForm>();
             var invoiceForm = host.Services.GetRequiredService<InvoiceForm>();
             var invoiceTypeForm = host.Services.GetRequiredService<InvoiceTypeForm>();
-            var invoiceFrom = host.Services.GetRequiredService<LoginForm>();
             var mainWindowFrom = host.Services.GetRequiredService<MainWindowFrom>();
             var repairInvoiceForm = host.Services.GetRequiredService<RepairInvoiceForm>();
             var salesInvoiceForm = host.Services.GetRequiredService<SalesInvoiceForm>();
@@ -127,7 +124,30 @@ namespace Carvo.User_Interface_Layer
 
             var service = host.Services.GetRequiredService<ICategoryService>();
 
-            Application.Run(vehicleDashboardForm);
+            //Application.Run(loginFrom);
+            //Application.Run(adminCategoriesForm);
+            //Application.Run(adminCustomersForm);
+            //Application.Run(adminEmplyeeForm);
+            //Application.Run(adminInvoicesForm);
+            //Application.Run(adminProductsForm);
+            //Application.Run(adminSuppliersForm);
+            //Application.Run(vehicleDashboardForm);
+            //Application.Run(alertIncompleteInformationForm);
+            //Application.Run(alertSelectAndDeleteForm);
+            //Application.Run(confirmationForm);
+            //Application.Run(customerDashboardForm);
+            //Application.Run(dashboardForm);
+            //Application.Run(deleteAlertForm);
+            //Application.Run(homeDashboardForm);
+            //Application.Run(invoiceForm);
+            //Application.Run(invoiceTypeForm);
+            //Application.Run(mainWindowFrom);
+            //Application.Run(repairInvoiceForm);
+            //Application.Run(salesInvoiceForm);
+            //Application.Run(updateAlertForm);
+
+
+
         }
     }
 }
