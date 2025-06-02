@@ -1,6 +1,10 @@
 ﻿using System.Configuration;
+using Carvo.Business_Logic_Layer.IServices;
+using Carvo.Business_Logic_Layer.Services;
 using Carvo.Data_Access_Layer.Data.Context;
 using Carvo.Data_Access_Layer.DataSeeding;
+using Carvo.Data_Access_Layer.Repository.GenericRepositories;
+using Carvo.Data_Access_Layer.Repository.IGenericRepositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,13 +27,23 @@ namespace Carvo.User_Interface_Layer
                      // سجل DbContext
                      services.AddDbContext<CarvoDbContext>(options =>
                          options.UseSqlServer(context.Configuration.GetConnectionString("DefaultConnection")));
+                     
                      // سجل الفورم الرئيسي
-                     services.AddTransient<MainWindow>();
                      services.AddTransient<InvoiceForm>();
                      services.AddTransient<LoginForm>();
                      services.AddTransient<SalesInvoiceForm>();
                      services.AddTransient<RepairInvoiceForm>();
                      services.AddTransient<DashboardForm>();
+                     services.AddTransient<AdminCategoriesForm>();
+                     services.AddTransient<AdminProductsForm>();
+
+
+
+                     services.AddScoped(typeof(IGenericRepository<,>), typeof(GenericRepository<,>));
+                     services.AddScoped<ICategoryService, CategoryService>();
+                     services.AddScoped<IProductService, ProductService>();
+
+
 
 
                  })
@@ -62,14 +76,14 @@ namespace Carvo.User_Interface_Layer
             Application.SetCompatibleTextRenderingDefault(false);
 
             // شغّل الفورم من DI
-            var mainFrom = host.Services.GetRequiredService<MainWindow>();
             var loginFrom = host.Services.GetRequiredService<LoginForm>();
             var InvoiceFrom = host.Services.GetRequiredService<InvoiceForm>();
-            var repairInvoiceFrom = host.Services.GetRequiredService<RepairInvoiceForm>();
-            var salesInvoiceFrom = host.Services.GetRequiredService<SalesInvoiceForm>();
-            var dashboardForm = host.Services.GetRequiredService<DashboardForm>();
+            var adminCategoriesForm = host.Services.GetRequiredService<AdminCategoriesForm>();
+            var adminProductsForm = host.Services.GetRequiredService<AdminProductsForm>();
 
-            Application.Run(dashboardForm);
+            var service = host.Services.GetRequiredService<ICategoryService>();
+
+            Application.Run(adminProductsForm);
         }
     }
 }

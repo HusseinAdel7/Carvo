@@ -74,8 +74,7 @@
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
+
             // 
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
@@ -160,6 +159,7 @@
             // 
             // panel2
             // 
+
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(pictureBox6);
@@ -167,6 +167,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(357, 193);
             panel2.TabIndex = 5;
+
             // 
             // label3
             // 
@@ -204,8 +205,10 @@
             // 
             panel3.Controls.Add(label5);
             panel3.Controls.Add(label6);
+
             panel3.Controls.Add(pictureBox7);
             panel3.Location = new Point(724, 61);
+
             panel3.Name = "panel3";
             panel3.Size = new Size(357, 193);
             panel3.TabIndex = 6;
@@ -231,8 +234,7 @@
             label6.Size = new Size(115, 21);
             label6.TabIndex = 1;
             label6.Text = "عدد الفواتير : 120";
-            // 
-            // pictureBox7
+
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
             pictureBox7.Location = new Point(90, 39);
@@ -251,6 +253,7 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(357, 193);
             panel4.TabIndex = 7;
+
             // 
             // label7
             // 
@@ -367,12 +370,14 @@
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox10.TabIndex = 0;
             pictureBox10.TabStop = false;
+
             // 
             // DashboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
+
             ClientSize = new Size(1043, 569);
             ControlBox = false;
             Controls.Add(panel6);
@@ -396,6 +401,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             panel2.ResumeLayout(false);

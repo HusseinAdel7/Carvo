@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Carvo.User_Interface_Layer
 {
-    public partial class HomeForm : UserControl
+    public partial class InvoiceTypeForm : Form
     {
-        public HomeForm()
+        public InvoiceTypeForm()
         {
             InitializeComponent();
         }
+
+     
     }
 }
