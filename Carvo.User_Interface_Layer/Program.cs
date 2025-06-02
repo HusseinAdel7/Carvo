@@ -124,6 +124,7 @@ namespace Carvo.User_Interface_Layer
 
             var service = host.Services.GetRequiredService<ICategoryService>();
 
+
             //Application.Run(loginFrom);
             //Application.Run(adminCategoriesForm);
             //Application.Run(adminCustomersForm);
