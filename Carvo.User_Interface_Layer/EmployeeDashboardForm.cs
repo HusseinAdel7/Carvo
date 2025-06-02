@@ -22,6 +22,9 @@ namespace Carvo.User_Interface_Layer
 
         }
 
-       
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

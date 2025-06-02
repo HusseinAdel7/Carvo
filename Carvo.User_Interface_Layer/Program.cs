@@ -127,7 +127,7 @@ namespace Carvo.User_Interface_Layer
 
             var service = host.Services.GetRequiredService<ICategoryService>();
 
-            Application.Run(vehicleDashboardForm);
+            Application.Run(new EmployeeDashboardForm());
         }
     }
 }
