@@ -15,6 +15,7 @@ namespace Carvo.User_Interface_Layer
     public partial class AdminCategoriesForm : Form
     {
         private ICategoryService categoryService;
+
         public AdminCategoriesForm(ICategoryService _categoryService)
         {
             categoryService = _categoryService;
@@ -53,9 +54,12 @@ namespace Carvo.User_Interface_Layer
         {
             string Name = CategoryNameTxt.Text;
             string Desc = CategoryDescTxt.Text;
-            Category addedCategory = new Category { Name = Name, Description = Desc };
-            await categoryService.AddCategoryAsync(addedCategory);
-            await LoadCategoriesAsync();
+            if (ValidateCategory(Name, Desc))
+            {
+                Category addedCategory = new Category { Name = Name, Description = Desc };
+                await categoryService.AddCategoryAsync(addedCategory);
+                await LoadCategoriesAsync();
+            }
         }
 
         private async void UpdateCategoryBtn_Click(object sender, EventArgs e)
@@ -63,17 +67,19 @@ namespace Carvo.User_Interface_Layer
             string Name = CategoryNameTxt.Text;
             string Desc = CategoryDescTxt.Text;
 
-            var selectedRow = CategoryGridView.SelectedRows[0];
-            int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+            if (ValidateCategory(Name, Desc))
+            {
+                var selectedRow = CategoryGridView.SelectedRows[0];
+                int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
-            Category category = await categoryService.GetCategoryByIdAsync(id);
+                Category category = await categoryService.GetCategoryByIdAsync(id);
 
-            category.Name = Name;
-            category.Description = Desc;
+                category.Name = Name;
+                category.Description = Desc;
 
-            await categoryService.UpdateCategoryAsync(category);
-            await LoadCategoriesAsync();
-
+                await categoryService.UpdateCategoryAsync(category);
+                await LoadCategoriesAsync();
+            }
         }
 
         private async void DeleteCategoryBtn_Click(object sender, EventArgs e)
@@ -88,7 +94,7 @@ namespace Carvo.User_Interface_Layer
         {
             var allCategories = await categoryService.GetAllCategoryAsync();
 
-            var categories = allCategories.Select(c => new { ID = c.Id, Description = c.Description , Name = c.Name }).ToList();
+            var categories = allCategories.Select(c => new { ID = c.Id, Description = c.Description, Name = c.Name }).ToList();
 
             CategoryGridView.DataSource = null;
             CategoryGridView.DataSource = categories;
@@ -97,6 +103,8 @@ namespace Carvo.User_Interface_Layer
             CategoryGridView.Columns[1].HeaderText = "الوصف";
             CategoryGridView.Columns[2].HeaderText = "الاسم";
         }
+
+
 
         private void CategoryGridView_SelectionChanged(object sender, EventArgs e)
         {
@@ -109,6 +117,50 @@ namespace Carvo.User_Interface_Layer
                 CategoryDescTxt.Text = desc;
             }
 
+        }
+
+
+
+        /// <summary>
+        /// Validation Function To validate Category Inputs
+        /// </summary>
+        /// <param name="categoryName"></param>
+        /// <param name="categoryDesc"></param>
+        /// <returns>
+        /// Displays Error Message On the Form , and return False If any input
+        /// is invalid, Otherwise return True. 
+        /// </returns>
+        private bool ValidateCategory(string categoryName, string categoryDesc)
+        {
+            bool isValid = true;
+
+            if (categoryName.Length < 3 || string.IsNullOrWhiteSpace(categoryName))
+            {
+                isValid = false;
+                NameErrorMsg.Visible = true;
+            }
+            else
+                NameErrorMsg.Visible = false;
+
+            if (categoryDesc.Length < 5 || string.IsNullOrWhiteSpace(categoryDesc))
+            {
+                isValid = false;
+                DescErrorMsg.Visible = true;
+            }
+            else
+                DescErrorMsg.Visible = false;
+
+            return isValid;
+        }
+
+        private void PrevImageAsBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

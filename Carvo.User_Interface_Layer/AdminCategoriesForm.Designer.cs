@@ -43,6 +43,8 @@
             CategoriesManagement = new Label();
             CategoryGridView = new DataGridView();
             panel2 = new Panel();
+            DescErrorMsg = new Label();
+            NameErrorMsg = new Label();
             CategoryDescTxt = new TextBox();
             CategoryNameTxt = new TextBox();
             label2 = new Label();
@@ -110,6 +112,7 @@
             LogoutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogoutBtn.TabIndex = 4;
             LogoutBtn.TabStop = false;
+            LogoutBtn.Click += LogoutBtn_Click;
             // 
             // CloseFormBtn
             // 
@@ -142,6 +145,7 @@
             PrevImageAsBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevImageAsBtn.TabIndex = 1;
             PrevImageAsBtn.TabStop = false;
+            PrevImageAsBtn.Click += PrevImageAsBtn_Click;
             // 
             // CategoriesManagement
             // 
@@ -209,6 +213,8 @@
             // 
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(48, 67, 87);
+            panel2.Controls.Add(DescErrorMsg);
+            panel2.Controls.Add(NameErrorMsg);
             panel2.Controls.Add(CategoryDescTxt);
             panel2.Controls.Add(CategoryNameTxt);
             panel2.Controls.Add(label2);
@@ -221,8 +227,32 @@
             panel2.Controls.Add(DeleteCategoryBtn);
             panel2.Location = new Point(3, 119);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1502, 278);
+            panel2.Size = new Size(1502, 279);
             panel2.TabIndex = 1;
+            // 
+            // DescErrorMsg
+            // 
+            DescErrorMsg.AutoSize = true;
+            DescErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DescErrorMsg.ForeColor = Color.Red;
+            DescErrorMsg.Location = new Point(512, 136);
+            DescErrorMsg.Name = "DescErrorMsg";
+            DescErrorMsg.Size = new Size(156, 28);
+            DescErrorMsg.TabIndex = 12;
+            DescErrorMsg.Text = "الوصف قصير جدا";
+            DescErrorMsg.Visible = false;
+            // 
+            // NameErrorMsg
+            // 
+            NameErrorMsg.AutoSize = true;
+            NameErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NameErrorMsg.ForeColor = Color.Red;
+            NameErrorMsg.Location = new Point(528, 60);
+            NameErrorMsg.Name = "NameErrorMsg";
+            NameErrorMsg.Size = new Size(140, 28);
+            NameErrorMsg.TabIndex = 11;
+            NameErrorMsg.Text = "الاسم قصير جدا";
+            NameErrorMsg.Visible = false;
             // 
             // CategoryDescTxt
             // 
@@ -385,5 +415,7 @@
         private PictureBox LogoutBtn;
         private PictureBox CloseFormBtn;
         private PictureBox MinimizeBtn;
+        private Label NameErrorMsg;
+        private Label DescErrorMsg;
     }
 }
