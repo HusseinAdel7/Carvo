@@ -1,8 +1,10 @@
 ﻿// Required namespaces
 using Carvo.Business_Logic_Layer.IServices;
+using Carvo.Data_Access_Layer.Entities.Users;
 using Carvo.Data_Access_Layer.Enums;
 using Carvo.User_Interface_Layer.UIHelpers;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,20 +21,20 @@ namespace Carvo.User_Interface_Layer
 {
     public partial class LoginForm : Form
     {
-        // Service for accessing user data
+        // Service to access user-related operations (e.g., fetching users)
         private IUserService userService;
 
-        // Dependency injection provider
+        // Dependency injection container for resolving other forms/services
         private IServiceProvider provider;
 
-        // Role to determine which type of user is trying to log in (Admin or Employee)
+        // Represents the user role selected (Admin or Employee)
         public Role role { get; set; }
 
-        // Variables to store user input
+        // Variables to hold entered username and password
         private string userName;
         private string password;
 
-        // Constructor to initialize form with DI provider and user service
+        // Constructor: initializes DI dependencies and form controls
         public LoginForm(IServiceProvider _provider, IUserService _userService)
         {
             InitializeComponent();
@@ -40,78 +42,76 @@ namespace Carvo.User_Interface_Layer
             provider = _provider;
         }
 
-        // Event handler to close the login form
-        private void button2_Click(object sender, EventArgs e)
+        // Closes the login form when the "close" button is clicked
+        private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        // Event handler to minimize the login form
-        private void button3_Click(object sender, EventArgs e)
+        // Minimizes the login form window when the "minimize" button is clicked
+        private void minimizeBtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        // Event handler for the login button click
+        // Triggered when the login button is clicked
         private async void loginBtn_Click(object sender, EventArgs e)
         {
-            // Retrieve and trim user input from textboxes
+            // Trim and store input values
             userName = userNameTxt.Text.Trim();
             password = passwordTxt.Text.Trim();
 
-            // Validate credentials
+            // Clear any previous error messages
+            errorUserLabel.Text = "";
+            errorPasswordLabel.Text = "";
+
+            // Call validation logic
             await Validate(userName, password);
         }
 
-        // Validates the entered username and password based on the selected role
+        // Validates the entered credentials against the user list and role
         public async Task Validate(string userName, string password)
         {
-            // Get all users from the database
+            // Fetch all registered users from the database
             var users = await userService.GetAllUsersAsync();
 
-            // Try to find a matching user with provided credentials
-            var user = users.FirstOrDefault(u => u.UserName == userName && u.Password == password);
+            // Get users matching the entered username and selected role
+            var matchedUsers = users.Where(u => u.UserName == userName && u.Role == role).ToList();
 
-            // If Admin role was selected from main window
-            if (role == Role.Admin)
+            // If no users match the username + role combination
+            if (!matchedUsers.Any())
             {
-                if (user != null && user.Role == Role.Admin)
-                {
-                    MessageBox.Show($"مرحبا {userName} تم تسجيل دخولك بنجاح", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    OpenHomeDashboardForm();
-                }
-                else if (user != null && user.Role != Role.Admin)
-                {
-                    MessageBox.Show($"معذرة {userName} يبدو انك اخطأت في اختيار الوظيفة المناسبة", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("خطأ في اسم المستخدم او كلمة المرور", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                errorUserLabel.Text = "خطأ في اسم المستخدم أو الوظيفة";
             }
-
-            // If Employee role was selected from main window
-            if (role == Role.Employee)
+            else
             {
-                if (user != null && user.Role == Role.Employee)
+                // Check if any of the matched users has the correct password
+                var matchedUser = matchedUsers.FirstOrDefault(u => u.Password == password);
+
+                if (matchedUser != null)
                 {
+                    // Show success message with user's name
                     MessageBox.Show($"مرحبا {userName} تم تسجيل دخولك بنجاح", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    OpenEmployeeDashboardForm();
-                }
-                else if (user != null && user.Role != Role.Employee)
-                {
-                    MessageBox.Show($"معذرة {userName} يبدو انك اخطأت في اختيار الوظيفة المناسبة", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Close();
+
+                    // Redirect to appropriate dashboard based on role
+                    if (role == Role.Admin)
+                    {
+                        OpenHomeDashboardForm();
+                    }
+                    else
+                    {
+                        OpenEmployeeDashboardForm();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("خطأ في اسم المستخدم او كلمة المرور", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Password was incorrect for the matched username and role
+                    errorPasswordLabel.Text = "خطأ في كلمة المرور";
                 }
             }
         }
 
-        // Opens the Admin dashboard after successful Admin login
+        // Opens the Admin dashboard form and closes the login form
         public void OpenHomeDashboardForm()
         {
             var homeDashboardForm = provider.GetRequiredService<HomeDashboardForm>();
@@ -119,14 +119,12 @@ namespace Carvo.User_Interface_Layer
             homeDashboardForm.ShowDialog();
         }
 
-        // Opens the Employee dashboard after successful Employee login
+        // Opens the Employee dashboard form and closes the login form
         public void OpenEmployeeDashboardForm()
         {
             var employeeDashboardForm = provider.GetRequiredService<EmployeeDashboardForm>();
             this.Close();
             employeeDashboardForm.ShowDialog();
         }
-
-
     }
 }

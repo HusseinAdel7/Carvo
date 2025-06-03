@@ -36,9 +36,11 @@
             loginBtn = new Button();
             passwordTxt = new TextBox();
             panel1 = new Panel();
+            errorPasswordLabel = new Label();
+            errorUserLabel = new Label();
             pictureBox1 = new PictureBox();
-            button2 = new Button();
-            button3 = new Button();
+            closeBtn = new Button();
+            minimizeBtn = new Button();
             backBtn = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -120,6 +122,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(198, 198, 198);
+            panel1.Controls.Add(errorPasswordLabel);
+            panel1.Controls.Add(errorUserLabel);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(passwordTxt);
@@ -129,6 +133,28 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(483, 380);
             panel1.TabIndex = 8;
+            // 
+            // errorPasswordLabel
+            // 
+            errorPasswordLabel.AutoSize = true;
+            errorPasswordLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            errorPasswordLabel.ForeColor = Color.Red;
+            errorPasswordLabel.Location = new Point(271, 257);
+            errorPasswordLabel.Name = "errorPasswordLabel";
+            errorPasswordLabel.RightToLeft = RightToLeft.Yes;
+            errorPasswordLabel.Size = new Size(0, 23);
+            errorPasswordLabel.TabIndex = 6;
+            // 
+            // errorUserLabel
+            // 
+            errorUserLabel.AutoSize = true;
+            errorUserLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            errorUserLabel.ForeColor = Color.Red;
+            errorUserLabel.Location = new Point(170, 122);
+            errorUserLabel.Name = "errorUserLabel";
+            errorUserLabel.RightToLeft = RightToLeft.Yes;
+            errorUserLabel.Size = new Size(0, 23);
+            errorUserLabel.TabIndex = 5;
             // 
             // pictureBox1
             // 
@@ -141,31 +167,31 @@
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
-            // button2
+            // closeBtn
             // 
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(938, 9);
-            button2.Name = "button2";
-            button2.Size = new Size(50, 50);
-            button2.TabIndex = 10;
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            closeBtn.BackgroundImage = (Image)resources.GetObject("closeBtn.BackgroundImage");
+            closeBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            closeBtn.FlatAppearance.BorderSize = 0;
+            closeBtn.FlatStyle = FlatStyle.Flat;
+            closeBtn.Location = new Point(938, 9);
+            closeBtn.Name = "closeBtn";
+            closeBtn.Size = new Size(50, 50);
+            closeBtn.TabIndex = 10;
+            closeBtn.UseVisualStyleBackColor = true;
+            closeBtn.Click += closeBtn_Click;
             // 
-            // button3
+            // minimizeBtn
             // 
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.BackgroundImageLayout = ImageLayout.Stretch;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(873, 9);
-            button3.Name = "button3";
-            button3.Size = new Size(50, 50);
-            button3.TabIndex = 11;
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            minimizeBtn.BackgroundImage = (Image)resources.GetObject("minimizeBtn.BackgroundImage");
+            minimizeBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            minimizeBtn.FlatAppearance.BorderSize = 0;
+            minimizeBtn.FlatStyle = FlatStyle.Flat;
+            minimizeBtn.Location = new Point(873, 9);
+            minimizeBtn.Name = "minimizeBtn";
+            minimizeBtn.Size = new Size(50, 50);
+            minimizeBtn.TabIndex = 11;
+            minimizeBtn.UseVisualStyleBackColor = true;
+            minimizeBtn.Click += minimizeBtn_Click;
             // 
             // backBtn
             // 
@@ -178,7 +204,7 @@
             backBtn.Size = new Size(50, 50);
             backBtn.TabIndex = 12;
             backBtn.UseVisualStyleBackColor = true;
-            backBtn.Click += button2_Click;
+            backBtn.Click += closeBtn_Click;
             // 
             // LoginForm
             // 
@@ -188,8 +214,8 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(991, 582);
             Controls.Add(backBtn);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(minimizeBtn);
+            Controls.Add(closeBtn);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -214,8 +240,10 @@
         private TextBox passwordTxt;
         private Panel panel1;
         private PictureBox pictureBox1;
-        private Button button2;
-        private Button button3;
+        private Button closeBtn;
+        private Button minimizeBtn;
         private Button backBtn;
+        private Label errorPasswordLabel;
+        private Label errorUserLabel;
     }
 }
