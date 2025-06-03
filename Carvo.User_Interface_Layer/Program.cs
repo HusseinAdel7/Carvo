@@ -61,6 +61,7 @@ namespace Carvo.User_Interface_Layer
                      services.AddScoped(typeof(IGenericRepository<,>), typeof(GenericRepository<,>));
                      services.AddScoped<ICategoryService, CategoryService>();
                      services.AddScoped<IProductService, ProductService>();
+                     services.AddScoped<ISupplierService, SupplierService>();
 
 
 
@@ -121,7 +122,7 @@ namespace Carvo.User_Interface_Layer
 
 
 
-
+            
             var service = host.Services.GetRequiredService<ICategoryService>();
 
 
@@ -130,7 +131,7 @@ namespace Carvo.User_Interface_Layer
             //Application.Run(adminCustomersForm);
             //Application.Run(adminEmplyeeForm);
             //Application.Run(adminInvoicesForm);
-            //Application.Run(adminProductsForm);
+            Application.Run(adminProductsForm);
             //Application.Run(adminSuppliersForm);
             //Application.Run(vehicleDashboardForm);
             //Application.Run(alertIncompleteInformationForm);
