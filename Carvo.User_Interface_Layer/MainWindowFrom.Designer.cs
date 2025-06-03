@@ -31,26 +31,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindowFrom));
             label1 = new Label();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            button1 = new Button();
-            button2 = new Button();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            employeePictureBox = new PictureBox();
+            adminPictureBox = new PictureBox();
+            adminBtn = new Button();
+            employeeBtn = new Button();
+            closeBtn = new Button();
+            minimizeBtn = new Button();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            ((System.ComponentModel.ISupportInitialize)employeePictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)adminPictureBox).BeginInit();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Emoji", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(410, 32);
+            label1.Location = new Point(412, 30);
             label1.Name = "label1";
-            label1.Size = new Size(402, 36);
+            label1.Size = new Size(568, 54);
             label1.TabIndex = 0;
             label1.Text = "شركة الاستاذ للاطارات والبطاريات";
             // 
@@ -59,106 +61,147 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(117, 123);
+            label2.Location = new Point(40, 22);
             label2.Name = "label2";
-            label2.Size = new Size(1046, 37);
+            label2.Size = new Size(1296, 46);
             label2.TabIndex = 1;
             label2.Text = "مرحباً بك في نظام إدارة الورشة يمكنك إدارة عمليات الصيانة والمخزون والفواتير بسهولة وأمان";
             // 
-            // pictureBox1
+            // employeePictureBox
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(282, 258);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(114, 116);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            employeePictureBox.Image = (Image)resources.GetObject("employeePictureBox.Image");
+            employeePictureBox.Location = new Point(254, 112);
+            employeePictureBox.Margin = new Padding(3, 4, 3, 4);
+            employeePictureBox.Name = "employeePictureBox";
+            employeePictureBox.Size = new Size(130, 155);
+            employeePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            employeePictureBox.TabIndex = 2;
+            employeePictureBox.TabStop = false;
+            employeePictureBox.Tag = "2";
+            employeePictureBox.Click += PictureBox_Click;
             // 
-            // pictureBox2
+            // adminPictureBox
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(885, 258);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(116, 115);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
+            adminPictureBox.Image = (Image)resources.GetObject("adminPictureBox.Image");
+            adminPictureBox.Location = new Point(961, 112);
+            adminPictureBox.Margin = new Padding(3, 4, 3, 4);
+            adminPictureBox.Name = "adminPictureBox";
+            adminPictureBox.Size = new Size(133, 153);
+            adminPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            adminPictureBox.TabIndex = 3;
+            adminPictureBox.TabStop = false;
+            adminPictureBox.Tag = "1";
+            adminPictureBox.Click += PictureBox_Click;
             // 
-            // button1
+            // adminBtn
             // 
-            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(885, 426);
-            button1.Name = "button1";
-            button1.Size = new Size(116, 40);
-            button1.TabIndex = 4;
-            button1.Text = "مدير";
-            button1.UseVisualStyleBackColor = true;
+            adminBtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            adminBtn.Location = new Point(961, 312);
+            adminBtn.Margin = new Padding(3, 4, 3, 4);
+            adminBtn.Name = "adminBtn";
+            adminBtn.Size = new Size(133, 53);
+            adminBtn.TabIndex = 4;
+            adminBtn.Tag = "1";
+            adminBtn.Text = "مدير";
+            adminBtn.UseVisualStyleBackColor = true;
+            adminBtn.Click += Btn_Click;
             // 
-            // button2
+            // employeeBtn
             // 
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(282, 426);
-            button2.Name = "button2";
-            button2.Size = new Size(114, 40);
-            button2.TabIndex = 5;
-            button2.Text = "موظف";
-            button2.UseVisualStyleBackColor = true;
+            employeeBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            employeeBtn.Location = new Point(254, 313);
+            employeeBtn.Margin = new Padding(3, 4, 3, 4);
+            employeeBtn.Name = "employeeBtn";
+            employeeBtn.Size = new Size(130, 53);
+            employeeBtn.TabIndex = 5;
+            employeeBtn.Tag = "2";
+            employeeBtn.Text = "موظف";
+            employeeBtn.UseVisualStyleBackColor = true;
+            employeeBtn.Click += Btn_Click;
             // 
-            // pictureBox3
+            // closeBtn
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(1205, 12);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(50, 50);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 6;
-            pictureBox3.TabStop = false;
+            closeBtn.BackgroundImage = (Image)resources.GetObject("closeBtn.BackgroundImage");
+            closeBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            closeBtn.FlatAppearance.BorderSize = 0;
+            closeBtn.FlatStyle = FlatStyle.Flat;
+            closeBtn.Location = new Point(1393, 3);
+            closeBtn.Name = "closeBtn";
+            closeBtn.Size = new Size(50, 50);
+            closeBtn.TabIndex = 8;
+            closeBtn.UseVisualStyleBackColor = true;
+            closeBtn.Click += closeBtn_Click;
             // 
-            // pictureBox4
+            // minimizeBtn
             // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1125, 12);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(50, 50);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 7;
-            pictureBox4.TabStop = false;
+            minimizeBtn.BackgroundImage = (Image)resources.GetObject("minimizeBtn.BackgroundImage");
+            minimizeBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            minimizeBtn.FlatAppearance.BorderSize = 0;
+            minimizeBtn.FlatStyle = FlatStyle.Flat;
+            minimizeBtn.Location = new Point(1337, 3);
+            minimizeBtn.Name = "minimizeBtn";
+            minimizeBtn.Size = new Size(50, 50);
+            minimizeBtn.TabIndex = 9;
+            minimizeBtn.UseVisualStyleBackColor = true;
+            minimizeBtn.Click += minimizeBtn_Click;
+            // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(minimizeBtn);
+            panel1.Controls.Add(closeBtn);
+            panel1.Location = new Point(29, 24);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1459, 125);
+            panel1.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(adminPictureBox);
+            panel2.Controls.Add(employeeBtn);
+            panel2.Controls.Add(adminBtn);
+            panel2.Controls.Add(employeePictureBox);
+            panel2.Location = new Point(68, 187);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1371, 403);
+            panel2.TabIndex = 11;
             // 
             // MainWindowFrom
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
-            ClientSize = new Size(1370, 552);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            ClientSize = new Size(1526, 632);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MainWindowFrom";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MainWindowFrom";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)employeePictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)adminPictureBox).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Label label1;
         private Label label2;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private Button button1;
-        private Button button2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
+        private PictureBox employeePictureBox;
+        private PictureBox adminPictureBox;
+        private Button adminBtn;
+        private Button employeeBtn;
+        private Button closeBtn;
+        private Button minimizeBtn;
+        private Panel panel1;
+        private Panel panel2;
     }
 }

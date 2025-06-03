@@ -33,13 +33,13 @@
             label2 = new Label();
             label3 = new Label();
             userNameTxt = new TextBox();
-            roleComboBox = new ComboBox();
-            button1 = new Button();
+            loginBtn = new Button();
             passwordTxt = new TextBox();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             button2 = new Button();
             button3 = new Button();
+            backBtn = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -74,7 +74,7 @@
             label3.BackColor = Color.FromArgb(198, 198, 198);
             label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(277, 155);
+            label3.Location = new Point(277, 168);
             label3.Name = "label3";
             label3.Size = new Size(146, 38);
             label3.TabIndex = 2;
@@ -91,34 +91,25 @@
             userNameTxt.Size = new Size(379, 45);
             userNameTxt.TabIndex = 0;
             // 
-            // roleComboBox
+            // loginBtn
             // 
-            roleComboBox.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            roleComboBox.FormattingEnabled = true;
-            roleComboBox.Location = new Point(44, 298);
-            roleComboBox.Name = "roleComboBox";
-            roleComboBox.RightToLeft = RightToLeft.Yes;
-            roleComboBox.Size = new Size(382, 36);
-            roleComboBox.TabIndex = 2;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(157, 62, 81);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(166, 373);
-            button1.Name = "button1";
-            button1.Size = new Size(163, 47);
-            button1.TabIndex = 4;
-            button1.Text = "دخول";
-            button1.UseVisualStyleBackColor = false;
+            loginBtn.BackColor = Color.FromArgb(157, 62, 81);
+            loginBtn.FlatAppearance.BorderSize = 0;
+            loginBtn.FlatStyle = FlatStyle.Flat;
+            loginBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            loginBtn.ForeColor = Color.White;
+            loginBtn.Location = new Point(165, 311);
+            loginBtn.Name = "loginBtn";
+            loginBtn.Size = new Size(163, 47);
+            loginBtn.TabIndex = 4;
+            loginBtn.Text = "دخول";
+            loginBtn.UseVisualStyleBackColor = false;
+            loginBtn.Click += loginBtn_Click;
             // 
             // passwordTxt
             // 
             passwordTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passwordTxt.Location = new Point(44, 196);
+            passwordTxt.Location = new Point(44, 209);
             passwordTxt.Multiline = true;
             passwordTxt.Name = "passwordTxt";
             passwordTxt.PasswordChar = '*';
@@ -129,22 +120,21 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(198, 198, 198);
-            panel1.Controls.Add(roleComboBox);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(passwordTxt);
             panel1.Controls.Add(userNameTxt);
-            panel1.Controls.Add(button1);
-            panel1.Location = new Point(485, 123);
+            panel1.Controls.Add(loginBtn);
+            panel1.Location = new Point(485, 146);
             panel1.Name = "panel1";
-            panel1.Size = new Size(483, 436);
+            panel1.Size = new Size(483, 380);
             panel1.TabIndex = 8;
             // 
             // pictureBox1
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(47, 197);
+            pictureBox1.Location = new Point(47, 209);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(326, 244);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -157,7 +147,7 @@
             button2.BackgroundImageLayout = ImageLayout.Stretch;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(939, 0);
+            button2.Location = new Point(938, 9);
             button2.Name = "button2";
             button2.Size = new Size(50, 50);
             button2.TabIndex = 10;
@@ -170,12 +160,25 @@
             button3.BackgroundImageLayout = ImageLayout.Stretch;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(873, 0);
+            button3.Location = new Point(873, 9);
             button3.Name = "button3";
             button3.Size = new Size(50, 50);
             button3.TabIndex = 11;
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
+            // 
+            // backBtn
+            // 
+            backBtn.BackgroundImage = (Image)resources.GetObject("backBtn.BackgroundImage");
+            backBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            backBtn.FlatAppearance.BorderSize = 0;
+            backBtn.FlatStyle = FlatStyle.Flat;
+            backBtn.Location = new Point(12, 31);
+            backBtn.Name = "backBtn";
+            backBtn.Size = new Size(50, 50);
+            backBtn.TabIndex = 12;
+            backBtn.UseVisualStyleBackColor = true;
+            backBtn.Click += button2_Click;
             // 
             // LoginForm
             // 
@@ -184,6 +187,7 @@
             BackColor = Color.FromArgb(48, 67, 87);
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(991, 582);
+            Controls.Add(backBtn);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(pictureBox1);
@@ -193,7 +197,6 @@
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
-            Load += LoginForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -207,12 +210,12 @@
         private Label label2;
         private Label label3;
         private TextBox userNameTxt;
-        private ComboBox roleComboBox;
-        private Button button1;
+        private Button loginBtn;
         private TextBox passwordTxt;
         private Panel panel1;
         private PictureBox pictureBox1;
         private Button button2;
         private Button button3;
+        private Button backBtn;
     }
 }
