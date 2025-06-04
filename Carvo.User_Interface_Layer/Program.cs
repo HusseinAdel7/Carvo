@@ -8,6 +8,7 @@ using Carvo.Data_Access_Layer.Repository.IGenericRepositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
@@ -64,6 +65,7 @@ namespace Carvo.User_Interface_Layer
                      services.AddScoped<ICategoryService, CategoryService>();
                      services.AddScoped<IProductService, ProductService>();
                      services.AddScoped<ISupplierService, SupplierService>();
+                     services.AddScoped<IVehicleService, VehicleService>();
                      services.AddScoped<ICustomerService, CustomerService>();
 
 
@@ -131,7 +133,8 @@ namespace Carvo.User_Interface_Layer
 
 
             var service = host.Services.GetRequiredService<ICategoryService>();
-
+            var vehicle = host.Services.GetRequiredService<IVehicleService>();
+            var customerService = host.Services.GetRequiredService<ICustomerService>();
 
             //Application.Run(loginFrom);
             //Application.Run(adminCategoriesForm);
@@ -140,7 +143,7 @@ namespace Carvo.User_Interface_Layer
             //Application.Run(adminInvoicesForm);
             //Application.Run(adminProductsForm);
             //Application.Run(adminSuppliersForm);
-            //Application.Run(vehicleDashboardForm);
+            Application.Run(vehicleDashboardForm);
             //Application.Run(alertIncompleteInformationForm);
             //Application.Run(alertSelectAndDeleteForm);
             //Application.Run(confirmationForm);
