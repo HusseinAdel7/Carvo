@@ -109,8 +109,28 @@ namespace Carvo.User_Interface_Layer
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
         }
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            ResizeDataGridViewHeight();
+        }
 
+        private void ResizeDataGridViewHeight()
+        {
+            int totalHeight = dataGridView1.ColumnHeadersHeight;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Visible) totalHeight += row.Height;
+            }
+
+            dataGridView1.Height = totalHeight + 2; // 2px padding
+        }
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
         {
 
         }
