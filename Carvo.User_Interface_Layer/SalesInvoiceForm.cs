@@ -29,27 +29,6 @@ namespace Carvo.User_Interface_Layer
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            this.Close();
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-
-        }
 
         private void SalesInvoiceForm_Load(object sender, EventArgs e)
         {
@@ -62,10 +41,6 @@ namespace Carvo.User_Interface_Layer
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void FormatGrid()
         {
             // Set text direction to Right-to-Left for Arabic display
@@ -125,14 +100,15 @@ namespace Carvo.User_Interface_Layer
 
             dataGridView1.Height = totalHeight + 2; // 2px padding
         }
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
 
+        private void CloseFormBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
-        private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        private void MinimizeFormBtn_Click(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 
