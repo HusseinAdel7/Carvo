@@ -53,7 +53,7 @@
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
-            dataGridView1 = new DataGridView();
+            SalesInvoiceGridView1 = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MinimizeFormBtn).BeginInit();
@@ -65,7 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)UpdateCustomerImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AddCustomerImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SalesInvoiceGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -159,7 +159,7 @@
             panel2.Controls.Add(comboBox1);
             panel2.Location = new Point(0, 123);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1526, 359);
+            panel2.Size = new Size(1526, 408);
             panel2.TabIndex = 4;
             // 
             // DeleteCustomerImg
@@ -331,23 +331,22 @@
             comboBox1.Size = new Size(242, 28);
             comboBox1.TabIndex = 0;
             // 
-            // dataGridView1
+            // SalesInvoiceGridView1
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = Color.FromArgb(48, 67, 87);
-            dataGridView1.Location = new Point(0, 488);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1526, 274);
-            dataGridView1.TabIndex = 5;
+            SalesInvoiceGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            SalesInvoiceGridView1.GridColor = Color.FromArgb(48, 67, 87);
+            SalesInvoiceGridView1.Location = new Point(0, 547);
+            SalesInvoiceGridView1.Name = "SalesInvoiceGridView1";
+            SalesInvoiceGridView1.RowHeadersWidth = 51;
+            SalesInvoiceGridView1.Size = new Size(1526, 203);
+            SalesInvoiceGridView1.TabIndex = 5;
             // 
             // SalesInvoiceForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1526, 774);
-            Controls.Add(dataGridView1);
+            Controls.Add(SalesInvoiceGridView1);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -357,6 +356,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "فاتورة مبيعات";
             Load += SalesInvoiceForm_Load;
+            Shown += SalesInvoiceForm_Shown;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)CloseFormBtn).EndInit();
@@ -370,7 +370,7 @@
             ((System.ComponentModel.ISupportInitialize)UpdateCustomerImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)AddCustomerImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SalesInvoiceGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -388,7 +388,7 @@
         private Label label5;
         private Label label6;
         private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
-        private DataGridView dataGridView1;
+        private DataGridView SalesInvoiceGridView1;
         private PictureBox pictureBox1;
         private Button button3;
         private PictureBox UpdateCustomerImg;

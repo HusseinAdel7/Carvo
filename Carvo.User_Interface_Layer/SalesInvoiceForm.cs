@@ -17,6 +17,7 @@ namespace Carvo.User_Interface_Layer
         public SalesInvoiceForm()
         {
             InitializeComponent();
+
         }
         // كود خاص بسحب الفورم بدون شريط عنوان
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -27,6 +28,40 @@ namespace Carvo.User_Interface_Layer
 
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        private void SetupDataGridViewLayout()
+        {
+            int horizontalPadding = 30;
+
+            SalesInvoiceGridView1.Left = horizontalPadding;
+            SalesInvoiceGridView1.Width = this.ClientSize.Width - (horizontalPadding * 2);
+
+            SalesInvoiceGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            SalesInvoiceGridView1.AllowUserToAddRows = false;
+            SalesInvoiceGridView1.AllowUserToResizeRows = false;
+            SalesInvoiceGridView1.ReadOnly = true;
+            SalesInvoiceGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            SalesInvoiceGridView1.MultiSelect = false;
+            SalesInvoiceGridView1.ScrollBars = ScrollBars.Vertical;
+
+            SalesInvoiceGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(48, 67, 87);
+            SalesInvoiceGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            SalesInvoiceGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10, FontStyle.Bold);
+            SalesInvoiceGridView1.EnableHeadersVisualStyles = false;
+
+            SalesInvoiceGridView1.DefaultCellStyle.Font = new Font("Tahoma", 10, FontStyle.Regular);
+            SalesInvoiceGridView1.DefaultCellStyle.ForeColor = Color.FromArgb(80, 90, 110);
+            SalesInvoiceGridView1.DefaultCellStyle.BackColor = Color.FromArgb(196, 196, 223);
+            SalesInvoiceGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(106, 90, 205);
+            SalesInvoiceGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            SalesInvoiceGridView1.GridColor = Color.LightGray;
+            SalesInvoiceGridView1.RowHeadersVisible = false;
+
+            // Set Height dynamically based on rows
+            SalesInvoiceGridView1.Height = SalesInvoiceGridView1.Rows.GetRowsHeight(DataGridViewElementStates.Visible)
+                                     + SalesInvoiceGridView1.ColumnHeadersHeight + 2;
+        }
 
 
 
@@ -44,62 +79,55 @@ namespace Carvo.User_Interface_Layer
         private void FormatGrid()
         {
             // Set text direction to Right-to-Left for Arabic display
-            dataGridView1.RightToLeft = RightToLeft.Yes;
+            SalesInvoiceGridView1.RightToLeft = RightToLeft.Yes;
 
             // Clear existing columns
-            dataGridView1.Columns.Clear();
+            SalesInvoiceGridView1.Columns.Clear();
 
             // Add columns with Arabic headers for display
 
-            dataGridView1.Columns.Add("buyer", "المشتري");
-            dataGridView1.Columns.Add("productName", "اسم المنتج");
-            dataGridView1.Columns.Add("quantity", "الكمية");
-            dataGridView1.Columns.Add("price", "السعر");
-            dataGridView1.Columns.Add("productId", "رقم المنتج");
+            SalesInvoiceGridView1.Columns.Add("buyer", "المشتري");
+            SalesInvoiceGridView1.Columns.Add("productName", "اسم المنتج");
+            SalesInvoiceGridView1.Columns.Add("quantity", "الكمية");
+            SalesInvoiceGridView1.Columns.Add("price", "السعر");
+            SalesInvoiceGridView1.Columns.Add("productId", "رقم المنتج");
 
             // Center-align headers and cell content
-            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            foreach (DataGridViewColumn column in SalesInvoiceGridView1.Columns)
             {
                 column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
 
             // Row coloring
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
-            dataGridView1.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            SalesInvoiceGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+            SalesInvoiceGridView1.DefaultCellStyle.BackColor = Color.WhiteSmoke;
 
             // Selection styling
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue;
-            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+            SalesInvoiceGridView1.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue;
+            SalesInvoiceGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
 
             // Font styling
-            dataGridView1.DefaultCellStyle.Font = new Font("Tahoma", 10);
-            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10, FontStyle.Bold);
+            SalesInvoiceGridView1.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            SalesInvoiceGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10, FontStyle.Bold);
 
             // Example Arabic data (you can remove this when using real data)
-            dataGridView1.Rows.Add("١٠١", "حاسوب محمول", "أحمد محمد", "٢", "٣٥٠٠");
-            dataGridView1.Rows.Add("١٠٢", "هاتف ذكي", "منى خالد", "١", "١٨٠٠");
+            SalesInvoiceGridView1.Rows.Add("١٠١", "حاسوب محمول", "أحمد محمد", "٢", "٣٥٠٠");
+            SalesInvoiceGridView1.Rows.Add("١٠٢", "هاتف ذكي", "منى خالد", "١", "١٨٠٠");
+            SalesInvoiceGridView1.Rows.Add("١٠", "حاسوب محمول", "أحمد محمد", "٢", "٣٥٠٠");
+            SalesInvoiceGridView1.Rows.Add("١٠٢", "لاب توب", "لولو خالد", "١", "١٨٠٠");
+            SalesInvoiceGridView1.Rows.Add("١١", "حاسوب محمول", "رؤى محمد", "٢", "٣٥٠٠");
+            SalesInvoiceGridView1.Rows.Add("١٢", "هاتف ذكي", "هدى خالد", "١", "١٨٠٠");
+            SalesInvoiceGridView1.Rows.Add("١٠١", "حاسوب محمول", "أحمد محمد", "٢", "٣٥٠٠");
+            SalesInvoiceGridView1.Rows.Add("١٠٢", "هاتف ذكي", "منى خالد", "١", "١٨٠٠");
+            SalesInvoiceGridView1.Rows.Add("١٠١", "حاسوب محمول", "أحمد محمد", "٢", "٣٥٠٠");
+            SalesInvoiceGridView1.Rows.Add("١٠٢", "هاتف ذكي", "منى خالد", "١", "١٨٠٠");
 
             // Auto sizing and styling
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-        }
-        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            ResizeDataGridViewHeight();
+            SalesInvoiceGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            SalesInvoiceGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
         }
 
-        private void ResizeDataGridViewHeight()
-        {
-            int totalHeight = dataGridView1.ColumnHeadersHeight;
-
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                if (row.Visible) totalHeight += row.Height;
-            }
-
-            dataGridView1.Height = totalHeight + 2; // 2px padding
-        }
 
         private void CloseFormBtn_Click(object sender, EventArgs e)
         {
@@ -109,6 +137,11 @@ namespace Carvo.User_Interface_Layer
         private void MinimizeFormBtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void SalesInvoiceForm_Shown(object sender, EventArgs e)
+        {
+            SetupDataGridViewLayout();
         }
     }
 
