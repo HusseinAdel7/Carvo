@@ -37,12 +37,13 @@
             button6 = new Button();
             button5 = new Button();
             panel2 = new Panel();
+            pictureBox3 = new PictureBox();
+            button9 = new Button();
+            button8 = new Button();
             pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
             label6 = new Label();
             label5 = new Label();
             numericUpDown2 = new NumericUpDown();
-            button4 = new Button();
             button3 = new Button();
             label4 = new Label();
             numericUpDown1 = new NumericUpDown();
@@ -54,8 +55,8 @@
             dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -93,7 +94,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 178);
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(86, 9);
+            button2.Location = new Point(101, 12);
             button2.Name = "button2";
             button2.Size = new Size(50, 50);
             button2.TabIndex = 2;
@@ -131,7 +132,7 @@
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.Location = new Point(1327, 9);
+            button6.Location = new Point(1444, 13);
             button6.Name = "button6";
             button6.Size = new Size(50, 50);
             button6.TabIndex = 4;
@@ -143,7 +144,7 @@
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.Location = new Point(1408, 9);
+            button5.Location = new Point(1379, 13);
             button5.Name = "button5";
             button5.Size = new Size(50, 50);
             button5.TabIndex = 3;
@@ -154,12 +155,13 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(48, 67, 87);
+            panel2.Controls.Add(pictureBox3);
+            panel2.Controls.Add(button9);
+            panel2.Controls.Add(button8);
             panel2.Controls.Add(pictureBox2);
-            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(numericUpDown2);
-            panel2.Controls.Add(button4);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(button3);
             panel2.Controls.Add(label4);
@@ -173,6 +175,37 @@
             panel2.Size = new Size(1526, 340);
             panel2.TabIndex = 4;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(763, 266);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(50, 50);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 17;
+            pictureBox3.TabStop = false;
+            // 
+            // button9
+            // 
+            button9.BackColor = Color.FromArgb(244, 244, 244);
+            button9.Location = new Point(645, 266);
+            button9.Name = "button9";
+            button9.Size = new Size(112, 50);
+            button9.TabIndex = 16;
+            button9.Text = "تحديث";
+            button9.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            button8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
+            button8.ForeColor = Color.FromArgb(48, 67, 87);
+            button8.Location = new Point(1218, 14);
+            button8.Name = "button8";
+            button8.Size = new Size(174, 39);
+            button8.TabIndex = 13;
+            button8.Text = "استخراج الفاتورة ";
+            button8.UseVisualStyleBackColor = true;
+            // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
@@ -182,16 +215,6 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(766, 266);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(50, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 11;
-            pictureBox1.TabStop = false;
             // 
             // label6
             // 
@@ -220,18 +243,8 @@
             numericUpDown2.BackColor = Color.FromArgb(244, 244, 244);
             numericUpDown2.Location = new Point(927, 279);
             numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(130, 27);
+            numericUpDown2.Size = new Size(247, 27);
             numericUpDown2.TabIndex = 8;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.FromArgb(244, 244, 244);
-            button4.Location = new Point(648, 266);
-            button4.Name = "button4";
-            button4.Size = new Size(112, 50);
-            button4.TabIndex = 7;
-            button4.Text = "حذف";
-            button4.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -316,6 +329,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1526, 247);
             dataGridView1.TabIndex = 5;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick_2;
             // 
             // SalesInvoiceForm
             // 
@@ -336,8 +350,8 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -357,7 +371,6 @@
         private Label label3;
         private Label label2;
         private NumericUpDown numericUpDown2;
-        private Button button4;
         private Button button3;
         private Label label4;
         private Label label5;
@@ -367,7 +380,9 @@
         private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
         private Button button7;
         private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
         private DataGridView dataGridView1;
+        private Button button8;
+        private PictureBox pictureBox3;
+        private Button button9;
     }
 }
