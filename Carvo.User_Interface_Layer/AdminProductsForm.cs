@@ -21,6 +21,8 @@ namespace Carvo.User_Interface_Layer
         private ICategoryService categoryService;
         private ISupplierService supplierService;
 
+        private string supplierSearchTxt = "";
+
         private IEnumerable<Category> allCategories;
         private IEnumerable<Supplier> allSuppliers;
         public AdminProductsForm(IProductService _productService, ICategoryService _categoryService, ISupplierService _supplierService)
@@ -236,5 +238,19 @@ namespace Carvo.User_Interface_Layer
             return isValid;
         }
 
+        private void FliterSuppliersTxt_TextChanged(object sender, EventArgs e)
+        {
+            
+            if(string.IsNullOrWhiteSpace(FliterSuppliersTxt.Text))
+                SupplierNameDropdownList.DataSource = allSuppliers;
+            else
+            {
+                List<Supplier> filteredList = allSuppliers.Where(
+                    s => s.Name.Contains(FliterSuppliersTxt.Text)
+                ).ToList();
+                SupplierNameDropdownList.DataSource = filteredList;
+            }
+                
+        }
     }
 }
