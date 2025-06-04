@@ -64,6 +64,8 @@ namespace Carvo.User_Interface_Layer
                      services.AddScoped<ICategoryService, CategoryService>();
                      services.AddScoped<IProductService, ProductService>();
                      services.AddScoped<ISupplierService, SupplierService>();
+                     services.AddScoped<ICustomerService, CustomerService>();
+
 
 
 
@@ -121,19 +123,22 @@ namespace Carvo.User_Interface_Layer
             var updateAlertForm = host.Services.GetRequiredService<UpdateAlertForm>();
             var vehicleDashboardForm = host.Services.GetRequiredService<VehicleDashboardForm>();
 
+            var employeeDashboardForm = host.Services.GetRequiredService<EmployeeDashboardForm>();
 
 
 
-            
+
+
+
             var service = host.Services.GetRequiredService<ICategoryService>();
 
 
             //Application.Run(loginFrom);
             //Application.Run(adminCategoriesForm);
-            //Application.Run(adminCustomersForm);
+            Application.Run(adminCustomersForm);
             //Application.Run(adminEmplyeeForm);
             //Application.Run(adminInvoicesForm);
-            Application.Run(adminProductsForm);
+            //Application.Run(adminProductsForm);
             //Application.Run(adminSuppliersForm);
             //Application.Run(vehicleDashboardForm);
             //Application.Run(alertIncompleteInformationForm);
@@ -145,10 +150,12 @@ namespace Carvo.User_Interface_Layer
             //Application.Run(homeDashboardForm);
             //Application.Run(invoiceForm);
             //Application.Run(invoiceTypeForm);
-            Application.Run(mainWindowFrom);
+            //Application.Run(mainWindowFrom);
             //Application.Run(repairInvoiceForm);
             //Application.Run(salesInvoiceForm);
             //Application.Run(updateAlertForm);
+            //Application.Run(employeeDashboardForm);
+
 
 
 
