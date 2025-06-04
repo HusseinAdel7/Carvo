@@ -53,6 +53,8 @@ namespace Carvo.User_Interface_Layer
                      services.AddTransient<SalesInvoiceForm>();
                      services.AddTransient<UpdateAlertForm>();
                      services.AddTransient<VehicleDashboardForm>();
+                     services.AddTransient<EmployeeDashboardForm>();
+                     services.AddTransient<IUserService , UserService>();
 
 
 
@@ -123,17 +125,20 @@ namespace Carvo.User_Interface_Layer
             var updateAlertForm = host.Services.GetRequiredService<UpdateAlertForm>();
             var vehicleDashboardForm = host.Services.GetRequiredService<VehicleDashboardForm>();
 
+            var employeeDashboardForm = host.Services.GetRequiredService<EmployeeDashboardForm>();
 
 
 
-            
+
+
+
             var service = host.Services.GetRequiredService<ICategoryService>();
             var vehicle = host.Services.GetRequiredService<IVehicleService>();
             var customerService = host.Services.GetRequiredService<ICustomerService>();
 
             //Application.Run(loginFrom);
             //Application.Run(adminCategoriesForm);
-            //Application.Run(adminCustomersForm);
+            Application.Run(adminCustomersForm);
             //Application.Run(adminEmplyeeForm);
             //Application.Run(adminInvoicesForm);
             //Application.Run(adminProductsForm);
@@ -152,6 +157,8 @@ namespace Carvo.User_Interface_Layer
             //Application.Run(repairInvoiceForm);
             //Application.Run(salesInvoiceForm);
             //Application.Run(updateAlertForm);
+            //Application.Run(employeeDashboardForm);
+
 
 
 
