@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VehicleDashboardForm));
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             label4 = new Label();
             VehicleNameTxt = new TextBox();
             VehicleModelTxt = new TextBox();
@@ -45,6 +45,8 @@
             AddImage = new PictureBox();
             UpdateImage = new PictureBox();
             panel2 = new Panel();
+            label6 = new Label();
+            CustomersFilterTxt = new TextBox();
             PlateErrorLabel = new Label();
             NameErrorLabel = new Label();
             ModelErrorLabel = new Label();
@@ -59,8 +61,6 @@
             PrevImageAsBtn = new PictureBox();
             MinimizeBtn = new PictureBox();
             VehiclesGridView = new DataGridView();
-            CustomersFilterTxt = new TextBox();
-            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)AddImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UpdateImage).BeginInit();
             panel2.SuspendLayout();
@@ -215,6 +215,27 @@
             panel2.Size = new Size(1491, 305);
             panel2.TabIndex = 23;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(533, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(187, 28);
+            label6.TabIndex = 30;
+            label6.Text = "تصفية العملاء بالاسم";
+            // 
+            // CustomersFilterTxt
+            // 
+            CustomersFilterTxt.Font = new Font("Segoe UI", 12F);
+            CustomersFilterTxt.Location = new Point(323, 42);
+            CustomersFilterTxt.Name = "CustomersFilterTxt";
+            CustomersFilterTxt.Size = new Size(397, 34);
+            CustomersFilterTxt.TabIndex = 29;
+            CustomersFilterTxt.TextAlign = HorizontalAlignment.Right;
+            CustomersFilterTxt.TextChanged += CustomersFilterTxt_TextChanged;
+            // 
             // PlateErrorLabel
             // 
             PlateErrorLabel.AutoSize = true;
@@ -355,73 +376,54 @@
             // VehiclesGridView
             // 
             VehiclesGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle6.BackColor = SystemColors.ButtonFace;
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.CornflowerBlue;
-            VehiclesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = SystemColors.ButtonFace;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.CornflowerBlue;
+            VehiclesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             VehiclesGridView.Anchor = AnchorStyles.None;
             VehiclesGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             VehiclesGridView.BorderStyle = BorderStyle.None;
             VehiclesGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(48, 67, 87);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            VehiclesGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 67, 87);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            VehiclesGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             VehiclesGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.Padding = new Padding(0, 2, 2, 2);
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            VehiclesGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new Padding(0, 2, 2, 2);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            VehiclesGridView.DefaultCellStyle = dataGridViewCellStyle3;
             VehiclesGridView.EnableHeadersVisualStyles = false;
             VehiclesGridView.Location = new Point(12, 464);
             VehiclesGridView.MaximumSize = new Size(1502, 243);
             VehiclesGridView.Name = "VehiclesGridView";
             VehiclesGridView.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.BackColor = SystemColors.Control;
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            VehiclesGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            VehiclesGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             VehiclesGridView.RowHeadersVisible = false;
             VehiclesGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleRight;
-            VehiclesGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
+            VehiclesGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             VehiclesGridView.ScrollBars = ScrollBars.Vertical;
             VehiclesGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             VehiclesGridView.Size = new Size(1502, 243);
             VehiclesGridView.TabIndex = 29;
             VehiclesGridView.SelectionChanged += VehicleGridView_SelectionChanged;
-            // 
-            // CustomersFilterTxt
-            // 
-            CustomersFilterTxt.Font = new Font("Segoe UI", 12F);
-            CustomersFilterTxt.Location = new Point(323, 42);
-            CustomersFilterTxt.Name = "CustomersFilterTxt";
-            CustomersFilterTxt.Size = new Size(397, 34);
-            CustomersFilterTxt.TabIndex = 29;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(533, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(187, 28);
-            label6.TabIndex = 30;
-            label6.Text = "تصفية العملاء بالاسم";
             // 
             // VehicleDashboardForm
             // 

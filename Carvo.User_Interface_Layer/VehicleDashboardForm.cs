@@ -25,6 +25,8 @@ namespace Carvo.User_Interface_Layer
     {
         private IVehicleService _vehicleService; //have a service to handle vehicle data
         private ICustomerService _customerService;
+
+        private IEnumerable<Customer> customers;
         public VehicleDashboardForm(IVehicleService vehicleService, ICustomerService customerService)
         {
             _vehicleService = vehicleService; // initialize the service
@@ -195,7 +197,7 @@ namespace Carvo.User_Interface_Layer
             try
             {
                 var allVehicles = await _vehicleService.GetAllVehiclesAsync(); // get all vehicles
-                var customers = await _customerService.GetAllCustomersAsync(); // get all customers
+                customers = await _customerService.GetAllCustomersAsync(); // get all customers
 
                 var vehicles = allVehicles.Select(v => new
                 {
@@ -257,6 +259,19 @@ namespace Carvo.User_Interface_Layer
         private void MinimizeBtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void CustomersFilterTxt_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(CustomersFilterTxt.Text))
+                CustomerComboBox.DataSource = customers;
+            else
+            {
+                List<Customer> filteredList = customers.Where(
+                    s => s.Name.ToLower().Contains(CustomersFilterTxt.Text.ToLower())
+                ).ToList();
+                CustomerComboBox.DataSource = filteredList;
+            }
         }
     }
 }
