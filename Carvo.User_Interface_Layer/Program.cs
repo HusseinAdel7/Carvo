@@ -67,6 +67,7 @@ namespace Carvo.User_Interface_Layer
                      services.AddScoped<ISupplierService, SupplierService>();
                      services.AddScoped<IVehicleService, VehicleService>();
                      services.AddScoped<ICustomerService, CustomerService>();
+                     services.AddScoped<IInvoiceProductService, InvoiceProductService>();
                      services.AddScoped<IInvoiceService, InvoiceService>();
 
 
