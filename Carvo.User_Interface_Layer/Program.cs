@@ -73,6 +73,7 @@ namespace Carvo.User_Interface_Layer
 
 
 
+
                  })
                  .Build();
 
@@ -149,7 +150,7 @@ namespace Carvo.User_Interface_Layer
             //Application.Run(alertSelectAndDeleteForm);
             //Application.Run(confirmationForm);
             //Application.Run(customerDashboardForm);
-            //Application.Run(dashboardForm);
+            Application.Run(dashboardForm);
             //Application.Run(deleteAlertForm);
             //Application.Run(homeDashboardForm);
             //Application.Run(invoiceForm);

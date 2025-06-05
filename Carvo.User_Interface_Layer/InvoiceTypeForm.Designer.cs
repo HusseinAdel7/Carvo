@@ -29,130 +29,148 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoiceTypeForm));
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            button1 = new Button();
-            button2 = new Button();
-            pbClose = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbClose).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            RepairImage = new PictureBox();
+            SalesImage = new PictureBox();
+            RepairBtn = new Button();
+            SalesBtn = new Button();
+            PrevFormBtn = new PictureBox();
+            LogOutBtn = new PictureBox();
+            CloseFormBtn = new PictureBox();
+            MinimizeFormBtn = new PictureBox();
+            panel1 = new Panel();
+            ((System.ComponentModel.ISupportInitialize)RepairImage).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SalesImage).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PrevFormBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LogOutBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MinimizeFormBtn).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // RepairImage
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(233, 141);
-            pictureBox1.Margin = new Padding(4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(143, 132);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            RepairImage.Image = (Image)resources.GetObject("RepairImage.Image");
+            RepairImage.Location = new Point(233, 141);
+            RepairImage.Margin = new Padding(4);
+            RepairImage.Name = "RepairImage";
+            RepairImage.Size = new Size(143, 132);
+            RepairImage.SizeMode = PictureBoxSizeMode.Zoom;
+            RepairImage.TabIndex = 0;
+            RepairImage.TabStop = false;
+            RepairImage.Click += RepairImage_Click;
             // 
-            // pictureBox2
+            // SalesImage
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(634, 141);
-            pictureBox2.Margin = new Padding(4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(143, 132);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+            SalesImage.Image = (Image)resources.GetObject("SalesImage.Image");
+            SalesImage.Location = new Point(757, 141);
+            SalesImage.Margin = new Padding(4);
+            SalesImage.Name = "SalesImage";
+            SalesImage.Size = new Size(143, 132);
+            SalesImage.SizeMode = PictureBoxSizeMode.Zoom;
+            SalesImage.TabIndex = 1;
+            SalesImage.TabStop = false;
+            SalesImage.Click += SalesImage_Click;
             // 
-            // button1
+            // RepairBtn
             // 
-            button1.BackColor = Color.FromArgb(244, 244, 244);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(251, 307);
-            button1.Margin = new Padding(4);
-            button1.Name = "button1";
-            button1.Size = new Size(107, 32);
-            button1.TabIndex = 2;
-            button1.Text = "تصليح";
-            button1.UseVisualStyleBackColor = false;
+            RepairBtn.BackColor = Color.FromArgb(244, 244, 244);
+            RepairBtn.Cursor = Cursors.Hand;
+            RepairBtn.FlatStyle = FlatStyle.Flat;
+            RepairBtn.ForeColor = Color.FromArgb(48, 67, 87);
+            RepairBtn.Location = new Point(233, 307);
+            RepairBtn.Margin = new Padding(4);
+            RepairBtn.Name = "RepairBtn";
+            RepairBtn.Size = new Size(143, 45);
+            RepairBtn.TabIndex = 2;
+            RepairBtn.Text = "تصليح";
+            RepairBtn.UseVisualStyleBackColor = false;
+            RepairBtn.Click += RepairBtn_Click;
             // 
-            // button2
+            // SalesBtn
             // 
-            button2.BackColor = Color.FromArgb(244, 244, 244);
-            button2.Cursor = Cursors.Hand;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(661, 307);
-            button2.Margin = new Padding(4);
-            button2.Name = "button2";
-            button2.Size = new Size(107, 32);
-            button2.TabIndex = 3;
-            button2.Text = "شراء";
-            button2.UseVisualStyleBackColor = false;
+            SalesBtn.BackColor = Color.FromArgb(244, 244, 244);
+            SalesBtn.Cursor = Cursors.Hand;
+            SalesBtn.FlatStyle = FlatStyle.Flat;
+            SalesBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SalesBtn.ForeColor = Color.FromArgb(48, 67, 87);
+            SalesBtn.Location = new Point(757, 307);
+            SalesBtn.Margin = new Padding(4);
+            SalesBtn.Name = "SalesBtn";
+            SalesBtn.Size = new Size(143, 45);
+            SalesBtn.TabIndex = 3;
+            SalesBtn.Text = "بيع";
+            SalesBtn.UseVisualStyleBackColor = false;
+            SalesBtn.Click += SalesBtn_Click;
             // 
-            // pbClose
+            // PrevFormBtn
             // 
-            pbClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pbClose.Image = (Image)resources.GetObject("pbClose.Image");
-            pbClose.Location = new Point(1007, 2);
-            pbClose.Name = "pbClose";
-            pbClose.Size = new Size(50, 50);
-            pbClose.SizeMode = PictureBoxSizeMode.Zoom;
-            pbClose.TabIndex = 4;
-            pbClose.TabStop = false;
+            PrevFormBtn.Image = (Image)resources.GetObject("PrevFormBtn.Image");
+            PrevFormBtn.Location = new Point(116, 3);
+            PrevFormBtn.Name = "PrevFormBtn";
+            PrevFormBtn.Size = new Size(50, 50);
+            PrevFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            PrevFormBtn.TabIndex = 13;
+            PrevFormBtn.TabStop = false;
+            PrevFormBtn.Click += PrevFormBtn_Click;
             // 
-            // pictureBox3
+            // LogOutBtn
             // 
-            pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(951, 2);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(50, 50);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 5;
-            pictureBox3.TabStop = false;
+            LogOutBtn.Image = (Image)resources.GetObject("LogOutBtn.Image");
+            LogOutBtn.Location = new Point(18, 3);
+            LogOutBtn.Name = "LogOutBtn";
+            LogOutBtn.Size = new Size(50, 50);
+            LogOutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            LogOutBtn.TabIndex = 12;
+            LogOutBtn.TabStop = false;
+            LogOutBtn.Click += LogOutBtn_Click;
             // 
-            // pictureBox4
+            // CloseFormBtn
             // 
-            pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(12, 2);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(50, 50);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 6;
-            pictureBox4.TabStop = false;
+            CloseFormBtn.Image = (Image)resources.GetObject("CloseFormBtn.Image");
+            CloseFormBtn.Location = new Point(1044, 3);
+            CloseFormBtn.Name = "CloseFormBtn";
+            CloseFormBtn.Size = new Size(50, 50);
+            CloseFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            CloseFormBtn.TabIndex = 15;
+            CloseFormBtn.TabStop = false;
+            CloseFormBtn.Click += CloseFormBtn_Click;
             // 
-            // pictureBox5
+            // MinimizeFormBtn
             // 
-            pictureBox5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(68, 2);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(50, 50);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 7;
-            pictureBox5.TabStop = false;
+            MinimizeFormBtn.Image = (Image)resources.GetObject("MinimizeFormBtn.Image");
+            MinimizeFormBtn.Location = new Point(944, 3);
+            MinimizeFormBtn.Name = "MinimizeFormBtn";
+            MinimizeFormBtn.Size = new Size(50, 50);
+            MinimizeFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            MinimizeFormBtn.TabIndex = 14;
+            MinimizeFormBtn.TabStop = false;
+            MinimizeFormBtn.Click += MinimizeFormBtn_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(PrevFormBtn);
+            panel1.Controls.Add(CloseFormBtn);
+            panel1.Controls.Add(LogOutBtn);
+            panel1.Controls.Add(MinimizeFormBtn);
+            panel1.Location = new Point(12, 27);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1119, 63);
+            panel1.TabIndex = 16;
+            panel1.Paint += panel1_Paint;
+            panel1.MouseDown += panel1_MouseDown;
             // 
             // InvoiceTypeForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
             ClientSize = new Size(1143, 630);
             ControlBox = false;
-            Controls.Add(pictureBox5);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
-            Controls.Add(pbClose);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
+            Controls.Add(panel1);
+            Controls.Add(SalesBtn);
+            Controls.Add(RepairBtn);
+            Controls.Add(SalesImage);
+            Controls.Add(RepairImage);
             Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
@@ -161,24 +179,26 @@
             Name = "InvoiceTypeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "نموذج اختيار نوع الفاتورة";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbClose).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)RepairImage).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SalesImage).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PrevFormBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LogOutBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CloseFormBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MinimizeFormBtn).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private Button button1;
-        private Button button2;
-        private PictureBox pbClose;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
+        private PictureBox RepairImage;
+        private PictureBox SalesImage;
+        private Button RepairBtn;
+        private Button SalesBtn;
+        private PictureBox PrevFormBtn;
+        private PictureBox LogOutBtn;
+        private PictureBox CloseFormBtn;
+        private PictureBox MinimizeFormBtn;
+        private Panel panel1;
     }
 }
