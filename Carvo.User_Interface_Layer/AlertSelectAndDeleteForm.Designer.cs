@@ -46,6 +46,7 @@
             button4.TabIndex = 16;
             button4.Text = "موافق";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // pictureBox2
             // 
@@ -81,6 +82,7 @@
             Name = "AlertSelectAndDeleteForm";
             RightToLeft = RightToLeft.Yes;
             RightToLeftLayout = true;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AlertSelectAndDelete";
             Load += AlertSelectAndDelete_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
