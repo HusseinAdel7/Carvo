@@ -29,23 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlertIncompleteInformationForm));
-            button5 = new Button();
+            Okbtn = new Button();
             pictureBox1 = new PictureBox();
             label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // button5
+            // Okbtn
             // 
-            button5.BackColor = Color.White;
-            button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = Color.FromArgb(48, 67, 87);
-            button5.Location = new Point(99, 274);
-            button5.Name = "button5";
-            button5.Size = new Size(163, 46);
-            button5.TabIndex = 17;
-            button5.Text = "موافق";
-            button5.UseVisualStyleBackColor = false;
+            Okbtn.BackColor = Color.White;
+            Okbtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Okbtn.ForeColor = Color.FromArgb(48, 67, 87);
+            Okbtn.Location = new Point(99, 274);
+            Okbtn.Name = "Okbtn";
+            Okbtn.Size = new Size(163, 46);
+            Okbtn.TabIndex = 17;
+            Okbtn.Text = "موافق";
+            Okbtn.UseVisualStyleBackColor = false;
+            Okbtn.Click += Okbtn_Click;
             // 
             // pictureBox1
             // 
@@ -75,12 +76,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
             ClientSize = new Size(352, 450);
-            Controls.Add(button5);
+            Controls.Add(Okbtn);
             Controls.Add(pictureBox1);
             Controls.Add(label5);
             Name = "AlertIncompleteInformationForm";
             RightToLeft = RightToLeft.Yes;
             RightToLeftLayout = true;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AlertIncompleteInformationForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -89,7 +91,7 @@
 
         #endregion
 
-        private Button button5;
+        private Button Okbtn;
         private PictureBox pictureBox1;
         private Label label5;
     }
