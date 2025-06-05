@@ -27,31 +27,28 @@ namespace Carvo.User_Interface_Layer
         [DllImport("user32.dll")]
 
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void RepairInvoiceForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-
-        }
+  
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+
+        private void CloseFormBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
 
+        private void MinimizeFormBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
