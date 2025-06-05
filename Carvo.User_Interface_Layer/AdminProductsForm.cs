@@ -246,7 +246,7 @@ namespace Carvo.User_Interface_Layer
             else
             {
                 List<Supplier> filteredList = allSuppliers.Where(
-                    s => s.Name.Contains(FliterSuppliersTxt.Text)
+                    s => s.Name.ToLower().Contains(FliterSuppliersTxt.Text.ToLower())
                 ).ToList();
                 SupplierNameDropdownList.DataSource = filteredList;
             }

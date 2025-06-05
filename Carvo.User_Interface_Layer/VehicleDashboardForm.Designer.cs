@@ -45,6 +45,8 @@
             AddImage = new PictureBox();
             UpdateImage = new PictureBox();
             panel2 = new Panel();
+            label6 = new Label();
+            CustomersFilterTxt = new TextBox();
             PlateErrorLabel = new Label();
             NameErrorLabel = new Label();
             ModelErrorLabel = new Label();
@@ -76,7 +78,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(741, 46);
+            label4.Location = new Point(1345, 188);
             label4.Name = "label4";
             label4.Size = new Size(109, 28);
             label4.TabIndex = 3;
@@ -85,7 +87,7 @@
             // VehicleNameTxt
             // 
             VehicleNameTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            VehicleNameTxt.Location = new Point(323, 46);
+            VehicleNameTxt.Location = new Point(914, 185);
             VehicleNameTxt.Multiline = true;
             VehicleNameTxt.Name = "VehicleNameTxt";
             VehicleNameTxt.RightToLeft = RightToLeft.Yes;
@@ -95,7 +97,7 @@
             // VehicleModelTxt
             // 
             VehicleModelTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            VehicleModelTxt.Location = new Point(914, 46);
+            VehicleModelTxt.Location = new Point(914, 83);
             VehicleModelTxt.Multiline = true;
             VehicleModelTxt.Name = "VehicleModelTxt";
             VehicleModelTxt.RightToLeft = RightToLeft.Yes;
@@ -107,7 +109,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(1327, 46);
+            label3.Location = new Point(1327, 83);
             label3.Name = "label3";
             label3.Size = new Size(127, 28);
             label3.TabIndex = 8;
@@ -116,7 +118,7 @@
             // VehiclePlateTxt
             // 
             VehiclePlateTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            VehiclePlateTxt.Location = new Point(323, 177);
+            VehiclePlateTxt.Location = new Point(323, 185);
             VehiclePlateTxt.Multiline = true;
             VehiclePlateTxt.Name = "VehiclePlateTxt";
             VehiclePlateTxt.RightToLeft = RightToLeft.Yes;
@@ -128,7 +130,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(753, 177);
+            label5.Location = new Point(755, 188);
             label5.Name = "label5";
             label5.Size = new Size(97, 28);
             label5.TabIndex = 10;
@@ -189,6 +191,8 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(CustomersFilterTxt);
             panel2.Controls.Add(PlateErrorLabel);
             panel2.Controls.Add(NameErrorLabel);
             panel2.Controls.Add(ModelErrorLabel);
@@ -211,6 +215,27 @@
             panel2.Size = new Size(1491, 305);
             panel2.TabIndex = 23;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(533, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(187, 28);
+            label6.TabIndex = 30;
+            label6.Text = "تصفية العملاء بالاسم";
+            // 
+            // CustomersFilterTxt
+            // 
+            CustomersFilterTxt.Font = new Font("Segoe UI", 12F);
+            CustomersFilterTxt.Location = new Point(323, 42);
+            CustomersFilterTxt.Name = "CustomersFilterTxt";
+            CustomersFilterTxt.Size = new Size(397, 34);
+            CustomersFilterTxt.TabIndex = 29;
+            CustomersFilterTxt.TextAlign = HorizontalAlignment.Right;
+            CustomersFilterTxt.TextChanged += CustomersFilterTxt_TextChanged;
+            // 
             // PlateErrorLabel
             // 
             PlateErrorLabel.AutoSize = true;
@@ -230,7 +255,7 @@
             // ModelErrorLabel
             // 
             ModelErrorLabel.AutoSize = true;
-            ModelErrorLabel.Location = new Point(744, 106);
+            ModelErrorLabel.Location = new Point(1348, 179);
             ModelErrorLabel.Name = "ModelErrorLabel";
             ModelErrorLabel.Size = new Size(0, 20);
             ModelErrorLabel.TabIndex = 26;
@@ -266,7 +291,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(1346, 177);
+            label2.Location = new Point(755, 83);
             label2.Name = "label2";
             label2.Size = new Size(108, 28);
             label2.TabIndex = 23;
@@ -276,7 +301,7 @@
             // 
             CustomerComboBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             CustomerComboBox.FormattingEnabled = true;
-            CustomerComboBox.Location = new Point(914, 177);
+            CustomerComboBox.Location = new Point(323, 83);
             CustomerComboBox.Name = "CustomerComboBox";
             CustomerComboBox.RightToLeft = RightToLeft.Yes;
             CustomerComboBox.Size = new Size(397, 36);
@@ -454,5 +479,6 @@
         private PictureBox CloseFormBtn;
         private PictureBox PrevImageAsBtn;
         private PictureBox MinimizeBtn;
+        private TextBox CustomersFilterTxt;
     }
 }
