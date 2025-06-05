@@ -67,6 +67,7 @@ namespace Carvo.User_Interface_Layer
                      services.AddScoped<ISupplierService, SupplierService>();
                      services.AddScoped<IVehicleService, VehicleService>();
                      services.AddScoped<ICustomerService, CustomerService>();
+                     services.AddScoped<IInvoiceService, InvoiceService>();
 
 
 
@@ -138,17 +139,17 @@ namespace Carvo.User_Interface_Layer
 
             //Application.Run(loginFrom);
             //Application.Run(adminCategoriesForm);
-            Application.Run(adminCustomersForm);
+            //Application.Run(adminCustomersForm);
             //Application.Run(adminEmplyeeForm);
             //Application.Run(adminInvoicesForm);
             //Application.Run(adminProductsForm);
             //Application.Run(adminSuppliersForm);
-            Application.Run(vehicleDashboardForm);
+            //Application.Run(vehicleDashboardForm);
             //Application.Run(alertIncompleteInformationForm);
             //Application.Run(alertSelectAndDeleteForm);
             //Application.Run(confirmationForm);
             //Application.Run(customerDashboardForm);
-            //Application.Run(dashboardForm);
+            Application.Run(dashboardForm);
             //Application.Run(deleteAlertForm);
             //Application.Run(homeDashboardForm);
             //Application.Run(invoiceForm);
