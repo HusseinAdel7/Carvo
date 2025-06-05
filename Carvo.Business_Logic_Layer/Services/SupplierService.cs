@@ -51,7 +51,7 @@ namespace Carvo.Business_Logic_Layer.Services
             existingSupplier.PhoneNumber = supplier.PhoneNumber;
             existingSupplier.Address = supplier.Address;
             existingSupplier.ComapayName = supplier.ComapayName;
-            //existingSupplier.NationalId = supplier.NationalId;
+            existingSupplier.RemainingBalance = supplier.RemainingBalance;
           
 
 

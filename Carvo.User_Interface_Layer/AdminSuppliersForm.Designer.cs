@@ -42,7 +42,9 @@
             PrevImageAsBtn = new PictureBox();
             CategoriesManagement = new Label();
             panel2 = new Panel();
-            textBox1 = new TextBox();
+            SupplierRemainigBalanceTxt = new TextBox();
+            label4 = new Label();
+            SupplierCompanyFollowedTxt = new TextBox();
             SupplierPhoneTxt = new TextBox();
             SupplierAddressTxt = new TextBox();
             label3 = new Label();
@@ -161,7 +163,9 @@
             // 
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(48, 67, 87);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(SupplierRemainigBalanceTxt);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(SupplierCompanyFollowedTxt);
             panel2.Controls.Add(SupplierPhoneTxt);
             panel2.Controls.Add(SupplierAddressTxt);
             panel2.Controls.Add(label3);
@@ -180,15 +184,36 @@
             panel2.Size = new Size(1502, 432);
             panel2.TabIndex = 1;
             // 
-            // textBox1
+            // SupplierRemainigBalanceTxt
             // 
-            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(85, 143);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(373, 39);
-            textBox1.TabIndex = 20;
-            textBox1.TextAlign = HorizontalAlignment.Right;
+            SupplierRemainigBalanceTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SupplierRemainigBalanceTxt.Location = new Point(463, 228);
+            SupplierRemainigBalanceTxt.Multiline = true;
+            SupplierRemainigBalanceTxt.Name = "SupplierRemainigBalanceTxt";
+            SupplierRemainigBalanceTxt.Size = new Size(373, 39);
+            SupplierRemainigBalanceTxt.TabIndex = 22;
+            SupplierRemainigBalanceTxt.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(869, 231);
+            label4.Name = "label4";
+            label4.Size = new Size(150, 28);
+            label4.TabIndex = 21;
+            label4.Text = " : المبلغ المتبقي";
+            // 
+            // SupplierCompanyFollowedTxt
+            // 
+            SupplierCompanyFollowedTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SupplierCompanyFollowedTxt.Location = new Point(85, 143);
+            SupplierCompanyFollowedTxt.Multiline = true;
+            SupplierCompanyFollowedTxt.Name = "SupplierCompanyFollowedTxt";
+            SupplierCompanyFollowedTxt.Size = new Size(373, 39);
+            SupplierCompanyFollowedTxt.TabIndex = 20;
+            SupplierCompanyFollowedTxt.TextAlign = HorizontalAlignment.Right;
             // 
             // SupplierPhoneTxt
             // 
@@ -268,7 +293,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(819, 289);
+            pictureBox1.Location = new Point(819, 324);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(64, 52);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -279,17 +304,18 @@
             // 
             UpdateSupplierBtn.BackColor = Color.FromArgb(224, 224, 224);
             UpdateSupplierBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            UpdateSupplierBtn.Location = new Point(683, 289);
+            UpdateSupplierBtn.Location = new Point(683, 324);
             UpdateSupplierBtn.Name = "UpdateSupplierBtn";
             UpdateSupplierBtn.Size = new Size(130, 52);
             UpdateSupplierBtn.TabIndex = 5;
             UpdateSupplierBtn.Text = "تحديث موزع";
             UpdateSupplierBtn.UseVisualStyleBackColor = false;
+            UpdateSupplierBtn.Click += UpdateSupplierBtn_Click;
             // 
             // DeleteInvoiceImg
             // 
             DeleteInvoiceImg.Image = (Image)resources.GetObject("DeleteInvoiceImg.Image");
-            DeleteInvoiceImg.Location = new Point(434, 289);
+            DeleteInvoiceImg.Location = new Point(434, 324);
             DeleteInvoiceImg.Name = "DeleteInvoiceImg";
             DeleteInvoiceImg.Size = new Size(64, 52);
             DeleteInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -299,7 +325,7 @@
             // AddInvoiceImg
             // 
             AddInvoiceImg.Image = (Image)resources.GetObject("AddInvoiceImg.Image");
-            AddInvoiceImg.Location = new Point(1209, 289);
+            AddInvoiceImg.Location = new Point(1209, 324);
             AddInvoiceImg.Name = "AddInvoiceImg";
             AddInvoiceImg.Size = new Size(64, 52);
             AddInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -310,23 +336,25 @@
             // 
             AddSupplierBtn.BackColor = Color.FromArgb(224, 224, 224);
             AddSupplierBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            AddSupplierBtn.Location = new Point(1073, 289);
+            AddSupplierBtn.Location = new Point(1073, 324);
             AddSupplierBtn.Name = "AddSupplierBtn";
             AddSupplierBtn.Size = new Size(130, 52);
             AddSupplierBtn.TabIndex = 2;
             AddSupplierBtn.Text = "اضافة موزع ";
             AddSupplierBtn.UseVisualStyleBackColor = false;
+            AddSupplierBtn.Click += AddSupplierBtn_Click;
             // 
             // DeleteSupplierBtn
             // 
             DeleteSupplierBtn.BackColor = Color.FromArgb(224, 224, 224);
             DeleteSupplierBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            DeleteSupplierBtn.Location = new Point(298, 289);
+            DeleteSupplierBtn.Location = new Point(298, 324);
             DeleteSupplierBtn.Name = "DeleteSupplierBtn";
             DeleteSupplierBtn.Size = new Size(130, 52);
             DeleteSupplierBtn.TabIndex = 1;
             DeleteSupplierBtn.Text = "مسح موزع";
             DeleteSupplierBtn.UseVisualStyleBackColor = false;
+            DeleteSupplierBtn.Click += DeleteSupplierBtn_Click;
             // 
             // SuppliersGridView
             // 
@@ -375,9 +403,11 @@
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
             SuppliersGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             SuppliersGridView.ScrollBars = ScrollBars.Vertical;
+            SuppliersGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             SuppliersGridView.Size = new Size(1502, 243);
             SuppliersGridView.TabIndex = 2;
             SuppliersGridView.DataBindingComplete += InvoicesGridView_DataBindingComplete;
+            SuppliersGridView.SelectionChanged += SuppliersGridView_SelectionChanged;
             // 
             // AdminSuppliersForm
             // 
@@ -430,9 +460,11 @@
         private Label SupplierCompanyTxt;
         private TextBox SupplierPhoneTxt;
         private TextBox SupplierAddressTxt;
-        private TextBox textBox1;
+        private TextBox SupplierCompanyFollowedTxt;
         private PictureBox CloseFormBtn;
         private PictureBox MinimizeBtn;
         private PictureBox Logoutbtn;
+        private TextBox SupplierRemainigBalanceTxt;
+        private Label label4;
     }
 }
