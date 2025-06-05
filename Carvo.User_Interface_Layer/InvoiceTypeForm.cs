@@ -75,7 +75,12 @@ namespace Carvo.User_Interface_Layer
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Handles the click event for the PrevFormBtn button.
+        /// Navigates the user back to the Employee Dashboard form.
+        /// </summary>
+        /// <param name="sender">The source of the event (Back button).</param>
+        /// <param name="e">Event data for the click event.</param>
         private void PrevFormBtn_Click(object sender, EventArgs e)
 
         {
@@ -83,7 +88,12 @@ namespace Carvo.User_Interface_Layer
             EmployeeForm.Show();
             this.Hide();
         }
-
+        /// <summary>
+        /// Handles the click event for the Logout button.
+        /// Logs the user out and navigates to the main window form.
+        /// </summary>
+        /// <param name="sender">The source of the event (Logout button).</param>
+        /// <param name="e">Event data for the click event.</param>
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
             var mainWindow = _serviceProvider.GetService(typeof(MainWindowFrom)) as MainWindowFrom;
@@ -95,7 +105,7 @@ namespace Carvo.User_Interface_Layer
         {
 
         }
-        // Win32 API - لتحريك الفورم يدويًا
+      
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
