@@ -23,7 +23,6 @@ namespace Carvo.User_Interface_Layer
 {
     public partial class VehicleDashboardForm : Form
     {
-        IServiceProvider serviceProvider; // to provide services to the form
         private IVehicleService _vehicleService; //have a service to handle vehicle data
         private ICustomerService _customerService;
         public VehicleDashboardForm(IVehicleService vehicleService, ICustomerService customerService)
@@ -39,94 +38,10 @@ namespace Carvo.User_Interface_Layer
             this.Load += async (s, e) => await LoadDataVehicles(); // load vehicles when the form loads
 
         }
-        private void SetupDataGridViewLayout()
-        {
-            int horizontalPadding = 30;
-
-            VehicleGridView.Left = horizontalPadding;
-            VehicleGridView.Width = this.ClientSize.Width - (horizontalPadding * 2);
-
-
-            VehicleGridView.Height = this.ClientSize.Height - VehicleGridView.Top - 50;
-
-
-            VehicleGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            VehicleGridView.AllowUserToAddRows = false;
-            VehicleGridView.AllowUserToResizeRows = false;
-            VehicleGridView.ReadOnly = true;
-            VehicleGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            VehicleGridView.MultiSelect = false;
-            VehicleGridView.ScrollBars = ScrollBars.Vertical;
-
-
-            VehicleGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(48, 67, 87);// dark blue color for headers
-            VehicleGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            VehicleGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 10, FontStyle.Bold);
-            VehicleGridView.EnableHeadersVisualStyles = false;
-
-
-            // VehicleGridView.DefaultCellStyle.Font = new Font("Tahoma", 10);
-            VehicleGridView.DefaultCellStyle.Font = new Font("Tahoma", 10, FontStyle.Regular);
-            //VehicleGridView.DefaultCellStyle.SelectionBackColor = Color.White;
-            //VehicleGridView.DefaultCellStyle.SelectionForeColor = Color.Black;
-            //VehicleGridView.DefaultCellStyle.BackColor = Color.Magenta;
-            //VehicleGridView.DefaultCellStyle.ForeColor = Color.SlateGray;
-
-            VehicleGridView.DefaultCellStyle.ForeColor = Color.FromArgb(80, 90, 110); // الجديد
-            VehicleGridView.DefaultCellStyle.BackColor = Color.FromArgb(196, 196, 223); // Lavender Gray
-            VehicleGridView.DefaultCellStyle.SelectionBackColor = Color.FromArgb(106, 90, 205); // Slate Blue
-            VehicleGridView.DefaultCellStyle.SelectionForeColor = Color.White;
-
-
-            VehicleGridView.GridColor = Color.LightGray;
-
-            VehicleGridView.RowHeadersVisible = false;
-        }
-
-
-
-
-
-
-        private async Task CustomerDashboardForm_LoadAsync(object sender, EventArgs e)
-        {
-            UIHelper.SetupDataGridView(VehicleGridView);
-
-            // apply rounded corners to the form
-            foreach (Control ctrl in this.Controls)
-            {
-                if (ctrl is TextBox || ctrl is Button)
-                {
-                    UIHelper.MakeControlRounded(ctrl, 16); // degree of rounding
-                }
-            }
-
-
-
-            // to icrease the height of the DataGridView to fit all rows
-            VehicleGridView.Height = VehicleGridView.Rows.GetRowsHeight(DataGridViewElementStates.Visible)
-                                  + VehicleGridView.ColumnHeadersHeight;
-
-            // to set the form height to fit the DataGridView and add some padding
-            this.Height = VehicleGridView.Bottom + 50; // empty space at the bottom
-
-
-        }
-
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
 
         private async void AddBtn_Click(object sender, EventArgs e)
         {
-           
+
             try
             {
                 string _PlateNumber = VehiclePlateTxt.Text;
@@ -165,14 +80,14 @@ namespace Carvo.User_Interface_Layer
             if (ValidateVehicle(_Name, _PlateNumber, _Model))
             {
 
-                if (VehicleGridView.SelectedRows.Count == 0)
+                if (VehiclesGridView.SelectedRows.Count == 0)
                 {
                     MessageBox.Show("من فضلك اختر السيارة التي تريد تعديلها.");
                     return;
                 }
 
 
-                var selectedRow = VehicleGridView.SelectedRows[0];
+                var selectedRow = VehiclesGridView.SelectedRows[0];
                 int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
 
@@ -198,21 +113,13 @@ namespace Carvo.User_Interface_Layer
 
         private async void DeleteBtn_Click(object sender, EventArgs e)
         {
-            //    var selectedRow = VehicleGridView.SelectedRows[0];
-            //    int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
-            //    var confirmResult = MessageBox.Show("هل أنت متأكد من حذف السيارة؟", "تأكيد الحذف", MessageBoxButtons.YesNo);
-            //    if (confirmResult == DialogResult.Yes)
-            //    {
-            //        await _vehicleService.DeleteVehicleAsync(id);
-            //        await LoadDataVehicles();
-            //    }
-            if (VehicleGridView.SelectedRows.Count == 0)
+            if (VehiclesGridView.SelectedRows.Count == 0)
             {
                 MessageBox.Show("الرجاء اختيار سيارة للحذف.", "تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var selectedRow = VehicleGridView.SelectedRows[0];
+            var selectedRow = VehiclesGridView.SelectedRows[0];
             int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
 
             var confirmResult = MessageBox.Show("هل أنت متأكد من حذف السيارة؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -235,12 +142,13 @@ namespace Carvo.User_Interface_Layer
 
         private void VehicleGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if (VehicleGridView.SelectedRows.Count > 0)
+            if (VehiclesGridView.SelectedRows.Count > 0)
             {
-                var selectedRow = VehicleGridView.SelectedRows[0];
-                string _Name = (string)selectedRow.Cells["VehicleName"].Value;
-                string _Model = (string)selectedRow.Cells["VehicleModel"].Value;
-                string _platNumber = (string)selectedRow.Cells["PlatNumber"].Value;
+
+                var selectedRow = VehiclesGridView.SelectedRows[0];
+                string _Name = (string)selectedRow.Cells["Name"].Value;
+                string _Model = (string)selectedRow.Cells["Model"].Value;
+                string _platNumber = (string)selectedRow.Cells["PlateNumber"].Value;
                 string _CustomerName = (string)selectedRow.Cells["CustomerName"].Value;
 
                 VehicleNameTxt.Text = _Name; // set the text of the name textbox
@@ -300,28 +208,20 @@ namespace Carvo.User_Interface_Layer
 
 
 
-                VehicleGridView.DataSource = null;
-                VehicleGridView.DataSource = vehicles;
+                VehiclesGridView.DataSource = null;
+                VehiclesGridView.DataSource = vehicles;
 
 
                 CustomerComboBox.DataSource = customers.ToList();
-                SetupDataGridViewLayout();
+                //SetupDataGridViewLayout();
                 CustomerComboBox.DisplayMember = "Name";
                 CustomerComboBox.ValueMember = "Id";
-                VehicleGridView.Columns["ID"].Visible = false;
+                VehiclesGridView.Columns["ID"].Visible = false;
 
-                VehicleGridView.Columns[4].HeaderText = "اسم العميل";
-                VehicleGridView.Columns[3].HeaderText = "رقم اللوحة";
-                VehicleGridView.Columns[2].HeaderText = "موديل المركبة ";
-                VehicleGridView.Columns[1].HeaderText = "اسم المركبة ";
-
-
-
-
-
-
-
-
+                VehiclesGridView.Columns[4].HeaderText = "اسم العميل";
+                VehiclesGridView.Columns[3].HeaderText = "رقم اللوحة";
+                VehiclesGridView.Columns[2].HeaderText = "موديل المركبة ";
+                VehiclesGridView.Columns[1].HeaderText = "اسم المركبة ";
             }
             catch (Exception ex)
             {
@@ -329,20 +229,7 @@ namespace Carvo.User_Interface_Layer
             }
         }
 
-        private void DeleteBtn_Click_1(object sender, EventArgs e)
-        {
 
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void VehicleDashboardForm_Load(object sender, EventArgs e)
-        {
-
-        }
         // Win32 API - لتحريك الفورم يدويًا
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
@@ -360,6 +247,16 @@ namespace Carvo.User_Interface_Layer
                 ReleaseCapture();
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
+        }
+
+        private void CloseFormBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizeBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

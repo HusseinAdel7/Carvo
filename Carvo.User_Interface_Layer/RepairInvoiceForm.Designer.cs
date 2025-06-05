@@ -30,146 +30,227 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RepairInvoiceForm));
             panel2 = new Panel();
-            label6 = new Label();
+            textBox1 = new TextBox();
             label5 = new Label();
-            button1 = new Button();
-            label4 = new Label();
-            label3 = new Label();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            label7 = new Label();
+            label6 = new Label();
+            DeleteCustomerImg = new PictureBox();
+            DeleteInvoiceBtn = new Button();
+            PrintInvoiceImg = new PictureBox();
+            PrintInvoice = new Button();
+            UpdateInvoiceImg = new PictureBox();
+            UpdateInvoiceBtn = new Button();
+            AddInvoiceImg = new PictureBox();
+            AddInvoiceBtn = new Button();
+            RepairPriceNumeric = new NumericUpDown();
+            VehicleDropDownList = new ComboBox();
+            CustomerDropdowwnList = new ComboBox();
             panel1 = new Panel();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
+            CloseFormBtn = new PictureBox();
+            MinimizeFormBtn = new PictureBox();
+            PrevFormBtn = new PictureBox();
+            LogOutBtn = new PictureBox();
             label1 = new Label();
-            button6 = new Button();
             dataGridView1 = new DataGridView();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            button7 = new Button();
-            button8 = new Button();
-            numericUpDown1 = new NumericUpDown();
             label2 = new Label();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DeleteCustomerImg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PrintInvoiceImg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)UpdateInvoiceImg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AddInvoiceImg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)RepairPriceNumeric).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MinimizeFormBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PrevFormBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LogOutBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(48, 67, 87);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(numericUpDown1);
-            panel2.Controls.Add(pictureBox2);
-            panel2.Controls.Add(pictureBox1);
-            panel2.Controls.Add(button7);
-            panel2.Controls.Add(button8);
-            panel2.Controls.Add(button6);
-            panel2.Controls.Add(label6);
+            panel2.Controls.Add(textBox1);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(button1);
-            panel2.Controls.Add(label4);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(comboBox2);
-            panel2.Controls.Add(comboBox1);
-            panel2.Location = new Point(0, 129);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(DeleteCustomerImg);
+            panel2.Controls.Add(DeleteInvoiceBtn);
+            panel2.Controls.Add(PrintInvoiceImg);
+            panel2.Controls.Add(PrintInvoice);
+            panel2.Controls.Add(UpdateInvoiceImg);
+            panel2.Controls.Add(UpdateInvoiceBtn);
+            panel2.Controls.Add(AddInvoiceImg);
+            panel2.Controls.Add(AddInvoiceBtn);
+            panel2.Controls.Add(RepairPriceNumeric);
+            panel2.Controls.Add(VehicleDropDownList);
+            panel2.Controls.Add(CustomerDropdowwnList);
+            panel2.Location = new Point(0, 119);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1508, 190);
+            panel2.Size = new Size(1508, 303);
             panel2.TabIndex = 6;
             // 
-            // label6
+            // textBox1
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.FromArgb(244, 244, 244);
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
-            label6.ForeColor = Color.FromArgb(48, 67, 87);
-            label6.Location = new Point(1292, 78);
-            label6.Name = "label6";
-            label6.Size = new Size(104, 28);
-            label6.TabIndex = 10;
-            label6.Text = "نوع المركبة";
+            textBox1.Location = new Point(961, 50);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(309, 27);
+            textBox1.TabIndex = 30;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.BackColor = Color.FromArgb(244, 244, 244);
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
-            label5.ForeColor = Color.FromArgb(48, 67, 87);
-            label5.Location = new Point(683, 78);
+            label5.ForeColor = Color.FromArgb(244, 244, 244);
+            label5.Location = new Point(640, 105);
             label5.Name = "label5";
-            label5.Size = new Size(81, 28);
-            label5.TabIndex = 9;
-            label5.Text = "المشتري";
+            label5.Size = new Size(127, 28);
+            label5.TabIndex = 29;
+            label5.Text = "سعر الصيانة :";
             // 
-            // button1
+            // label7
             // 
-            button1.BackColor = Color.FromArgb(244, 244, 244);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(1406, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(50, 50);
-            button1.TabIndex = 1;
-            button1.UseVisualStyleBackColor = false;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
+            label7.ForeColor = Color.FromArgb(244, 244, 244);
+            label7.Location = new Point(1359, 101);
+            label7.Name = "label7";
+            label7.Size = new Size(79, 28);
+            label7.TabIndex = 28;
+            label7.Text = "العميل :";
             // 
-            // label4
+            // label6
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.FromArgb(244, 244, 244);
-            label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 178);
-            label4.ForeColor = Color.FromArgb(48, 67, 87);
-            label4.Location = new Point(705, 199);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 23);
-            label4.TabIndex = 5;
-            label4.Text = "1234";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
+            label6.ForeColor = Color.FromArgb(244, 244, 244);
+            label6.Location = new Point(646, 46);
+            label6.Name = "label6";
+            label6.Size = new Size(121, 28);
+            label6.TabIndex = 27;
+            label6.Text = "نوع المركبة : ";
             // 
-            // label3
+            // DeleteCustomerImg
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(244, 244, 244);
-            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 178);
-            label3.ForeColor = Color.FromArgb(48, 67, 87);
-            label3.Location = new Point(848, 199);
-            label3.Name = "label3";
-            label3.Size = new Size(156, 23);
-            label3.TabIndex = 3;
-            label3.Text = "اجمالي سعر الصيانة ";
+            DeleteCustomerImg.Image = (Image)resources.GetObject("DeleteCustomerImg.Image");
+            DeleteCustomerImg.Location = new Point(233, 211);
+            DeleteCustomerImg.Name = "DeleteCustomerImg";
+            DeleteCustomerImg.Size = new Size(64, 52);
+            DeleteCustomerImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            DeleteCustomerImg.TabIndex = 26;
+            DeleteCustomerImg.TabStop = false;
             // 
-            // comboBox2
+            // DeleteInvoiceBtn
             // 
-            comboBox2.BackColor = SystemColors.ActiveCaption;
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "عربية ", "موتوسيكل ", "عجلة" });
-            comboBox2.Location = new Point(909, 82);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(268, 28);
-            comboBox2.TabIndex = 1;
+            DeleteInvoiceBtn.BackColor = Color.FromArgb(224, 224, 224);
+            DeleteInvoiceBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            DeleteInvoiceBtn.Location = new Point(97, 211);
+            DeleteInvoiceBtn.Name = "DeleteInvoiceBtn";
+            DeleteInvoiceBtn.Size = new Size(130, 52);
+            DeleteInvoiceBtn.TabIndex = 25;
+            DeleteInvoiceBtn.Text = "مسح فاتورة";
+            DeleteInvoiceBtn.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // PrintInvoiceImg
             // 
-            comboBox1.BackColor = SystemColors.ActiveCaption;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Customer1", "Customer2", "Customer3", "Customer4", "Customer5", "" });
-            comboBox1.Location = new Point(365, 78);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(253, 28);
-            comboBox1.TabIndex = 0;
+            PrintInvoiceImg.Image = (Image)resources.GetObject("PrintInvoiceImg.Image");
+            PrintInvoiceImg.Location = new Point(1350, 211);
+            PrintInvoiceImg.Name = "PrintInvoiceImg";
+            PrintInvoiceImg.Size = new Size(64, 52);
+            PrintInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            PrintInvoiceImg.TabIndex = 24;
+            PrintInvoiceImg.TabStop = false;
+            // 
+            // PrintInvoice
+            // 
+            PrintInvoice.BackColor = Color.FromArgb(224, 224, 224);
+            PrintInvoice.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            PrintInvoice.Location = new Point(1214, 211);
+            PrintInvoice.Name = "PrintInvoice";
+            PrintInvoice.Size = new Size(130, 52);
+            PrintInvoice.TabIndex = 23;
+            PrintInvoice.Text = "طباعة";
+            PrintInvoice.UseVisualStyleBackColor = false;
+            // 
+            // UpdateInvoiceImg
+            // 
+            UpdateInvoiceImg.Image = (Image)resources.GetObject("UpdateInvoiceImg.Image");
+            UpdateInvoiceImg.Location = new Point(512, 211);
+            UpdateInvoiceImg.Name = "UpdateInvoiceImg";
+            UpdateInvoiceImg.Size = new Size(64, 52);
+            UpdateInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            UpdateInvoiceImg.TabIndex = 22;
+            UpdateInvoiceImg.TabStop = false;
+            // 
+            // UpdateInvoiceBtn
+            // 
+            UpdateInvoiceBtn.BackColor = Color.FromArgb(224, 224, 224);
+            UpdateInvoiceBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            UpdateInvoiceBtn.Location = new Point(376, 211);
+            UpdateInvoiceBtn.Name = "UpdateInvoiceBtn";
+            UpdateInvoiceBtn.Size = new Size(130, 52);
+            UpdateInvoiceBtn.TabIndex = 21;
+            UpdateInvoiceBtn.Text = "تحديث فاتورة";
+            UpdateInvoiceBtn.UseVisualStyleBackColor = false;
+            // 
+            // AddInvoiceImg
+            // 
+            AddInvoiceImg.Image = (Image)resources.GetObject("AddInvoiceImg.Image");
+            AddInvoiceImg.Location = new Point(782, 211);
+            AddInvoiceImg.Name = "AddInvoiceImg";
+            AddInvoiceImg.Size = new Size(64, 52);
+            AddInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            AddInvoiceImg.TabIndex = 20;
+            AddInvoiceImg.TabStop = false;
+            // 
+            // AddInvoiceBtn
+            // 
+            AddInvoiceBtn.BackColor = Color.FromArgb(224, 224, 224);
+            AddInvoiceBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            AddInvoiceBtn.Location = new Point(646, 211);
+            AddInvoiceBtn.Name = "AddInvoiceBtn";
+            AddInvoiceBtn.Size = new Size(130, 52);
+            AddInvoiceBtn.TabIndex = 19;
+            AddInvoiceBtn.Text = "اضافة فاتورة ";
+            AddInvoiceBtn.UseVisualStyleBackColor = false;
+            // 
+            // RepairPriceNumeric
+            // 
+            RepairPriceNumeric.Location = new Point(268, 106);
+            RepairPriceNumeric.Name = "RepairPriceNumeric";
+            RepairPriceNumeric.Size = new Size(309, 27);
+            RepairPriceNumeric.TabIndex = 17;
+            // 
+            // VehicleDropDownList
+            // 
+            VehicleDropDownList.BackColor = SystemColors.ActiveCaption;
+            VehicleDropDownList.DropDownStyle = ComboBoxStyle.DropDownList;
+            VehicleDropDownList.FormattingEnabled = true;
+            VehicleDropDownList.Items.AddRange(new object[] { "عربية ", "موتوسيكل ", "عجلة" });
+            VehicleDropDownList.Location = new Point(268, 50);
+            VehicleDropDownList.Name = "VehicleDropDownList";
+            VehicleDropDownList.Size = new Size(309, 28);
+            VehicleDropDownList.TabIndex = 1;
+            // 
+            // CustomerDropdowwnList
+            // 
+            CustomerDropdowwnList.BackColor = SystemColors.ActiveCaption;
+            CustomerDropdowwnList.DropDownStyle = ComboBoxStyle.DropDownList;
+            CustomerDropdowwnList.FormattingEnabled = true;
+            CustomerDropdowwnList.Items.AddRange(new object[] { "Customer1", "Customer2", "Customer3", "Customer4", "Customer5", "" });
+            CustomerDropdowwnList.Location = new Point(961, 105);
+            CustomerDropdowwnList.Name = "CustomerDropdowwnList";
+            CustomerDropdowwnList.Size = new Size(309, 28);
+            CustomerDropdowwnList.TabIndex = 0;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(48, 67, 87);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(CloseFormBtn);
+            panel1.Controls.Add(MinimizeFormBtn);
+            panel1.Controls.Add(PrevFormBtn);
+            panel1.Controls.Add(LogOutBtn);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -178,148 +259,85 @@
             panel1.TabIndex = 5;
             panel1.MouseDown += panel1_MouseDown;
             // 
-            // button5
+            // CloseFormBtn
             // 
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.Location = new Point(1428, 8);
-            button5.Name = "button5";
-            button5.Size = new Size(50, 50);
-            button5.TabIndex = 5;
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            CloseFormBtn.Image = (Image)resources.GetObject("CloseFormBtn.Image");
+            CloseFormBtn.Location = new Point(1426, 29);
+            CloseFormBtn.Name = "CloseFormBtn";
+            CloseFormBtn.Size = new Size(50, 50);
+            CloseFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            CloseFormBtn.TabIndex = 13;
+            CloseFormBtn.TabStop = false;
+            CloseFormBtn.Click += CloseFormBtn_Click;
             // 
-            // button4
+            // MinimizeFormBtn
             // 
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(1372, 8);
-            button4.Name = "button4";
-            button4.Size = new Size(50, 50);
-            button4.TabIndex = 4;
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            MinimizeFormBtn.Image = (Image)resources.GetObject("MinimizeFormBtn.Image");
+            MinimizeFormBtn.Location = new Point(1327, 29);
+            MinimizeFormBtn.Name = "MinimizeFormBtn";
+            MinimizeFormBtn.Size = new Size(50, 50);
+            MinimizeFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            MinimizeFormBtn.TabIndex = 12;
+            MinimizeFormBtn.TabStop = false;
+            MinimizeFormBtn.Click += MinimizeFormBtn_Click;
             // 
-            // button3
+            // PrevFormBtn
             // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(12, 9);
-            button3.Name = "button3";
-            button3.Size = new Size(50, 50);
-            button3.TabIndex = 3;
-            button3.UseVisualStyleBackColor = true;
+            PrevFormBtn.Image = (Image)resources.GetObject("PrevFormBtn.Image");
+            PrevFormBtn.Location = new Point(130, 29);
+            PrevFormBtn.Name = "PrevFormBtn";
+            PrevFormBtn.Size = new Size(50, 50);
+            PrevFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            PrevFormBtn.TabIndex = 11;
+            PrevFormBtn.TabStop = false;
             // 
-            // button2
+            // LogOutBtn
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(87, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(60, 60);
-            button2.TabIndex = 2;
-            button2.UseVisualStyleBackColor = false;
+            LogOutBtn.Image = (Image)resources.GetObject("LogOutBtn.Image");
+            LogOutBtn.Location = new Point(32, 29);
+            LogOutBtn.Name = "LogOutBtn";
+            LogOutBtn.Size = new Size(50, 50);
+            LogOutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            LogOutBtn.TabIndex = 10;
+            LogOutBtn.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 178);
             label1.ForeColor = Color.FromArgb(244, 244, 244);
-            label1.Location = new Point(668, 50);
+            label1.Location = new Point(666, 29);
             label1.Name = "label1";
-            label1.Size = new Size(121, 28);
-            label1.TabIndex = 0;
+            label1.Size = new Size(238, 54);
+            label1.TabIndex = 9;
             label1.Text = "فاتورة صيانة ";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // button6
-            // 
-            button6.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 178);
-            button6.ForeColor = Color.FromArgb(48, 67, 87);
-            button6.Location = new Point(1264, 4);
-            button6.Name = "button6";
-            button6.Size = new Size(132, 50);
-            button6.TabIndex = 11;
-            button6.Text = "استخراج الفاتورة";
-            button6.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 328);
+            dataGridView1.Location = new Point(0, 428);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1508, 267);
+            dataGridView1.Size = new Size(1530, 267);
             dataGridView1.TabIndex = 7;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(149, 18);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(50, 50);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 16;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(140, 123);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(50, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 15;
-            pictureBox1.TabStop = false;
-            // 
-            // button7
-            // 
-            button7.BackColor = Color.FromArgb(244, 244, 244);
-            button7.Location = new Point(22, 123);
-            button7.Name = "button7";
-            button7.Size = new Size(112, 50);
-            button7.TabIndex = 14;
-            button7.Text = "تحديث";
-            button7.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            button8.BackColor = Color.FromArgb(244, 244, 244);
-            button8.Location = new Point(22, 18);
-            button8.Name = "button8";
-            button8.Size = new Size(112, 50);
-            button8.TabIndex = 13;
-            button8.Text = "إضافة";
-            button8.UseVisualStyleBackColor = false;
-            // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(1027, 146);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(150, 27);
-            numericUpDown1.TabIndex = 17;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(244, 244, 244);
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 178);
-            label2.ForeColor = Color.FromArgb(48, 67, 87);
-            label2.Location = new Point(1277, 141);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
+            label2.ForeColor = Color.FromArgb(244, 244, 244);
+            label2.Location = new Point(1083, 9);
             label2.Name = "label2";
-            label2.Size = new Size(119, 28);
-            label2.TabIndex = 18;
-            label2.Text = "سعر التصليح";
+            label2.Size = new Size(187, 28);
+            label2.TabIndex = 31;
+            label2.Text = "تصفية العملاء بالاسم";
             // 
             // RepairInvoiceForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1508, 594);
+            ClientSize = new Size(1508, 707);
             Controls.Add(dataGridView1);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -332,38 +350,46 @@
             Load += RepairInvoiceForm_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DeleteCustomerImg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PrintInvoiceImg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)UpdateInvoiceImg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AddInvoiceImg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)RepairPriceNumeric).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)CloseFormBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MinimizeFormBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PrevFormBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LogOutBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel2;
-        private Label label6;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox VehicleDropDownList;
+        private ComboBox CustomerDropdowwnList;
         private Panel panel1;
-        private Button button2;
-        private Label label1;
-        private Button button1;
-        private Button button3;
-        private Button button5;
-        private Button button4;
-        private Button button6;
         private DataGridView dataGridView1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
-        private Button button7;
-        private Button button8;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown RepairPriceNumeric;
+        private PictureBox DeleteCustomerImg;
+        private Button DeleteInvoiceBtn;
+        private PictureBox PrintInvoiceImg;
+        private Button PrintInvoice;
+        private PictureBox UpdateInvoiceImg;
+        private Button UpdateInvoiceBtn;
+        private PictureBox AddInvoiceImg;
+        private Button AddInvoiceBtn;
+        private PictureBox CloseFormBtn;
+        private PictureBox MinimizeFormBtn;
+        private PictureBox PrevFormBtn;
+        private PictureBox LogOutBtn;
+        private Label label1;
+        private Label label7;
+        private Label label6;
+        private TextBox textBox1;
+        private Label label5;
         private Label label2;
     }
 }
