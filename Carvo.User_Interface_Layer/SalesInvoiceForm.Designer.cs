@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesInvoiceForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             label1 = new Label();
             panel1 = new Panel();
             CloseFormBtn = new PictureBox();
@@ -45,7 +45,7 @@
             DeleteCustomerImg = new PictureBox();
             DeleteInvoiceBtn = new Button();
             pictureBox1 = new PictureBox();
-            button3 = new Button();
+            ExtractInvoiceBtn = new Button();
             AddCustomerImg = new PictureBox();
             AddInvoiceBtn = new Button();
             label6 = new Label();
@@ -147,7 +147,7 @@
             panel2.Controls.Add(DeleteCustomerImg);
             panel2.Controls.Add(DeleteInvoiceBtn);
             panel2.Controls.Add(pictureBox1);
-            panel2.Controls.Add(button3);
+            panel2.Controls.Add(ExtractInvoiceBtn);
             panel2.Controls.Add(AddCustomerImg);
             panel2.Controls.Add(AddInvoiceBtn);
             panel2.Controls.Add(label6);
@@ -205,16 +205,17 @@
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
             // 
-            // button3
+            // ExtractInvoiceBtn
             // 
-            button3.BackColor = Color.FromArgb(224, 224, 224);
-            button3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            button3.Location = new Point(1150, 296);
-            button3.Name = "button3";
-            button3.Size = new Size(130, 52);
-            button3.TabIndex = 11;
-            button3.Text = "طباعة";
-            button3.UseVisualStyleBackColor = false;
+            ExtractInvoiceBtn.BackColor = Color.FromArgb(224, 224, 224);
+            ExtractInvoiceBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            ExtractInvoiceBtn.Location = new Point(1150, 296);
+            ExtractInvoiceBtn.Name = "ExtractInvoiceBtn";
+            ExtractInvoiceBtn.Size = new Size(130, 52);
+            ExtractInvoiceBtn.TabIndex = 11;
+            ExtractInvoiceBtn.Text = "استخراج";
+            ExtractInvoiceBtn.UseVisualStyleBackColor = false;
+            ExtractInvoiceBtn.Click += ExtractInvoiceBtn_Click;
             // 
             // AddCustomerImg
             // 
@@ -317,49 +318,49 @@
             // SalesInvoiceGridView
             // 
             SalesInvoiceGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = SystemColors.ButtonFace;
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.CornflowerBlue;
-            SalesInvoiceGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = SystemColors.ButtonFace;
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.CornflowerBlue;
+            SalesInvoiceGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             SalesInvoiceGridView.Anchor = AnchorStyles.None;
             SalesInvoiceGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             SalesInvoiceGridView.BorderStyle = BorderStyle.None;
             SalesInvoiceGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 67, 87);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            SalesInvoiceGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(48, 67, 87);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            SalesInvoiceGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             SalesInvoiceGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new Padding(0, 2, 2, 2);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            SalesInvoiceGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new Padding(0, 2, 2, 2);
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            SalesInvoiceGridView.DefaultCellStyle = dataGridViewCellStyle8;
             SalesInvoiceGridView.EnableHeadersVisualStyles = false;
             SalesInvoiceGridView.Location = new Point(12, 537);
             SalesInvoiceGridView.MaximumSize = new Size(1502, 243);
             SalesInvoiceGridView.Name = "SalesInvoiceGridView";
             SalesInvoiceGridView.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            SalesInvoiceGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            SalesInvoiceGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             SalesInvoiceGridView.RowHeadersVisible = false;
             SalesInvoiceGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
-            SalesInvoiceGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleRight;
+            SalesInvoiceGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             SalesInvoiceGridView.ScrollBars = ScrollBars.Vertical;
             SalesInvoiceGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             SalesInvoiceGridView.Size = new Size(1502, 243);
@@ -410,7 +411,7 @@
         private Label label6;
         private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
         private PictureBox pictureBox1;
-        private Button button3;
+        private Button ExtractInvoiceBtn;
         private PictureBox AddCustomerImg;
         private Button AddInvoiceBtn;
         private PictureBox LogOutBtn;

@@ -55,7 +55,10 @@ namespace Carvo.User_Interface_Layer
                      services.AddTransient<UpdateAlertForm>();
                      services.AddTransient<VehicleDashboardForm>();
                      services.AddTransient<EmployeeDashboardForm>();
+                     services.AddTransient<PaidSalesInvoiceForm>();
                      services.AddTransient<IUserService , UserService>();
+                     
+
 
 
 
@@ -147,22 +150,23 @@ namespace Carvo.User_Interface_Layer
             //Application.Run(adminProductsForm);
             //Application.Run(adminSuppliersForm);
             //Application.Run(vehicleDashboardForm);
-            //Application.Run(alertIncompleteInformationForm);
-            //Application.Run(alertSelectAndDeleteForm);
-            //Application.Run(confirmationForm);
+
             //Application.Run(customerDashboardForm);
             //Application.Run(dashboardForm);
-            //Application.Run(deleteAlertForm);
+
             //Application.Run(homeDashboardForm);
             //Application.Run(invoiceForm);
             //Application.Run(invoiceTypeForm);
-            Application.Run(mainWindowFrom);
+            //Application.Run(mainWindowFrom);
             //Application.Run(repairInvoiceForm);
-            //Application.Run(salesInvoiceForm);
+            Application.Run(salesInvoiceForm);
             //Application.Run(updateAlertForm);
             //Application.Run(employeeDashboardForm);
 
-
+            //Application.Run(alertIncompleteInformationForm);
+            //Application.Run(alertSelectAndDeleteForm);
+            //Application.Run(confirmationForm);
+            //Application.Run(deleteAlertForm);
 
 
         }
