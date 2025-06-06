@@ -79,9 +79,9 @@ namespace Carvo.User_Interface_Layer
             loginform.role = _role;
 
             // Hide the main window, show login form modally, then show main again
+           
+            loginform.Show();
             this.Hide();
-            loginform.ShowDialog();
-            this.Show();
         }
     }
 }
