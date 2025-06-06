@@ -31,32 +31,32 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeDashboardForm));
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
+            ManageInvoicesBtn = new Button();
+            ManageInvoicesImgBtn = new PictureBox();
             panel2 = new Panel();
+            ManageCustomersBtn = new Button();
+            ManageCustomersImgBtn = new PictureBox();
             panel3 = new Panel();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
+            ManageVehiclesBtn = new Button();
+            ManageVehiclesImgBtn = new PictureBox();
             panel4 = new Panel();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            label4 = new Label();
+            WelcomeMsgLabel = new Label();
+            PrevFormBtn = new PictureBox();
+            MinimizeFormBtn = new PictureBox();
+            CloseFormBtn = new PictureBox();
+            LogoutBtn = new PictureBox();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ManageInvoicesImgBtn).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ManageCustomersImgBtn).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ManageVehiclesImgBtn).BeginInit();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PrevFormBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MinimizeFormBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LogoutBtn).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -75,196 +75,200 @@
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20.166666F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 79.8333359F));
-            tableLayoutPanel1.Size = new Size(1340, 600);
+            tableLayoutPanel1.Size = new Size(1518, 600);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(ManageInvoicesBtn);
+            panel1.Controls.Add(ManageInvoicesImgBtn);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 124);
             panel1.Name = "panel1";
-            panel1.Size = new Size(440, 473);
+            panel1.Size = new Size(500, 473);
             panel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // ManageInvoicesBtn
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(165, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(249, 223);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            ManageInvoicesBtn.BackColor = Color.FromArgb(224, 224, 224);
+            ManageInvoicesBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            ManageInvoicesBtn.Location = new Point(155, 336);
+            ManageInvoicesBtn.Name = "ManageInvoicesBtn";
+            ManageInvoicesBtn.Size = new Size(249, 52);
+            ManageInvoicesBtn.TabIndex = 17;
+            ManageInvoicesBtn.Text = "ادارة الفواتير";
+            ManageInvoicesBtn.UseVisualStyleBackColor = false;
+            ManageInvoicesBtn.Click += ManageInvoicesBtn_Click;
+            // 
+            // ManageInvoicesImgBtn
+            // 
+            ManageInvoicesImgBtn.Image = (Image)resources.GetObject("ManageInvoicesImgBtn.Image");
+            ManageInvoicesImgBtn.Location = new Point(155, 27);
+            ManageInvoicesImgBtn.Name = "ManageInvoicesImgBtn";
+            ManageInvoicesImgBtn.Size = new Size(249, 223);
+            ManageInvoicesImgBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            ManageInvoicesImgBtn.TabIndex = 0;
+            ManageInvoicesImgBtn.TabStop = false;
+            ManageInvoicesImgBtn.Click += ManageInvoicesBtn_Click;
             // 
             // panel2
             // 
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(pictureBox2);
+            panel2.Controls.Add(ManageCustomersBtn);
+            panel2.Controls.Add(ManageCustomersImgBtn);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(449, 124);
+            panel2.Location = new Point(509, 124);
             panel2.Name = "panel2";
-            panel2.Size = new Size(440, 473);
+            panel2.Size = new Size(499, 473);
             panel2.TabIndex = 1;
+            // 
+            // ManageCustomersBtn
+            // 
+            ManageCustomersBtn.BackColor = Color.FromArgb(224, 224, 224);
+            ManageCustomersBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            ManageCustomersBtn.Location = new Point(131, 336);
+            ManageCustomersBtn.Name = "ManageCustomersBtn";
+            ManageCustomersBtn.Size = new Size(249, 52);
+            ManageCustomersBtn.TabIndex = 18;
+            ManageCustomersBtn.Text = "ادارة العملاء";
+            ManageCustomersBtn.UseVisualStyleBackColor = false;
+            ManageCustomersBtn.Click += ManageCustomersBtn_Click;
+            // 
+            // ManageCustomersImgBtn
+            // 
+            ManageCustomersImgBtn.Image = (Image)resources.GetObject("ManageCustomersImgBtn.Image");
+            ManageCustomersImgBtn.Location = new Point(131, 27);
+            ManageCustomersImgBtn.Name = "ManageCustomersImgBtn";
+            ManageCustomersImgBtn.Size = new Size(249, 223);
+            ManageCustomersImgBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            ManageCustomersImgBtn.TabIndex = 1;
+            ManageCustomersImgBtn.TabStop = false;
+            ManageCustomersImgBtn.Click += ManageCustomersBtn_Click;
             // 
             // panel3
             // 
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(pictureBox3);
+            panel3.Controls.Add(ManageVehiclesBtn);
+            panel3.Controls.Add(ManageVehiclesImgBtn);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(895, 124);
+            panel3.Location = new Point(1014, 124);
             panel3.Name = "panel3";
-            panel3.Size = new Size(442, 473);
+            panel3.Size = new Size(501, 473);
             panel3.TabIndex = 2;
             // 
-            // pictureBox2
+            // ManageVehiclesBtn
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(106, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(249, 223);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+            ManageVehiclesBtn.BackColor = Color.FromArgb(224, 224, 224);
+            ManageVehiclesBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            ManageVehiclesBtn.Location = new Point(118, 336);
+            ManageVehiclesBtn.Name = "ManageVehiclesBtn";
+            ManageVehiclesBtn.Size = new Size(249, 52);
+            ManageVehiclesBtn.TabIndex = 19;
+            ManageVehiclesBtn.Text = "ادارة المركبات";
+            ManageVehiclesBtn.UseVisualStyleBackColor = false;
+            ManageVehiclesBtn.Click += ManageVehiclesBtn_Click;
             // 
-            // pictureBox3
+            // ManageVehiclesImgBtn
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(52, 0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(249, 223);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
+            ManageVehiclesImgBtn.Image = (Image)resources.GetObject("ManageVehiclesImgBtn.Image");
+            ManageVehiclesImgBtn.Location = new Point(118, 27);
+            ManageVehiclesImgBtn.Name = "ManageVehiclesImgBtn";
+            ManageVehiclesImgBtn.Size = new Size(249, 223);
+            ManageVehiclesImgBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            ManageVehiclesImgBtn.TabIndex = 2;
+            ManageVehiclesImgBtn.TabStop = false;
+            ManageVehiclesImgBtn.Click += ManageVehiclesBtn_Click;
             // 
             // panel4
             // 
             tableLayoutPanel1.SetColumnSpan(panel4, 3);
-            panel4.Controls.Add(label4);
-            panel4.Controls.Add(pictureBox7);
-            panel4.Controls.Add(pictureBox6);
-            panel4.Controls.Add(pictureBox5);
-            panel4.Controls.Add(pictureBox4);
+            panel4.Controls.Add(WelcomeMsgLabel);
+            panel4.Controls.Add(PrevFormBtn);
+            panel4.Controls.Add(MinimizeFormBtn);
+            panel4.Controls.Add(CloseFormBtn);
+            panel4.Controls.Add(LogoutBtn);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(3, 3);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1334, 115);
+            panel4.Size = new Size(1512, 115);
             panel4.TabIndex = 3;
             // 
-            // label1
+            // WelcomeMsgLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(219, 314);
-            label1.Name = "label1";
-            label1.Size = new Size(113, 28);
-            label1.TabIndex = 1;
-            label1.Text = "ادارة الفواتير";
-            label1.Click += label1_Click;
+            WelcomeMsgLabel.AutoSize = true;
+            WelcomeMsgLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            WelcomeMsgLabel.ForeColor = Color.White;
+            WelcomeMsgLabel.Location = new Point(569, 31);
+            WelcomeMsgLabel.Name = "WelcomeMsgLabel";
+            WelcomeMsgLabel.Size = new Size(317, 41);
+            WelcomeMsgLabel.TabIndex = 4;
+            WelcomeMsgLabel.Text = "مرحبا بك , اسم الموظف";
             // 
-            // label2
+            // PrevFormBtn
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(171, 314);
-            label2.Name = "label2";
-            label2.Size = new Size(110, 28);
-            label2.TabIndex = 2;
-            label2.Text = "ادارة العملاء";
+            PrevFormBtn.Image = (Image)resources.GetObject("PrevFormBtn.Image");
+            PrevFormBtn.Location = new Point(132, 22);
+            PrevFormBtn.Name = "PrevFormBtn";
+            PrevFormBtn.Size = new Size(50, 50);
+            PrevFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            PrevFormBtn.TabIndex = 3;
+            PrevFormBtn.TabStop = false;
             // 
-            // label3
+            // MinimizeFormBtn
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(127, 314);
-            label3.Name = "label3";
-            label3.Size = new Size(124, 28);
-            label3.TabIndex = 3;
-            label3.Text = "ادارة المركبات";
+            MinimizeFormBtn.Image = (Image)resources.GetObject("MinimizeFormBtn.Image");
+            MinimizeFormBtn.Location = new Point(1328, 22);
+            MinimizeFormBtn.Name = "MinimizeFormBtn";
+            MinimizeFormBtn.Size = new Size(50, 50);
+            MinimizeFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            MinimizeFormBtn.TabIndex = 2;
+            MinimizeFormBtn.TabStop = false;
+            MinimizeFormBtn.Click += MinimizeFormBtn_Click;
             // 
-            // pictureBox4
+            // CloseFormBtn
             // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(38, 22);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(50, 50);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 0;
-            pictureBox4.TabStop = false;
+            CloseFormBtn.Image = (Image)resources.GetObject("CloseFormBtn.Image");
+            CloseFormBtn.Location = new Point(1415, 22);
+            CloseFormBtn.Name = "CloseFormBtn";
+            CloseFormBtn.Size = new Size(50, 50);
+            CloseFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            CloseFormBtn.TabIndex = 1;
+            CloseFormBtn.TabStop = false;
+            CloseFormBtn.Click += CloseFormBtn_Click;
             // 
-            // pictureBox5
+            // LogoutBtn
             // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(1241, 22);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(50, 50);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 1;
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(1154, 22);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(50, 50);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 2;
-            pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(132, 22);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(50, 50);
-            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox7.TabIndex = 3;
-            pictureBox7.TabStop = false;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(569, 31);
-            label4.Name = "label4";
-            label4.Size = new Size(317, 41);
-            label4.TabIndex = 4;
-            label4.Text = "مرحبا بك , اسم الموظف";
+            LogoutBtn.Image = (Image)resources.GetObject("LogoutBtn.Image");
+            LogoutBtn.Location = new Point(38, 22);
+            LogoutBtn.Name = "LogoutBtn";
+            LogoutBtn.Size = new Size(50, 50);
+            LogoutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            LogoutBtn.TabIndex = 0;
+            LogoutBtn.TabStop = false;
             // 
             // EmployeeDashboardForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
-            ClientSize = new Size(1340, 600);
+            ClientSize = new Size(1518, 600);
             Controls.Add(tableLayoutPanel1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "EmployeeDashboardForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "الصفحة الرئيسية للموظف";
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ManageInvoicesImgBtn).EndInit();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ManageCustomersImgBtn).EndInit();
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ManageVehiclesImgBtn).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PrevFormBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MinimizeFormBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CloseFormBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LogoutBtn).EndInit();
             ResumeLayout(false);
         }
 
@@ -272,19 +276,19 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
-        private PictureBox pictureBox1;
+        private PictureBox ManageInvoicesImgBtn;
         private Panel panel2;
         private Panel panel3;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
+        private PictureBox ManageVehiclesImgBtn;
+        private PictureBox ManageCustomersImgBtn;
         private Panel panel4;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox4;
-        private Label label4;
+        private PictureBox PrevFormBtn;
+        private PictureBox MinimizeFormBtn;
+        private PictureBox CloseFormBtn;
+        private PictureBox LogoutBtn;
+        private Label WelcomeMsgLabel;
+        private Button ManageInvoicesBtn;
+        private Button ManageCustomersBtn;
+        private Button ManageVehiclesBtn;
     }
 }
