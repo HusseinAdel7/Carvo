@@ -34,25 +34,22 @@ namespace Carvo.User_Interface_Layer
         private void ManageVehiclesBtn_Click(object sender, EventArgs e)
         {
             VehicleDashboardForm vehiclesForm = serviceProvider.GetRequiredService<VehicleDashboardForm>();
-            this.Hide();
-            vehiclesForm.ShowDialog();
-            this.Show();
+            vehiclesForm.Show();
+            this.Close();
         }
 
         private void ManageCustomersBtn_Click(object sender, EventArgs e)
         {
             AdminCustomersForm customersForm = serviceProvider.GetRequiredService<AdminCustomersForm>();
-            this.Hide();
-            customersForm.ShowDialog();
-            this.Show();
+            customersForm.Show();
+            this.Close();
         }
 
         private void ManageInvoicesBtn_Click(object sender, EventArgs e)
         {
             InvoiceTypeForm invoiceTypeForm = serviceProvider.GetRequiredService<InvoiceTypeForm>();
-            this.Hide();
-            invoiceTypeForm.ShowDialog();
-            this.Show();
+            invoiceTypeForm.Show();
+            this.Close();
         }
     }
 }
