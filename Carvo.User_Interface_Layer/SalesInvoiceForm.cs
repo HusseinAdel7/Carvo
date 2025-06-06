@@ -45,7 +45,6 @@ namespace Carvo.User_Interface_Layer
             invoiceProductService = _invoiceProductService;
             InitializeComponent();
             this.Load += async (s, e) => await LoadInvoicesAsync();
-
         }
 
         private void CloseFormBtn_Click(object sender, EventArgs e)

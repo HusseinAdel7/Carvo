@@ -7,24 +7,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Carvo.User_Interface_Layer
 {
     public partial class EmployeeDashboardForm : Form
     {
-        public EmployeeDashboardForm()
+        private IServiceProvider serviceProvider;
+
+        public EmployeeDashboardForm(IServiceProvider _serviceProvider)
         {
+            serviceProvider = _serviceProvider;
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void CloseFormBtn_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void MinimizeFormBtn_Click(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
+        private void ManageVehiclesBtn_Click(object sender, EventArgs e)
+        {
+            VehicleDashboardForm vehiclesForm = serviceProvider.GetRequiredService<VehicleDashboardForm>();
+            vehiclesForm.Show();
+            this.Close();
+        }
+
+        private void ManageCustomersBtn_Click(object sender, EventArgs e)
+        {
+            AdminCustomersForm customersForm = serviceProvider.GetRequiredService<AdminCustomersForm>();
+            customersForm.Show();
+            this.Close();
+        }
+
+        private void ManageInvoicesBtn_Click(object sender, EventArgs e)
+        {
+            InvoiceTypeForm invoiceTypeForm = serviceProvider.GetRequiredService<InvoiceTypeForm>();
+            invoiceTypeForm.Show();
+            this.Close();
         }
     }
 }

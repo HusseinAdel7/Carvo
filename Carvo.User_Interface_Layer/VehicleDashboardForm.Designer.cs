@@ -436,6 +436,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "VehicleDashboardForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CustomerDashboardForm";
             ((System.ComponentModel.ISupportInitialize)AddImage).EndInit();
             ((System.ComponentModel.ISupportInitialize)UpdateImage).EndInit();

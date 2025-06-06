@@ -26,8 +26,9 @@ namespace Carvo.User_Interface_Layer
                  .ConfigureServices((context, services) =>
                  {
                      // سجل DbContext
-                     services.AddDbContext<CarvoDbContext>(options =>
-                         options.UseSqlServer(context.Configuration.GetConnectionString("DefaultConnection")));
+                     services.AddDbContextFactory<CarvoDbContext>(options =>
+                         options.UseSqlServer(context.Configuration.GetConnectionString("DefaultConnection"))
+                         ,ServiceLifetime.Scoped);
                      
                      // سجل الفورم الرئيسي
                      services.AddTransient<AddAlertForm>();
@@ -150,12 +151,12 @@ namespace Carvo.User_Interface_Layer
             //Application.Run(alertSelectAndDeleteForm);
             //Application.Run(confirmationForm);
             //Application.Run(customerDashboardForm);
-            Application.Run(dashboardForm);
+            //Application.Run(dashboardForm);
             //Application.Run(deleteAlertForm);
             //Application.Run(homeDashboardForm);
             //Application.Run(invoiceForm);
             //Application.Run(invoiceTypeForm);
-            //Application.Run(mainWindowFrom);
+            Application.Run(mainWindowFrom);
             //Application.Run(repairInvoiceForm);
             //Application.Run(salesInvoiceForm);
             //Application.Run(updateAlertForm);
