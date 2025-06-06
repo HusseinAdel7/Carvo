@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Carvo.Business_Logic_Layer.IServices;
+using Carvo.Business_Logic_Layer.Services;
+using Carvo.Data_Access_Layer.Entities;
+using Carvo.Data_Access_Layer.Entities.Users;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace Carvo.User_Interface_Layer
+{
+    public partial class PaidSalesInvoiceForm : Form
+    {
+        private IServiceProvider serviceProvider;
+        private ICustomerService customerService;
+
+        public Invoice Invoice;
+        public Customer Customer;
+        public PaidSalesInvoiceForm(IServiceProvider _serviceProvider, ICustomerService _customerService)
+        {
+            serviceProvider = _serviceProvider;
+            customerService = _customerService;
+            InitializeComponent();
+            this.Load += async (s, e) => await LoadInvoicesAsync();
+        }
+
+
+        private async Task LoadInvoicesAsync()
+        {
+            TotalPriceNumeric.Value = Invoice.SaleAmount;
+
+        }
+
+        private async void PrintInvoiceBtn_Click(object sender, EventArgs e)
+        {
+            Customer.RemainingBalance += (double)(TotalPriceNumeric.Value - PaidPriceNumeric.Value);
+            await customerService.UpdateCustomerAsync(Customer);
+
+            InvoiceForm invoiceForm =serviceProvider.GetRequiredService<InvoiceForm>();
+            invoiceForm.Show();
+            this.Close();   
+        }
+    }
+}
