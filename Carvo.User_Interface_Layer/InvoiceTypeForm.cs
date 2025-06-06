@@ -86,7 +86,7 @@ namespace Carvo.User_Interface_Layer
         {
             var EmployeeForm = _serviceProvider.GetService(typeof(EmployeeDashboardForm)) as EmployeeDashboardForm;
             EmployeeForm.Show();
-            this.Hide();
+            this.Close();
         }
         /// <summary>
         /// Handles the click event for the Logout button.
@@ -98,7 +98,7 @@ namespace Carvo.User_Interface_Layer
         {
             var mainWindow = _serviceProvider.GetService(typeof(MainWindowFrom)) as MainWindowFrom;
             mainWindow.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
