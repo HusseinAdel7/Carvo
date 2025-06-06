@@ -11,63 +11,50 @@ namespace Carvo.Data_Access_Layer.Repository.GenericRepositories
 {
     public class GenericRepository<TEntity, TKey> : IGenericRepository<TEntity, TKey> where TEntity : class
     {
-        private readonly CarvoDbContext _carvoDbContext;
-        public GenericRepository(CarvoDbContext carvoDbContext)
+        private readonly IDbContextFactory<CarvoDbContext> _contextFactory;
+
+        public GenericRepository(IDbContextFactory<CarvoDbContext> contextFactory)
         {
-            _carvoDbContext = carvoDbContext;
+            _contextFactory = contextFactory;
         }
 
-        public Task<IEnumerable<TEntity>> GetAllAsync()
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            return _carvoDbContext.Set<TEntity>().ToListAsync()
-                .ContinueWith(task => (IEnumerable<TEntity>)task.Result);
+            using var context = _contextFactory.CreateDbContext();
+            return await context.Set<TEntity>().ToListAsync();
         }
 
-        public Task<TEntity?> GetByIdAsync(TKey id)
+        public async Task<TEntity?> GetByIdAsync(TKey id)
         {
-            if (id == null)
-            {
-                throw new ArgumentNullException(nameof(id), "ID cannot be null");
-            }
-            return _carvoDbContext.Set<TEntity>().FindAsync(id).AsTask();
+            using var context = _contextFactory.CreateDbContext();
+            return await context.Set<TEntity>().FindAsync(id);
         }
 
-        public Task<TEntity> AddAsync(TEntity entity)
+        public async Task<TEntity> AddAsync(TEntity entity)
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException(nameof(entity), "Entity cannot be null");
-            }
-            _carvoDbContext.Set<TEntity>().Add(entity);
-            return _carvoDbContext.SaveChangesAsync().ContinueWith(t => entity);
-
+            using var context = _contextFactory.CreateDbContext();
+            context.Set<TEntity>().Add(entity);
+            await context.SaveChangesAsync();
+            return entity;
         }
 
-        public Task<TEntity> UpdateAsync(TEntity entity)
+        public async Task<TEntity> UpdateAsync(TEntity entity)
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException(nameof(entity), "Entity cannot be null");
-            }
-            _carvoDbContext.Set<TEntity>().Update(entity);
-            return _carvoDbContext.SaveChangesAsync().ContinueWith(t => entity);
-
+            using var context = _contextFactory.CreateDbContext();
+            context.Set<TEntity>().Update(entity);
+            await context.SaveChangesAsync();
+            return entity;
         }
-       
-        public Task<bool> DeleteAsync(TKey id)
-        {
-            if (id == null)
-            {
-                throw new ArgumentNullException(nameof(id), "ID cannot be null");
-            }
-            var entity = _carvoDbContext.Set<TEntity>().Find(id);
-            if (entity == null)
-            {
-                return Task.FromResult(false);
-            }
-            _carvoDbContext.Set<TEntity>().Remove(entity);
-            return _carvoDbContext.SaveChangesAsync().ContinueWith(t => true);
 
+        public async Task<bool> DeleteAsync(TKey id)
+        {
+            using var context = _contextFactory.CreateDbContext();
+            var entity = await context.Set<TEntity>().FindAsync(id);
+            if (entity == null) return false;
+
+            context.Set<TEntity>().Remove(entity);
+            await context.SaveChangesAsync();
+            return true;
         }
     }
 }
