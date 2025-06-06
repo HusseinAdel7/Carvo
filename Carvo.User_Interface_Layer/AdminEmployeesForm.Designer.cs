@@ -42,6 +42,9 @@
             PrevImageAsBtn = new PictureBox();
             CategoriesManagement = new Label();
             panel2 = new Panel();
+            userPassErrorLabel = new Label();
+            userEmailErrorLabel = new Label();
+            userNameErrorLabel = new Label();
             UserpassTxt = new TextBox();
             label5 = new Label();
             UsernationalIDTxt = new TextBox();
@@ -121,7 +124,7 @@
             // MinimizeBtn
             // 
             MinimizeBtn.Image = (Image)resources.GetObject("MinimizeBtn.Image");
-            MinimizeBtn.Location = new Point(1303, 23);
+            MinimizeBtn.Location = new Point(1315, 23);
             MinimizeBtn.Name = "MinimizeBtn";
             MinimizeBtn.Size = new Size(50, 50);
             MinimizeBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -138,6 +141,7 @@
             LogoutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogoutBtn.TabIndex = 2;
             LogoutBtn.TabStop = false;
+            LogoutBtn.Click += LogoutBtn_Click;
             // 
             // PrevImageAsBtn
             // 
@@ -148,6 +152,7 @@
             PrevImageAsBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevImageAsBtn.TabIndex = 1;
             PrevImageAsBtn.TabStop = false;
+            PrevImageAsBtn.Click += PrevImageAsBtn_Click;
             // 
             // CategoriesManagement
             // 
@@ -163,6 +168,9 @@
             // 
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(48, 67, 87);
+            panel2.Controls.Add(userPassErrorLabel);
+            panel2.Controls.Add(userEmailErrorLabel);
+            panel2.Controls.Add(userNameErrorLabel);
             panel2.Controls.Add(UserpassTxt);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(UsernationalIDTxt);
@@ -184,6 +192,43 @@
             panel2.Size = new Size(1502, 432);
             panel2.TabIndex = 1;
             // 
+            // userPassErrorLabel
+            // 
+            userPassErrorLabel.AutoSize = true;
+            userPassErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            userPassErrorLabel.ForeColor = Color.Red;
+            userPassErrorLabel.Location = new Point(646, 263);
+            userPassErrorLabel.Name = "userPassErrorLabel";
+            userPassErrorLabel.Size = new Size(489, 20);
+            userPassErrorLabel.TabIndex = 23;
+            userPassErrorLabel.Text = "كلمة المرور لا يجب ان تكون فارغة او اقل من (4)حروف او أن تزيد عن(30) حرفا";
+            userPassErrorLabel.Visible = false;
+            // 
+            // userEmailErrorLabel
+            // 
+            userEmailErrorLabel.AutoSize = true;
+            userEmailErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            userEmailErrorLabel.ForeColor = Color.Red;
+            userEmailErrorLabel.Location = new Point(592, 172);
+            userEmailErrorLabel.Name = "userEmailErrorLabel";
+            userEmailErrorLabel.RightToLeft = RightToLeft.Yes;
+            userEmailErrorLabel.Size = new Size(543, 20);
+            userEmailErrorLabel.TabIndex = 22;
+            userEmailErrorLabel.Text = "الصيغة الصحيحة للبريد \"example@gmail.com\" ويجب ان لا يزيد طوله عن (30) حرفا";
+            userEmailErrorLabel.Visible = false;
+            // 
+            // userNameErrorLabel
+            // 
+            userNameErrorLabel.AutoSize = true;
+            userNameErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            userNameErrorLabel.ForeColor = Color.Red;
+            userNameErrorLabel.Location = new Point(682, 95);
+            userNameErrorLabel.Name = "userNameErrorLabel";
+            userNameErrorLabel.Size = new Size(453, 20);
+            userNameErrorLabel.TabIndex = 21;
+            userNameErrorLabel.Text = "الاسم لا يجب ان يكون فارغا او اقل من (3) حروف او أن يزيد عن(30) حرفا";
+            userNameErrorLabel.Visible = false;
+            // 
             // UserpassTxt
             // 
             UserpassTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -191,7 +236,7 @@
             UserpassTxt.Multiline = true;
             UserpassTxt.Name = "UserpassTxt";
             UserpassTxt.Size = new Size(373, 39);
-            UserpassTxt.TabIndex = 21;
+            UserpassTxt.TabIndex = 5;
             UserpassTxt.TextAlign = HorizontalAlignment.Right;
             // 
             // label5
@@ -222,7 +267,7 @@
             UserEmailTxt.Multiline = true;
             UserEmailTxt.Name = "UserEmailTxt";
             UserEmailTxt.Size = new Size(373, 39);
-            UserEmailTxt.TabIndex = 18;
+            UserEmailTxt.TabIndex = 3;
             UserEmailTxt.TextAlign = HorizontalAlignment.Right;
             // 
             // label3
@@ -255,7 +300,7 @@
             UserRoleDropdownList.Location = new Point(85, 130);
             UserRoleDropdownList.Name = "UserRoleDropdownList";
             UserRoleDropdownList.Size = new Size(373, 31);
-            UserRoleDropdownList.TabIndex = 12;
+            UserRoleDropdownList.TabIndex = 4;
             // 
             // UserNameTxt
             // 
@@ -264,7 +309,7 @@
             UserNameTxt.Multiline = true;
             UserNameTxt.Name = "UserNameTxt";
             UserNameTxt.Size = new Size(373, 39);
-            UserNameTxt.TabIndex = 9;
+            UserNameTxt.TabIndex = 1;
             UserNameTxt.TextAlign = HorizontalAlignment.Right;
             // 
             // label2
@@ -298,6 +343,7 @@
             UpdateUserImg.SizeMode = PictureBoxSizeMode.StretchImage;
             UpdateUserImg.TabIndex = 6;
             UpdateUserImg.TabStop = false;
+            UpdateUserImg.Click += UpdateUserBtn_Click;
             // 
             // UpdateUserBtn
             // 
@@ -306,9 +352,10 @@
             UpdateUserBtn.Location = new Point(559, 331);
             UpdateUserBtn.Name = "UpdateUserBtn";
             UpdateUserBtn.Size = new Size(151, 52);
-            UpdateUserBtn.TabIndex = 5;
+            UpdateUserBtn.TabIndex = 7;
             UpdateUserBtn.Text = "تحديث مستخدم";
             UpdateUserBtn.UseVisualStyleBackColor = false;
+            UpdateUserBtn.Click += UpdateUserBtn_Click;
             // 
             // DeleteUserImg
             // 
@@ -319,6 +366,7 @@
             DeleteUserImg.SizeMode = PictureBoxSizeMode.StretchImage;
             DeleteUserImg.TabIndex = 4;
             DeleteUserImg.TabStop = false;
+            DeleteUserImg.Click += DeleteUserBtn_Click;
             // 
             // AddUserImg
             // 
@@ -329,6 +377,7 @@
             AddUserImg.SizeMode = PictureBoxSizeMode.StretchImage;
             AddUserImg.TabIndex = 3;
             AddUserImg.TabStop = false;
+            AddUserImg.Click += AddUserBtn_Click;
             // 
             // AddUserBtn
             // 
@@ -337,9 +386,10 @@
             AddUserBtn.Location = new Point(960, 331);
             AddUserBtn.Name = "AddUserBtn";
             AddUserBtn.Size = new Size(140, 52);
-            AddUserBtn.TabIndex = 2;
+            AddUserBtn.TabIndex = 6;
             AddUserBtn.Text = "اضافة مستخدم ";
             AddUserBtn.UseVisualStyleBackColor = false;
+            AddUserBtn.Click += AddUserBtn_Click;
             // 
             // DeleteUserBtn
             // 
@@ -348,9 +398,10 @@
             DeleteUserBtn.Location = new Point(188, 331);
             DeleteUserBtn.Name = "DeleteUserBtn";
             DeleteUserBtn.Size = new Size(137, 52);
-            DeleteUserBtn.TabIndex = 1;
+            DeleteUserBtn.TabIndex = 8;
             DeleteUserBtn.Text = "مسح مستخدم";
             DeleteUserBtn.UseVisualStyleBackColor = false;
+            DeleteUserBtn.Click += DeleteUserBtn_Click;
             // 
             // UsersGridView
             // 
@@ -399,9 +450,11 @@
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
             UsersGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             UsersGridView.ScrollBars = ScrollBars.Vertical;
+            UsersGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             UsersGridView.Size = new Size(1502, 234);
             UsersGridView.TabIndex = 2;
             UsersGridView.DataBindingComplete += InvoicesGridView_DataBindingComplete;
+            UsersGridView.SelectionChanged += UsersGridView_SelectionChanged;
             // 
             // AdminEmployeesForm
             // 
@@ -460,5 +513,8 @@
         private PictureBox CloseFormBtn;
         private PictureBox MinimizeBtn;
         private PictureBox LogoutBtn;
+        private Label userNameErrorLabel;
+        private Label userEmailErrorLabel;
+        private Label userPassErrorLabel;
     }
 }
