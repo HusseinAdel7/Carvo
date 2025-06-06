@@ -13,6 +13,7 @@ using Carvo.Business_Logic_Layer.Services;
 using Carvo.Data_Access_Layer.Entities;
 using Carvo.Data_Access_Layer.Entities.Users;
 using Carvo.Data_Access_Layer.Enums;
+using Microsoft.Extensions.DependencyInjection;
 
 
 namespace Carvo.User_Interface_Layer
@@ -23,6 +24,7 @@ namespace Carvo.User_Interface_Layer
 
     public partial class SalesInvoiceForm : Form
     {
+        private IServiceProvider serviceProvider;
         private ICustomerService customerService;
         private IProductService productService;
         private IInvoiceService invoiceService;
@@ -37,8 +39,9 @@ namespace Carvo.User_Interface_Layer
         private InvoiceProduct addedInvoiceProduct = null;
 
 
-        public SalesInvoiceForm(IProductService _productService, ICustomerService _customerService, IInvoiceService _invoiceService, IInvoiceProductService _invoiceProductService)
+        public SalesInvoiceForm(IServiceProvider _serviceProvider, IProductService _productService, ICustomerService _customerService, IInvoiceService _invoiceService, IInvoiceProductService _invoiceProductService)
         {
+            serviceProvider = _serviceProvider;
             customerService = _customerService;
             productService = _productService;
             invoiceService = _invoiceService;
@@ -108,7 +111,7 @@ namespace Carvo.User_Interface_Layer
                     InvoiceType = InvoiceType.Sale,
                     CustomerId = customerId,
                     SaleAmount = totalPrice,
-                    UserId = 5,
+                    UserId = 6,
                     InvoiceNumber = "Abc123"
                 };
 
@@ -166,6 +169,17 @@ namespace Carvo.User_Interface_Layer
                 await invoiceService.DeleteInvoiceAsync(invoiceP.InvoiceId);
         }
 
+        private void ExtractInvoiceBtn_Click(object sender, EventArgs e)
+        {
+            int customerId = (int)CustomersDropdownList.SelectedValue;
+            Customer customer = allCustomers.FirstOrDefault(c => c.Id == customerId);
+
+            PaidSalesInvoiceForm paidSalesInvoiceForm = serviceProvider.GetRequiredService<PaidSalesInvoiceForm>();
+            paidSalesInvoiceForm.Invoice = addedInvoice;
+            paidSalesInvoiceForm.Customer = customer;
+            paidSalesInvoiceForm.Show();
+            this.Hide();
+        }
     }
 
     public class DataDispalyedInGrid
