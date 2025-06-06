@@ -21,7 +21,7 @@ namespace Carvo.Business_Logic_Layer.Services
 
         public Task<IEnumerable<Customer>> GetAllCustomersAsync()
         {
-            return _customerRepository.GetAllAsync();
+            return  _customerRepository.GetAllAsync();
         }
 
         public Task<Customer?> GetCustomerByIdAsync(int id)
@@ -50,6 +50,8 @@ namespace Carvo.Business_Logic_Layer.Services
 
             existingCustomer.Name = customer.Name;
             existingCustomer.PhoneNumber = customer.PhoneNumber;
+            existingCustomer.RemainingBalance = customer.RemainingBalance;
+
             //existingCustomer.NationalId = customer.NationalId;
 
             var updatedCustomer = await _customerRepository.UpdateAsync(existingCustomer);
