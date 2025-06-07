@@ -19,6 +19,13 @@ namespace Carvo.User_Interface_Layer
         {
             serviceProvider = _serviceProvider;
             InitializeComponent();
+            this.Load += async (s, e) => LoadEmployeeDashboard();
+        }
+
+
+        private void LoadEmployeeDashboard()
+        {
+            WelcomeMsgLabel.Text = $"{LoggedUser.loggedUserName} مرحبا بك ";
         }
 
         private void CloseFormBtn_Click(object sender, EventArgs e)

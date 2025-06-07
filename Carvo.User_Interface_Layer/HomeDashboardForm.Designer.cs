@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeDashboardForm));
-            label1 = new Label();
+            welcomemsgLabel = new Label();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             picUsers = new PictureBox();
@@ -61,16 +61,16 @@
             ((System.ComponentModel.ISupportInitialize)picVehicles).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // welcomemsgLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(632, 56);
-            label1.Name = "label1";
-            label1.Size = new Size(250, 41);
-            label1.TabIndex = 0;
-            label1.Text = "مرحبا بك ,مدير النظام";
+            welcomemsgLabel.AutoSize = true;
+            welcomemsgLabel.Font = new Font("Segoe UI", 22F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            welcomemsgLabel.ForeColor = Color.White;
+            welcomemsgLabel.Location = new Point(553, 63);
+            welcomemsgLabel.Name = "welcomemsgLabel";
+            welcomemsgLabel.Size = new Size(351, 50);
+            welcomemsgLabel.TabIndex = 0;
+            welcomemsgLabel.Text = "مرحبا بك ,مدير النظام";
             // 
             // pictureBox1
             // 
@@ -99,7 +99,7 @@
             // picUsers
             // 
             picUsers.Image = (Image)resources.GetObject("picUsers.Image");
-            picUsers.Location = new Point(1154, 252);
+            picUsers.Location = new Point(1120, 252);
             picUsers.Margin = new Padding(3, 4, 3, 4);
             picUsers.Name = "picUsers";
             picUsers.Size = new Size(143, 129);
@@ -110,7 +110,7 @@
             // picCategories
             // 
             picCategories.Image = (Image)resources.GetObject("picCategories.Image");
-            picCategories.Location = new Point(839, 252);
+            picCategories.Location = new Point(818, 252);
             picCategories.Margin = new Padding(3, 4, 3, 4);
             picCategories.Name = "picCategories";
             picCategories.Size = new Size(147, 129);
@@ -121,7 +121,7 @@
             // picProducts
             // 
             picProducts.Image = (Image)resources.GetObject("picProducts.Image");
-            picProducts.Location = new Point(516, 252);
+            picProducts.Location = new Point(512, 252);
             picProducts.Margin = new Padding(3, 4, 3, 4);
             picProducts.Name = "picProducts";
             picProducts.Size = new Size(147, 129);
@@ -132,7 +132,7 @@
             // picSuppliers
             // 
             picSuppliers.Image = (Image)resources.GetObject("picSuppliers.Image");
-            picSuppliers.Location = new Point(160, 252);
+            picSuppliers.Location = new Point(206, 252);
             picSuppliers.Margin = new Padding(3, 4, 3, 4);
             picSuppliers.Name = "picSuppliers";
             picSuppliers.Size = new Size(147, 129);
@@ -144,7 +144,7 @@
             // 
             btnUsers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUsers.ForeColor = Color.Black;
-            btnUsers.Location = new Point(1154, 404);
+            btnUsers.Location = new Point(1120, 404);
             btnUsers.Margin = new Padding(3, 4, 3, 4);
             btnUsers.Name = "btnUsers";
             btnUsers.Size = new Size(147, 44);
@@ -156,7 +156,7 @@
             // 
             btnCategories.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCategories.ForeColor = Color.Black;
-            btnCategories.Location = new Point(839, 404);
+            btnCategories.Location = new Point(818, 404);
             btnCategories.Margin = new Padding(3, 4, 3, 4);
             btnCategories.Name = "btnCategories";
             btnCategories.Size = new Size(147, 44);
@@ -168,7 +168,7 @@
             // 
             btnProducts.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnProducts.ForeColor = Color.Black;
-            btnProducts.Location = new Point(516, 404);
+            btnProducts.Location = new Point(512, 404);
             btnProducts.Margin = new Padding(3, 4, 3, 4);
             btnProducts.Name = "btnProducts";
             btnProducts.Size = new Size(147, 44);
@@ -180,7 +180,7 @@
             // 
             btnSuppliers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSuppliers.ForeColor = Color.Black;
-            btnSuppliers.Location = new Point(160, 404);
+            btnSuppliers.Location = new Point(206, 404);
             btnSuppliers.Margin = new Padding(3, 4, 3, 4);
             btnSuppliers.Name = "btnSuppliers";
             btnSuppliers.Size = new Size(147, 44);
@@ -192,7 +192,7 @@
             // 
             btnCustomers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCustomers.ForeColor = Color.Black;
-            btnCustomers.Location = new Point(516, 671);
+            btnCustomers.Location = new Point(357, 636);
             btnCustomers.Margin = new Padding(3, 4, 3, 4);
             btnCustomers.Name = "btnCustomers";
             btnCustomers.Size = new Size(151, 44);
@@ -203,7 +203,7 @@
             // picCustomers
             // 
             picCustomers.Image = (Image)resources.GetObject("picCustomers.Image");
-            picCustomers.Location = new Point(516, 523);
+            picCustomers.Location = new Point(357, 484);
             picCustomers.Margin = new Padding(3, 4, 3, 4);
             picCustomers.Name = "picCustomers";
             picCustomers.Size = new Size(147, 129);
@@ -214,7 +214,7 @@
             // picreports
             // 
             picreports.Image = (Image)resources.GetObject("picreports.Image");
-            picreports.Location = new Point(1154, 523);
+            picreports.Location = new Point(974, 484);
             picreports.Margin = new Padding(3, 4, 3, 4);
             picreports.Name = "picreports";
             picreports.Size = new Size(143, 129);
@@ -250,7 +250,7 @@
             // 
             btnVehicles.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVehicles.ForeColor = Color.Black;
-            btnVehicles.Location = new Point(839, 671);
+            btnVehicles.Location = new Point(664, 636);
             btnVehicles.Margin = new Padding(3, 4, 3, 4);
             btnVehicles.Name = "btnVehicles";
             btnVehicles.Size = new Size(147, 44);
@@ -261,7 +261,7 @@
             // picVehicles
             // 
             picVehicles.Image = (Image)resources.GetObject("picVehicles.Image");
-            picVehicles.Location = new Point(839, 523);
+            picVehicles.Location = new Point(664, 484);
             picVehicles.Margin = new Padding(3, 4, 3, 4);
             picVehicles.Name = "picVehicles";
             picVehicles.Size = new Size(147, 129);
@@ -273,7 +273,7 @@
             // 
             btnreports.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnreports.ForeColor = Color.Black;
-            btnreports.Location = new Point(1154, 671);
+            btnreports.Location = new Point(974, 636);
             btnreports.Margin = new Padding(3, 4, 3, 4);
             btnreports.Name = "btnreports";
             btnreports.Size = new Size(147, 44);
@@ -305,7 +305,7 @@
             Controls.Add(picUsers);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Controls.Add(label1);
+            Controls.Add(welcomemsgLabel);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "HomeDashboardForm";
@@ -327,7 +327,7 @@
 
         #endregion
 
-        private Label label1;
+        private Label welcomemsgLabel;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox picUsers;
