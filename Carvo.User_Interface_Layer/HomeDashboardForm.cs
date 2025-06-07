@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Carvo.Business_Logic_Layer.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Carvo.User_Interface_Layer
@@ -21,9 +22,14 @@ namespace Carvo.User_Interface_Layer
         {
             _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
             InitializeComponent();
+            this.Load += async (s, e) =>  LoadHomeDashboard();
             RegisterControlEvents();
         }
 
+        private void LoadHomeDashboard()
+        {
+            welcomemsgLabel.Text = $"{LoggedUser.loggedUserName} مرحبا بك ";
+        }
 
         private void RegisterControlEvents()
         {

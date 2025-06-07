@@ -93,6 +93,9 @@ namespace Carvo.User_Interface_Layer
                     // Show success message with user's name
                     //MessageBox.Show($"مرحبا {userName} تم تسجيل دخولك بنجاح", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    LoggedUser.loggedUserId = matchedUser.Id;
+                    LoggedUser.loggedUserName = matchedUser.UserName;
+
                     // Redirect to appropriate dashboard based on role
                     if (role == Role.Admin)
                     {
