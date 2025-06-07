@@ -4,46 +4,93 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Carvo.Business_Logic_Layer.IServices;
 using Carvo.Data_Access_Layer.Entities;
 
 namespace Carvo.User_Interface_Layer
 {
     public partial class AdminInvoicesForm : Form
     {
-        public AdminInvoicesForm()
+        private readonly IInvoiceService _invoiceService;
+        private BindingList<Invoice> _invoicesBindingList;
+
+        public AdminInvoicesForm(IInvoiceService invoiceService)
         {
             InitializeComponent();
+            _invoiceService = invoiceService;
 
-            /* Testing Grid View */
-            List<Product> products = new List<Product>()
+            // ✅ استخدم الحدث Load بدلاً من استدعاء مباشر
+            this.Load += AdminInvoicesForm_Load;
+        }
+
+        // ✅ حدث تحميل الفورم
+        private async void AdminInvoicesForm_Load(object? sender, EventArgs e)
+        {
+            await LoadInvoicesAsync();
+        }
+
+        // ✅ أصبح Task وليس void
+        private async Task LoadInvoicesAsync()
+        {
+            try
             {
-                new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-                //new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
+                var invoices = await _invoiceService.GetAllInvoicesAsync();
+                _invoicesBindingList = new BindingList<Invoice>(invoices.ToList());
 
-            };
+                InvoicesGridView.AllowUserToAddRows = false;
+                InvoicesGridView.DataSource = _invoicesBindingList;
 
-            var GridView = products.Select(p => new { Name = p.Name, Description = p.Description, Price = p.Price }).ToList();
+                // إعادة تسمية الأعمدة (مع التأكد من وجود الأعمدة)
+                InvoicesGridView.Columns[nameof(Invoice.Id)].HeaderText = "رقم الفاتورة";
+                InvoicesGridView.Columns[nameof(Invoice.InvoiceNumber)].HeaderText = "رقم الفاتورة الخارجي";
+                InvoicesGridView.Columns[nameof(Invoice.InvoiceType)].HeaderText = "نوع الفاتورة";
+                InvoicesGridView.Columns[nameof(Invoice.SaleAmount)].HeaderText = "قيمة البيع";
+                InvoicesGridView.Columns[nameof(Invoice.RepairAmount)].HeaderText = "قيمة الصيانة";
+                InvoicesGridView.Columns[nameof(Invoice.InvoiceDate)].HeaderText = "تاريخ الفاتورة";
+                InvoicesGridView.Columns[nameof(Invoice.CustomerId)].HeaderText = "رقم العميل";
+                InvoicesGridView.Columns[nameof(Invoice.UserId)].HeaderText = "رقم الموظف";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"حدث خطأ أثناء تحميل الفواتير: {ex.Message}");
+            }
+        }
 
-            InvoicesGridView.AllowUserToAddRows = false;
-            InvoicesGridView.DataSource = GridView;
+        private async void DeleteInvoice_Click(object sender, EventArgs e)
+        {
+            if (InvoicesGridView.CurrentRow != null)
+            {
+                var selectedInvoice = (Invoice)InvoicesGridView.CurrentRow.DataBoundItem;
 
-            InvoicesGridView.Columns[0].HeaderText = "الاسم";
-            InvoicesGridView.Columns[1].HeaderText = "الوصف";
-            InvoicesGridView.Columns[2].HeaderText = "سعر الوحدة";
+                var confirm = MessageBox.Show($"هل أنت متأكد من حذف الفاتورة رقم {selectedInvoice.Id}؟", "تأكيد الحذف", MessageBoxButtons.YesNo);
+                if (confirm == DialogResult.Yes)
+                {
+                    bool deleted = await _invoiceService.DeleteInvoiceAsync(selectedInvoice.Id);
+                    if (deleted)
+                    {
+                        _invoicesBindingList.Remove(selectedInvoice);
+                    }
+                    else
+                    {
+                        MessageBox.Show("فشل في حذف الفاتورة.");
+                    }
+                }
+            }
+        }
 
+        private async void DeleteAllInvoices_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show("هل أنت متأكد من حذف جميع الفواتير؟", "تأكيد الحذف الكلي", MessageBoxButtons.YesNo);
+            if (confirm == DialogResult.Yes)
+            {
+                foreach (var invoice in _invoicesBindingList.ToList())
+                {
+                    await _invoiceService.DeleteInvoiceAsync(invoice.Id);
+                    _invoicesBindingList.Remove(invoice);
+                }
+            }
         }
 
         private void InvoicesGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -65,7 +112,7 @@ namespace Carvo.User_Interface_Layer
 
         private void CloseFormBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void MinimizeImgBtn_Click(object sender, EventArgs e)
