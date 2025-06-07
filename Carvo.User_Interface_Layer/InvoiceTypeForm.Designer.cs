@@ -50,10 +50,10 @@
             // RepairImage
             // 
             RepairImage.Image = (Image)resources.GetObject("RepairImage.Image");
-            RepairImage.Location = new Point(233, 141);
+            RepairImage.Location = new Point(666, 141);
             RepairImage.Margin = new Padding(4);
             RepairImage.Name = "RepairImage";
-            RepairImage.Size = new Size(143, 132);
+            RepairImage.Size = new Size(247, 196);
             RepairImage.SizeMode = PictureBoxSizeMode.Zoom;
             RepairImage.TabIndex = 0;
             RepairImage.TabStop = false;
@@ -62,10 +62,10 @@
             // SalesImage
             // 
             SalesImage.Image = (Image)resources.GetObject("SalesImage.Image");
-            SalesImage.Location = new Point(757, 141);
+            SalesImage.Location = new Point(227, 141);
             SalesImage.Margin = new Padding(4);
             SalesImage.Name = "SalesImage";
-            SalesImage.Size = new Size(143, 132);
+            SalesImage.Size = new Size(247, 196);
             SalesImage.SizeMode = PictureBoxSizeMode.Zoom;
             SalesImage.TabIndex = 1;
             SalesImage.TabStop = false;
@@ -77,12 +77,12 @@
             RepairBtn.Cursor = Cursors.Hand;
             RepairBtn.FlatStyle = FlatStyle.Flat;
             RepairBtn.ForeColor = Color.FromArgb(48, 67, 87);
-            RepairBtn.Location = new Point(233, 307);
+            RepairBtn.Location = new Point(666, 390);
             RepairBtn.Margin = new Padding(4);
             RepairBtn.Name = "RepairBtn";
-            RepairBtn.Size = new Size(143, 45);
+            RepairBtn.Size = new Size(247, 51);
             RepairBtn.TabIndex = 2;
-            RepairBtn.Text = "تصليح";
+            RepairBtn.Text = "صيانة";
             RepairBtn.UseVisualStyleBackColor = false;
             RepairBtn.Click += RepairBtn_Click;
             // 
@@ -93,19 +93,19 @@
             SalesBtn.FlatStyle = FlatStyle.Flat;
             SalesBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SalesBtn.ForeColor = Color.FromArgb(48, 67, 87);
-            SalesBtn.Location = new Point(757, 307);
+            SalesBtn.Location = new Point(227, 390);
             SalesBtn.Margin = new Padding(4);
             SalesBtn.Name = "SalesBtn";
-            SalesBtn.Size = new Size(143, 45);
+            SalesBtn.Size = new Size(247, 51);
             SalesBtn.TabIndex = 3;
-            SalesBtn.Text = "بيع";
+            SalesBtn.Text = "مشتريات";
             SalesBtn.UseVisualStyleBackColor = false;
             SalesBtn.Click += SalesBtn_Click;
             // 
             // PrevFormBtn
             // 
             PrevFormBtn.Image = (Image)resources.GetObject("PrevFormBtn.Image");
-            PrevFormBtn.Location = new Point(116, 3);
+            PrevFormBtn.Location = new Point(113, 0);
             PrevFormBtn.Name = "PrevFormBtn";
             PrevFormBtn.Size = new Size(50, 50);
             PrevFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -116,7 +116,7 @@
             // LogOutBtn
             // 
             LogOutBtn.Image = (Image)resources.GetObject("LogOutBtn.Image");
-            LogOutBtn.Location = new Point(18, 3);
+            LogOutBtn.Location = new Point(33, 0);
             LogOutBtn.Name = "LogOutBtn";
             LogOutBtn.Size = new Size(50, 50);
             LogOutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -138,7 +138,7 @@
             // MinimizeFormBtn
             // 
             MinimizeFormBtn.Image = (Image)resources.GetObject("MinimizeFormBtn.Image");
-            MinimizeFormBtn.Location = new Point(944, 3);
+            MinimizeFormBtn.Location = new Point(963, 3);
             MinimizeFormBtn.Name = "MinimizeFormBtn";
             MinimizeFormBtn.Size = new Size(50, 50);
             MinimizeFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -164,7 +164,7 @@
             AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
-            ClientSize = new Size(1143, 630);
+            ClientSize = new Size(1143, 547);
             ControlBox = false;
             Controls.Add(panel1);
             Controls.Add(SalesBtn);

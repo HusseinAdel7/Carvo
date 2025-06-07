@@ -41,7 +41,6 @@ namespace Carvo.User_Interface_Layer
                      services.AddTransient<AdminVehiclesForm>();
                      services.AddTransient<AlertIncompleteInformationForm>();
                      services.AddTransient<AlertSelectAndDeleteForm>();
-                     services.AddTransient<ConfirmationForm>();
                      services.AddTransient<CustomerDashboardForm>();
                      services.AddTransient<DashboardForm>();
                      services.AddTransient<DeleteAlertForm>();
@@ -118,7 +117,6 @@ namespace Carvo.User_Interface_Layer
             var adminVehiclesForm = host.Services.GetRequiredService<AdminVehiclesForm>();
             var alertIncompleteInformationForm = host.Services.GetRequiredService<AlertIncompleteInformationForm>();
             var alertSelectAndDeleteForm = host.Services.GetRequiredService<AlertSelectAndDeleteForm>();
-            var confirmationForm = host.Services.GetRequiredService<ConfirmationForm>();
             var customerDashboardForm = host.Services.GetRequiredService<CustomerDashboardForm>();
             var dashboardForm = host.Services.GetRequiredService<DashboardForm>();
             var deleteAlertForm = host.Services.GetRequiredService<DeleteAlertForm>();
@@ -130,6 +128,7 @@ namespace Carvo.User_Interface_Layer
             var salesInvoiceForm = host.Services.GetRequiredService<SalesInvoiceForm>();
             var updateAlertForm = host.Services.GetRequiredService<UpdateAlertForm>();
             var vehicleDashboardForm = host.Services.GetRequiredService<VehicleDashboardForm>();
+            var paidSalesInvoiceForm = host.Services.GetRequiredService<PaidSalesInvoiceForm>();
 
             var employeeDashboardForm = host.Services.GetRequiredService<EmployeeDashboardForm>();
 
@@ -142,7 +141,13 @@ namespace Carvo.User_Interface_Layer
             var vehicle = host.Services.GetRequiredService<IVehicleService>();
             var customerService = host.Services.GetRequiredService<ICustomerService>();
 
+            //Application.Run(mainWindowFrom);
             //Application.Run(loginFrom);
+
+            // Admin Region
+            #region Admin Region
+            //Application.Run(homeDashboardForm);       // home page
+
             //Application.Run(adminCategoriesForm);
             //Application.Run(adminCustomersForm);
             //Application.Run(adminEmplyeeForm);
@@ -150,19 +155,27 @@ namespace Carvo.User_Interface_Layer
             //Application.Run(adminProductsForm);
             //Application.Run(adminSuppliersForm);
             //Application.Run(vehicleDashboardForm);
+            //Application.Run(dashboardForm);           // reports page
+            #endregion
 
-            //Application.Run(customerDashboardForm);
-            //Application.Run(dashboardForm);
 
-            //Application.Run(homeDashboardForm);
-            //Application.Run(invoiceForm);
+            // Employee Region
+            #region Employee Region
+            //Application.Run(employeeDashboardForm);   // home page
+
+            //Application.Run(adminCustomersForm);
+            //Application.Run(vehicleDashboardForm);
+
             //Application.Run(invoiceTypeForm);
-            Application.Run(mainWindowFrom);
             //Application.Run(repairInvoiceForm);
             //Application.Run(salesInvoiceForm);
-            //Application.Run(updateAlertForm);
-            //Application.Run(employeeDashboardForm);
+            //Application.Run(paidSalesInvoiceForm);
 
+            //Application.Run(invoiceForm);             // invoice should be printed
+            #endregion
+            
+            //Application.Run(customerDashboardForm);
+            //Application.Run(updateAlertForm);
             //Application.Run(alertIncompleteInformationForm);
             //Application.Run(alertSelectAndDeleteForm);
             //Application.Run(deleteAlertForm);

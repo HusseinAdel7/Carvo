@@ -66,16 +66,17 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(553, 42);
+            label1.Location = new Point(632, 56);
             label1.Name = "label1";
-            label1.Size = new Size(220, 32);
+            label1.Size = new Size(250, 41);
             label1.TabIndex = 0;
             label1.Text = "مرحبا بك ,مدير النظام";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(27, 24);
+            pictureBox1.Location = new Point(50, 32);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(50, 50);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -86,7 +87,8 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(102, 24);
+            pictureBox2.Location = new Point(136, 32);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(50, 50);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -97,9 +99,10 @@
             // picUsers
             // 
             picUsers.Image = (Image)resources.GetObject("picUsers.Image");
-            picUsers.Location = new Point(1086, 203);
+            picUsers.Location = new Point(1154, 252);
+            picUsers.Margin = new Padding(3, 4, 3, 4);
             picUsers.Name = "picUsers";
-            picUsers.Size = new Size(100, 80);
+            picUsers.Size = new Size(143, 129);
             picUsers.SizeMode = PictureBoxSizeMode.StretchImage;
             picUsers.TabIndex = 3;
             picUsers.TabStop = false;
@@ -107,9 +110,10 @@
             // picCategories
             // 
             picCategories.Image = (Image)resources.GetObject("picCategories.Image");
-            picCategories.Location = new Point(810, 189);
+            picCategories.Location = new Point(839, 252);
+            picCategories.Margin = new Padding(3, 4, 3, 4);
             picCategories.Name = "picCategories";
-            picCategories.Size = new Size(100, 94);
+            picCategories.Size = new Size(147, 129);
             picCategories.SizeMode = PictureBoxSizeMode.StretchImage;
             picCategories.TabIndex = 4;
             picCategories.TabStop = false;
@@ -117,9 +121,10 @@
             // picProducts
             // 
             picProducts.Image = (Image)resources.GetObject("picProducts.Image");
-            picProducts.Location = new Point(466, 189);
+            picProducts.Location = new Point(516, 252);
+            picProducts.Margin = new Padding(3, 4, 3, 4);
             picProducts.Name = "picProducts";
-            picProducts.Size = new Size(100, 89);
+            picProducts.Size = new Size(147, 129);
             picProducts.SizeMode = PictureBoxSizeMode.StretchImage;
             picProducts.TabIndex = 5;
             picProducts.TabStop = false;
@@ -127,9 +132,10 @@
             // picSuppliers
             // 
             picSuppliers.Image = (Image)resources.GetObject("picSuppliers.Image");
-            picSuppliers.Location = new Point(111, 198);
+            picSuppliers.Location = new Point(160, 252);
+            picSuppliers.Margin = new Padding(3, 4, 3, 4);
             picSuppliers.Name = "picSuppliers";
-            picSuppliers.Size = new Size(100, 80);
+            picSuppliers.Size = new Size(147, 129);
             picSuppliers.SizeMode = PictureBoxSizeMode.StretchImage;
             picSuppliers.TabIndex = 6;
             picSuppliers.TabStop = false;
@@ -138,9 +144,10 @@
             // 
             btnUsers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUsers.ForeColor = Color.Black;
-            btnUsers.Location = new Point(1086, 303);
+            btnUsers.Location = new Point(1154, 404);
+            btnUsers.Margin = new Padding(3, 4, 3, 4);
             btnUsers.Name = "btnUsers";
-            btnUsers.Size = new Size(100, 33);
+            btnUsers.Size = new Size(147, 44);
             btnUsers.TabIndex = 7;
             btnUsers.Text = "المستخدمين";
             btnUsers.UseVisualStyleBackColor = true;
@@ -149,9 +156,10 @@
             // 
             btnCategories.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCategories.ForeColor = Color.Black;
-            btnCategories.Location = new Point(810, 314);
+            btnCategories.Location = new Point(839, 404);
+            btnCategories.Margin = new Padding(3, 4, 3, 4);
             btnCategories.Name = "btnCategories";
-            btnCategories.Size = new Size(100, 33);
+            btnCategories.Size = new Size(147, 44);
             btnCategories.TabIndex = 8;
             btnCategories.Text = "التصنيفات";
             btnCategories.UseVisualStyleBackColor = true;
@@ -160,9 +168,10 @@
             // 
             btnProducts.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnProducts.ForeColor = Color.Black;
-            btnProducts.Location = new Point(466, 314);
+            btnProducts.Location = new Point(516, 404);
+            btnProducts.Margin = new Padding(3, 4, 3, 4);
             btnProducts.Name = "btnProducts";
-            btnProducts.Size = new Size(100, 33);
+            btnProducts.Size = new Size(147, 44);
             btnProducts.TabIndex = 9;
             btnProducts.Text = "المنتجات";
             btnProducts.UseVisualStyleBackColor = true;
@@ -171,9 +180,10 @@
             // 
             btnSuppliers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSuppliers.ForeColor = Color.Black;
-            btnSuppliers.Location = new Point(111, 303);
+            btnSuppliers.Location = new Point(160, 404);
+            btnSuppliers.Margin = new Padding(3, 4, 3, 4);
             btnSuppliers.Name = "btnSuppliers";
-            btnSuppliers.Size = new Size(100, 33);
+            btnSuppliers.Size = new Size(147, 44);
             btnSuppliers.TabIndex = 10;
             btnSuppliers.Text = "الموردين";
             btnSuppliers.UseVisualStyleBackColor = true;
@@ -182,9 +192,10 @@
             // 
             btnCustomers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCustomers.ForeColor = Color.Black;
-            btnCustomers.Location = new Point(182, 503);
+            btnCustomers.Location = new Point(516, 671);
+            btnCustomers.Margin = new Padding(3, 4, 3, 4);
             btnCustomers.Name = "btnCustomers";
-            btnCustomers.Size = new Size(100, 33);
+            btnCustomers.Size = new Size(151, 44);
             btnCustomers.TabIndex = 13;
             btnCustomers.Text = "الموظفين";
             btnCustomers.UseVisualStyleBackColor = true;
@@ -192,9 +203,10 @@
             // picCustomers
             // 
             picCustomers.Image = (Image)resources.GetObject("picCustomers.Image");
-            picCustomers.Location = new Point(182, 392);
+            picCustomers.Location = new Point(516, 523);
+            picCustomers.Margin = new Padding(3, 4, 3, 4);
             picCustomers.Name = "picCustomers";
-            picCustomers.Size = new Size(100, 87);
+            picCustomers.Size = new Size(147, 129);
             picCustomers.SizeMode = PictureBoxSizeMode.StretchImage;
             picCustomers.TabIndex = 17;
             picCustomers.TabStop = false;
@@ -202,9 +214,10 @@
             // picreports
             // 
             picreports.Image = (Image)resources.GetObject("picreports.Image");
-            picreports.Location = new Point(1032, 392);
+            picreports.Location = new Point(1154, 523);
+            picreports.Margin = new Padding(3, 4, 3, 4);
             picreports.Name = "picreports";
-            picreports.Size = new Size(100, 68);
+            picreports.Size = new Size(143, 129);
             picreports.SizeMode = PictureBoxSizeMode.StretchImage;
             picreports.TabIndex = 18;
             picreports.TabStop = false;
@@ -212,7 +225,8 @@
             // pictureBox11
             // 
             pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
-            pictureBox11.Location = new Point(1192, 12);
+            pictureBox11.Location = new Point(1366, 32);
+            pictureBox11.Margin = new Padding(3, 4, 3, 4);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(50, 50);
             pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -223,7 +237,8 @@
             // pictureBox12
             // 
             pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
-            pictureBox12.Location = new Point(1116, 12);
+            pictureBox12.Location = new Point(1279, 32);
+            pictureBox12.Margin = new Padding(3, 4, 3, 4);
             pictureBox12.Name = "pictureBox12";
             pictureBox12.Size = new Size(50, 50);
             pictureBox12.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -235,9 +250,10 @@
             // 
             btnVehicles.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVehicles.ForeColor = Color.Black;
-            btnVehicles.Location = new Point(637, 503);
+            btnVehicles.Location = new Point(839, 671);
+            btnVehicles.Margin = new Padding(3, 4, 3, 4);
             btnVehicles.Name = "btnVehicles";
-            btnVehicles.Size = new Size(100, 33);
+            btnVehicles.Size = new Size(147, 44);
             btnVehicles.TabIndex = 21;
             btnVehicles.Text = "المركبات";
             btnVehicles.UseVisualStyleBackColor = true;
@@ -245,9 +261,10 @@
             // picVehicles
             // 
             picVehicles.Image = (Image)resources.GetObject("picVehicles.Image");
-            picVehicles.Location = new Point(637, 392);
+            picVehicles.Location = new Point(839, 523);
+            picVehicles.Margin = new Padding(3, 4, 3, 4);
             picVehicles.Name = "picVehicles";
-            picVehicles.Size = new Size(100, 87);
+            picVehicles.Size = new Size(147, 129);
             picVehicles.SizeMode = PictureBoxSizeMode.StretchImage;
             picVehicles.TabIndex = 22;
             picVehicles.TabStop = false;
@@ -256,19 +273,20 @@
             // 
             btnreports.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnreports.ForeColor = Color.Black;
-            btnreports.Location = new Point(1032, 492);
+            btnreports.Location = new Point(1154, 671);
+            btnreports.Margin = new Padding(3, 4, 3, 4);
             btnreports.Name = "btnreports";
-            btnreports.Size = new Size(100, 33);
+            btnreports.Size = new Size(147, 44);
             btnreports.TabIndex = 23;
             btnreports.Text = "التقارير";
             btnreports.UseVisualStyleBackColor = true;
             // 
             // HomeDashboardForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
-            ClientSize = new Size(1386, 566);
+            ClientSize = new Size(1453, 755);
             Controls.Add(btnreports);
             Controls.Add(picVehicles);
             Controls.Add(btnVehicles);
@@ -289,6 +307,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "HomeDashboardForm";
             Text = "HomeDashboardForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

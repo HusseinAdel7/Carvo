@@ -91,7 +91,7 @@ namespace Carvo.User_Interface_Layer
                 if (matchedUser != null)
                 {
                     // Show success message with user's name
-                    MessageBox.Show($"مرحبا {userName} تم تسجيل دخولك بنجاح", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show($"مرحبا {userName} تم تسجيل دخولك بنجاح", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Redirect to appropriate dashboard based on role
                     if (role == Role.Admin)
@@ -116,7 +116,7 @@ namespace Carvo.User_Interface_Layer
         {
             var homeDashboardForm = provider.GetRequiredService<HomeDashboardForm>();
             this.Close();
-            homeDashboardForm.ShowDialog();
+            homeDashboardForm.Show();
         }
 
         // Opens the Employee dashboard form and closes the login form
@@ -124,7 +124,7 @@ namespace Carvo.User_Interface_Layer
         {
             var employeeDashboardForm = provider.GetRequiredService<EmployeeDashboardForm>();
             this.Close();
-            employeeDashboardForm.ShowDialog();
+            employeeDashboardForm.Show();
         }
     }
 }
