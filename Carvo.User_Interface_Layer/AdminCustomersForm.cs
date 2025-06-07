@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Carvo.Business_Logic_Layer.IServices;
+using Carvo.Data_Access_Layer.Entities.Users;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Carvo.Business_Logic_Layer.IServices;
-using Carvo.Data_Access_Layer.Entities.Users;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Carvo.User_Interface_Layer
 {
@@ -30,14 +31,21 @@ namespace Carvo.User_Interface_Layer
         {
             var customers = await _customerService.GetAllCustomersAsync();
             dgvCustomers.AllowUserToAddRows = false;
-            dgvCustomers.DataSource = customers.ToList();
+            dgvCustomers.DataSource = customers.Select(c => new
+            {
+                c.Id,
+                c.CreatedAt,
+                c.RemainingBalance,
+                c.PhoneNumber,
+                c.Name,
+            }).ToList();
 
-            if (dgvCustomers.Columns.Contains("Name"))
-                dgvCustomers.Columns["Name"].HeaderText = "الاسم";
-            if (dgvCustomers.Columns.Contains("PhoneNumber"))
-                dgvCustomers.Columns["PhoneNumber"].HeaderText = "رقم الهاتف";
-            //if (dgvCustomers.Columns.Contains("NationalId"))
-            //dgvCustomers.Columns["NationalId"].HeaderText = "الرقم القومي";
+            dgvCustomers.Columns["id"].Visible = false;
+            dgvCustomers.Columns["CreatedAt"].Visible = false;
+            dgvCustomers.Columns[dgvCustomers.ColumnCount - 1].HeaderText = "الاسم";
+            dgvCustomers.Columns[dgvCustomers.ColumnCount - 2].HeaderText = "رقم الهاتف";
+            dgvCustomers.Columns[dgvCustomers.ColumnCount - 3].HeaderText = "الرصيد المتبقي";
+            //UsersGridView.Columns[5].HeaderText = "تاريخ الاضافة";
         }
 
 

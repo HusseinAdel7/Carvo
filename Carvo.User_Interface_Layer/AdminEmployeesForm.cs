@@ -100,11 +100,8 @@ namespace Carvo.User_Interface_Layer
             UsersGridView.Columns["id"].Visible = false;
             UsersGridView.Columns["Password"].Visible = false;
             UsersGridView.Columns["CreatedAt"].Visible = false;
-            //UsersGridView.Columns[UsersGridView.ColumnCount - 1].HeaderText = "الاسم";
-            //UsersGridView.Columns[UsersGridView.ColumnCount - 1].HeaderText = "المسئولية";
             UsersGridView.Columns[UsersGridView.ColumnCount - 2].HeaderText = "البريد الالكتروني";
             UsersGridView.Columns[UsersGridView.ColumnCount - 3].HeaderText = "المسئولية";
-            //UsersGridView.Columns[5].HeaderText = "تاريخ الاضافة";
         }
 
         // Add new user button click handler
@@ -113,7 +110,9 @@ namespace Carvo.User_Interface_Layer
             string userName = UserNameTxt.Text;
             string email = UserEmailTxt.Text;
             string password = UserpassTxt.Text;
-            Role role = (Role)UserRoleDropdownList.SelectedIndex;
+            Role selectedRole = (Role)UserRoleDropdownList.SelectedIndex;
+            Role role = (selectedRole == Role.None) ? Role.Employee : selectedRole;
+
 
             if (ValidateUserName() && ValidatePassword() && ValidateEmail())
             {
@@ -129,6 +128,7 @@ namespace Carvo.User_Interface_Layer
                 bool ExistedUser = await IsExist(userName, password);
                 if (!ExistedUser)
                 {
+                    MessageBox.Show("تم اضافة المستخدم بنجاح", "Add Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     await userService.AddUserAsync(newUser);
                     await LoadUsersAsync();
 
@@ -251,7 +251,8 @@ namespace Carvo.User_Interface_Layer
             string userName = UserNameTxt.Text;
             string passWord = UserpassTxt.Text;
             string email = UserEmailTxt.Text;
-            Role role = (Role)UserRoleDropdownList.SelectedIndex;
+            Role selectedRole = (Role)UserRoleDropdownList.SelectedIndex;
+            Role role = (selectedRole == Role.None) ? Role.Employee : selectedRole;
 
             var selectedRow = UsersGridView.SelectedRows[0];
             int selectedID = Convert.ToInt32(selectedRow.Cells["id"].Value);
@@ -265,6 +266,7 @@ namespace Carvo.User_Interface_Layer
                 selectedUser.Role = role;
                 selectedUser.CreatedAt = DateTime.Now;
 
+                MessageBox.Show("تم تعديل بيانات المستخدم بنجاح", "Update Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 await userService.UpdateUserAsync(selectedUser);
                 await LoadUsersAsync();
             }
