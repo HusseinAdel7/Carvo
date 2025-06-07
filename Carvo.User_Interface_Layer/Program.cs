@@ -174,7 +174,7 @@ namespace Carvo.User_Interface_Layer
 
             //Application.Run(invoiceForm);             // invoice should be printed
 
-            Application.Run(adminInvoicesForm);
+            //Application.Run(adminInvoicesForm);
 
             #endregion
 
