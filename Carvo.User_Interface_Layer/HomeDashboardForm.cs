@@ -69,7 +69,7 @@ namespace Carvo.User_Interface_Layer
         private void pictureBox11_Click(object sender, EventArgs e)
         {
            // this buton for close form
-                       this.Close();
+           Application.Exit();
         }
 
         private void pictureBox12_Click(object sender, EventArgs e)

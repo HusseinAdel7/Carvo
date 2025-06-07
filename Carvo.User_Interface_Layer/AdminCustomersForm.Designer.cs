@@ -42,6 +42,8 @@
             PrevImageAsBtn = new PictureBox();
             CategoriesManagement = new Label();
             panel2 = new Panel();
+            AddVehicleBtnImg = new PictureBox();
+            AddVehicleBtn = new Button();
             txtNationalId = new TextBox();
             txtPhoneNumber = new TextBox();
             label3 = new Label();
@@ -55,8 +57,6 @@
             btnAddCustomer = new Button();
             btnDeleteCustomer = new Button();
             dgvCustomers = new DataGridView();
-            AddVehicleBtnImg = new PictureBox();
-            AddVehicleBtn = new Button();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
@@ -64,11 +64,11 @@
             ((System.ComponentModel.ISupportInitialize)LogoutBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PrevImageAsBtn).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)AddVehicleBtnImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UpdateCustomerImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DeleteCustomerImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AddCustomerImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)AddVehicleBtnImg).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -141,7 +141,7 @@
             // PrevImageAsBtn
             // 
             PrevImageAsBtn.Image = (Image)resources.GetObject("PrevImageAsBtn.Image");
-            PrevImageAsBtn.Location = new Point(139, 23);
+            PrevImageAsBtn.Location = new Point(138, 23);
             PrevImageAsBtn.Name = "PrevImageAsBtn";
             PrevImageAsBtn.Size = new Size(50, 51);
             PrevImageAsBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -180,6 +180,29 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1486, 341);
             panel2.TabIndex = 1;
+            // 
+            // AddVehicleBtnImg
+            // 
+            AddVehicleBtnImg.Image = (Image)resources.GetObject("AddVehicleBtnImg.Image");
+            AddVehicleBtnImg.Location = new Point(255, 211);
+            AddVehicleBtnImg.Name = "AddVehicleBtnImg";
+            AddVehicleBtnImg.Size = new Size(64, 52);
+            AddVehicleBtnImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            AddVehicleBtnImg.TabIndex = 21;
+            AddVehicleBtnImg.TabStop = false;
+            AddVehicleBtnImg.Click += AddVehicleBtn_Click;
+            // 
+            // AddVehicleBtn
+            // 
+            AddVehicleBtn.BackColor = Color.FromArgb(224, 224, 224);
+            AddVehicleBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            AddVehicleBtn.Location = new Point(119, 211);
+            AddVehicleBtn.Name = "AddVehicleBtn";
+            AddVehicleBtn.Size = new Size(130, 52);
+            AddVehicleBtn.TabIndex = 20;
+            AddVehicleBtn.Text = "اضافة سيارة";
+            AddVehicleBtn.UseVisualStyleBackColor = false;
+            AddVehicleBtn.Click += AddVehicleBtn_Click;
             // 
             // txtNationalId
             // 
@@ -363,27 +386,6 @@
             dgvCustomers.DataBindingComplete += InvoicesGridView_DataBindingComplete;
             dgvCustomers.SelectionChanged += dgvCustomers_SelectionChanged;
             // 
-            // AddVehicleBtnImg
-            // 
-            AddVehicleBtnImg.Image = (Image)resources.GetObject("AddVehicleBtnImg.Image");
-            AddVehicleBtnImg.Location = new Point(255, 211);
-            AddVehicleBtnImg.Name = "AddVehicleBtnImg";
-            AddVehicleBtnImg.Size = new Size(64, 52);
-            AddVehicleBtnImg.SizeMode = PictureBoxSizeMode.StretchImage;
-            AddVehicleBtnImg.TabIndex = 21;
-            AddVehicleBtnImg.TabStop = false;
-            // 
-            // AddVehicleBtn
-            // 
-            AddVehicleBtn.BackColor = Color.FromArgb(224, 224, 224);
-            AddVehicleBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            AddVehicleBtn.Location = new Point(119, 211);
-            AddVehicleBtn.Name = "AddVehicleBtn";
-            AddVehicleBtn.Size = new Size(130, 52);
-            AddVehicleBtn.TabIndex = 20;
-            AddVehicleBtn.Text = "اضافة سيارة";
-            AddVehicleBtn.UseVisualStyleBackColor = false;
-            // 
             // AdminCustomersForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -406,11 +408,11 @@
             ((System.ComponentModel.ISupportInitialize)PrevImageAsBtn).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)AddVehicleBtnImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)UpdateCustomerImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)DeleteCustomerImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)AddCustomerImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
-            ((System.ComponentModel.ISupportInitialize)AddVehicleBtnImg).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
