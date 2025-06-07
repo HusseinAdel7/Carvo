@@ -92,7 +92,7 @@ namespace Carvo.User_Interface_Layer
 
             decimal repairAmount = (decimal)RepairPriceNumeric.Value;
 
-            Invoice invoice = new Invoice { CustomerId = customerId, InvoiceNumber = "Abc123", InvoiceType = InvoiceType.Repair, RepairAmount = repairAmount, UserId = 6 };
+            Invoice invoice = new Invoice { CustomerId = customerId, InvoiceNumber = "Abc123", InvoiceType = InvoiceType.Repair, RepairAmount = repairAmount, UserId = LoggedUser.loggedUserId };
 
             CustomerNameLabel.Text = allCustomers.FirstOrDefault(c => c.Id == customerId).Name;
             VehicleNameLabel.Text = allVehicles.FirstOrDefault(v => v.Id == vehicleId).Name;
