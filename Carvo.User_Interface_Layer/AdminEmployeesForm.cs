@@ -89,18 +89,22 @@ namespace Carvo.User_Interface_Layer
             var Users = AllUsers.Select(c => new
             {
                 c.Id,
-                الاسم = c.UserName,
-                c.Email,
                 c.Password,
-                المسئولية = (c.Role == Role.Admin) ? "مدير" : "موظف",
-                c.CreatedAt
+                c.CreatedAt,
+                Role = (c.Role == Role.Admin) ? "مدير" : "موظف",
+                c.Email,
+                الاسم = c.UserName,
             }).ToList();
 
             UsersGridView.DataSource = Users;
             UsersGridView.Columns["id"].Visible = false;
-            UsersGridView.Columns[2].HeaderText = "البريد الالكتروني";
-            UsersGridView.Columns[3].HeaderText = "كلمة المرور";
-            UsersGridView.Columns[5].HeaderText = "تاريخ الاضافة";
+            UsersGridView.Columns["Password"].Visible = false;
+            UsersGridView.Columns["CreatedAt"].Visible = false;
+            //UsersGridView.Columns[UsersGridView.ColumnCount - 1].HeaderText = "الاسم";
+            //UsersGridView.Columns[UsersGridView.ColumnCount - 1].HeaderText = "المسئولية";
+            UsersGridView.Columns[UsersGridView.ColumnCount - 2].HeaderText = "البريد الالكتروني";
+            UsersGridView.Columns[UsersGridView.ColumnCount - 3].HeaderText = "المسئولية";
+            //UsersGridView.Columns[5].HeaderText = "تاريخ الاضافة";
         }
 
         // Add new user button click handler
@@ -237,7 +241,7 @@ namespace Carvo.User_Interface_Layer
                 var selectedRow = UsersGridView.SelectedRows[0];
                 UserNameTxt.Text = selectedRow.Cells["الاسم"].Value.ToString();
                 UserEmailTxt.Text = selectedRow.Cells["Email"].Value.ToString();
-                UserpassTxt.Text = selectedRow.Cells["Password"].Value.ToString();
+                //UserpassTxt.Text = selectedRow.Cells["Password"].Value.ToString();
             }
         }
 
