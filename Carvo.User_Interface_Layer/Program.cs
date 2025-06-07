@@ -77,6 +77,7 @@ namespace Carvo.User_Interface_Layer
 
 
 
+
                  })
                  .Build();
 
@@ -172,13 +173,17 @@ namespace Carvo.User_Interface_Layer
             //Application.Run(paidSalesInvoiceForm);
 
             //Application.Run(invoiceForm);             // invoice should be printed
+
+            Application.Run(adminInvoicesForm);
+
             #endregion
-            
+
             //Application.Run(customerDashboardForm);
             //Application.Run(updateAlertForm);
             //Application.Run(alertIncompleteInformationForm);
             //Application.Run(alertSelectAndDeleteForm);
             //Application.Run(deleteAlertForm);
+
 
 
         }
