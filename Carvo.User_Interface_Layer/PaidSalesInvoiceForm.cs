@@ -42,9 +42,19 @@ namespace Carvo.User_Interface_Layer
             Customer.RemainingBalance += (double)(TotalPriceNumeric.Value - PaidPriceNumeric.Value);
             await customerService.UpdateCustomerAsync(Customer);
 
-            InvoiceForm invoiceForm =serviceProvider.GetRequiredService<InvoiceForm>();
+            InvoiceForm invoiceForm = serviceProvider.GetRequiredService<InvoiceForm>();
             invoiceForm.Show();
-            this.Close();   
+            this.Close();
+        }
+
+        private void CloseFormBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MinimizeFormBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

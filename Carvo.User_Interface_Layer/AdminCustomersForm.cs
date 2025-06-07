@@ -9,20 +9,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Carvo.Business_Logic_Layer.IServices;
 using Carvo.Data_Access_Layer.Entities.Users;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Carvo.User_Interface_Layer
 {
     public partial class AdminCustomersForm : Form
     {
         private readonly ICustomerService _customerService;
+        private IServiceProvider _serviceProvider;
 
-        public AdminCustomersForm(ICustomerService customerService)
+        public AdminCustomersForm(ICustomerService customerService, IServiceProvider serviceProvider)
         {
-            InitializeComponent();
             _customerService = customerService;
+            _serviceProvider = serviceProvider;
+            InitializeComponent();
             LoadCustomersAsync();
         }
-      //  الداله الصح
+        //  الداله الصح
         private async Task LoadCustomersAsync()
         {
             var customers = await _customerService.GetAllCustomersAsync();
@@ -158,10 +161,11 @@ namespace Carvo.User_Interface_Layer
             this.WindowState = FormWindowState.Minimized;
         }
 
-     
-        
-
-
-
+        private void AddVehicleBtn_Click(object sender, EventArgs e)
+        {
+            VehicleDashboardForm vehicleDashboardForm = _serviceProvider.GetRequiredService<VehicleDashboardForm>();
+            vehicleDashboardForm.Show();
+            this.Close();
+        }
     }
 }

@@ -114,6 +114,7 @@
             CloseFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             CloseFormBtn.TabIndex = 16;
             CloseFormBtn.TabStop = false;
+            CloseFormBtn.Click += CloseFormBtn_Click;
             // 
             // MinimizeFormBtn
             // 
@@ -124,6 +125,7 @@
             MinimizeFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             MinimizeFormBtn.TabIndex = 15;
             MinimizeFormBtn.TabStop = false;
+            MinimizeFormBtn.Click += MinimizeFormBtn_Click;
             // 
             // PaidSalesInvoiceForm
             // 
@@ -141,6 +143,7 @@
             Controls.Add(PaidPriceNumeric);
             FormBorderStyle = FormBorderStyle.None;
             Name = "PaidSalesInvoiceForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "PaidSalesInvoiceForm";
             ((System.ComponentModel.ISupportInitialize)PaidPriceNumeric).EndInit();
             ((System.ComponentModel.ISupportInitialize)TotalPriceNumeric).EndInit();
