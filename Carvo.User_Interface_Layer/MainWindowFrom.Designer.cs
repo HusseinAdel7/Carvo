@@ -70,10 +70,10 @@
             // employeePictureBox
             // 
             employeePictureBox.Image = (Image)resources.GetObject("employeePictureBox.Image");
-            employeePictureBox.Location = new Point(254, 112);
+            employeePictureBox.Location = new Point(298, 130);
             employeePictureBox.Margin = new Padding(3, 4, 3, 4);
             employeePictureBox.Name = "employeePictureBox";
-            employeePictureBox.Size = new Size(130, 155);
+            employeePictureBox.Size = new Size(197, 193);
             employeePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             employeePictureBox.TabIndex = 2;
             employeePictureBox.TabStop = false;
@@ -83,10 +83,10 @@
             // adminPictureBox
             // 
             adminPictureBox.Image = (Image)resources.GetObject("adminPictureBox.Image");
-            adminPictureBox.Location = new Point(961, 112);
+            adminPictureBox.Location = new Point(882, 130);
             adminPictureBox.Margin = new Padding(3, 4, 3, 4);
             adminPictureBox.Name = "adminPictureBox";
-            adminPictureBox.Size = new Size(133, 153);
+            adminPictureBox.Size = new Size(197, 193);
             adminPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             adminPictureBox.TabIndex = 3;
             adminPictureBox.TabStop = false;
@@ -96,10 +96,10 @@
             // adminBtn
             // 
             adminBtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            adminBtn.Location = new Point(961, 312);
+            adminBtn.Location = new Point(882, 344);
             adminBtn.Margin = new Padding(3, 4, 3, 4);
             adminBtn.Name = "adminBtn";
-            adminBtn.Size = new Size(133, 53);
+            adminBtn.Size = new Size(197, 53);
             adminBtn.TabIndex = 4;
             adminBtn.Tag = "1";
             adminBtn.Text = "مدير";
@@ -109,10 +109,10 @@
             // employeeBtn
             // 
             employeeBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            employeeBtn.Location = new Point(254, 313);
+            employeeBtn.Location = new Point(298, 344);
             employeeBtn.Margin = new Padding(3, 4, 3, 4);
             employeeBtn.Name = "employeeBtn";
-            employeeBtn.Size = new Size(130, 53);
+            employeeBtn.Size = new Size(197, 53);
             employeeBtn.TabIndex = 5;
             employeeBtn.Tag = "2";
             employeeBtn.Text = "موظف";
@@ -147,7 +147,6 @@
             // 
             // panel1
             // 
-            panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(label1);
             panel1.Controls.Add(minimizeBtn);
             panel1.Controls.Add(closeBtn);
@@ -166,7 +165,7 @@
             panel2.Controls.Add(employeePictureBox);
             panel2.Location = new Point(68, 187);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1371, 403);
+            panel2.Size = new Size(1371, 433);
             panel2.TabIndex = 11;
             // 
             // MainWindowFrom

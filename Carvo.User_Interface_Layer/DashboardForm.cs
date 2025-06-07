@@ -34,7 +34,7 @@ namespace Carvo.User_Interface_Layer
 
         private void closebtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void minimizebtn_Click(object sender, EventArgs e)
