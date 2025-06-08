@@ -71,7 +71,7 @@ namespace Carvo.User_Interface_Layer
             string Name = CategoryNameTxt.Text;
             string Desc = CategoryDescTxt.Text;
 
-            if (ValidateCategory(Name, Desc))
+            if (ValidateCategory(Name, Desc) && CategoryGridView.SelectedRows.Count > 0)
             {
                 var selectedRow = CategoryGridView.SelectedRows[0];
                 int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
@@ -81,6 +81,9 @@ namespace Carvo.User_Interface_Layer
                 category.Name = Name;
                 category.Description = Desc;
 
+                UpdateAlertForm updateAlert = serviceProvider.GetRequiredService<UpdateAlertForm>();
+                updateAlert.ShowDialog();
+
                 await categoryService.UpdateCategoryAsync(category);
                 await LoadCategoriesAsync();
             }
@@ -88,10 +91,17 @@ namespace Carvo.User_Interface_Layer
 
         private async void DeleteCategoryBtn_Click(object sender, EventArgs e)
         {
-            var selectedRow = CategoryGridView.SelectedRows[0];
-            int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
-            await categoryService.DeleteCategoryAsync(id);
-            await LoadCategoriesAsync();
+            if (CategoryGridView.SelectedRows.Count > 0)
+            {
+                var selectedRow = CategoryGridView.SelectedRows[0];
+                int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                await categoryService.DeleteCategoryAsync(id);
+                await LoadCategoriesAsync();
+
+                DeleteAlertForm deleteAlert =  serviceProvider.GetRequiredService<DeleteAlertForm>();
+                deleteAlert.ShowDialog();
+            }
+                
         }
 
         private async Task LoadCategoriesAsync()

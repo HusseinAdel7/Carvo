@@ -148,6 +148,9 @@ namespace Carvo.User_Interface_Layer
                     supplier.ComapayName = supplierCompanyFollowed;
                     supplier.RemainingBalance = double.Parse(supplierRemainingBalance);
 
+                    UpdateAlertForm updateAlert = _serviceProvider.GetRequiredService<UpdateAlertForm>();
+                    updateAlert.ShowDialog();
+
                     await _supplierService.UpdateSupplierAsync(supplier);
                     await LoadSuppliersAsync();
                 }
@@ -170,12 +173,17 @@ namespace Carvo.User_Interface_Layer
 
             try
             {
-                DeleteConfirmation();
-                var selectedRow = SuppliersGridView.SelectedRows[0];
-                int supplierId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                if (SuppliersGridView.SelectedRows.Count > 0)
+                {
+                    var selectedRow = SuppliersGridView.SelectedRows[0];
+                    int supplierId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
-                await _supplierService.DeleteSupplierAsync(supplierId);
-                await LoadSuppliersAsync();
+                    await _supplierService.DeleteSupplierAsync(supplierId);
+                    await LoadSuppliersAsync();
+
+                    DeleteAlertForm deleteAlert = _serviceProvider.GetRequiredService<DeleteAlertForm>();
+                    deleteAlert.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
@@ -240,12 +248,6 @@ namespace Carvo.User_Interface_Layer
                 return;
 
             }
-        }
-        private void DeleteConfirmation()
-        {
-            AlertSelectAndDeleteForm alertForm = new AlertSelectAndDeleteForm();
-            alertForm.ShowDialog();
-            return;
         }
 
         private void Logoutbtn_Click(object sender, EventArgs e)

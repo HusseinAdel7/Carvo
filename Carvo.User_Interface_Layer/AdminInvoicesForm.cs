@@ -114,6 +114,8 @@ namespace Carvo.User_Interface_Layer
                     if (deleted)
                     {
                         _invoicesBindingList.Remove(selectedDisplayedInvoice);
+                        DeleteAlertForm deleteAlert = _serviceProvider.GetRequiredService<DeleteAlertForm>();
+                        deleteAlert.ShowDialog();
                         //displayedInvoices.Remove(selectedDisplayedInvoice);
                     }
                     else
@@ -132,11 +134,15 @@ namespace Carvo.User_Interface_Layer
                 displayedInvoices = new List<DisplayedInvoice>();
                 _invoicesBindingList = new BindingList<DisplayedInvoice>(displayedInvoices);
                 InvoicesGridView.DataSource = _invoicesBindingList;
+
+                DeleteAlertForm deleteAlert = _serviceProvider.GetRequiredService<DeleteAlertForm>();
+                deleteAlert.ShowDialog();
+
                 foreach (var invoice in invoices)
                 {
                     await _invoiceService.DeleteInvoiceAsync(invoice.Id);
                 }
-
+                
             }
         }
 

@@ -81,6 +81,7 @@
             Name = "UpdateAlertForm";
             RightToLeft = RightToLeft.Yes;
             RightToLeftLayout = true;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "UpdateAlertForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);

@@ -16,5 +16,10 @@ namespace Carvo.User_Interface_Layer
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

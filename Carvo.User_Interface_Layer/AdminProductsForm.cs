@@ -140,25 +140,35 @@ namespace Carvo.User_Interface_Layer
             string desc = ProductDescTxt.Text;
             int quantity = int.Parse(ProductQuantityNumeric.Value.ToString());
             double price = double.Parse(ProductPriceNumeric.Value.ToString());
-            int supplierId = (int)SupplierNameDropdownList.SelectedValue;
-            int categoryId = (int)CategoriesDeopdownList.SelectedValue;
+            int supplierId = 0; 
+            int categoryId = 0;
 
-
-            if (ValidateProduct(name, desc, quantity, price))
+            try
             {
-                Product addedProduct = new Product
-                {
-                    Name = name,
-                    Description = desc,
-                    Quantity = quantity,
-                    Price = price,
-                    SupplierId = supplierId,
-                    CategoryId = categoryId
-                };
-                await productService.AddProductAsync(addedProduct);
-                await LoadProductsAsync();
-            }
+                supplierId =  (int)SupplierNameDropdownList.SelectedValue;
+                categoryId =  (int)CategoriesDeopdownList.SelectedValue;
 
+                if (ValidateProduct(name, desc, quantity, price))
+                {
+                    Product addedProduct = new Product
+                    {
+                        Name = name,
+                        Description = desc,
+                        Quantity = quantity,
+                        Price = price,
+                        SupplierId = supplierId,
+                        CategoryId = categoryId
+                    };
+                    await productService.AddProductAsync(addedProduct);
+                    await LoadProductsAsync();
+                }
+
+            }
+            catch
+            {
+                AlertIncompleteInformationForm alert = serviceProvider.GetService<AlertIncompleteInformationForm>();
+                alert.ShowDialog();
+            }
         }
 
 
@@ -187,6 +197,9 @@ namespace Carvo.User_Interface_Layer
                 product.SupplierId = supplierId;
                 product.CategoryId = categoryId;
 
+                UpdateAlertForm updateAlert = serviceProvider.GetRequiredService<UpdateAlertForm>();
+                updateAlert.ShowDialog();
+
                 await productService.UpdateProductAsync(product);
                 await LoadProductsAsync();
             }
@@ -195,10 +208,17 @@ namespace Carvo.User_Interface_Layer
 
         private async void DeleteProductBtn_Click(object sender, EventArgs e)
         {
-            var selectedRow = ProductsGridView.SelectedRows[0];
-            int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
-            await productService.DeleteProductAsync(id);
-            await LoadProductsAsync();
+            if (ProductsGridView.SelectedRows.Count > 0)
+            {
+                var selectedRow = ProductsGridView.SelectedRows[0];
+                int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                await productService.DeleteProductAsync(id);
+                await LoadProductsAsync();
+
+                DeleteAlertForm deleteAlert = serviceProvider.GetRequiredService<DeleteAlertForm>();
+                deleteAlert.ShowDialog();
+            }
+                
         }
 
         private bool ValidateProduct(string productName, string productDesc, int productQuantity, double productPrice)

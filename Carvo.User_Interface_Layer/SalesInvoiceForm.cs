@@ -159,6 +159,9 @@ namespace Carvo.User_Interface_Layer
             addedInvoice.SaleAmount = (decimal)dispalyedInGrids.Sum(g => g.TotalPrice);
             await LoadInvoicesAsync();
 
+            DeleteAlertForm deleteAlert = serviceProvider.GetRequiredService<DeleteAlertForm>();
+            deleteAlert.ShowDialog();
+
             IEnumerable<InvoiceProduct> invoicePSList = await invoiceProductService.GetAllInvoiceProductsAsync();
 
             InvoiceProduct invoiceP = invoicePSList.FirstOrDefault(ips => ips.ProductId == id && ips.InvoiceId == addedInvoice.Id);

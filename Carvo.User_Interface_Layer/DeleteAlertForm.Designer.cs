@@ -50,12 +50,13 @@
             button1.BackColor = Color.White;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
             button1.ForeColor = Color.FromArgb(48, 67, 87);
-            button1.Location = new Point(68, 278);
+            button1.Location = new Point(66, 309);
             button1.Name = "button1";
             button1.Size = new Size(163, 46);
             button1.TabIndex = 11;
             button1.Text = "موافق";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -79,6 +80,7 @@
             Controls.Add(button1);
             Controls.Add(label2);
             Name = "DeleteAlertForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "DeleteAlertForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);

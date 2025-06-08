@@ -109,7 +109,8 @@ namespace Carvo.User_Interface_Layer
                 await _vehicleService.UpdateVehicleAsync(updatedVehicle);
                 await LoadDataVehicles();
 
-                MessageBox.Show("تم تعديل بيانات السيارة بنجاح.", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                UpdateAlertForm updateAlert = _serviceProvider.GetRequiredService<UpdateAlertForm>();
+                updateAlert.ShowDialog();
             }
             else
             {
@@ -136,7 +137,8 @@ namespace Carvo.User_Interface_Layer
                     await _vehicleService.DeleteVehicleAsync(id); // حذف من قاعدة البيانات
                     await LoadDataVehicles(); // تحديث البيانات
 
-                    MessageBox.Show("تم حذف السيارة بنجاح.", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DeleteAlertForm deleteAlert = _serviceProvider.GetRequiredService<DeleteAlertForm>();
+                    deleteAlert.ShowDialog();
                 }
                 catch (Exception ex)
                 {
