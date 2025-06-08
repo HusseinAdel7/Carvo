@@ -477,6 +477,7 @@
             PrevFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevFormBtn.TabIndex = 11;
             PrevFormBtn.TabStop = false;
+            PrevFormBtn.Click += PrevFormBtn_Click;
             // 
             // LogOutBtn
             // 
@@ -487,6 +488,7 @@
             LogOutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogOutBtn.TabIndex = 10;
             LogOutBtn.TabStop = false;
+            LogOutBtn.Click += LogOutBtn_Click;
             // 
             // label1
             // 

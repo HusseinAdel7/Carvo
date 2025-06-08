@@ -42,12 +42,10 @@
             LogoutImageAsBtn = new PictureBox();
             InvoicesManagement = new Label();
             panel2 = new Panel();
-            DeleteAllInvoicesImg = new PictureBox();
-            DeleteInvoiceImg = new PictureBox();
-            AddInvoiceImg = new PictureBox();
-            AddInvoiceBtn = new Button();
-            DeleteInvoiceBtn = new Button();
-            DeleteAllInvoicesBtn = new Button();
+            DeleteAllPictureBox = new PictureBox();
+            DeleteInvoicePictureBox = new PictureBox();
+            DeleteInvoiceButton = new Button();
+            DeleteAllButton = new Button();
             InvoicesGridView = new DataGridView();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
@@ -56,9 +54,8 @@
             ((System.ComponentModel.ISupportInitialize)MinimizeImgBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)LogoutImageAsBtn).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DeleteAllInvoicesImg).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DeleteInvoiceImg).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)AddInvoiceImg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DeleteAllPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DeleteInvoicePictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)InvoicesGridView).BeginInit();
             SuspendLayout();
             // 
@@ -75,10 +72,10 @@
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 106F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 126F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(1508, 703);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 107F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 252F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.Size = new Size(1375, 630);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -94,7 +91,7 @@
             panel1.ForeColor = Color.White;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1502, 100);
+            panel1.Size = new Size(1369, 101);
             panel1.TabIndex = 0;
             // 
             // PrevImgBtn
@@ -102,17 +99,18 @@
             PrevImgBtn.Image = (Image)resources.GetObject("PrevImgBtn.Image");
             PrevImgBtn.Location = new Point(142, 20);
             PrevImgBtn.Name = "PrevImgBtn";
-            PrevImgBtn.Size = new Size(52, 53);
+            PrevImgBtn.Size = new Size(53, 53);
             PrevImgBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevImgBtn.TabIndex = 4;
             PrevImgBtn.TabStop = false;
+            PrevImgBtn.Click += PrevImgBtn_Click;
             // 
             // CloseFormBtn
             // 
             CloseFormBtn.Image = (Image)resources.GetObject("CloseFormBtn.Image");
-            CloseFormBtn.Location = new Point(1393, 20);
+            CloseFormBtn.Location = new Point(1288, 20);
             CloseFormBtn.Name = "CloseFormBtn";
-            CloseFormBtn.Size = new Size(52, 53);
+            CloseFormBtn.Size = new Size(53, 53);
             CloseFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             CloseFormBtn.TabIndex = 3;
             CloseFormBtn.TabStop = false;
@@ -121,9 +119,9 @@
             // MinimizeImgBtn
             // 
             MinimizeImgBtn.Image = (Image)resources.GetObject("MinimizeImgBtn.Image");
-            MinimizeImgBtn.Location = new Point(1300, 20);
+            MinimizeImgBtn.Location = new Point(1196, 20);
             MinimizeImgBtn.Name = "MinimizeImgBtn";
-            MinimizeImgBtn.Size = new Size(52, 53);
+            MinimizeImgBtn.Size = new Size(53, 53);
             MinimizeImgBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             MinimizeImgBtn.TabIndex = 2;
             MinimizeImgBtn.TabStop = false;
@@ -134,16 +132,17 @@
             LogoutImageAsBtn.Image = (Image)resources.GetObject("LogoutImageAsBtn.Image");
             LogoutImageAsBtn.Location = new Point(42, 20);
             LogoutImageAsBtn.Name = "LogoutImageAsBtn";
-            LogoutImageAsBtn.Size = new Size(52, 53);
+            LogoutImageAsBtn.Size = new Size(53, 53);
             LogoutImageAsBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogoutImageAsBtn.TabIndex = 1;
             LogoutImageAsBtn.TabStop = false;
+            LogoutImageAsBtn.Click += LogoutImageAsBtn_Click;
             // 
             // InvoicesManagement
             // 
             InvoicesManagement.AutoSize = true;
             InvoicesManagement.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            InvoicesManagement.Location = new Point(707, 35);
+            InvoicesManagement.Location = new Point(638, 35);
             InvoicesManagement.Name = "InvoicesManagement";
             InvoicesManagement.Size = new Size(158, 38);
             InvoicesManagement.TabIndex = 0;
@@ -153,79 +152,60 @@
             // 
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(48, 67, 87);
-            panel2.Controls.Add(DeleteAllInvoicesImg);
-            panel2.Controls.Add(DeleteInvoiceImg);
-            panel2.Controls.Add(AddInvoiceImg);
-            panel2.Controls.Add(AddInvoiceBtn);
-            panel2.Controls.Add(DeleteInvoiceBtn);
-            panel2.Controls.Add(DeleteAllInvoicesBtn);
-            panel2.Location = new Point(3, 109);
+            panel2.Controls.Add(DeleteAllPictureBox);
+            panel2.Controls.Add(DeleteInvoicePictureBox);
+            panel2.Controls.Add(DeleteInvoiceButton);
+            panel2.Controls.Add(DeleteAllButton);
+            panel2.Location = new Point(3, 110);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1502, 120);
+            panel2.Size = new Size(1369, 246);
             panel2.TabIndex = 1;
             // 
-            // DeleteAllInvoicesImg
+            // DeleteAllPictureBox
             // 
-            DeleteAllInvoicesImg.Image = (Image)resources.GetObject("DeleteAllInvoicesImg.Image");
-            DeleteAllInvoicesImg.Location = new Point(328, 39);
-            DeleteAllInvoicesImg.Name = "DeleteAllInvoicesImg";
-            DeleteAllInvoicesImg.Size = new Size(64, 52);
-            DeleteAllInvoicesImg.SizeMode = PictureBoxSizeMode.StretchImage;
-            DeleteAllInvoicesImg.TabIndex = 5;
-            DeleteAllInvoicesImg.TabStop = false;
+            DeleteAllPictureBox.Image = (Image)resources.GetObject("DeleteAllPictureBox.Image");
+            DeleteAllPictureBox.Location = new Point(533, 94);
+            DeleteAllPictureBox.Name = "DeleteAllPictureBox";
+            DeleteAllPictureBox.Size = new Size(64, 52);
+            DeleteAllPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            DeleteAllPictureBox.TabIndex = 5;
+            DeleteAllPictureBox.TabStop = false;
+            DeleteAllPictureBox.Click += DeleteAllInvoices_Click;
             // 
-            // DeleteInvoiceImg
+            // DeleteInvoicePictureBox
             // 
-            DeleteInvoiceImg.Image = (Image)resources.GetObject("DeleteInvoiceImg.Image");
-            DeleteInvoiceImg.Location = new Point(764, 39);
-            DeleteInvoiceImg.Name = "DeleteInvoiceImg";
-            DeleteInvoiceImg.Size = new Size(64, 52);
-            DeleteInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
-            DeleteInvoiceImg.TabIndex = 4;
-            DeleteInvoiceImg.TabStop = false;
+            DeleteInvoicePictureBox.Image = (Image)resources.GetObject("DeleteInvoicePictureBox.Image");
+            DeleteInvoicePictureBox.Location = new Point(968, 94);
+            DeleteInvoicePictureBox.Name = "DeleteInvoicePictureBox";
+            DeleteInvoicePictureBox.Size = new Size(64, 52);
+            DeleteInvoicePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            DeleteInvoicePictureBox.TabIndex = 4;
+            DeleteInvoicePictureBox.TabStop = false;
+            DeleteInvoicePictureBox.Click += DeleteInvoice_Click;
             // 
-            // AddInvoiceImg
+            // DeleteInvoiceButton
             // 
-            AddInvoiceImg.Image = (Image)resources.GetObject("AddInvoiceImg.Image");
-            AddInvoiceImg.Location = new Point(1186, 39);
-            AddInvoiceImg.Name = "AddInvoiceImg";
-            AddInvoiceImg.Size = new Size(64, 52);
-            AddInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
-            AddInvoiceImg.TabIndex = 3;
-            AddInvoiceImg.TabStop = false;
+            DeleteInvoiceButton.BackColor = Color.FromArgb(224, 224, 224);
+            DeleteInvoiceButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            DeleteInvoiceButton.Location = new Point(834, 94);
+            DeleteInvoiceButton.Name = "DeleteInvoiceButton";
+            DeleteInvoiceButton.Size = new Size(130, 52);
+            DeleteInvoiceButton.TabIndex = 1;
+            DeleteInvoiceButton.Text = "مسح فاتورة";
+            DeleteInvoiceButton.UseVisualStyleBackColor = false;
+            DeleteInvoiceButton.Click += DeleteInvoice_Click;
             // 
-            // AddInvoiceBtn
+            // DeleteAllButton
             // 
-            AddInvoiceBtn.BackColor = Color.FromArgb(224, 224, 224);
-            AddInvoiceBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            AddInvoiceBtn.Location = new Point(1050, 39);
-            AddInvoiceBtn.Name = "AddInvoiceBtn";
-            AddInvoiceBtn.Size = new Size(130, 52);
-            AddInvoiceBtn.TabIndex = 2;
-            AddInvoiceBtn.Text = "اضافة فاتورة ";
-            AddInvoiceBtn.UseVisualStyleBackColor = false;
-            // 
-            // DeleteInvoiceBtn
-            // 
-            DeleteInvoiceBtn.BackColor = Color.FromArgb(224, 224, 224);
-            DeleteInvoiceBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            DeleteInvoiceBtn.Location = new Point(628, 39);
-            DeleteInvoiceBtn.Name = "DeleteInvoiceBtn";
-            DeleteInvoiceBtn.Size = new Size(130, 52);
-            DeleteInvoiceBtn.TabIndex = 1;
-            DeleteInvoiceBtn.Text = "مسح فاتورة";
-            DeleteInvoiceBtn.UseVisualStyleBackColor = false;
-            // 
-            // DeleteAllInvoicesBtn
-            // 
-            DeleteAllInvoicesBtn.BackColor = Color.FromArgb(224, 224, 224);
-            DeleteAllInvoicesBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            DeleteAllInvoicesBtn.Location = new Point(192, 39);
-            DeleteAllInvoicesBtn.Name = "DeleteAllInvoicesBtn";
-            DeleteAllInvoicesBtn.Size = new Size(130, 52);
-            DeleteAllInvoicesBtn.TabIndex = 0;
-            DeleteAllInvoicesBtn.Text = "مسح الكل";
-            DeleteAllInvoicesBtn.UseVisualStyleBackColor = false;
+            DeleteAllButton.BackColor = Color.FromArgb(224, 224, 224);
+            DeleteAllButton.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            DeleteAllButton.Location = new Point(397, 94);
+            DeleteAllButton.Name = "DeleteAllButton";
+            DeleteAllButton.Size = new Size(130, 52);
+            DeleteAllButton.TabIndex = 0;
+            DeleteAllButton.Text = "مسح الكل";
+            DeleteAllButton.UseVisualStyleBackColor = false;
+            DeleteAllButton.Click += DeleteAllInvoices_Click;
             // 
             // InvoicesGridView
             // 
@@ -257,8 +237,8 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             InvoicesGridView.DefaultCellStyle = dataGridViewCellStyle3;
             InvoicesGridView.EnableHeadersVisualStyles = false;
-            InvoicesGridView.Location = new Point(3, 238);
-            InvoicesGridView.MaximumSize = new Size(1502, 458);
+            InvoicesGridView.Location = new Point(3, 373);
+            InvoicesGridView.MaximumSize = new Size(1502, 243);
             InvoicesGridView.Name = "InvoicesGridView";
             InvoicesGridView.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -274,9 +254,9 @@
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
             InvoicesGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             InvoicesGridView.ScrollBars = ScrollBars.Vertical;
-            InvoicesGridView.Size = new Size(1502, 458);
-            InvoicesGridView.TabIndex = 2;
-            InvoicesGridView.DataBindingComplete += InvoicesGridView_DataBindingComplete;
+            InvoicesGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            InvoicesGridView.Size = new Size(1369, 243);
+            InvoicesGridView.TabIndex = 17;
             // 
             // AdminInvoicesForm
             // 
@@ -284,7 +264,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1508, 703);
+            ClientSize = new Size(1375, 630);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AdminInvoicesForm";
@@ -298,9 +278,8 @@
             ((System.ComponentModel.ISupportInitialize)MinimizeImgBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)LogoutImageAsBtn).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)DeleteAllInvoicesImg).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DeleteInvoiceImg).EndInit();
-            ((System.ComponentModel.ISupportInitialize)AddInvoiceImg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DeleteAllPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DeleteInvoicePictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)InvoicesGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -312,16 +291,14 @@
         private Panel panel1;
         private Label InvoicesManagement;
         private Panel panel2;
-        private Button AddInvoiceBtn;
-        private Button DeleteInvoiceBtn;
-        private Button DeleteAllInvoicesBtn;
-        private DataGridView InvoicesGridView;
-        private PictureBox DeleteInvoiceImg;
-        private PictureBox AddInvoiceImg;
-        private PictureBox DeleteAllInvoicesImg;
+        private Button DeleteInvoiceButton;
+        private Button DeleteAllButton;
+        private PictureBox DeleteInvoicePictureBox;
+        private PictureBox DeleteAllPictureBox;
         private PictureBox LogoutImageAsBtn;
         private PictureBox PrevImgBtn;
         private PictureBox CloseFormBtn;
         private PictureBox MinimizeImgBtn;
+        private DataGridView InvoicesGridView;
     }
 }

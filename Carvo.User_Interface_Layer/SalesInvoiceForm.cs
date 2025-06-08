@@ -180,6 +180,21 @@ namespace Carvo.User_Interface_Layer
             paidSalesInvoiceForm.Show();
             this.Hide();
         }
+
+        private void LogOutBtn_Click(object sender, EventArgs e)
+        {
+            LoggedUser.loggedUserId = 0;
+            LoggedUser.loggedUserName = "";
+            LoggedUser.mainWindowForm.Show();
+            this.Close();
+        }
+
+        private void PrevFormBtn_Click(object sender, EventArgs e)
+        {
+            EmployeeDashboardForm employeeDashboard = serviceProvider.GetRequiredService<EmployeeDashboardForm>();
+            employeeDashboard.Show();
+            this.Close();
+        }
     }
 
     public class DataDispalyedInGrid

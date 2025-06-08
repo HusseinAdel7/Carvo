@@ -96,8 +96,9 @@ namespace Carvo.User_Interface_Layer
         /// <param name="e">Event data for the click event.</param>
         private void LogOutBtn_Click(object sender, EventArgs e)
         {
-            var mainWindow = _serviceProvider.GetService(typeof(MainWindowFrom)) as MainWindowFrom;
-            mainWindow.Show();
+            LoggedUser.loggedUserId = 0;
+            LoggedUser.loggedUserName = "";
+            LoggedUser.mainWindowForm.Show();
             this.Close();
         }
 

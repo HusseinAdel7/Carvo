@@ -1,5 +1,6 @@
 ﻿using Carvo.Business_Logic_Layer.IServices;
 using Carvo.Data_Access_Layer.Entities.Users;
+using Carvo.Data_Access_Layer.Enums;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
@@ -173,6 +174,29 @@ namespace Carvo.User_Interface_Layer
         {
             VehicleDashboardForm vehicleDashboardForm = _serviceProvider.GetRequiredService<VehicleDashboardForm>();
             vehicleDashboardForm.Show();
+            this.Close();
+        }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            LoggedUser.loggedUserId = 0;
+            LoggedUser.loggedUserName = "";
+            LoggedUser.mainWindowForm.Show();
+            this.Close();
+        }
+
+        private void PrevImageAsBtn_Click(object sender, EventArgs e)
+        {
+            if(LoggedUser.Role == Role.Admin)
+            {
+                HomeDashboardForm homeDashboardForm = _serviceProvider.GetRequiredService<HomeDashboardForm>();
+                homeDashboardForm.Show();
+            }
+            else
+            {
+                EmployeeDashboardForm employeeDashboardForm = _serviceProvider.GetRequiredService<EmployeeDashboardForm>();
+                employeeDashboardForm.Show();
+            }
             this.Close();
         }
     }

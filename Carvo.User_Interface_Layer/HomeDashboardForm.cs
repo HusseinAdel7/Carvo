@@ -22,7 +22,7 @@ namespace Carvo.User_Interface_Layer
         {
             _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
             InitializeComponent();
-            this.Load += async (s, e) =>  LoadHomeDashboard();
+            this.Load += async (s, e) => LoadHomeDashboard();
             RegisterControlEvents();
         }
 
@@ -61,6 +61,9 @@ namespace Carvo.User_Interface_Layer
             btnreports.Click += OpenDashboardForm;
             picreports.Click += OpenDashboardForm;
 
+            InvoicesBtn.Click += OpenAdminInvoicesForm;
+            InvoicesImgBtn.Click += OpenAdminInvoicesForm;
+
         }
 
 
@@ -71,11 +74,12 @@ namespace Carvo.User_Interface_Layer
         private void OpenCustomersForm(object? sender, EventArgs e) => ShowChildForm<AdminCustomersForm>();
         private void OpenVehiclesForm(object? sender, EventArgs e) => ShowChildForm<VehicleDashboardForm>();
         private void OpenDashboardForm(object? sender, EventArgs e) => ShowChildForm<DashboardForm>();
+        private void OpenAdminInvoicesForm(object? sender, EventArgs e) => ShowChildForm<AdminInvoicesForm>();
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
-           // this buton for close form
-           Application.Exit();
+            // this buton for close form
+            Application.Exit();
         }
 
         private void pictureBox12_Click(object sender, EventArgs e)
@@ -89,18 +93,18 @@ namespace Carvo.User_Interface_Layer
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             //this picture for go to Admin Dashboard Form
-            ShowChildForm<MainWindowFrom>();
+            LoggedUser.loggedUserId = 0;
+            LoggedUser.loggedUserName = "";
+            LoggedUser.mainWindowForm.Show();
+            this.Close();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ShowChildForm<TForm>() where TForm : Form
         {
             var form = _serviceProvider.GetRequiredService<TForm>();
-            form.ShowDialog(this);
+            form.Show();
+            this.Close();
         }
     }
 }

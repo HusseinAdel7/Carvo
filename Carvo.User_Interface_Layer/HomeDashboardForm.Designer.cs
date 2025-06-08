@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeDashboardForm));
             welcomemsgLabel = new Label();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             picUsers = new PictureBox();
             picCategories = new PictureBox();
             picProducts = new PictureBox();
@@ -48,8 +47,9 @@
             btnVehicles = new Button();
             picVehicles = new PictureBox();
             btnreports = new Button();
+            InvoicesImgBtn = new PictureBox();
+            InvoicesBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picUsers).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picCategories).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picProducts).BeginInit();
@@ -59,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picVehicles).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)InvoicesImgBtn).BeginInit();
             SuspendLayout();
             // 
             // welcomemsgLabel
@@ -83,18 +84,6 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(136, 32);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(50, 50);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
             // 
             // picUsers
             // 
@@ -192,7 +181,7 @@
             // 
             btnCustomers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCustomers.ForeColor = Color.Black;
-            btnCustomers.Location = new Point(357, 636);
+            btnCustomers.Location = new Point(511, 639);
             btnCustomers.Margin = new Padding(3, 4, 3, 4);
             btnCustomers.Name = "btnCustomers";
             btnCustomers.Size = new Size(151, 44);
@@ -203,7 +192,7 @@
             // picCustomers
             // 
             picCustomers.Image = (Image)resources.GetObject("picCustomers.Image");
-            picCustomers.Location = new Point(357, 484);
+            picCustomers.Location = new Point(511, 487);
             picCustomers.Margin = new Padding(3, 4, 3, 4);
             picCustomers.Name = "picCustomers";
             picCustomers.Size = new Size(147, 129);
@@ -214,7 +203,7 @@
             // picreports
             // 
             picreports.Image = (Image)resources.GetObject("picreports.Image");
-            picreports.Location = new Point(974, 484);
+            picreports.Location = new Point(1128, 487);
             picreports.Margin = new Padding(3, 4, 3, 4);
             picreports.Name = "picreports";
             picreports.Size = new Size(143, 129);
@@ -250,7 +239,7 @@
             // 
             btnVehicles.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVehicles.ForeColor = Color.Black;
-            btnVehicles.Location = new Point(664, 636);
+            btnVehicles.Location = new Point(818, 639);
             btnVehicles.Margin = new Padding(3, 4, 3, 4);
             btnVehicles.Name = "btnVehicles";
             btnVehicles.Size = new Size(147, 44);
@@ -261,7 +250,7 @@
             // picVehicles
             // 
             picVehicles.Image = (Image)resources.GetObject("picVehicles.Image");
-            picVehicles.Location = new Point(664, 484);
+            picVehicles.Location = new Point(818, 487);
             picVehicles.Margin = new Padding(3, 4, 3, 4);
             picVehicles.Name = "picVehicles";
             picVehicles.Size = new Size(147, 129);
@@ -273,7 +262,7 @@
             // 
             btnreports.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnreports.ForeColor = Color.Black;
-            btnreports.Location = new Point(974, 636);
+            btnreports.Location = new Point(1128, 639);
             btnreports.Margin = new Padding(3, 4, 3, 4);
             btnreports.Name = "btnreports";
             btnreports.Size = new Size(147, 44);
@@ -281,12 +270,37 @@
             btnreports.Text = "التقارير";
             btnreports.UseVisualStyleBackColor = true;
             // 
+            // InvoicesImgBtn
+            // 
+            InvoicesImgBtn.Image = (Image)resources.GetObject("InvoicesImgBtn.Image");
+            InvoicesImgBtn.Location = new Point(206, 487);
+            InvoicesImgBtn.Margin = new Padding(3, 4, 3, 4);
+            InvoicesImgBtn.Name = "InvoicesImgBtn";
+            InvoicesImgBtn.Size = new Size(147, 129);
+            InvoicesImgBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            InvoicesImgBtn.TabIndex = 25;
+            InvoicesImgBtn.TabStop = false;
+            // 
+            // InvoicesBtn
+            // 
+            InvoicesBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            InvoicesBtn.ForeColor = Color.Black;
+            InvoicesBtn.Location = new Point(206, 639);
+            InvoicesBtn.Margin = new Padding(3, 4, 3, 4);
+            InvoicesBtn.Name = "InvoicesBtn";
+            InvoicesBtn.Size = new Size(151, 44);
+            InvoicesBtn.TabIndex = 24;
+            InvoicesBtn.Text = "الفواتير";
+            InvoicesBtn.UseVisualStyleBackColor = true;
+            // 
             // HomeDashboardForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
             ClientSize = new Size(1453, 755);
+            Controls.Add(InvoicesImgBtn);
+            Controls.Add(InvoicesBtn);
             Controls.Add(btnreports);
             Controls.Add(picVehicles);
             Controls.Add(btnVehicles);
@@ -303,7 +317,6 @@
             Controls.Add(picProducts);
             Controls.Add(picCategories);
             Controls.Add(picUsers);
-            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(welcomemsgLabel);
             FormBorderStyle = FormBorderStyle.None;
@@ -311,7 +324,6 @@
             Name = "HomeDashboardForm";
             Text = "HomeDashboardForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)picUsers).EndInit();
             ((System.ComponentModel.ISupportInitialize)picCategories).EndInit();
             ((System.ComponentModel.ISupportInitialize)picProducts).EndInit();
@@ -321,6 +333,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ((System.ComponentModel.ISupportInitialize)picVehicles).EndInit();
+            ((System.ComponentModel.ISupportInitialize)InvoicesImgBtn).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -329,7 +342,6 @@
 
         private Label welcomemsgLabel;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private PictureBox picUsers;
         private PictureBox picCategories;
         private PictureBox picProducts;
@@ -349,5 +361,7 @@
         private Button btnVehicles;
         private PictureBox picVehicles;
         private Button btnreports;
+        private PictureBox InvoicesImgBtn;
+        private Button InvoicesBtn;
     }
 }

@@ -2,6 +2,7 @@
 using Carvo.Business_Logic_Layer.Services;
 using Carvo.Data_Access_Layer.Entities;
 using Carvo.Data_Access_Layer.Entities.Users;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,10 +19,12 @@ namespace Carvo.User_Interface_Layer
     public partial class AdminSuppliersForm : Form
     {
         private ISupplierService _supplierService;
+        private IServiceProvider _serviceProvider;
 
-        public AdminSuppliersForm(ISupplierService supplierService)
+        public AdminSuppliersForm(ISupplierService supplierService, IServiceProvider serviceProvider)
         {
             _supplierService = supplierService;
+            _serviceProvider = serviceProvider;
             InitializeComponent();
             this.Load += async (s, e) => await LoadSuppliersAsync();
         }
@@ -162,24 +165,24 @@ namespace Carvo.User_Interface_Layer
 
         private async void DeleteSupplierBtn_Click(object sender, EventArgs e)
         {
-            
 
-           
-                try
-                {
+
+
+            try
+            {
                 DeleteConfirmation();
-                    var selectedRow = SuppliersGridView.SelectedRows[0];
-                    int supplierId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                var selectedRow = SuppliersGridView.SelectedRows[0];
+                int supplierId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
-                    await _supplierService.DeleteSupplierAsync(supplierId);
-                    await LoadSuppliersAsync();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("حدث خطأ أثناء حذف المورد:\n" + ex.Message,
-                                    "Delete Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            
+                await _supplierService.DeleteSupplierAsync(supplierId);
+                await LoadSuppliersAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ أثناء حذف المورد:\n" + ex.Message,
+                                "Delete Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         private void SuppliersGridView_SelectionChanged(object sender, EventArgs e)
         {
@@ -212,7 +215,7 @@ namespace Carvo.User_Interface_Layer
             if (string.IsNullOrWhiteSpace(address) || address.Length < 5)
                 errors.Add("العنوان يجب ان يكون اكثر من خمس حروف.");
 
-            if (string.IsNullOrWhiteSpace(phone) || phone.Length ==10 || !phone.All(char.IsDigit))
+            if (string.IsNullOrWhiteSpace(phone) || phone.Length == 10 || !phone.All(char.IsDigit))
                 errors.Add(" يجب ان يكون رقم التليفون 11 رقم.ولا يزجد به حروف");
 
             if (string.IsNullOrWhiteSpace(company))
@@ -245,5 +248,19 @@ namespace Carvo.User_Interface_Layer
             return;
         }
 
+        private void Logoutbtn_Click(object sender, EventArgs e)
+        {
+            LoggedUser.loggedUserId = 0;
+            LoggedUser.loggedUserName = "";
+            LoggedUser.mainWindowForm.Show();
+            this.Close();
+        }
+
+        private void PrevImageAsBtn_Click(object sender, EventArgs e)
+        {
+            HomeDashboardForm homeDashboardForm = _serviceProvider.GetRequiredService<HomeDashboardForm>();
+            this.Close();
+            homeDashboardForm.Show();
+        }
     }
 }
