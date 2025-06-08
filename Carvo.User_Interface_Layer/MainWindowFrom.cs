@@ -50,6 +50,8 @@ namespace Carvo.User_Interface_Layer
             // Parse the role value from the button's Tag and convert to Role enum
             Role clickedRole = (Role)int.Parse(btn.Tag.ToString());
 
+            LoggedUser.mainWindowForm = this;
+
             // Open the login form with the selected role
             OpenLoginForm(clickedRole);
         }

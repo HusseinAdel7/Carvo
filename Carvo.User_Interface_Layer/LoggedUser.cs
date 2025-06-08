@@ -11,6 +11,6 @@ namespace Carvo.User_Interface_Layer
     {
         public static int loggedUserId = 0;
         public static string loggedUserName = "";
-
+        public static MainWindowFrom mainWindowForm = null;
     }
 }
