@@ -186,7 +186,7 @@
             btnCustomers.Name = "btnCustomers";
             btnCustomers.Size = new Size(151, 44);
             btnCustomers.TabIndex = 13;
-            btnCustomers.Text = "الموظفين";
+            btnCustomers.Text = "العملاء";
             btnCustomers.UseVisualStyleBackColor = true;
             // 
             // picCustomers

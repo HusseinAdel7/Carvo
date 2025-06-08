@@ -63,7 +63,6 @@ namespace Carvo.User_Interface_Layer
             EmployeeName.Text = LoggedUser.loggedUserName;
             CustomerName.Text = Customer.Name;
             CustomerPhone.Text = Customer.PhoneNumber.ToString();
-            CustomerMail.Text = "-------";
 
             if (Invoice_.InvoiceType == Data_Access_Layer.Enums.InvoiceType.Repair)
             {

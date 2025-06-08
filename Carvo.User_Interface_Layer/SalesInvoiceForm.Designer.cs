@@ -41,6 +41,7 @@
             PrevFormBtn = new PictureBox();
             LogOutBtn = new PictureBox();
             panel2 = new Panel();
+            PrintErrorMsg = new Label();
             TotalPriceNumeric = new NumericUpDown();
             DeleteCustomerImg = new PictureBox();
             DeleteInvoiceBtn = new Button();
@@ -57,6 +58,7 @@
             CustomersDropdownList = new ComboBox();
             sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             SalesInvoiceGridView = new DataGridView();
+            quantityErrorMsg = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MinimizeFormBtn).BeginInit();
@@ -146,6 +148,8 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(48, 67, 87);
+            panel2.Controls.Add(quantityErrorMsg);
+            panel2.Controls.Add(PrintErrorMsg);
             panel2.Controls.Add(TotalPriceNumeric);
             panel2.Controls.Add(DeleteCustomerImg);
             panel2.Controls.Add(DeleteInvoiceBtn);
@@ -164,6 +168,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1526, 408);
             panel2.TabIndex = 4;
+            // 
+            // PrintErrorMsg
+            // 
+            PrintErrorMsg.AutoSize = true;
+            PrintErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PrintErrorMsg.ForeColor = Color.Red;
+            PrintErrorMsg.Location = new Point(943, 307);
+            PrintErrorMsg.Name = "PrintErrorMsg";
+            PrintErrorMsg.Size = new Size(201, 28);
+            PrintErrorMsg.TabIndex = 47;
+            PrintErrorMsg.Text = "يجب اضافة الفاتورة اولا";
+            PrintErrorMsg.Visible = false;
             // 
             // TotalPriceNumeric
             // 
@@ -369,6 +385,18 @@
             SalesInvoiceGridView.Size = new Size(1502, 243);
             SalesInvoiceGridView.TabIndex = 16;
             // 
+            // quantityErrorMsg
+            // 
+            quantityErrorMsg.AutoSize = true;
+            quantityErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            quantityErrorMsg.ForeColor = Color.Red;
+            quantityErrorMsg.Location = new Point(1065, 207);
+            quantityErrorMsg.Name = "quantityErrorMsg";
+            quantityErrorMsg.Size = new Size(172, 28);
+            quantityErrorMsg.TabIndex = 48;
+            quantityErrorMsg.Text = "الكمية المتاحة حاليا ";
+            quantityErrorMsg.Visible = false;
+            // 
             // SalesInvoiceForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -425,5 +453,7 @@
         private Button DeleteInvoiceBtn;
         private NumericUpDown TotalPriceNumeric;
         private DataGridView SalesInvoiceGridView;
+        private Label PrintErrorMsg;
+        private Label quantityErrorMsg;
     }
 }

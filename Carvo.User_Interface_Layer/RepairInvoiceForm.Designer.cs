@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RepairInvoiceForm));
             panel2 = new Panel();
+            PaidPriceErrorMsg = new Label();
             label11 = new Label();
             PaidMoneyNumeric = new NumericUpDown();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -65,6 +66,7 @@
             PrevFormBtn = new PictureBox();
             LogOutBtn = new PictureBox();
             label1 = new Label();
+            PrintErrorMsg = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PaidMoneyNumeric).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -83,6 +85,8 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(48, 67, 87);
+            panel2.Controls.Add(PrintErrorMsg);
+            panel2.Controls.Add(PaidPriceErrorMsg);
             panel2.Controls.Add(label11);
             panel2.Controls.Add(PaidMoneyNumeric);
             panel2.Controls.Add(tableLayoutPanel1);
@@ -106,6 +110,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1508, 524);
             panel2.TabIndex = 6;
+            // 
+            // PaidPriceErrorMsg
+            // 
+            PaidPriceErrorMsg.AutoSize = true;
+            PaidPriceErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PaidPriceErrorMsg.ForeColor = Color.Red;
+            PaidPriceErrorMsg.Location = new Point(142, 198);
+            PaidPriceErrorMsg.Name = "PaidPriceErrorMsg";
+            PaidPriceErrorMsg.Size = new Size(435, 28);
+            PaidPriceErrorMsg.TabIndex = 45;
+            PaidPriceErrorMsg.Text = "المبلغ المدفوع يجب ان يكون اقل من السعر الاجمالي";
+            PaidPriceErrorMsg.Visible = false;
             // 
             // label11
             // 
@@ -502,6 +518,18 @@
             label1.Text = "فاتورة صيانة ";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // PrintErrorMsg
+            // 
+            PrintErrorMsg.AutoSize = true;
+            PrintErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PrintErrorMsg.ForeColor = Color.Red;
+            PrintErrorMsg.Location = new Point(1007, 284);
+            PrintErrorMsg.Name = "PrintErrorMsg";
+            PrintErrorMsg.Size = new Size(201, 28);
+            PrintErrorMsg.TabIndex = 46;
+            PrintErrorMsg.Text = "يجب اضافة الفاتورة اولا";
+            PrintErrorMsg.Visible = false;
+            // 
             // RepairInvoiceForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -572,5 +600,7 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Label label11;
         private NumericUpDown PaidMoneyNumeric;
+        private Label PaidPriceErrorMsg;
+        private Label PrintErrorMsg;
     }
 }

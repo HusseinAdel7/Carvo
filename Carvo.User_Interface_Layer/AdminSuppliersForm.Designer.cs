@@ -42,8 +42,6 @@
             PrevImageAsBtn = new PictureBox();
             CategoriesManagement = new Label();
             panel2 = new Panel();
-            SupplierRemainigBalanceTxt = new TextBox();
-            label4 = new Label();
             SupplierCompanyFollowedTxt = new TextBox();
             SupplierPhoneTxt = new TextBox();
             SupplierAddressTxt = new TextBox();
@@ -157,16 +155,14 @@
             CategoriesManagement.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CategoriesManagement.Location = new Point(707, 35);
             CategoriesManagement.Name = "CategoriesManagement";
-            CategoriesManagement.Size = new Size(177, 38);
+            CategoriesManagement.Size = new Size(175, 38);
             CategoriesManagement.TabIndex = 0;
-            CategoriesManagement.Text = "ادارة الموزعين";
+            CategoriesManagement.Text = "ادارة الموردين";
             // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(48, 67, 87);
-            panel2.Controls.Add(SupplierRemainigBalanceTxt);
-            panel2.Controls.Add(label4);
             panel2.Controls.Add(SupplierCompanyFollowedTxt);
             panel2.Controls.Add(SupplierPhoneTxt);
             panel2.Controls.Add(SupplierAddressTxt);
@@ -185,27 +181,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1502, 432);
             panel2.TabIndex = 1;
-            // 
-            // SupplierRemainigBalanceTxt
-            // 
-            SupplierRemainigBalanceTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SupplierRemainigBalanceTxt.Location = new Point(463, 228);
-            SupplierRemainigBalanceTxt.Multiline = true;
-            SupplierRemainigBalanceTxt.Name = "SupplierRemainigBalanceTxt";
-            SupplierRemainigBalanceTxt.Size = new Size(373, 39);
-            SupplierRemainigBalanceTxt.TabIndex = 22;
-            SupplierRemainigBalanceTxt.TextAlign = HorizontalAlignment.Right;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(869, 231);
-            label4.Name = "label4";
-            label4.Size = new Size(150, 28);
-            label4.TabIndex = 21;
-            label4.Text = " : المبلغ المتبقي";
             // 
             // SupplierCompanyFollowedTxt
             // 
@@ -466,7 +441,5 @@
         private PictureBox CloseFormBtn;
         private PictureBox MinimizeBtn;
         private PictureBox Logoutbtn;
-        private TextBox SupplierRemainigBalanceTxt;
-        private Label label4;
     }
 }

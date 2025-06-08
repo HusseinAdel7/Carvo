@@ -125,7 +125,7 @@
             pictureBox2.Location = new Point(14, 7);
             pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(57, 67);
+            pictureBox2.Size = new Size(50, 50);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -137,7 +137,7 @@
             pictureBox3.Location = new Point(78, 7);
             pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(57, 67);
+            pictureBox3.Size = new Size(50, 50);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
@@ -149,7 +149,7 @@
             closebtn.Location = new Point(1121, 7);
             closebtn.Margin = new Padding(3, 4, 3, 4);
             closebtn.Name = "closebtn";
-            closebtn.Size = new Size(57, 67);
+            closebtn.Size = new Size(50, 50);
             closebtn.SizeMode = PictureBoxSizeMode.Zoom;
             closebtn.TabIndex = 3;
             closebtn.TabStop = false;
@@ -161,7 +161,7 @@
             minimizebtn.Location = new Point(1057, 7);
             minimizebtn.Margin = new Padding(3, 4, 3, 4);
             minimizebtn.Name = "minimizebtn";
-            minimizebtn.Size = new Size(57, 67);
+            minimizebtn.Size = new Size(50, 50);
             minimizebtn.SizeMode = PictureBoxSizeMode.Zoom;
             minimizebtn.TabIndex = 4;
             minimizebtn.TabStop = false;

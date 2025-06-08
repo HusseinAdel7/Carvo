@@ -47,9 +47,7 @@
             userNameErrorLabel = new Label();
             UserpassTxt = new TextBox();
             label5 = new Label();
-            UsernationalIDTxt = new TextBox();
             UserEmailTxt = new TextBox();
-            label3 = new Label();
             label4 = new Label();
             UserRoleDropdownList = new ComboBox();
             UserNameTxt = new TextBox();
@@ -173,9 +171,7 @@
             panel2.Controls.Add(userNameErrorLabel);
             panel2.Controls.Add(UserpassTxt);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(UsernationalIDTxt);
             panel2.Controls.Add(UserEmailTxt);
-            panel2.Controls.Add(label3);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(UserRoleDropdownList);
             panel2.Controls.Add(UserNameTxt);
@@ -197,7 +193,7 @@
             userPassErrorLabel.AutoSize = true;
             userPassErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             userPassErrorLabel.ForeColor = Color.Red;
-            userPassErrorLabel.Location = new Point(646, 263);
+            userPassErrorLabel.Location = new Point(-31, 173);
             userPassErrorLabel.Name = "userPassErrorLabel";
             userPassErrorLabel.Size = new Size(489, 20);
             userPassErrorLabel.TabIndex = 23;
@@ -232,7 +228,7 @@
             // UserpassTxt
             // 
             UserpassTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UserpassTxt.Location = new Point(762, 221);
+            UserpassTxt.Location = new Point(85, 131);
             UserpassTxt.Multiline = true;
             UserpassTxt.Name = "UserpassTxt";
             UserpassTxt.Size = new Size(373, 39);
@@ -244,21 +240,11 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(1205, 222);
+            label5.Location = new Point(527, 131);
             label5.Name = "label5";
             label5.Size = new Size(117, 25);
             label5.TabIndex = 20;
             label5.Text = " : كلمة المرور ";
-            // 
-            // UsernationalIDTxt
-            // 
-            UsernationalIDTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UsernationalIDTxt.Location = new Point(85, 52);
-            UsernationalIDTxt.Multiline = true;
-            UsernationalIDTxt.Name = "UsernationalIDTxt";
-            UsernationalIDTxt.Size = new Size(373, 39);
-            UsernationalIDTxt.TabIndex = 19;
-            UsernationalIDTxt.TextAlign = HorizontalAlignment.Right;
             // 
             // UserEmailTxt
             // 
@@ -270,23 +256,12 @@
             UserEmailTxt.TabIndex = 3;
             UserEmailTxt.TextAlign = HorizontalAlignment.Right;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(515, 53);
-            label3.Name = "label3";
-            label3.Size = new Size(129, 25);
-            label3.TabIndex = 17;
-            label3.Text = " : الرقم القومي ";
-            // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(575, 130);
+            label4.Location = new Point(575, 61);
             label4.Name = "label4";
             label4.Size = new Size(69, 25);
             label4.TabIndex = 15;
@@ -297,7 +272,7 @@
             // 
             UserRoleDropdownList.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             UserRoleDropdownList.FormattingEnabled = true;
-            UserRoleDropdownList.Location = new Point(85, 130);
+            UserRoleDropdownList.Location = new Point(85, 61);
             UserRoleDropdownList.Name = "UserRoleDropdownList";
             UserRoleDropdownList.Size = new Size(373, 31);
             UserRoleDropdownList.TabIndex = 4;
@@ -503,10 +478,8 @@
         private Button UpdateUserBtn;
         private TextBox UserNameTxt;
         private Label label2;
-        private Label label3;
         private Label label4;
         private ComboBox UserRoleDropdownList;
-        private TextBox UsernationalIDTxt;
         private TextBox UserEmailTxt;
         private TextBox UserpassTxt;
         private Label label5;

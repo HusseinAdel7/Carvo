@@ -59,8 +59,6 @@
             label3 = new Label();
             CustomerName = new Label();
             CustomerPhone = new Label();
-            CustomerMail = new Label();
-            label6 = new Label();
             label5 = new Label();
             label4 = new Label();
             CustomerInformation = new Label();
@@ -397,8 +395,6 @@
             CustomerInfoPanel.Controls.Add(label3);
             CustomerInfoPanel.Controls.Add(CustomerName);
             CustomerInfoPanel.Controls.Add(CustomerPhone);
-            CustomerInfoPanel.Controls.Add(CustomerMail);
-            CustomerInfoPanel.Controls.Add(label6);
             CustomerInfoPanel.Controls.Add(label5);
             CustomerInfoPanel.Controls.Add(label4);
             CustomerInfoPanel.Controls.Add(CustomerInformation);
@@ -436,27 +432,6 @@
             CustomerPhone.Size = new Size(115, 20);
             CustomerPhone.TabIndex = 12;
             CustomerPhone.Text = "رقم هاتف العميل";
-            // 
-            // CustomerMail
-            // 
-            CustomerMail.AutoSize = true;
-            CustomerMail.Location = new Point(24, 121);
-            CustomerMail.Name = "CustomerMail";
-            CustomerMail.RightToLeft = RightToLeft.Yes;
-            CustomerMail.Size = new Size(88, 20);
-            CustomerMail.TabIndex = 11;
-            CustomerMail.Text = "ايميل العميل";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label6.Location = new Point(530, 121);
-            label6.Name = "label6";
-            label6.RightToLeft = RightToLeft.Yes;
-            label6.Size = new Size(109, 20);
-            label6.TabIndex = 10;
-            label6.Text = "البريد الالكتروني";
             // 
             // label5
             // 
@@ -787,8 +762,6 @@
         private Label VehicleInformation;
         private Label CustomerName;
         private Label CustomerPhone;
-        private Label CustomerMail;
-        private Label label6;
         private Label label5;
         private Label label4;
         private Label CustomerInformation;

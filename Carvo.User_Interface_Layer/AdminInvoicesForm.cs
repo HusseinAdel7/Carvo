@@ -193,11 +193,16 @@ namespace Carvo.User_Interface_Layer
     public class DisplayedInvoice
     {
         public int InvoiceId { get; set; }
-        public string InvoiceNumer {  get; set; }
-        public InvoiceType InvoiceType { get; set; }
-        public decimal InvoicePrice { get; set; }
-        public string CustomerName { get; set; }
-        public string EmployeeName {  get; set; }
         public DateTime InvoiceDate { get; set; }
+        public string EmployeeName { get; set; }
+        public string CustomerName { get; set; }
+        public decimal InvoicePrice { get; set; }
+        public InvoiceType InvoiceType { get; set; }
+        public string InvoiceNumer {  get; set; }
+        
+        
+        
+        
+        
     }
 }

@@ -86,10 +86,10 @@ namespace Carvo.User_Interface_Layer
             string supplierAddress = SupplierAddressTxt.Text;
             string supplierPhone = SupplierPhoneTxt.Text;
             string supplierCompanyFollowed = SupplierCompanyFollowedTxt.Text;
-            string supplierRemainingBalance = SupplierRemainigBalanceTxt.Text;
+            // string supplierRemainingBalance = SupplierRemainigBalanceTxt.Text;
 
-            FillAllFields(supplierName, supplierAddress, supplierPhone, supplierCompanyFollowed, supplierRemainingBalance);
-            if (ValidateSupplier(supplierName, supplierAddress, supplierPhone, supplierCompanyFollowed, supplierRemainingBalance, out var errors))
+            FillAllFields(supplierName, supplierAddress, supplierPhone, supplierCompanyFollowed);
+            if (ValidateSupplier(supplierName, supplierAddress, supplierPhone, supplierCompanyFollowed, out var errors))
             {
                 Supplier newSupplier = new Supplier
                 {
@@ -97,7 +97,7 @@ namespace Carvo.User_Interface_Layer
                     Address = supplierAddress,
                     PhoneNumber = supplierPhone,
                     ComapayName = supplierCompanyFollowed,
-                    RemainingBalance = double.Parse(supplierRemainingBalance)
+                    // RemainingBalance = double.Parse(supplierRemainingBalance)
                 };
 
                 AddAlertForm addAlert = _serviceProvider.GetRequiredService<AddAlertForm>();
@@ -119,11 +119,11 @@ namespace Carvo.User_Interface_Layer
             string supplierAddress = SupplierAddressTxt.Text;
             string supplierPhone = SupplierPhoneTxt.Text;
             string supplierCompanyFollowed = SupplierCompanyFollowedTxt.Text;
-            string supplierRemainingBalance = SupplierRemainigBalanceTxt.Text;
+            // string supplierRemainingBalance = SupplierRemainigBalanceTxt.Text;
 
-            FillAllFields(supplierName, supplierAddress, supplierPhone, supplierCompanyFollowed, supplierRemainingBalance);
+            FillAllFields(supplierName, supplierAddress, supplierPhone, supplierCompanyFollowed);
 
-            if (ValidateSupplier(supplierName, supplierAddress, supplierPhone, supplierCompanyFollowed, supplierRemainingBalance, out var errors))
+            if (ValidateSupplier(supplierName, supplierAddress, supplierPhone, supplierCompanyFollowed, out var errors))
             {
                 try
                 {
@@ -149,7 +149,7 @@ namespace Carvo.User_Interface_Layer
                     supplier.Address = supplierAddress;
                     supplier.PhoneNumber = supplierPhone;
                     supplier.ComapayName = supplierCompanyFollowed;
-                    supplier.RemainingBalance = double.Parse(supplierRemainingBalance);
+                    // supplier.RemainingBalance = double.Parse(supplierRemainingBalance);
 
                     UpdateAlertForm updateAlert = _serviceProvider.GetRequiredService<UpdateAlertForm>();
                     updateAlert.ShowDialog();
@@ -204,7 +204,7 @@ namespace Carvo.User_Interface_Layer
                 SupplierAddressTxt.Text = selectedRow.Cells["Address"].Value.ToString();
                 SupplierPhoneTxt.Text = selectedRow.Cells["PhoneNumber"].Value.ToString();
                 SupplierCompanyFollowedTxt.Text = selectedRow.Cells["CompanyFollowed"].Value.ToString();
-                SupplierRemainigBalanceTxt.Text = selectedRow.Cells["RemainingBalance"].Value.ToString();
+                // SupplierRemainigBalanceTxt.Text = selectedRow.Cells["RemainingBalance"].Value.ToString();
             }
             else
             {
@@ -212,11 +212,11 @@ namespace Carvo.User_Interface_Layer
                 SupplierAddressTxt.Clear();
                 SupplierPhoneTxt.Clear();
                 SupplierCompanyFollowedTxt.Clear();
-                SupplierRemainigBalanceTxt.Clear();
+                //SupplierRemainigBalanceTxt.Clear();
 
             }
         }
-        private bool ValidateSupplier(string name, string address, string phone, string company, string balance, out List<string> errors)
+        private bool ValidateSupplier(string name, string address, string phone, string company, out List<string> errors)
         {
             errors = new List<string>();
 
@@ -232,19 +232,16 @@ namespace Carvo.User_Interface_Layer
             if (string.IsNullOrWhiteSpace(company))
                 errors.Add("يجب ادخال اسم الشركة.");
 
-            if (!decimal.TryParse(balance, out decimal parsedBalance) || parsedBalance < 0)
-                errors.Add("يجب ان يكون المبلغ المتبقي اكبر من صفر ولا يحتوي علي حروف");
 
             return errors.Count == 0;
         }
 
-        private void FillAllFields(string name, string address, string phone, string company, string balance)
+        private void FillAllFields(string name, string address, string phone, string company)
         {
             if (string.IsNullOrWhiteSpace(name) ||
                 string.IsNullOrWhiteSpace(address) ||
                 string.IsNullOrWhiteSpace(phone) ||
-                string.IsNullOrWhiteSpace(company) ||
-                string.IsNullOrWhiteSpace(balance))
+                string.IsNullOrWhiteSpace(company))
             {
                 AlertIncompleteInformationForm alertForm = new AlertIncompleteInformationForm();
                 alertForm.ShowDialog();
