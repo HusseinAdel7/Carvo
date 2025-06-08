@@ -103,6 +103,7 @@
             PrevImgBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevImgBtn.TabIndex = 4;
             PrevImgBtn.TabStop = false;
+            PrevImgBtn.Click += PrevImgBtn_Click;
             // 
             // CloseFormBtn
             // 
@@ -135,6 +136,7 @@
             LogoutImageAsBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogoutImageAsBtn.TabIndex = 1;
             LogoutImageAsBtn.TabStop = false;
+            LogoutImageAsBtn.Click += LogoutImageAsBtn_Click;
             // 
             // InvoicesManagement
             // 
@@ -235,7 +237,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             InvoicesGridView.DefaultCellStyle = dataGridViewCellStyle3;
             InvoicesGridView.EnableHeadersVisualStyles = false;
-            InvoicesGridView.Location = new Point(3, 371);
+            InvoicesGridView.Location = new Point(3, 373);
             InvoicesGridView.MaximumSize = new Size(1502, 243);
             InvoicesGridView.Name = "InvoicesGridView";
             InvoicesGridView.ReadOnly = true;
