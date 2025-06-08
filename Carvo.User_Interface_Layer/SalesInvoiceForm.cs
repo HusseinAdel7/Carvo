@@ -135,6 +135,9 @@ namespace Carvo.User_Interface_Layer
                 ProdId = productId
             });
 
+            AddAlertForm addAlert = serviceProvider.GetRequiredService<AddAlertForm>();
+            addAlert.ShowDialog();
+
             TotalPriceNumeric.Value = (decimal)dispalyedInGrids.Sum(g => g.TotalPrice);
             addedInvoice.SaleAmount = (decimal)dispalyedInGrids.Sum(g => g.TotalPrice);
 

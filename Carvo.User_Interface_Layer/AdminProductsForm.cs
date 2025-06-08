@@ -159,6 +159,10 @@ namespace Carvo.User_Interface_Layer
                         SupplierId = supplierId,
                         CategoryId = categoryId
                     };
+
+                    AddAlertForm addAlert = serviceProvider.GetRequiredService<AddAlertForm>();
+                    addAlert.ShowDialog();
+
                     await productService.AddProductAsync(addedProduct);
                     await LoadProductsAsync();
                 }
@@ -180,29 +184,41 @@ namespace Carvo.User_Interface_Layer
             string desc = ProductDescTxt.Text;
             int quantity = int.Parse(ProductQuantityNumeric.Value.ToString());
             double price = double.Parse(ProductPriceNumeric.Value.ToString());
-            int supplierId = (int)SupplierNameDropdownList.SelectedValue;
-            int categoryId = (int)CategoriesDeopdownList.SelectedValue;
+            int supplierId = 0;
+            int categoryId = 0;
 
-
-            if (ValidateProduct(name, desc, quantity, price))
+            try
             {
-                var selectedRow = ProductsGridView.SelectedRows[0];
-                int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                supplierId = (int)SupplierNameDropdownList.SelectedValue;
+                categoryId = (int)CategoriesDeopdownList.SelectedValue;
 
-                Product product = await productService.GetProductByIdAsync(id);
-                product.Name = name;
-                product.Description = desc;
-                product.Quantity = quantity;
-                product.Price = price;
-                product.SupplierId = supplierId;
-                product.CategoryId = categoryId;
+                if (ValidateProduct(name, desc, quantity, price))
+                {
+                    var selectedRow = ProductsGridView.SelectedRows[0];
+                    int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
-                UpdateAlertForm updateAlert = serviceProvider.GetRequiredService<UpdateAlertForm>();
-                updateAlert.ShowDialog();
+                    Product product = await productService.GetProductByIdAsync(id);
+                    product.Name = name;
+                    product.Description = desc;
+                    product.Quantity = quantity;
+                    product.Price = price;
+                    product.SupplierId = supplierId;
+                    product.CategoryId = categoryId;
 
-                await productService.UpdateProductAsync(product);
-                await LoadProductsAsync();
+                    UpdateAlertForm updateAlert = serviceProvider.GetRequiredService<UpdateAlertForm>();
+                    updateAlert.ShowDialog();
+
+                    await productService.UpdateProductAsync(product);
+                    await LoadProductsAsync();
+                }
             }
+            catch
+            {
+                AlertIncompleteInformationForm alert = serviceProvider.GetService<AlertIncompleteInformationForm>();
+                alert.ShowDialog();
+            }
+
+               
 
         }
 

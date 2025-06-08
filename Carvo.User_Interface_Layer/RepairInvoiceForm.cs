@@ -91,6 +91,8 @@ namespace Carvo.User_Interface_Layer
 
             PaidMoneyNumeric.Maximum = RepairPriceNumeric.Value;
 
+            AddAlertForm addAlert = serviceProvider.GetRequiredService<AddAlertForm>();
+            addAlert.ShowDialog();
 
             addedInvoice = await invoiceService.AddInvoiceAsync(invoice);
         }

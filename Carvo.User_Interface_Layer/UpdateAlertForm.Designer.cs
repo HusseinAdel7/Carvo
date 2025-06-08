@@ -46,6 +46,7 @@
             button3.TabIndex = 15;
             button3.Text = "موافق";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // pictureBox5
             // 

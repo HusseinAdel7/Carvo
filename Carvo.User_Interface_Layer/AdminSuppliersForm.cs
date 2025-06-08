@@ -100,6 +100,9 @@ namespace Carvo.User_Interface_Layer
                     RemainingBalance = double.Parse(supplierRemainingBalance)
                 };
 
+                AddAlertForm addAlert = _serviceProvider.GetRequiredService<AddAlertForm>();
+                addAlert.ShowDialog();
+
                 await _supplierService.AddSupplierAsync(newSupplier);
                 await LoadSuppliersAsync();
             }
