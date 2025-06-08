@@ -93,60 +93,80 @@ namespace Carvo.User_Interface_Layer
         private async void AddInvoiceBtn_Click(object sender, EventArgs e)
         {
 
-
-            int quantity = int.Parse(ProductQuantityNumeric.Value.ToString());
-            int customerId = (int)CustomersDropdownList.SelectedValue;
-            int productId = (int)ProductsDropdownList.SelectedValue;
-
-
-            Product product = allProducts.FirstOrDefault(p => p.Id == productId);
-            Customer customer = allCustomers.FirstOrDefault(c => c.Id == customerId);
-
-            decimal totalPrice = (decimal)product.Price * quantity;
-
-            if (dispalyedInGrids.Count == 0)
+            try
             {
-                Invoice invoice = new Invoice
+                quantityErrorMsg.Visible = false;
+                PrintErrorMsg.Visible = false;
+
+                int quantity = int.Parse(ProductQuantityNumeric.Value.ToString());
+                int customerId = (int)CustomersDropdownList.SelectedValue;
+                int productId = (int)ProductsDropdownList.SelectedValue;
+
+
+                Product product = allProducts.FirstOrDefault(p => p.Id == productId);
+                Customer customer = allCustomers.FirstOrDefault(c => c.Id == customerId);
+
+                decimal totalPrice = (decimal)product.Price * quantity;
+
+                if(quantity > product.Quantity)
                 {
-                    InvoiceType = InvoiceType.Sale,
-                    CustomerId = customerId,
-                    SaleAmount = totalPrice,
-                    UserId = LoggedUser.loggedUserId,
-                    InvoiceNumber = "Abc123"
-                };
+                    quantityErrorMsg.Text = $"الكمية المتاحة حاليا {product.Quantity}";
+                    quantityErrorMsg.Visible = true;
+                    return;
+                }
 
-                addedInvoice = await invoiceService.AddInvoiceAsync(invoice);
+                if (dispalyedInGrids.Count == 0)
+                {
+                    Invoice invoice = new Invoice
+                    {
+                        InvoiceType = InvoiceType.Sale,
+                        CustomerId = customerId,
+                        SaleAmount = totalPrice,
+                        UserId = LoggedUser.loggedUserId,
+                        InvoiceNumber = "Abc123"
+                    };
 
-                CustomersDropdownList.Enabled = false;
-                CustomersDropdownList.SelectedValue = customerId;
+                    addedInvoice = await invoiceService.AddInvoiceAsync(invoice);
+
+                    CustomersDropdownList.Enabled = false;
+                    CustomersDropdownList.SelectedValue = customerId;
+                }
+
+                InvoiceProduct invoiceProduct = new InvoiceProduct { InvoiceId = addedInvoice.Id, ProductId = productId, Quantity = quantity };
+
+                addedInvoiceProduct = await invoiceProductService.AddInvoiceProductAsync(invoiceProduct);
+
+                dispalyedInGrids.Add(new DataDispalyedInGrid
+                {
+                    CustomerName = customer.Name,
+                    ProdName = product.Name,
+                    Quantity = quantity,
+                    TotalPrice = (double)totalPrice,
+                    InvoiceId = addedInvoice.Id,
+                    ProdId = productId
+                });
+
+                AddAlertForm addAlert = serviceProvider.GetRequiredService<AddAlertForm>();
+                addAlert.ShowDialog();
+
+                TotalPriceNumeric.Value = (decimal)dispalyedInGrids.Sum(g => g.TotalPrice);
+                addedInvoice.SaleAmount = (decimal)dispalyedInGrids.Sum(g => g.TotalPrice);
+
+                await LoadInvoicesAsync();
+                await invoiceService.UpdateInvoiceAsync(addedInvoice);
             }
-
-            InvoiceProduct invoiceProduct = new InvoiceProduct { InvoiceId = addedInvoice.Id, ProductId = productId, Quantity = quantity };
-
-            addedInvoiceProduct = await invoiceProductService.AddInvoiceProductAsync(invoiceProduct);
-
-            dispalyedInGrids.Add(new DataDispalyedInGrid
+            catch
             {
-                CustomerName = customer.Name,
-                ProdName = product.Name,
-                Quantity = quantity,
-                TotalPrice = (double)totalPrice,
-                InvoiceId = addedInvoice.Id,
-                ProdId = productId
-            });
 
-            AddAlertForm addAlert = serviceProvider.GetRequiredService<AddAlertForm>();
-            addAlert.ShowDialog();
-
-            TotalPriceNumeric.Value = (decimal)dispalyedInGrids.Sum(g => g.TotalPrice);
-            addedInvoice.SaleAmount = (decimal)dispalyedInGrids.Sum(g => g.TotalPrice);
-
-            await LoadInvoicesAsync();
-            await invoiceService.UpdateInvoiceAsync(addedInvoice);
+            }
+            
         }
 
         private async void DeleteInvoiceBtn_Click(object sender, EventArgs e)
         {
+            quantityErrorMsg.Visible = false;
+            PrintErrorMsg.Visible = false;
+
             if (SalesInvoiceGridView.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please select a row to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -175,17 +195,32 @@ namespace Carvo.User_Interface_Layer
                 await invoiceService.DeleteInvoiceAsync(invoiceP.InvoiceId);
         }
 
-        private void ExtractInvoiceBtn_Click(object sender, EventArgs e)
+        private async void ExtractInvoiceBtn_Click(object sender, EventArgs e)
         {
-            int customerId = (int)CustomersDropdownList.SelectedValue;
-            Customer customer = allCustomers.FirstOrDefault(c => c.Id == customerId);
+            if(dispalyedInGrids.Count == 0)
+            {
+                PrintErrorMsg.Visible = true;
+            }
+            else
+            {
+                int customerId = (int)CustomersDropdownList.SelectedValue;
+                Customer customer = allCustomers.FirstOrDefault(c => c.Id == customerId);
 
-            PaidSalesInvoiceForm paidSalesInvoiceForm = serviceProvider.GetRequiredService<PaidSalesInvoiceForm>();
-            paidSalesInvoiceForm.Invoice = addedInvoice;
-            paidSalesInvoiceForm.Customer = customer;
-            paidSalesInvoiceForm.ProductsList = dispalyedInGrids;
-            paidSalesInvoiceForm.Show();
-            this.Hide();
+                PaidSalesInvoiceForm paidSalesInvoiceForm = serviceProvider.GetRequiredService<PaidSalesInvoiceForm>();
+                paidSalesInvoiceForm.Invoice = addedInvoice;
+                paidSalesInvoiceForm.Customer = customer;
+                paidSalesInvoiceForm.ProductsList = dispalyedInGrids;
+                paidSalesInvoiceForm.Show();
+
+                foreach(var product in dispalyedInGrids)
+                {
+                    Product dbProduct = await productService.GetProductByIdAsync(product.ProdId);
+                    dbProduct.Quantity -= product.Quantity;
+                    await productService.UpdateProductAsync(dbProduct);
+                }
+
+                this.Close();
+            }         
         }
 
         private void LogOutBtn_Click(object sender, EventArgs e)
