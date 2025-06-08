@@ -76,85 +76,143 @@ namespace Carvo.User_Interface_Layer
 
         private async void AddInvoiceBtn_Click(object sender, EventArgs e)
         {
-            int customerId = (int)CustomerDropdowwnList.SelectedValue;
-            int vehicleId = (int)VehicleDropDownList.SelectedValue;
+            try
+            {
+                PaidPriceErrorMsg.Visible = false;
+                PrintErrorMsg.Visible = false;
 
-            decimal repairAmount = (decimal)RepairPriceNumeric.Value;
+                int customerId = (int)CustomerDropdowwnList.SelectedValue;
+                int vehicleId = (int)VehicleDropDownList.SelectedValue;
 
-            Invoice invoice = new Invoice { CustomerId = customerId, InvoiceNumber = "Abc123", InvoiceType = InvoiceType.Repair, RepairAmount = repairAmount, UserId = LoggedUser.loggedUserId };
+                decimal repairAmount = (decimal)RepairPriceNumeric.Value;
 
-            CustomerNameLabel.Text = allCustomers.FirstOrDefault(c => c.Id == customerId).Name;
-            VehicleNameLabel.Text = allVehicles.FirstOrDefault(v => v.Id == vehicleId).Name;
-            TotalPriceLabel.Text = RepairPriceNumeric.Value.ToString();
-            PaidMoneyLabel.Text = PaidMoneyNumeric.Value.ToString();
-            RestMoneyLabel.Text = (RepairPriceNumeric.Value - PaidMoneyNumeric.Value).ToString();
+                Invoice invoice = new Invoice {
+                    CustomerId = customerId,
+                    InvoiceNumber = "Abc123",
+                    InvoiceType = InvoiceType.Repair,
+                    RepairAmount = repairAmount,
+                    UserId = LoggedUser.loggedUserId 
+                };
 
-            PaidMoneyNumeric.Maximum = RepairPriceNumeric.Value;
+                if(RepairPriceNumeric.Value < PaidMoneyNumeric.Value)
+                {
+                    PaidPriceErrorMsg.Visible = true;
+                    return;
+                }
 
-            AddAlertForm addAlert = serviceProvider.GetRequiredService<AddAlertForm>();
-            addAlert.ShowDialog();
+                CustomerNameLabel.Text = allCustomers.FirstOrDefault(c => c.Id == customerId).Name;
+                VehicleNameLabel.Text = allVehicles.FirstOrDefault(v => v.Id == vehicleId).Name;
+                TotalPriceLabel.Text = RepairPriceNumeric.Value.ToString();
+                PaidMoneyLabel.Text = PaidMoneyNumeric.Value.ToString();
+                RestMoneyLabel.Text = (RepairPriceNumeric.Value - PaidMoneyNumeric.Value).ToString();
 
-            addedInvoice = await invoiceService.AddInvoiceAsync(invoice);
+                PaidMoneyNumeric.Maximum = RepairPriceNumeric.Value;
+
+                AddAlertForm addAlert = serviceProvider.GetRequiredService<AddAlertForm>();
+                addAlert.ShowDialog();
+
+                addedInvoice = await invoiceService.AddInvoiceAsync(invoice);
+            }
+            catch
+            {
+                AlertIncompleteInformationForm alert = serviceProvider.GetService<AlertIncompleteInformationForm>();
+                alert.ShowDialog();
+            }
         }
 
         private async void UpdateInvoiceBtn_Click(object sender, EventArgs e)
         {
-            int customerId = (int)CustomerDropdowwnList.SelectedValue;
-            int vehicleId = (int)VehicleDropDownList.SelectedValue;
+            try
+            {
+                PaidPriceErrorMsg.Visible = false;
+                PrintErrorMsg.Visible = false;
 
-            decimal repairAmount = (decimal)RepairPriceNumeric.Value;
-
-            addedInvoice.CustomerId = customerId;
-            addedInvoice.RepairAmount = repairAmount;
+                int customerId = (int)CustomerDropdowwnList.SelectedValue;
+                int vehicleId = (int)VehicleDropDownList.SelectedValue;
 
 
-            CustomerNameLabel.Text = allCustomers.FirstOrDefault(c => c.Id == customerId).Name;
-            VehicleNameLabel.Text = allVehicles.FirstOrDefault(v => v.Id == vehicleId).Name;
-            TotalPriceLabel.Text = RepairPriceNumeric.Value.ToString();
-            PaidMoneyLabel.Text = PaidMoneyNumeric.Value.ToString();
-            RestMoneyLabel.Text = (RepairPriceNumeric.Value - PaidMoneyNumeric.Value).ToString();
+                if (RepairPriceNumeric.Value < PaidMoneyNumeric.Value)
+                {
+                    PaidPriceErrorMsg.Visible = true;
+                    return;
+                }
 
-            PaidMoneyNumeric.Maximum = RepairPriceNumeric.Value;
+                decimal repairAmount = (decimal)RepairPriceNumeric.Value;
 
-            UpdateAlertForm updateAlert = serviceProvider.GetRequiredService<UpdateAlertForm>();
-            updateAlert.ShowDialog();
+                addedInvoice.CustomerId = customerId;
+                addedInvoice.RepairAmount = repairAmount;
 
-            await invoiceService.UpdateInvoiceAsync(addedInvoice);
+
+                CustomerNameLabel.Text = allCustomers.FirstOrDefault(c => c.Id == customerId).Name;
+                VehicleNameLabel.Text = allVehicles.FirstOrDefault(v => v.Id == vehicleId).Name;
+                TotalPriceLabel.Text = RepairPriceNumeric.Value.ToString();
+                PaidMoneyLabel.Text = PaidMoneyNumeric.Value.ToString();
+                RestMoneyLabel.Text = (RepairPriceNumeric.Value - PaidMoneyNumeric.Value).ToString();
+
+                PaidMoneyNumeric.Maximum = RepairPriceNumeric.Value;
+
+                UpdateAlertForm updateAlert = serviceProvider.GetRequiredService<UpdateAlertForm>();
+                updateAlert.ShowDialog();
+
+                await invoiceService.UpdateInvoiceAsync(addedInvoice);
+            }
+            catch
+            {
+                AlertIncompleteInformationForm alert = serviceProvider.GetService<AlertIncompleteInformationForm>();
+                alert.ShowDialog();
+            }
+            
         }
 
         private async void DeleteInvoiceBtn_Click(object sender, EventArgs e)
         {
-            CustomerNameLabel.Text = "";
-            VehicleNameLabel.Text = "";
-            TotalPriceLabel.Text = "";
-            PaidMoneyLabel.Text = "";
-            RestMoneyLabel.Text = "";
+            PrintErrorMsg.Visible = false;
 
-            DeleteAlertForm deleteAlert = serviceProvider.GetRequiredService<DeleteAlertForm>();
-            deleteAlert.ShowDialog();
+            if (string.IsNullOrWhiteSpace(CustomerNameLabel.Text))
+            { return; }
 
-            await invoiceService.DeleteInvoiceAsync(addedInvoice.Id);
+            else
+            {
+                CustomerNameLabel.Text = "";
+                VehicleNameLabel.Text = "";
+                TotalPriceLabel.Text = "";
+                PaidMoneyLabel.Text = "";
+                RestMoneyLabel.Text = "";
+
+                DeleteAlertForm deleteAlert = serviceProvider.GetRequiredService<DeleteAlertForm>();
+                deleteAlert.ShowDialog();
+
+                await invoiceService.DeleteInvoiceAsync(addedInvoice.Id);
+                addedInvoice = null;
+            }
+                
         }
 
         private async void PrintInvoice_Click(object sender, EventArgs e)
         {
-            int customerId = (int)CustomerDropdowwnList.SelectedValue;
-            Customer customer = await customerService.GetCustomerByIdAsync(customerId);
-            customer.RemainingBalance += (double)(RepairPriceNumeric.Value - PaidMoneyNumeric.Value);
-            await customerService.UpdateCustomerAsync(customer);
+            if(addedInvoice == null)
+            {
+                PrintErrorMsg.Visible = true;
+            }
+            else
+            {
+                int customerId = (int)CustomerDropdowwnList.SelectedValue;
+                Customer customer = await customerService.GetCustomerByIdAsync(customerId);
+                customer.RemainingBalance += (double)(RepairPriceNumeric.Value - PaidMoneyNumeric.Value);
+                await customerService.UpdateCustomerAsync(customer);
 
-            int vehicleId = (int)VehicleDropDownList.SelectedValue;
-            Vehicle vehicle = allVehicles.FirstOrDefault(v => v.Id == vehicleId);
-           
+                int vehicleId = (int)VehicleDropDownList.SelectedValue;
+                Vehicle vehicle = allVehicles.FirstOrDefault(v => v.Id == vehicleId);
 
-            InvoiceForm invoiceForm = serviceProvider.GetRequiredService<InvoiceForm>();
-            invoiceForm.Customer = customer;
-            invoiceForm.Invoice_ = addedInvoice;
-            invoiceForm.Vehicle = vehicle;
-            invoiceForm.PaidPrice = (decimal)PaidMoneyNumeric.Value;
-            invoiceForm.Show();
-            this.Close();
 
+                InvoiceForm invoiceForm = serviceProvider.GetRequiredService<InvoiceForm>();
+                invoiceForm.Customer = customer;
+                invoiceForm.Invoice_ = addedInvoice;
+                invoiceForm.Vehicle = vehicle;
+                invoiceForm.PaidPrice = (decimal)PaidMoneyNumeric.Value;
+                invoiceForm.Show();
+                this.Close();
+            }            
         }
 
         private void LogOutBtn_Click(object sender, EventArgs e)
@@ -171,5 +229,6 @@ namespace Carvo.User_Interface_Layer
             employeeDashboard.Show();
             this.Close();
         }
+
     }
 }
