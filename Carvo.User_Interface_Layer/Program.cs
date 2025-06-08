@@ -142,7 +142,7 @@ namespace Carvo.User_Interface_Layer
             var vehicle = host.Services.GetRequiredService<IVehicleService>();
             var customerService = host.Services.GetRequiredService<ICustomerService>();
 
-            //Application.Run(mainWindowFrom);
+            Application.Run(mainWindowFrom);
             //Application.Run(loginFrom);
 
             // Admin Region

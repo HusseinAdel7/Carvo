@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
+﻿using System.Data;
 using Carvo.Business_Logic_Layer.IServices;
-using Carvo.Business_Logic_Layer.Services;
 using Carvo.Data_Access_Layer.Entities;
 using Carvo.Data_Access_Layer.Entities.Users;
 using Carvo.Data_Access_Layer.Enums;
-using System.Runtime.CompilerServices;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Carvo.User_Interface_Layer
@@ -147,7 +136,15 @@ namespace Carvo.User_Interface_Layer
             customer.RemainingBalance = (double)(RepairPriceNumeric.Value - PaidMoneyNumeric.Value);
             await customerService.UpdateCustomerAsync(customer);
 
+            int vehicleId = (int)VehicleDropDownList.SelectedValue;
+            Vehicle vehicle = allVehicles.FirstOrDefault(v => v.Id == vehicleId);
+           
+
             InvoiceForm invoiceForm = serviceProvider.GetRequiredService<InvoiceForm>();
+            invoiceForm.Customer = customer;
+            invoiceForm.Invoice_ = addedInvoice;
+            invoiceForm.Vehicle = vehicle;
+            invoiceForm.PaidPrice = (decimal)PaidMoneyNumeric.Value;
             invoiceForm.Show();
             this.Close();
 
