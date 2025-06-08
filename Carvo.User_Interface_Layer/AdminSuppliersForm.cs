@@ -100,6 +100,7 @@ namespace Carvo.User_Interface_Layer
                     RemainingBalance = double.Parse(supplierRemainingBalance)
                 };
 
+                MessageBox.Show("تم اضافة الموزع بنجاح", "Add Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 await _supplierService.AddSupplierAsync(newSupplier);
                 await LoadSuppliersAsync();
             }
@@ -148,6 +149,8 @@ namespace Carvo.User_Interface_Layer
                     supplier.ComapayName = supplierCompanyFollowed;
                     supplier.RemainingBalance = double.Parse(supplierRemainingBalance);
 
+                    MessageBox.Show("تم تعديل الموزع بنجاح", "Update Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     await _supplierService.UpdateSupplierAsync(supplier);
                     await LoadSuppliersAsync();
                 }
@@ -170,12 +173,23 @@ namespace Carvo.User_Interface_Layer
 
             try
             {
-                DeleteConfirmation();
-                var selectedRow = SuppliersGridView.SelectedRows[0];
-                int supplierId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                if(SuppliersGridView.SelectedRows.Count < 1)
+                {
+                    DeleteConfirmation();
+                }
+                DialogResult result = MessageBox.Show("هل تريد مسح هذا الموزع", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                
+                if (result == DialogResult.Yes)
+                {
+                    var selectedRow = SuppliersGridView.SelectedRows[0];
+                    int supplierId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
-                await _supplierService.DeleteSupplierAsync(supplierId);
-                await LoadSuppliersAsync();
+                    MessageBox.Show("تم حذف الموزع بنجاح", "Delete Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    await _supplierService.DeleteSupplierAsync(supplierId);
+                    await LoadSuppliersAsync();
+                }
+                
             }
             catch (Exception ex)
             {

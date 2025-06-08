@@ -72,6 +72,7 @@ namespace Carvo.User_Interface_Layer
                 //NationalId = txtNationalId.Text
             };
 
+            MessageBox.Show("تم اضافة العميل بنجاح", "Add Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             await _customerService.AddCustomerAsync(customer);
             LoadCustomersAsync();
             ClearInputs();

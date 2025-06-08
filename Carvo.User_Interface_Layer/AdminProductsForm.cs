@@ -155,6 +155,7 @@ namespace Carvo.User_Interface_Layer
                     SupplierId = supplierId,
                     CategoryId = categoryId
                 };
+                MessageBox.Show("تم اضافة المنتج بنجاح", "Add Confiramation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 await productService.AddProductAsync(addedProduct);
                 await LoadProductsAsync();
             }
@@ -187,6 +188,7 @@ namespace Carvo.User_Interface_Layer
                 product.SupplierId = supplierId;
                 product.CategoryId = categoryId;
 
+                MessageBox.Show("تم تعديل المنتج بنجاح", "Update Confiramation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 await productService.UpdateProductAsync(product);
                 await LoadProductsAsync();
             }
@@ -195,10 +197,15 @@ namespace Carvo.User_Interface_Layer
 
         private async void DeleteProductBtn_Click(object sender, EventArgs e)
         {
-            var selectedRow = ProductsGridView.SelectedRows[0];
-            int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
-            await productService.DeleteProductAsync(id);
-            await LoadProductsAsync();
+            DialogResult result = MessageBox.Show("هل تريد حذف هذا المنتج", "Delete Confiramation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                var selectedRow = ProductsGridView.SelectedRows[0];
+                int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                MessageBox.Show("تم حذف المنتج بنجاح", "Delete Confiramation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await productService.DeleteProductAsync(id);
+                await LoadProductsAsync();
+            }
         }
 
         private bool ValidateProduct(string productName, string productDesc, int productQuantity, double productPrice)

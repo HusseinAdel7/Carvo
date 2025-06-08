@@ -204,7 +204,7 @@
             backBtn.Size = new Size(50, 50);
             backBtn.TabIndex = 12;
             backBtn.UseVisualStyleBackColor = true;
-            backBtn.Click += closeBtn_Click;
+            backBtn.Click += backBtn_Click;
             // 
             // LoginForm
             // 

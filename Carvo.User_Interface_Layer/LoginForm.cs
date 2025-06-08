@@ -129,5 +129,12 @@ namespace Carvo.User_Interface_Layer
             this.Close();
             employeeDashboardForm.Show();
         }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            var mainWindowFrom = provider.GetRequiredService<MainWindowFrom>();
+            this.Close();
+            mainWindowFrom.Show();
+        }
     }
 }

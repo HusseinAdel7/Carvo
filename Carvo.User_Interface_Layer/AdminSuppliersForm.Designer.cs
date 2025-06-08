@@ -301,6 +301,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += UpdateSupplierBtn_Click;
             // 
             // UpdateSupplierBtn
             // 
@@ -323,6 +324,7 @@
             DeleteInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
             DeleteInvoiceImg.TabIndex = 4;
             DeleteInvoiceImg.TabStop = false;
+            DeleteInvoiceImg.Click += DeleteSupplierBtn_Click;
             // 
             // AddInvoiceImg
             // 
@@ -333,6 +335,7 @@
             AddInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
             AddInvoiceImg.TabIndex = 3;
             AddInvoiceImg.TabStop = false;
+            AddInvoiceImg.Click += AddSupplierBtn_Click;
             // 
             // AddSupplierBtn
             // 

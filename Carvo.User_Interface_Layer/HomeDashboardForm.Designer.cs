@@ -174,7 +174,7 @@
             btnSuppliers.Name = "btnSuppliers";
             btnSuppliers.Size = new Size(147, 44);
             btnSuppliers.TabIndex = 10;
-            btnSuppliers.Text = "الموردين";
+            btnSuppliers.Text = "الموزعين";
             btnSuppliers.UseVisualStyleBackColor = true;
             // 
             // btnCustomers
@@ -186,7 +186,7 @@
             btnCustomers.Name = "btnCustomers";
             btnCustomers.Size = new Size(151, 44);
             btnCustomers.TabIndex = 13;
-            btnCustomers.Text = "الموظفين";
+            btnCustomers.Text = "العملاء";
             btnCustomers.UseVisualStyleBackColor = true;
             // 
             // picCustomers
@@ -322,6 +322,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "HomeDashboardForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "HomeDashboardForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)picUsers).EndInit();
