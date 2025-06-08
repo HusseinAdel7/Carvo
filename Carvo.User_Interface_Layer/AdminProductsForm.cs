@@ -11,6 +11,7 @@ using Carvo.Business_Logic_Layer.IServices;
 using Carvo.Business_Logic_Layer.Services;
 using Carvo.Data_Access_Layer.Entities;
 using Carvo.Data_Access_Layer.Entities.Users;
+using Microsoft.Extensions.DependencyInjection;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Carvo.User_Interface_Layer
@@ -20,16 +21,18 @@ namespace Carvo.User_Interface_Layer
         private IProductService productService;
         private ICategoryService categoryService;
         private ISupplierService supplierService;
+        private IServiceProvider serviceProvider;
 
         private string supplierSearchTxt = "";
 
         private IEnumerable<Category> allCategories;
         private IEnumerable<Supplier> allSuppliers;
-        public AdminProductsForm(IProductService _productService, ICategoryService _categoryService, ISupplierService _supplierService)
+        public AdminProductsForm(IServiceProvider _serviceProvider ,IProductService _productService, ICategoryService _categoryService, ISupplierService _supplierService)
         {
             productService = _productService;
             categoryService = _categoryService;
             supplierService = _supplierService;
+            serviceProvider = _serviceProvider;
 
 
             InitializeComponent();
@@ -240,8 +243,8 @@ namespace Carvo.User_Interface_Layer
 
         private void FliterSuppliersTxt_TextChanged(object sender, EventArgs e)
         {
-            
-            if(string.IsNullOrWhiteSpace(FliterSuppliersTxt.Text))
+
+            if (string.IsNullOrWhiteSpace(FliterSuppliersTxt.Text))
                 SupplierNameDropdownList.DataSource = allSuppliers;
             else
             {
@@ -250,7 +253,22 @@ namespace Carvo.User_Interface_Layer
                 ).ToList();
                 SupplierNameDropdownList.DataSource = filteredList;
             }
-                
+
+        }
+
+        private void LogoutImgBtn_Click(object sender, EventArgs e)
+        {
+            LoggedUser.loggedUserId = 0;
+            LoggedUser.loggedUserName = "";
+            LoggedUser.mainWindowForm.Show();
+            this.Close();
+        }
+
+        private void PrevImageAsBtn_Click(object sender, EventArgs e)
+        {
+            HomeDashboardForm homeDashboardForm = serviceProvider.GetRequiredService<HomeDashboardForm>();
+            this.Close();
+            homeDashboardForm.Show();
         }
     }
 }

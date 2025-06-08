@@ -340,6 +340,7 @@
             LogoutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogoutBtn.TabIndex = 34;
             LogoutBtn.TabStop = false;
+            LogoutBtn.Click += LogoutBtn_Click;
             // 
             // CloseFormBtn
             // 
@@ -361,6 +362,7 @@
             PrevImageAsBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevImageAsBtn.TabIndex = 31;
             PrevImageAsBtn.TabStop = false;
+            PrevImageAsBtn.Click += PrevImageAsBtn_Click;
             // 
             // MinimizeBtn
             // 

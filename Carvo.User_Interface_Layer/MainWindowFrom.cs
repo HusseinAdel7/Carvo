@@ -79,7 +79,7 @@ namespace Carvo.User_Interface_Layer
 
             // Set the role for the login form
             loginform.role = _role;
-
+            LoggedUser.Role = _role;
             // Hide the main window, show login form modally, then show main again
            
             loginform.Show();

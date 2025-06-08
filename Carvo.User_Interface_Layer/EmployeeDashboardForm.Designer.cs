@@ -41,7 +41,6 @@
             ManageVehiclesImgBtn = new PictureBox();
             panel4 = new Panel();
             WelcomeMsgLabel = new Label();
-            PrevFormBtn = new PictureBox();
             MinimizeFormBtn = new PictureBox();
             CloseFormBtn = new PictureBox();
             LogoutBtn = new PictureBox();
@@ -53,7 +52,6 @@
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ManageVehiclesImgBtn).BeginInit();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)PrevFormBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MinimizeFormBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)LogoutBtn).BeginInit();
@@ -181,7 +179,6 @@
             // 
             tableLayoutPanel1.SetColumnSpan(panel4, 3);
             panel4.Controls.Add(WelcomeMsgLabel);
-            panel4.Controls.Add(PrevFormBtn);
             panel4.Controls.Add(MinimizeFormBtn);
             panel4.Controls.Add(CloseFormBtn);
             panel4.Controls.Add(LogoutBtn);
@@ -201,16 +198,6 @@
             WelcomeMsgLabel.Size = new Size(317, 41);
             WelcomeMsgLabel.TabIndex = 4;
             WelcomeMsgLabel.Text = "مرحبا بك , اسم الموظف";
-            // 
-            // PrevFormBtn
-            // 
-            PrevFormBtn.Image = (Image)resources.GetObject("PrevFormBtn.Image");
-            PrevFormBtn.Location = new Point(132, 22);
-            PrevFormBtn.Name = "PrevFormBtn";
-            PrevFormBtn.Size = new Size(50, 50);
-            PrevFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
-            PrevFormBtn.TabIndex = 3;
-            PrevFormBtn.TabStop = false;
             // 
             // MinimizeFormBtn
             // 
@@ -243,6 +230,7 @@
             LogoutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogoutBtn.TabIndex = 0;
             LogoutBtn.TabStop = false;
+            LogoutBtn.Click += LogoutBtn_Click;
             // 
             // EmployeeDashboardForm
             // 
@@ -265,7 +253,6 @@
             ((System.ComponentModel.ISupportInitialize)ManageVehiclesImgBtn).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)PrevFormBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)MinimizeFormBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)CloseFormBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)LogoutBtn).EndInit();
@@ -282,7 +269,6 @@
         private PictureBox ManageVehiclesImgBtn;
         private PictureBox ManageCustomersImgBtn;
         private Panel panel4;
-        private PictureBox PrevFormBtn;
         private PictureBox MinimizeFormBtn;
         private PictureBox CloseFormBtn;
         private PictureBox LogoutBtn;

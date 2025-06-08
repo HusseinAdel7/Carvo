@@ -176,8 +176,10 @@ namespace Carvo.User_Interface_Layer
 
         private void LogoutImageAsBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            LoggedUser.loggedUserId = 0;
+            LoggedUser.loggedUserName = "";
             LoggedUser.mainWindowForm.Show();
+            this.Close();
         }
     }
 

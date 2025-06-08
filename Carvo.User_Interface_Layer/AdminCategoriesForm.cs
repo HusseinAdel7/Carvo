@@ -9,18 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Carvo.Business_Logic_Layer.IServices;
 using Carvo.Data_Access_Layer.Entities;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Carvo.User_Interface_Layer
 {
     public partial class AdminCategoriesForm : Form
     {
         private ICategoryService categoryService;
+        private IServiceProvider serviceProvider;
 
-        public AdminCategoriesForm(ICategoryService _categoryService)
+        public AdminCategoriesForm(ICategoryService _categoryService, IServiceProvider _serviceProvider)
         {
             categoryService = _categoryService;
+            serviceProvider = _serviceProvider;
             InitializeComponent();
             this.Load += async (s, e) => await LoadCategoriesAsync();
+            this.serviceProvider = serviceProvider;
         }
 
         private void InvoicesGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -155,11 +159,16 @@ namespace Carvo.User_Interface_Layer
 
         private void PrevImageAsBtn_Click(object sender, EventArgs e)
         {
+            HomeDashboardForm homeDashboardForm = serviceProvider.GetRequiredService<HomeDashboardForm>();
             this.Close();
+            homeDashboardForm.Show();
         }
 
         private void LogoutBtn_Click(object sender, EventArgs e)
         {
+            LoggedUser.loggedUserId = 0;
+            LoggedUser.loggedUserName = "";
+            LoggedUser.mainWindowForm.Show();
             this.Close();
         }
 

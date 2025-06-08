@@ -142,7 +142,7 @@ namespace Carvo.User_Interface_Layer
 
         private async void PrintInvoice_Click(object sender, EventArgs e)
         {
-            int customerId =  (int)CustomerDropdowwnList.SelectedValue;
+            int customerId = (int)CustomerDropdowwnList.SelectedValue;
             Customer customer = await customerService.GetCustomerByIdAsync(customerId);
             customer.RemainingBalance = (double)(RepairPriceNumeric.Value - PaidMoneyNumeric.Value);
             await customerService.UpdateCustomerAsync(customer);
@@ -151,6 +151,21 @@ namespace Carvo.User_Interface_Layer
             invoiceForm.Show();
             this.Close();
 
+        }
+
+        private void LogOutBtn_Click(object sender, EventArgs e)
+        {
+            LoggedUser.loggedUserId = 0;
+            LoggedUser.loggedUserName = "";
+            LoggedUser.mainWindowForm.Show();
+            this.Close();
+        }
+
+        private void PrevFormBtn_Click(object sender, EventArgs e)
+        {
+            EmployeeDashboardForm employeeDashboard = serviceProvider.GetRequiredService<EmployeeDashboardForm>();
+            employeeDashboard.Show();
+            this.Close();
         }
     }
 }

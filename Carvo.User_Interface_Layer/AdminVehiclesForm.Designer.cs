@@ -114,6 +114,7 @@
             LogoutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogoutBtn.TabIndex = 4;
             LogoutBtn.TabStop = false;
+            LogoutBtn.Click += LogoutBtn_Click;
             // 
             // CloseBtn
             // 
@@ -146,6 +147,7 @@
             PrevImageAsBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevImageAsBtn.TabIndex = 1;
             PrevImageAsBtn.TabStop = false;
+            PrevImageAsBtn.Click += PrevImageAsBtn_Click;
             // 
             // CategoriesManagement
             // 
