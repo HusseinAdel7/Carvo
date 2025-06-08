@@ -111,7 +111,7 @@ namespace Carvo.User_Interface_Layer
                     InvoiceType = InvoiceType.Sale,
                     CustomerId = customerId,
                     SaleAmount = totalPrice,
-                    UserId = 6,
+                    UserId = LoggedUser.loggedUserId,
                     InvoiceNumber = "Abc123"
                 };
 
