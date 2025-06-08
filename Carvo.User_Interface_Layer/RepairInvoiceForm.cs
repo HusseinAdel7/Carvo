@@ -140,7 +140,7 @@ namespace Carvo.User_Interface_Layer
         {
             int customerId = (int)CustomerDropdowwnList.SelectedValue;
             Customer customer = await customerService.GetCustomerByIdAsync(customerId);
-            customer.RemainingBalance = (double)(RepairPriceNumeric.Value - PaidMoneyNumeric.Value);
+            customer.RemainingBalance += (double)(RepairPriceNumeric.Value - PaidMoneyNumeric.Value);
             await customerService.UpdateCustomerAsync(customer);
 
             int vehicleId = (int)VehicleDropDownList.SelectedValue;
