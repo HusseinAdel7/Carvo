@@ -72,6 +72,9 @@ namespace Carvo.User_Interface_Layer
                 //NationalId = txtNationalId.Text
             };
 
+            AddAlertForm addAlert = _serviceProvider.GetRequiredService<AddAlertForm>();
+            addAlert.ShowDialog();
+
             await _customerService.AddCustomerAsync(customer);
             LoadCustomersAsync();
             ClearInputs();

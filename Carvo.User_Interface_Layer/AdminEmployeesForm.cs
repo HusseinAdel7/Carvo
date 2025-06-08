@@ -128,7 +128,9 @@ namespace Carvo.User_Interface_Layer
                 bool ExistedUser = await IsExist(userName, password);
                 if (!ExistedUser)
                 {
-                    MessageBox.Show("تم اضافة المستخدم بنجاح", "Add Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AddAlertForm addAlert = provider.GetRequiredService<AddAlertForm>();
+                    addAlert.ShowDialog();
+
                     await userService.AddUserAsync(newUser);
                     await LoadUsersAsync();
 

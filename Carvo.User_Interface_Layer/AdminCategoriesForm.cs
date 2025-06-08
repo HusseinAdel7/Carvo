@@ -62,6 +62,10 @@ namespace Carvo.User_Interface_Layer
             {
                 Category addedCategory = new Category { Name = Name, Description = Desc };
                 await categoryService.AddCategoryAsync(addedCategory);
+
+                AddAlertForm addAlert = serviceProvider.GetRequiredService<AddAlertForm>();
+                addAlert.ShowDialog();
+
                 await LoadCategoriesAsync();
             }
         }

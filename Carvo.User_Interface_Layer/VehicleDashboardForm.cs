@@ -67,7 +67,9 @@ namespace Carvo.User_Interface_Layer
                     await _vehicleService.AddVehicleAsync(addedVehicle);
                     await LoadDataVehicles();
                 }
-                MessageBox.Show("تم إضافة السيارة بنجاح.", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                AddAlertForm addAlert = _serviceProvider.GetRequiredService<AddAlertForm>();
+                addAlert.ShowDialog();
             }
             catch (Exception ex)
             {

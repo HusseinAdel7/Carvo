@@ -46,6 +46,7 @@
             button2.TabIndex = 14;
             button2.Text = "موافق";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // pictureBox3
             // 
@@ -79,6 +80,7 @@
             Controls.Add(pictureBox3);
             Controls.Add(label1);
             Name = "AddAlertForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddAlertForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);

@@ -322,6 +322,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "HomeDashboardForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "HomeDashboardForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)picUsers).EndInit();
