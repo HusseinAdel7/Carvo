@@ -266,7 +266,9 @@ namespace Carvo.User_Interface_Layer
                 selectedUser.Role = role;
                 selectedUser.CreatedAt = DateTime.Now;
 
-                MessageBox.Show("تم تعديل بيانات المستخدم بنجاح", "Update Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                UpdateAlertForm updateAlert = provider.GetRequiredService<UpdateAlertForm>();
+                updateAlert.ShowDialog();
+
                 await userService.UpdateUserAsync(selectedUser);
                 await LoadUsersAsync();
             }
@@ -275,15 +277,20 @@ namespace Carvo.User_Interface_Layer
         // Delete user on button click with confirmation
         private async void DeleteUserBtn_Click(object sender, EventArgs e)
         {
-            var selectedRow = UsersGridView.SelectedRows[0];
-            int selectedID = Convert.ToInt32(selectedRow.Cells["id"].Value);
-            DialogResult result = MessageBox.Show("هل تريد مسح هذا المستخدم", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (UsersGridView.SelectedRows.Count > 0)
             {
-                await userService.DeleteUserAsync(selectedID);
-                await LoadUsersAsync();
-                MessageBox.Show("تم حذف المستخدم بنجاح", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+                var selectedRow = UsersGridView.SelectedRows[0];
+                int selectedID = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                DialogResult result = MessageBox.Show("هل تريد مسح هذا المستخدم", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    await userService.DeleteUserAsync(selectedID);
+                    await LoadUsersAsync();
+
+                    DeleteAlertForm deleteAlert = new DeleteAlertForm();
+                    deleteAlert.ShowDialog();
+                }
+            }        
         }
 
         // Navigate to home dashboard form

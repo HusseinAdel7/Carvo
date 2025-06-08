@@ -114,6 +114,8 @@ namespace Carvo.User_Interface_Layer
 
             PaidMoneyNumeric.Maximum = RepairPriceNumeric.Value;
 
+            UpdateAlertForm updateAlert = serviceProvider.GetRequiredService<UpdateAlertForm>();
+            updateAlert.ShowDialog();
 
             await invoiceService.UpdateInvoiceAsync(addedInvoice);
         }
@@ -125,6 +127,9 @@ namespace Carvo.User_Interface_Layer
             TotalPriceLabel.Text = "";
             PaidMoneyLabel.Text = "";
             RestMoneyLabel.Text = "";
+
+            DeleteAlertForm deleteAlert = serviceProvider.GetRequiredService<DeleteAlertForm>();
+            deleteAlert.ShowDialog();
 
             await invoiceService.DeleteInvoiceAsync(addedInvoice.Id);
         }

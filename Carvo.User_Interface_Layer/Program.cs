@@ -38,10 +38,8 @@ namespace Carvo.User_Interface_Layer
                      services.AddTransient<AdminInvoicesForm>();
                      services.AddTransient<AdminProductsForm>();
                      services.AddTransient<AdminSuppliersForm>();
-                     services.AddTransient<AdminVehiclesForm>();
                      services.AddTransient<AlertIncompleteInformationForm>();
                      services.AddTransient<AlertSelectAndDeleteForm>();
-                     services.AddTransient<CustomerDashboardForm>();
                      services.AddTransient<DashboardForm>();
                      services.AddTransient<DeleteAlertForm>();
                      services.AddTransient<HomeDashboardForm>();
@@ -115,10 +113,8 @@ namespace Carvo.User_Interface_Layer
             var adminInvoicesForm = host.Services.GetRequiredService<AdminInvoicesForm>();
             var adminProductsForm = host.Services.GetRequiredService<AdminProductsForm>();
             var adminSuppliersForm = host.Services.GetRequiredService<AdminSuppliersForm>();
-            var adminVehiclesForm = host.Services.GetRequiredService<AdminVehiclesForm>();
             var alertIncompleteInformationForm = host.Services.GetRequiredService<AlertIncompleteInformationForm>();
             var alertSelectAndDeleteForm = host.Services.GetRequiredService<AlertSelectAndDeleteForm>();
-            var customerDashboardForm = host.Services.GetRequiredService<CustomerDashboardForm>();
             var dashboardForm = host.Services.GetRequiredService<DashboardForm>();
             var deleteAlertForm = host.Services.GetRequiredService<DeleteAlertForm>();
             var homeDashboardForm = host.Services.GetRequiredService<HomeDashboardForm>();
@@ -179,11 +175,11 @@ namespace Carvo.User_Interface_Layer
             #endregion
 
             //Application.Run(customerDashboardForm);
-            //Application.Run(updateAlertForm);
-            //Application.Run(alertIncompleteInformationForm);
-            //Application.Run(alertSelectAndDeleteForm);
-            //Application.Run(deleteAlertForm);
-
+            //Application.Run(updateAlertForm);                 // after update 
+            //Application.Run(alertIncompleteInformationForm);  // if any field is missing
+            //Application.Run(alertSelectAndDeleteForm);      
+            //Application.Run(deleteAlertForm);                 // after delete
+             
 
 
         }

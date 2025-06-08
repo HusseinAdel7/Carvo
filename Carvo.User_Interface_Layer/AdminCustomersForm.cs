@@ -93,7 +93,8 @@ namespace Carvo.User_Interface_Layer
 
             await _customerService.UpdateCustomerAsync(updatedCustomer);
 
-            MessageBox.Show("تم تحديث بيانات العميل بنجاح ✅");
+            UpdateAlertForm updateAlert = _serviceProvider.GetRequiredService<UpdateAlertForm>();
+            updateAlert.ShowDialog();
 
             await LoadCustomersAsync();
             ClearInputs();
@@ -111,7 +112,8 @@ namespace Carvo.User_Interface_Layer
             {
                 await _customerService.DeleteCustomerAsync(id);
 
-                MessageBox.Show("تم حذف العميل بنجاح ✅");
+                DeleteAlertForm deleteAlert = _serviceProvider.GetRequiredService<DeleteAlertForm>();
+                deleteAlert.ShowDialog();
 
                 await LoadCustomersAsync();
                 ClearInputs();
