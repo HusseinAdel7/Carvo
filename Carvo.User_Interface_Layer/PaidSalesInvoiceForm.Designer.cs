@@ -51,6 +51,7 @@
             PaidPriceNumeric.Name = "PaidPriceNumeric";
             PaidPriceNumeric.Size = new Size(265, 27);
             PaidPriceNumeric.TabIndex = 0;
+            PaidPriceNumeric.TextAlign = HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -82,6 +83,7 @@
             TotalPriceNumeric.Name = "TotalPriceNumeric";
             TotalPriceNumeric.Size = new Size(265, 27);
             TotalPriceNumeric.TabIndex = 5;
+            TotalPriceNumeric.TextAlign = HorizontalAlignment.Right;
             // 
             // pictureBox1
             // 
@@ -92,6 +94,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += PrintInvoiceBtn_Click;
             // 
             // PrintInvoiceBtn
             // 

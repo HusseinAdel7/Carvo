@@ -146,7 +146,7 @@
             InvoicesManagement.Name = "InvoicesManagement";
             InvoicesManagement.Size = new Size(158, 38);
             InvoicesManagement.TabIndex = 0;
-            InvoicesManagement.Text = "ادارة الفاوتير";
+            InvoicesManagement.Text = "ادارة الفواتير";
             // 
             // panel2
             // 
