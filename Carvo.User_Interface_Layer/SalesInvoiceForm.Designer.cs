@@ -82,6 +82,7 @@
             label1.TabIndex = 0;
             label1.Text = "فاتورة مبيعات ";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // panel1
             // 

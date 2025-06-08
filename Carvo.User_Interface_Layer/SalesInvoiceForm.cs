@@ -177,6 +177,7 @@ namespace Carvo.User_Interface_Layer
             PaidSalesInvoiceForm paidSalesInvoiceForm = serviceProvider.GetRequiredService<PaidSalesInvoiceForm>();
             paidSalesInvoiceForm.Invoice = addedInvoice;
             paidSalesInvoiceForm.Customer = customer;
+            paidSalesInvoiceForm.ProductsList = dispalyedInGrids;
             paidSalesInvoiceForm.Show();
             this.Hide();
         }
@@ -194,6 +195,11 @@ namespace Carvo.User_Interface_Layer
             EmployeeDashboardForm employeeDashboard = serviceProvider.GetRequiredService<EmployeeDashboardForm>();
             employeeDashboard.Show();
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

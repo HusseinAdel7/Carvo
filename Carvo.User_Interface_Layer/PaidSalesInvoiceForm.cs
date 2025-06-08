@@ -22,6 +22,7 @@ namespace Carvo.User_Interface_Layer
 
         public Invoice Invoice;
         public Customer Customer;
+        public List<DataDispalyedInGrid> ProductsList;
         public PaidSalesInvoiceForm(IServiceProvider _serviceProvider, ICustomerService _customerService)
         {
             serviceProvider = _serviceProvider;
@@ -43,6 +44,10 @@ namespace Carvo.User_Interface_Layer
             await customerService.UpdateCustomerAsync(Customer);
 
             InvoiceForm invoiceForm = serviceProvider.GetRequiredService<InvoiceForm>();
+            invoiceForm.Invoice_ = Invoice;
+            invoiceForm.Customer = Customer;
+            invoiceForm.ProductsList = ProductsList;
+            invoiceForm.PaidPrice = PaidPriceNumeric.Value;
             invoiceForm.Show();
             this.Close();
         }

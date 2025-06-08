@@ -28,10 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoiceForm));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             tableLayoutPanel2 = new TableLayoutPanel();
             HeaderPanel = new Panel();
+            CloseFormBtn = new PictureBox();
+            MinimizeFormBtn = new PictureBox();
+            PrevFormBtn = new PictureBox();
+            LogOutBtn = new PictureBox();
             InvoiceDate = new Label();
             label1 = new Label();
             InvoiceID = new Label();
@@ -66,7 +71,7 @@
             label8 = new Label();
             InvoiceInformation = new Label();
             label2 = new Label();
-            panel3 = new Panel();
+            PartsAndServicesHeaderPanel = new Panel();
             ProductsAndServices = new Label();
             ProductsServicesGrid = new DataGridView();
             panel4 = new Panel();
@@ -75,21 +80,19 @@
             label34 = new Label();
             label33 = new Label();
             SubTotal = new Label();
-            LaborCost = new Label();
-            Tax = new Label();
-            TotalAmount = new Label();
             PaidAmount = new Label();
             RemainingAmount = new Label();
-            label26 = new Label();
-            label25 = new Label();
-            label24 = new Label();
             label23 = new Label();
             tableLayoutPanel2.SuspendLayout();
             HeaderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MinimizeFormBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PrevFormBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LogOutBtn).BeginInit();
             VehicleInfoPanel.SuspendLayout();
             CustomerInfoPanel.SuspendLayout();
             InvoiceInfoPanel.SuspendLayout();
-            panel3.SuspendLayout();
+            PartsAndServicesHeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ProductsServicesGrid).BeginInit();
             panel4.SuspendLayout();
             SuspendLayout();
@@ -106,7 +109,7 @@
             tableLayoutPanel2.Controls.Add(VehicleInfoPanel, 0, 2);
             tableLayoutPanel2.Controls.Add(CustomerInfoPanel, 1, 1);
             tableLayoutPanel2.Controls.Add(InvoiceInfoPanel, 0, 1);
-            tableLayoutPanel2.Controls.Add(panel3, 0, 3);
+            tableLayoutPanel2.Controls.Add(PartsAndServicesHeaderPanel, 0, 3);
             tableLayoutPanel2.Controls.Add(ProductsServicesGrid, 0, 4);
             tableLayoutPanel2.Controls.Add(panel4, 0, 5);
             tableLayoutPanel2.Dock = DockStyle.Fill;
@@ -114,19 +117,23 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RightToLeft = RightToLeft.Yes;
             tableLayoutPanel2.RowCount = 5;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 186F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 184F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 154F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 33F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 252F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 169F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 157F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 258F));
-            tableLayoutPanel2.Size = new Size(1508, 830);
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 143F));
+            tableLayoutPanel2.Size = new Size(1508, 800);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // HeaderPanel
             // 
             HeaderPanel.BackColor = Color.FromArgb(48, 67, 87);
             tableLayoutPanel2.SetColumnSpan(HeaderPanel, 2);
+            HeaderPanel.Controls.Add(CloseFormBtn);
+            HeaderPanel.Controls.Add(MinimizeFormBtn);
+            HeaderPanel.Controls.Add(PrevFormBtn);
+            HeaderPanel.Controls.Add(LogOutBtn);
             HeaderPanel.Controls.Add(InvoiceDate);
             HeaderPanel.Controls.Add(label1);
             HeaderPanel.Controls.Add(InvoiceID);
@@ -141,14 +148,58 @@
             HeaderPanel.Location = new Point(3, 3);
             HeaderPanel.Name = "HeaderPanel";
             HeaderPanel.RightToLeft = RightToLeft.Yes;
-            HeaderPanel.Size = new Size(1502, 180);
+            HeaderPanel.Size = new Size(1502, 246);
             HeaderPanel.TabIndex = 1;
+            // 
+            // CloseFormBtn
+            // 
+            CloseFormBtn.Image = (Image)resources.GetObject("CloseFormBtn.Image");
+            CloseFormBtn.Location = new Point(1449, 0);
+            CloseFormBtn.Name = "CloseFormBtn";
+            CloseFormBtn.Size = new Size(50, 50);
+            CloseFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            CloseFormBtn.TabIndex = 13;
+            CloseFormBtn.TabStop = false;
+            CloseFormBtn.Click += CloseFormBtn_Click;
+            // 
+            // MinimizeFormBtn
+            // 
+            MinimizeFormBtn.Image = (Image)resources.GetObject("MinimizeFormBtn.Image");
+            MinimizeFormBtn.Location = new Point(1376, 0);
+            MinimizeFormBtn.Name = "MinimizeFormBtn";
+            MinimizeFormBtn.Size = new Size(50, 50);
+            MinimizeFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            MinimizeFormBtn.TabIndex = 12;
+            MinimizeFormBtn.TabStop = false;
+            MinimizeFormBtn.Click += MinimizeFormBtn_Click;
+            // 
+            // PrevFormBtn
+            // 
+            PrevFormBtn.Image = (Image)resources.GetObject("PrevFormBtn.Image");
+            PrevFormBtn.Location = new Point(78, 3);
+            PrevFormBtn.Name = "PrevFormBtn";
+            PrevFormBtn.Size = new Size(45, 45);
+            PrevFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            PrevFormBtn.TabIndex = 11;
+            PrevFormBtn.TabStop = false;
+            PrevFormBtn.Click += PrevFormBtn_Click;
+            // 
+            // LogOutBtn
+            // 
+            LogOutBtn.Image = (Image)resources.GetObject("LogOutBtn.Image");
+            LogOutBtn.Location = new Point(9, 5);
+            LogOutBtn.Name = "LogOutBtn";
+            LogOutBtn.Size = new Size(45, 45);
+            LogOutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            LogOutBtn.TabIndex = 10;
+            LogOutBtn.TabStop = false;
+            LogOutBtn.Click += LogOutBtn_Click;
             // 
             // InvoiceDate
             // 
             InvoiceDate.AutoSize = true;
             InvoiceDate.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            InvoiceDate.Location = new Point(11, 141);
+            InvoiceDate.Location = new Point(25, 198);
             InvoiceDate.Name = "InvoiceDate";
             InvoiceDate.RightToLeft = RightToLeft.Yes;
             InvoiceDate.Size = new Size(110, 25);
@@ -159,7 +210,7 @@
             // 
             label1.BackColor = Color.FromArgb(51, 149, 219);
             label1.Dock = DockStyle.Bottom;
-            label1.Location = new Point(0, 175);
+            label1.Location = new Point(0, 241);
             label1.Name = "label1";
             label1.RightToLeft = RightToLeft.Yes;
             label1.Size = new Size(1502, 5);
@@ -169,7 +220,7 @@
             // 
             InvoiceID.AutoSize = true;
             InvoiceID.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            InvoiceID.Location = new Point(1386, 141);
+            InvoiceID.Location = new Point(1400, 198);
             InvoiceID.Name = "InvoiceID";
             InvoiceID.RightToLeft = RightToLeft.Yes;
             InvoiceID.Size = new Size(98, 25);
@@ -179,7 +230,7 @@
             // Header_HR
             // 
             Header_HR.BorderStyle = BorderStyle.Fixed3D;
-            Header_HR.Location = new Point(11, 119);
+            Header_HR.Location = new Point(25, 176);
             Header_HR.Name = "Header_HR";
             Header_HR.RightToLeft = RightToLeft.Yes;
             Header_HR.Size = new Size(1468, 2);
@@ -189,7 +240,7 @@
             // 
             Invoice.AutoSize = true;
             Invoice.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            Invoice.Location = new Point(9, 6);
+            Invoice.Location = new Point(25, 63);
             Invoice.Name = "Invoice";
             Invoice.RightToLeft = RightToLeft.Yes;
             Invoice.Size = new Size(72, 31);
@@ -199,7 +250,7 @@
             // CompanyEmail
             // 
             CompanyEmail.AutoSize = true;
-            CompanyEmail.Location = new Point(1386, 91);
+            CompanyEmail.Location = new Point(1400, 148);
             CompanyEmail.Name = "CompanyEmail";
             CompanyEmail.RightToLeft = RightToLeft.Yes;
             CompanyEmail.Size = new Size(87, 20);
@@ -209,7 +260,7 @@
             // CompanyPhone
             // 
             CompanyPhone.AutoSize = true;
-            CompanyPhone.Location = new Point(1362, 71);
+            CompanyPhone.Location = new Point(1376, 128);
             CompanyPhone.Name = "CompanyPhone";
             CompanyPhone.RightToLeft = RightToLeft.Yes;
             CompanyPhone.Size = new Size(114, 20);
@@ -219,7 +270,7 @@
             // CompanyAddress
             // 
             CompanyAddress.AutoSize = true;
-            CompanyAddress.Location = new Point(1386, 51);
+            CompanyAddress.Location = new Point(1400, 108);
             CompanyAddress.Name = "CompanyAddress";
             CompanyAddress.RightToLeft = RightToLeft.Yes;
             CompanyAddress.Size = new Size(90, 20);
@@ -230,7 +281,7 @@
             // 
             CompanyName.AutoSize = true;
             CompanyName.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            CompanyName.Location = new Point(1358, 6);
+            CompanyName.Location = new Point(1372, 63);
             CompanyName.Name = "CompanyName";
             CompanyName.RightToLeft = RightToLeft.Yes;
             CompanyName.Size = new Size(121, 31);
@@ -250,7 +301,7 @@
             VehicleInfoPanel.Controls.Add(VehicleInformation);
             VehicleInfoPanel.Controls.Add(label17);
             VehicleInfoPanel.Controls.Add(label15);
-            VehicleInfoPanel.Location = new Point(63, 376);
+            VehicleInfoPanel.Location = new Point(63, 429);
             VehicleInfoPanel.Name = "VehicleInfoPanel";
             VehicleInfoPanel.RightToLeft = RightToLeft.Yes;
             VehicleInfoPanel.Size = new Size(1383, 141);
@@ -351,7 +402,7 @@
             CustomerInfoPanel.Controls.Add(label5);
             CustomerInfoPanel.Controls.Add(label4);
             CustomerInfoPanel.Controls.Add(CustomerInformation);
-            CustomerInfoPanel.Location = new Point(66, 198);
+            CustomerInfoPanel.Location = new Point(66, 256);
             CustomerInfoPanel.Name = "CustomerInfoPanel";
             CustomerInfoPanel.RightToLeft = RightToLeft.Yes;
             CustomerInfoPanel.Size = new Size(651, 160);
@@ -450,7 +501,7 @@
             InvoiceInfoPanel.Controls.Add(label8);
             InvoiceInfoPanel.Controls.Add(InvoiceInformation);
             InvoiceInfoPanel.Controls.Add(label2);
-            InvoiceInfoPanel.Location = new Point(846, 197);
+            InvoiceInfoPanel.Location = new Point(846, 256);
             InvoiceInfoPanel.Name = "InvoiceInfoPanel";
             InvoiceInfoPanel.RightToLeft = RightToLeft.Yes;
             InvoiceInfoPanel.Size = new Size(598, 161);
@@ -520,16 +571,16 @@
             label2.TabIndex = 5;
             label2.Text = "النوع";
             // 
-            // panel3
+            // PartsAndServicesHeaderPanel
             // 
-            panel3.Anchor = AnchorStyles.None;
-            tableLayoutPanel2.SetColumnSpan(panel3, 2);
-            panel3.Controls.Add(ProductsAndServices);
-            panel3.Location = new Point(60, 527);
-            panel3.Name = "panel3";
-            panel3.RightToLeft = RightToLeft.Yes;
-            panel3.Size = new Size(1389, 27);
-            panel3.TabIndex = 6;
+            PartsAndServicesHeaderPanel.Anchor = AnchorStyles.None;
+            tableLayoutPanel2.SetColumnSpan(PartsAndServicesHeaderPanel, 2);
+            PartsAndServicesHeaderPanel.Controls.Add(ProductsAndServices);
+            PartsAndServicesHeaderPanel.Location = new Point(60, 582);
+            PartsAndServicesHeaderPanel.Name = "PartsAndServicesHeaderPanel";
+            PartsAndServicesHeaderPanel.RightToLeft = RightToLeft.Yes;
+            PartsAndServicesHeaderPanel.Size = new Size(1389, 27);
+            PartsAndServicesHeaderPanel.TabIndex = 6;
             // 
             // ProductsAndServices
             // 
@@ -564,7 +615,7 @@
             tableLayoutPanel2.SetColumnSpan(ProductsServicesGrid, 2);
             ProductsServicesGrid.EnableHeadersVisualStyles = false;
             ProductsServicesGrid.GridColor = Color.White;
-            ProductsServicesGrid.Location = new Point(61, 560);
+            ProductsServicesGrid.Location = new Point(61, 617);
             ProductsServicesGrid.Name = "ProductsServicesGrid";
             ProductsServicesGrid.ReadOnly = true;
             ProductsServicesGrid.RightToLeft = RightToLeft.Yes;
@@ -585,26 +636,20 @@
             panel4.Controls.Add(label34);
             panel4.Controls.Add(label33);
             panel4.Controls.Add(SubTotal);
-            panel4.Controls.Add(LaborCost);
-            panel4.Controls.Add(Tax);
-            panel4.Controls.Add(TotalAmount);
             panel4.Controls.Add(PaidAmount);
             panel4.Controls.Add(RemainingAmount);
-            panel4.Controls.Add(label26);
-            panel4.Controls.Add(label25);
-            panel4.Controls.Add(label24);
             panel4.Controls.Add(label23);
             panel4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            panel4.Location = new Point(59, 587);
+            panel4.Location = new Point(59, 637);
             panel4.Name = "panel4";
             panel4.RightToLeft = RightToLeft.Yes;
-            panel4.Size = new Size(1390, 230);
+            panel4.Size = new Size(1390, 156);
             panel4.TabIndex = 8;
             // 
             // label10
             // 
             label10.BackColor = Color.FromArgb(48, 67, 87);
-            label10.Location = new Point(-5, 0);
+            label10.Location = new Point(-8, 0);
             label10.Name = "label10";
             label10.RightToLeft = RightToLeft.Yes;
             label10.Size = new Size(1398, 10);
@@ -614,7 +659,7 @@
             // 
             label35.AutoSize = true;
             label35.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label35.Location = new Point(1256, 160);
+            label35.Location = new Point(1256, 77);
             label35.Name = "label35";
             label35.RightToLeft = RightToLeft.Yes;
             label35.Size = new Size(101, 20);
@@ -625,7 +670,7 @@
             // 
             label34.AutoSize = true;
             label34.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label34.Location = new Point(1258, 190);
+            label34.Location = new Point(1258, 107);
             label34.Name = "label34";
             label34.RightToLeft = RightToLeft.Yes;
             label34.Size = new Size(99, 20);
@@ -653,41 +698,11 @@
             SubTotal.TabIndex = 12;
             SubTotal.Text = "360.00$";
             // 
-            // LaborCost
-            // 
-            LaborCost.AutoSize = true;
-            LaborCost.Location = new Point(31, 41);
-            LaborCost.Name = "LaborCost";
-            LaborCost.RightToLeft = RightToLeft.Yes;
-            LaborCost.Size = new Size(67, 20);
-            LaborCost.TabIndex = 11;
-            LaborCost.Text = "170.00$";
-            // 
-            // Tax
-            // 
-            Tax.AutoSize = true;
-            Tax.Location = new Point(31, 70);
-            Tax.Name = "Tax";
-            Tax.RightToLeft = RightToLeft.Yes;
-            Tax.Size = new Size(58, 20);
-            Tax.TabIndex = 10;
-            Tax.Text = "30.60$";
-            // 
-            // TotalAmount
-            // 
-            TotalAmount.AutoSize = true;
-            TotalAmount.Location = new Point(31, 127);
-            TotalAmount.Name = "TotalAmount";
-            TotalAmount.RightToLeft = RightToLeft.Yes;
-            TotalAmount.Size = new Size(67, 20);
-            TotalAmount.TabIndex = 9;
-            TotalAmount.Text = "390.60$";
-            // 
             // PaidAmount
             // 
             PaidAmount.AutoSize = true;
             PaidAmount.ForeColor = Color.LimeGreen;
-            PaidAmount.Location = new Point(31, 160);
+            PaidAmount.Location = new Point(31, 77);
             PaidAmount.Name = "PaidAmount";
             PaidAmount.RightToLeft = RightToLeft.Yes;
             PaidAmount.Size = new Size(67, 20);
@@ -698,50 +713,17 @@
             // 
             RemainingAmount.AutoSize = true;
             RemainingAmount.ForeColor = Color.Red;
-            RemainingAmount.Location = new Point(31, 190);
+            RemainingAmount.Location = new Point(31, 107);
             RemainingAmount.Name = "RemainingAmount";
             RemainingAmount.RightToLeft = RightToLeft.Yes;
             RemainingAmount.Size = new Size(67, 20);
             RemainingAmount.TabIndex = 7;
             RemainingAmount.Text = "190.60$";
             // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label26.Location = new Point(1270, 127);
-            label26.Name = "label26";
-            label26.RightToLeft = RightToLeft.Yes;
-            label26.Size = new Size(85, 20);
-            label26.TabIndex = 6;
-            label26.Text = "المبلغ الكلي";
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label25.Location = new Point(1264, 41);
-            label25.Name = "label25";
-            label25.RightToLeft = RightToLeft.Yes;
-            label25.Size = new Size(91, 20);
-            label25.TabIndex = 5;
-            label25.Text = "تكلفة العمالة";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label24.Location = new Point(1256, 70);
-            label24.Name = "label24";
-            label24.RightToLeft = RightToLeft.Yes;
-            label24.Size = new Size(99, 20);
-            label24.TabIndex = 4;
-            label24.Text = "ضريبة (8.5%)";
-            // 
             // label23
             // 
             label23.BackColor = Color.FromArgb(51, 149, 219);
-            label23.Location = new Point(41, 109);
+            label23.Location = new Point(49, 54);
             label23.Name = "label23";
             label23.RightToLeft = RightToLeft.Yes;
             label23.Size = new Size(1308, 2);
@@ -752,8 +734,9 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(1508, 830);
+            ClientSize = new Size(1508, 800);
             Controls.Add(tableLayoutPanel2);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "InvoiceForm";
             RightToLeft = RightToLeft.Yes;
             RightToLeftLayout = true;
@@ -762,14 +745,18 @@
             tableLayoutPanel2.ResumeLayout(false);
             HeaderPanel.ResumeLayout(false);
             HeaderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)CloseFormBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MinimizeFormBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PrevFormBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LogOutBtn).EndInit();
             VehicleInfoPanel.ResumeLayout(false);
             VehicleInfoPanel.PerformLayout();
             CustomerInfoPanel.ResumeLayout(false);
             CustomerInfoPanel.PerformLayout();
             InvoiceInfoPanel.ResumeLayout(false);
             InvoiceInfoPanel.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            PartsAndServicesHeaderPanel.ResumeLayout(false);
+            PartsAndServicesHeaderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ProductsServicesGrid).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
@@ -811,19 +798,13 @@
         private Label label8;
         private Label InvoiceInformation;
         private Label label2;
-        private Panel panel3;
+        private Panel PartsAndServicesHeaderPanel;
         private Label ProductsAndServices;
         private Panel panel4;
         private Label label33;
         private Label SubTotal;
-        private Label LaborCost;
-        private Label Tax;
-        private Label TotalAmount;
         private Label PaidAmount;
         private Label RemainingAmount;
-        private Label label26;
-        private Label label25;
-        private Label label24;
         private Label label23;
         private Label label35;
         private Label label34;
@@ -832,5 +813,9 @@
         private Label label9;
         private Label label10;
         private DataGridView ProductsServicesGrid;
+        private PictureBox CloseFormBtn;
+        private PictureBox MinimizeFormBtn;
+        private PictureBox PrevFormBtn;
+        private PictureBox LogOutBtn;
     }
 }
