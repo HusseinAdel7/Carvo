@@ -289,18 +289,17 @@ namespace Carvo.User_Interface_Layer
         // Navigate to home dashboard form
         private void PrevImageAsBtn_Click(object sender, EventArgs e)
         {
-            var homeDashboardForm = provider.GetRequiredService<HomeDashboardForm>();
-            this.Hide();
-            homeDashboardForm.ShowDialog();
+            HomeDashboardForm homeDashboardForm = provider.GetRequiredService<HomeDashboardForm>();
             this.Close();
+            homeDashboardForm.Show();
         }
 
         // Logout and go back to main window
         private void LogoutBtn_Click(object sender, EventArgs e)
         {
-            var mainWindowForm = provider.GetRequiredService<MainWindowFrom>();
-            this.Hide();
-            mainWindowForm.ShowDialog();
+            LoggedUser.loggedUserId = 0;
+            LoggedUser.loggedUserName = "";
+            LoggedUser.mainWindowForm.Show();
             this.Close();
         }
     }

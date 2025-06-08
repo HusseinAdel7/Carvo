@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeDashboardForm));
             welcomemsgLabel = new Label();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             picUsers = new PictureBox();
             picCategories = new PictureBox();
             picProducts = new PictureBox();
@@ -51,7 +50,6 @@
             InvoicesImgBtn = new PictureBox();
             InvoicesBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picUsers).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picCategories).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picProducts).BeginInit();
@@ -86,18 +84,6 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(136, 32);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(50, 50);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
             // 
             // picUsers
             // 
@@ -331,7 +317,6 @@
             Controls.Add(picProducts);
             Controls.Add(picCategories);
             Controls.Add(picUsers);
-            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(welcomemsgLabel);
             FormBorderStyle = FormBorderStyle.None;
@@ -339,7 +324,6 @@
             Name = "HomeDashboardForm";
             Text = "HomeDashboardForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)picUsers).EndInit();
             ((System.ComponentModel.ISupportInitialize)picCategories).EndInit();
             ((System.ComponentModel.ISupportInitialize)picProducts).EndInit();
@@ -358,7 +342,6 @@
 
         private Label welcomemsgLabel;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private PictureBox picUsers;
         private PictureBox picCategories;
         private PictureBox picProducts;

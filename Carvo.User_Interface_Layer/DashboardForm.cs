@@ -1,5 +1,6 @@
 ﻿using Carvo.Business_Logic_Layer.IServices;
 using Carvo.Business_Logic_Layer.Services;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,8 @@ namespace Carvo.User_Interface_Layer
         IProductService _productService;
         ICategoryService _categoryService;
         IUserService _userService;
-        public DashboardForm(ICustomerService customerService, ISupplierService supplierService, IInvoiceService invoiceService, IProductService productService, ICategoryService categoryService, IUserService userService)
+        IServiceProvider _serviceProvider;
+        public DashboardForm(IServiceProvider serviceProvider,ICustomerService customerService, ISupplierService supplierService, IInvoiceService invoiceService, IProductService productService, ICategoryService categoryService, IUserService userService)
         {
             InitializeComponent();
             _customerService = customerService;
@@ -29,6 +31,7 @@ namespace Carvo.User_Interface_Layer
             _productService = productService;
             _categoryService = categoryService;
             _userService = userService;
+            _serviceProvider = serviceProvider;
             LoadData();
         }
 
@@ -70,6 +73,21 @@ namespace Carvo.User_Interface_Layer
             {
                 MessageBox.Show($"An error occurred while loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            LoggedUser.loggedUserId = 0;
+            LoggedUser.loggedUserName = "";
+            LoggedUser.mainWindowForm.Show();
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            HomeDashboardForm homeDashboardForm = _serviceProvider.GetRequiredService<HomeDashboardForm>();
+            this.Close();
+            homeDashboardForm.Show();
         }
     }
 }

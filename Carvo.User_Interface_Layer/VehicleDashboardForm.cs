@@ -13,7 +13,9 @@ using Carvo.Business_Logic_Layer.IServices;
 using Carvo.Business_Logic_Layer.Services;
 using Carvo.Data_Access_Layer.Entities;
 using Carvo.Data_Access_Layer.Entities.Users;
+using Carvo.Data_Access_Layer.Enums;
 using Carvo.User_Interface_Layer.UIHelpers;
+using Microsoft.Extensions.DependencyInjection;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 
@@ -25,10 +27,12 @@ namespace Carvo.User_Interface_Layer
     {
         private IVehicleService _vehicleService; //have a service to handle vehicle data
         private ICustomerService _customerService;
+        private IServiceProvider _serviceProvider;
 
         private IEnumerable<Customer> customers;
-        public VehicleDashboardForm(IVehicleService vehicleService, ICustomerService customerService)
+        public VehicleDashboardForm(IServiceProvider serviceProvider ,IVehicleService vehicleService, ICustomerService customerService)
         {
+            _serviceProvider = serviceProvider;
             _vehicleService = vehicleService; // initialize the service
             _customerService = customerService; // initialize the customer service
             InitializeComponent();
@@ -272,6 +276,29 @@ namespace Carvo.User_Interface_Layer
                 ).ToList();
                 CustomerComboBox.DataSource = filteredList;
             }
+        }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            LoggedUser.loggedUserId = 0;
+            LoggedUser.loggedUserName = "";
+            LoggedUser.mainWindowForm.Show();
+            this.Close();
+        }
+
+        private void PrevImageAsBtn_Click(object sender, EventArgs e)
+        {
+            if (LoggedUser.Role == Role.Admin)
+            {
+                HomeDashboardForm homeDashboardForm = _serviceProvider.GetRequiredService<HomeDashboardForm>();
+                homeDashboardForm.Show();
+            }
+            else
+            {
+                EmployeeDashboardForm employeeDashboardForm = _serviceProvider.GetRequiredService<EmployeeDashboardForm>();
+                employeeDashboardForm.Show();
+            }
+            this.Close();
         }
     }
 }

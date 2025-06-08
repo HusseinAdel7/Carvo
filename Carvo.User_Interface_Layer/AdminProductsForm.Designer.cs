@@ -42,6 +42,7 @@
             PrevImageAsBtn = new PictureBox();
             CategoriesManagement = new Label();
             panel2 = new Panel();
+            label7 = new Label();
             FliterSuppliersTxt = new TextBox();
             ProdQuantityErrorMsg = new Label();
             ProdPriceErrorMsg = new Label();
@@ -66,7 +67,6 @@
             AddProductBtn = new Button();
             DeleteProductBtn = new Button();
             ProductsGridView = new DataGridView();
-            label7 = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoutImgBtn).BeginInit();
@@ -126,6 +126,7 @@
             LogoutImgBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogoutImgBtn.TabIndex = 4;
             LogoutImgBtn.TabStop = false;
+            LogoutImgBtn.Click += LogoutImgBtn_Click;
             // 
             // CloseFormBtn
             // 
@@ -158,6 +159,7 @@
             PrevImageAsBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevImageAsBtn.TabIndex = 1;
             PrevImageAsBtn.TabStop = false;
+            PrevImageAsBtn.Click += PrevImageAsBtn_Click;
             // 
             // CategoriesManagement
             // 
@@ -201,6 +203,17 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1502, 454);
             panel2.TabIndex = 1;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(213, 9);
+            label7.Name = "label7";
+            label7.Size = new Size(194, 28);
+            label7.TabIndex = 25;
+            label7.Text = "تصفية قائمة الموزعين";
             // 
             // FliterSuppliersTxt
             // 
@@ -500,17 +513,6 @@
             ProductsGridView.TabIndex = 2;
             ProductsGridView.DataBindingComplete += InvoicesGridView_DataBindingComplete;
             ProductsGridView.SelectionChanged += ProductsGridView_SelectionChanged;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(213, 9);
-            label7.Name = "label7";
-            label7.Size = new Size(194, 28);
-            label7.TabIndex = 25;
-            label7.Text = "تصفية قائمة الموزعين";
             // 
             // AdminProductsForm
             // 

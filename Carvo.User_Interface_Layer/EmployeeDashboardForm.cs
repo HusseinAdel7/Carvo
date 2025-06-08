@@ -58,5 +58,14 @@ namespace Carvo.User_Interface_Layer
             invoiceTypeForm.Show();
             this.Close();
         }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            LoggedUser.loggedUserId = 0;
+            LoggedUser.loggedUserName = "";
+            LoggedUser.mainWindowForm.Show();
+            this.Close();
+        }
+
     }
 }

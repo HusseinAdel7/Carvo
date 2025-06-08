@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Carvo.Data_Access_Layer.Entities;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Carvo.User_Interface_Layer
 {
     public partial class AdminVehiclesForm : Form
     {
-        public AdminVehiclesForm()
+        private IServiceProvider _serviceProvider;
+        public AdminVehiclesForm(IServiceProvider serviceProvider)
         {
+            _serviceProvider = serviceProvider;
             InitializeComponent();
 
             /* Testing Grid View */
@@ -43,7 +46,7 @@ namespace Carvo.User_Interface_Layer
             VehiclesGridView.Columns[0].HeaderText = "الاسم";
             VehiclesGridView.Columns[1].HeaderText = "الوصف";
             VehiclesGridView.Columns[2].HeaderText = "سعر الوحدة";
-
+            _serviceProvider = serviceProvider;
         }
 
         private void InvoicesGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -71,6 +74,21 @@ namespace Carvo.User_Interface_Layer
         private void MinimizeBtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            LoggedUser.loggedUserId = 0;
+            LoggedUser.loggedUserName = "";
+            LoggedUser.mainWindowForm.Show();
+            this.Close();
+        }
+
+        private void PrevImageAsBtn_Click(object sender, EventArgs e)
+        {
+            HomeDashboardForm homeDashboardForm = _serviceProvider.GetRequiredService<HomeDashboardForm>();
+            this.Close();
+            homeDashboardForm.Show();
         }
     }
 }

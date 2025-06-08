@@ -99,10 +99,6 @@ namespace Carvo.User_Interface_Layer
             this.Close();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ShowChildForm<TForm>() where TForm : Form
         {
