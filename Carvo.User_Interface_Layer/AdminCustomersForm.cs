@@ -145,7 +145,6 @@ namespace Carvo.User_Interface_Layer
         {
             txtCustomerName.Clear();
             txtPhoneNumber.Clear();
-            txtNationalId.Clear();
         }
 
         private void InvoicesGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
