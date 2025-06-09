@@ -1,20 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Carvo.Business_Logic_Layer.Services;
-using Carvo.Data_Access_Layer.Entities;
+﻿using Carvo.Data_Access_Layer.Entities;
 using Carvo.Data_Access_Layer.Entities.Users;
-using Carvo.Data_Access_Layer.Enums;
-using Microsoft.Extensions.DependencyInjection;
+using QuestPDF.Helpers;
+using QuestPDF.Fluent;
+using QuestPDF.Infrastructure;
+using Document = QuestPDF.Fluent.Document;
 
 
 namespace Carvo.User_Interface_Layer
@@ -31,24 +20,6 @@ namespace Carvo.User_Interface_Layer
         {
             InitializeComponent();
             this.Load += async (s, e) => await LoadInvoiceFormAsync();
-
-
-            /* Testing Grid View */
-            //List<Product> products = new List<Product>()
-            //{
-            //    new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-            //    new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 },
-            //    new Product() { Id = 1, Description = "vdsfvdsv", Name = "vfdfv", Price = 2551 }
-            //};
-
-            //var GridView = products.Select(p => new { Name = p.Name, Description = p.Description, Price = p.Price }).ToList();
-
-            //ProductsServicesGrid.AllowUserToAddRows = false;
-            //ProductsServicesGrid.DataSource = GridView;
-
-            //ProductsServicesGrid.Columns[0].HeaderText = "الاسم";
-            //ProductsServicesGrid.Columns[1].HeaderText = "الوصف";
-            //ProductsServicesGrid.Columns[2].HeaderText = "سعر الوحدة";
 
         }
 
@@ -140,5 +111,176 @@ namespace Carvo.User_Interface_Layer
             //employeeDashboard.Show();
             //this.Close();
         }
+
+        private void PrintInvoiceBtn_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+                saveFileDialog.DefaultExt = "pdf";
+                saveFileDialog.Title = "Save Invoice as PDF";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog.FileName;
+                    ExportToPDF(filePath);
+                    MessageBox.Show("Invoice exported successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+
+
+
+
+        private void ExportToPDF(string path)
+        {
+            QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
+
+            var invoiceNumber = Invoice_.InvoiceNumber; // From your form
+            var invoiceType = Invoice_.InvoiceType == Data_Access_Layer.Enums.InvoiceType.Repair ? "صيانة" : "مشتريات"; // From your form
+            var invoiceDate = Invoice_.InvoiceDate;
+
+            var empName = LoggedUser.loggedUserName;
+
+            var customerName = Customer.Name; // From your form
+            var customerPhone = Customer.PhoneNumber; // From your form
+
+            decimal totalPrice = 0;
+            decimal paidPrice = 0;
+            decimal remainingPrice = 0;
+
+            SubTotal.Text = Invoice_.SaleAmount.ToString();
+            PaidAmount.Text = PaidPrice.ToString();
+            RemainingAmount.Text = (Invoice_.SaleAmount - PaidPrice).ToString();
+
+            string vehicleName = null;
+            string vehicleModel = null;
+            string vehiclePlate = null;
+
+            if (Invoice_.InvoiceType == Data_Access_Layer.Enums.InvoiceType.Repair)
+            {
+                vehicleName = Vehicle.Name;
+                vehicleModel = Vehicle.Model;
+                vehiclePlate = Vehicle.PlateNumber;
+                totalPrice = Invoice_.RepairAmount;
+                paidPrice = PaidPrice;
+                remainingPrice = (Invoice_.RepairAmount - PaidPrice);
+            }
+            else
+            {
+                totalPrice = Invoice_.SaleAmount;
+                paidPrice = PaidPrice;
+                remainingPrice = (Invoice_.SaleAmount - PaidPrice);
+            }
+
+            Document.Create(container =>
+            {
+                container.Page(page =>
+                {
+                    page.Size(PageSizes.A4);
+                    page.Margin(2, Unit.Centimetre);
+                    page.DefaultTextStyle(x => x.FontSize(14));
+
+                    page.Content().Column(column =>
+                    {
+                        column.Spacing(15);
+
+                        // Main Title
+                        column.Item().Text("فاتورة")
+                            .FontSize(24)
+                            .SemiBold()
+                            .AlignRight();
+
+                        // Metadata / Invoice info
+                        column.Item().Text($"رقم الفاتورة: {invoiceNumber}")
+                            .AlignRight();
+
+                        column.Item().Text($"نوع الفاتورة: {invoiceType}")
+                            .AlignRight();
+
+                        column.Item().Text($"تاريخ الفاتورة: {invoiceDate}")
+                            .AlignRight();
+
+                        if(Invoice_.InvoiceType == Data_Access_Layer.Enums.InvoiceType.Repair)
+                        {
+                            column.Item().Text($"معلومات عن السيارة:")
+                            .AlignRight();
+
+                            column.Item().Text($"اسم السيارة: {vehicleName}")
+                            .AlignRight();
+
+                            column.Item().Text($"الموديل: {vehicleModel}")
+                            .AlignRight();
+
+                            column.Item().Text($"رقم اللوحة: {vehiclePlate}")
+                            .AlignRight();
+                        }
+                        else
+                        {
+                            column.Item().Table(table =>
+                            {
+                                table.ColumnsDefinition(columns =>
+                                {
+                                    columns.RelativeColumn();
+                                    columns.RelativeColumn();
+                                    columns.RelativeColumn();
+                                });
+
+                                // Header
+                                table.Cell().Element(CellStyle).Text("المنتج").AlignRight();
+                                table.Cell().Element(CellStyle).Text("الكمية").AlignRight();
+                                table.Cell().Element(CellStyle).Text("السعر").AlignRight();
+
+                                foreach(var product in ProductsList)
+                                {
+                                    table.Cell().Element(CellStyle).Text(product.ProdName).AlignRight();
+                                    table.Cell().Element(CellStyle).Text(product.Quantity.ToString()).AlignRight();
+                                    table.Cell().Element(CellStyle).Text(product.TotalPrice.ToString()).AlignRight();
+                                }
+                            });
+                        }
+
+
+                        column.Item().Text($"اسم العميل: {customerName}")
+                                .AlignRight();
+
+                        column.Item().Text($"رقم الهاتف: {customerPhone}")
+                            .AlignRight();
+
+                        column.Item().Text($"المبلغ الكلي: {totalPrice}")
+                            .AlignRight();
+
+                        column.Item().Text($"المبلغ المدفوع: {paidPrice}")
+                            .AlignRight();
+
+                        column.Item().Text($"المبلغ المتبقي: {remainingPrice}")
+                            .AlignRight();
+
+                        column.Item().Text($"الموظف: {empName}")
+                            .AlignRight();
+
+
+
+                        // Footer
+                        column.Item().Text("شكراً لتعاملكم معنا!")
+                            .FontSize(16)
+                            .AlignCenter();
+                    });
+                });
+            })
+            .GeneratePdf(path);
+        }
+
+        private IContainer CellStyle(IContainer container)
+        {
+            return container
+                .Border(1)
+                .BorderColor(Colors.Grey.Medium)
+                .Padding(5);
+        }
+
+
+
     }
 }

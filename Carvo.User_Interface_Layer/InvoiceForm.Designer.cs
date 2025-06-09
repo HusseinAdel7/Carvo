@@ -81,6 +81,7 @@
             PaidAmount = new Label();
             RemainingAmount = new Label();
             label23 = new Label();
+            PrintInvoiceBtn = new Button();
             tableLayoutPanel2.SuspendLayout();
             HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
@@ -99,7 +100,7 @@
             // 
             tableLayoutPanel2.AutoSize = true;
             tableLayoutPanel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            tableLayoutPanel2.BackColor = Color.White;
+            tableLayoutPanel2.BackColor = Color.LightGray;
             tableLayoutPanel2.ColumnCount = 2;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 782F));
@@ -128,6 +129,7 @@
             // 
             HeaderPanel.BackColor = Color.FromArgb(48, 67, 87);
             tableLayoutPanel2.SetColumnSpan(HeaderPanel, 2);
+            HeaderPanel.Controls.Add(PrintInvoiceBtn);
             HeaderPanel.Controls.Add(CloseFormBtn);
             HeaderPanel.Controls.Add(MinimizeFormBtn);
             HeaderPanel.Controls.Add(PrevFormBtn);
@@ -704,6 +706,19 @@
             label23.Size = new Size(1308, 2);
             label23.TabIndex = 3;
             // 
+            // PrintInvoiceBtn
+            // 
+            PrintInvoiceBtn.BackColor = Color.FromArgb(224, 224, 224);
+            PrintInvoiceBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            PrintInvoiceBtn.ForeColor = Color.Black;
+            PrintInvoiceBtn.Location = new Point(677, 3);
+            PrintInvoiceBtn.Name = "PrintInvoiceBtn";
+            PrintInvoiceBtn.Size = new Size(172, 52);
+            PrintInvoiceBtn.TabIndex = 14;
+            PrintInvoiceBtn.Text = "طباعة";
+            PrintInvoiceBtn.UseVisualStyleBackColor = false;
+            PrintInvoiceBtn.Click += PrintInvoiceBtn_Click;
+            // 
             // InvoiceForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -790,5 +805,6 @@
         private PictureBox MinimizeFormBtn;
         private PictureBox PrevFormBtn;
         private PictureBox LogOutBtn;
+        private Button PrintInvoiceBtn;
     }
 }
