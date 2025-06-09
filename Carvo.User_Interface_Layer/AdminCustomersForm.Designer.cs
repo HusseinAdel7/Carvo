@@ -44,9 +44,7 @@
             panel2 = new Panel();
             AddVehicleBtnImg = new PictureBox();
             AddVehicleBtn = new Button();
-            txtNationalId = new TextBox();
             txtPhoneNumber = new TextBox();
-            label3 = new Label();
             txtCustomerName = new TextBox();
             label2 = new Label();
             label1 = new Label();
@@ -166,9 +164,7 @@
             panel2.BackColor = Color.FromArgb(48, 67, 87);
             panel2.Controls.Add(AddVehicleBtnImg);
             panel2.Controls.Add(AddVehicleBtn);
-            panel2.Controls.Add(txtNationalId);
             panel2.Controls.Add(txtPhoneNumber);
-            panel2.Controls.Add(label3);
             panel2.Controls.Add(txtCustomerName);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
@@ -206,41 +202,20 @@
             AddVehicleBtn.UseVisualStyleBackColor = false;
             AddVehicleBtn.Click += AddVehicleBtn_Click;
             // 
-            // txtNationalId
-            // 
-            txtNationalId.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtNationalId.Location = new Point(768, 211);
-            txtNationalId.Multiline = true;
-            txtNationalId.Name = "txtNationalId";
-            txtNationalId.Size = new Size(401, 39);
-            txtNationalId.TabIndex = 19;
-            txtNationalId.TextAlign = HorizontalAlignment.Right;
-            // 
             // txtPhoneNumber
             // 
             txtPhoneNumber.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtPhoneNumber.Location = new Point(768, 129);
+            txtPhoneNumber.Location = new Point(768, 147);
             txtPhoneNumber.Multiline = true;
             txtPhoneNumber.Name = "txtPhoneNumber";
             txtPhoneNumber.Size = new Size(401, 39);
             txtPhoneNumber.TabIndex = 18;
             txtPhoneNumber.TextAlign = HorizontalAlignment.Right;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(1222, 209);
-            label3.Name = "label3";
-            label3.Size = new Size(142, 28);
-            label3.TabIndex = 17;
-            label3.Text = " : الرقم القومي ";
-            // 
             // txtCustomerName
             // 
             txtCustomerName.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtCustomerName.Location = new Point(768, 51);
+            txtCustomerName.Location = new Point(768, 69);
             txtCustomerName.Multiline = true;
             txtCustomerName.Name = "txtCustomerName";
             txtCustomerName.Size = new Size(401, 39);
@@ -252,7 +227,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(1241, 129);
+            label2.Location = new Point(1241, 147);
             label2.Name = "label2";
             label2.Size = new Size(123, 28);
             label2.TabIndex = 8;
@@ -263,7 +238,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(1233, 51);
+            label1.Location = new Point(1233, 69);
             label1.Name = "label1";
             label1.Size = new Size(131, 28);
             label1.TabIndex = 7;
@@ -436,8 +411,6 @@
         private Button btnUpdateCustomer;
         private TextBox txtCustomerName;
         private Label label2;
-        private Label label3;
-        private TextBox txtNationalId;
         private TextBox txtPhoneNumber;
         private PictureBox MinimizeFormBtn;
         private PictureBox LogoutBtn;

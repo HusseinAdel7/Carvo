@@ -65,11 +65,11 @@
             // welcomemsgLabel
             // 
             welcomemsgLabel.AutoSize = true;
-            welcomemsgLabel.Font = new Font("Segoe UI", 22F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            welcomemsgLabel.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             welcomemsgLabel.ForeColor = Color.White;
             welcomemsgLabel.Location = new Point(553, 63);
             welcomemsgLabel.Name = "welcomemsgLabel";
-            welcomemsgLabel.Size = new Size(351, 50);
+            welcomemsgLabel.Size = new Size(348, 50);
             welcomemsgLabel.TabIndex = 0;
             welcomemsgLabel.Text = "مرحبا بك ,مدير النظام";
             // 
