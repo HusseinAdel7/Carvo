@@ -37,6 +37,7 @@
             PrintInvoiceBtn = new Button();
             CloseFormBtn = new PictureBox();
             MinimizeFormBtn = new PictureBox();
+            PaidPriceErrorMsg = new Label();
             ((System.ComponentModel.ISupportInitialize)PaidPriceNumeric).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TotalPriceNumeric).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -46,7 +47,7 @@
             // 
             // PaidPriceNumeric
             // 
-            PaidPriceNumeric.Location = new Point(123, 333);
+            PaidPriceNumeric.Location = new Point(200, 338);
             PaidPriceNumeric.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
             PaidPriceNumeric.Name = "PaidPriceNumeric";
             PaidPriceNumeric.Size = new Size(265, 27);
@@ -58,7 +59,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
             label3.ForeColor = Color.FromArgb(244, 244, 244);
-            label3.Location = new Point(197, 270);
+            label3.Location = new Point(274, 275);
             label3.Name = "label3";
             label3.Size = new Size(134, 28);
             label3.TabIndex = 4;
@@ -69,7 +70,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
             label1.ForeColor = Color.FromArgb(244, 244, 244);
-            label1.Location = new Point(207, 114);
+            label1.Location = new Point(284, 119);
             label1.Name = "label1";
             label1.Size = new Size(114, 28);
             label1.TabIndex = 6;
@@ -78,7 +79,7 @@
             // TotalPriceNumeric
             // 
             TotalPriceNumeric.Enabled = false;
-            TotalPriceNumeric.Location = new Point(123, 182);
+            TotalPriceNumeric.Location = new Point(200, 187);
             TotalPriceNumeric.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
             TotalPriceNumeric.Name = "TotalPriceNumeric";
             TotalPriceNumeric.Size = new Size(265, 27);
@@ -88,7 +89,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(294, 446);
+            pictureBox1.Location = new Point(371, 451);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(64, 52);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -100,7 +101,7 @@
             // 
             PrintInvoiceBtn.BackColor = Color.FromArgb(224, 224, 224);
             PrintInvoiceBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            PrintInvoiceBtn.Location = new Point(158, 446);
+            PrintInvoiceBtn.Location = new Point(235, 451);
             PrintInvoiceBtn.Name = "PrintInvoiceBtn";
             PrintInvoiceBtn.Size = new Size(130, 52);
             PrintInvoiceBtn.TabIndex = 13;
@@ -111,7 +112,7 @@
             // CloseFormBtn
             // 
             CloseFormBtn.Image = (Image)resources.GetObject("CloseFormBtn.Image");
-            CloseFormBtn.Location = new Point(463, 21);
+            CloseFormBtn.Location = new Point(582, 21);
             CloseFormBtn.Name = "CloseFormBtn";
             CloseFormBtn.Size = new Size(50, 50);
             CloseFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -122,7 +123,7 @@
             // MinimizeFormBtn
             // 
             MinimizeFormBtn.Image = (Image)resources.GetObject("MinimizeFormBtn.Image");
-            MinimizeFormBtn.Location = new Point(384, 21);
+            MinimizeFormBtn.Location = new Point(503, 21);
             MinimizeFormBtn.Name = "MinimizeFormBtn";
             MinimizeFormBtn.Size = new Size(50, 50);
             MinimizeFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -130,12 +131,25 @@
             MinimizeFormBtn.TabStop = false;
             MinimizeFormBtn.Click += MinimizeFormBtn_Click;
             // 
+            // PaidPriceErrorMsg
+            // 
+            PaidPriceErrorMsg.AutoSize = true;
+            PaidPriceErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PaidPriceErrorMsg.ForeColor = Color.Red;
+            PaidPriceErrorMsg.Location = new Point(118, 368);
+            PaidPriceErrorMsg.Name = "PaidPriceErrorMsg";
+            PaidPriceErrorMsg.Size = new Size(435, 28);
+            PaidPriceErrorMsg.TabIndex = 46;
+            PaidPriceErrorMsg.Text = "المبلغ المدفوع يجب ان يكون اقل من السعر الاجمالي";
+            PaidPriceErrorMsg.Visible = false;
+            // 
             // PaidSalesInvoiceForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
-            ClientSize = new Size(525, 537);
+            ClientSize = new Size(655, 611);
+            Controls.Add(PaidPriceErrorMsg);
             Controls.Add(CloseFormBtn);
             Controls.Add(MinimizeFormBtn);
             Controls.Add(pictureBox1);
@@ -167,5 +181,6 @@
         private Button PrintInvoiceBtn;
         private PictureBox CloseFormBtn;
         private PictureBox MinimizeFormBtn;
+        private Label PaidPriceErrorMsg;
     }
 }

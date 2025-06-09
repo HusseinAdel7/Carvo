@@ -45,6 +45,7 @@ namespace Carvo.User_Interface_Layer
         // Closes the login form when the "close" button is clicked
         private void closeBtn_Click(object sender, EventArgs e)
         {
+            LoggedUser.mainWindowForm.Show();
             this.Close();
         }
 

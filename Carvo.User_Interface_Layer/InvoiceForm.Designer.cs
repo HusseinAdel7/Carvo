@@ -33,6 +33,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             tableLayoutPanel2 = new TableLayoutPanel();
             HeaderPanel = new Panel();
+            PrintInvoiceBtn = new Button();
             CloseFormBtn = new PictureBox();
             MinimizeFormBtn = new PictureBox();
             PrevFormBtn = new PictureBox();
@@ -81,7 +82,6 @@
             PaidAmount = new Label();
             RemainingAmount = new Label();
             label23 = new Label();
-            PrintInvoiceBtn = new Button();
             tableLayoutPanel2.SuspendLayout();
             HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
@@ -150,6 +150,19 @@
             HeaderPanel.RightToLeft = RightToLeft.Yes;
             HeaderPanel.Size = new Size(1502, 246);
             HeaderPanel.TabIndex = 1;
+            // 
+            // PrintInvoiceBtn
+            // 
+            PrintInvoiceBtn.BackColor = Color.FromArgb(224, 224, 224);
+            PrintInvoiceBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
+            PrintInvoiceBtn.ForeColor = Color.Black;
+            PrintInvoiceBtn.Location = new Point(520, 3);
+            PrintInvoiceBtn.Name = "PrintInvoiceBtn";
+            PrintInvoiceBtn.Size = new Size(519, 52);
+            PrintInvoiceBtn.TabIndex = 14;
+            PrintInvoiceBtn.Text = "طباعة";
+            PrintInvoiceBtn.UseVisualStyleBackColor = false;
+            PrintInvoiceBtn.Click += PrintInvoiceBtn_Click;
             // 
             // CloseFormBtn
             // 
@@ -220,12 +233,12 @@
             // 
             InvoiceID.AutoSize = true;
             InvoiceID.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            InvoiceID.Location = new Point(1400, 198);
+            InvoiceID.Location = new Point(1310, 198);
             InvoiceID.Name = "InvoiceID";
             InvoiceID.RightToLeft = RightToLeft.Yes;
-            InvoiceID.Size = new Size(98, 25);
+            InvoiceID.Size = new Size(183, 25);
             InvoiceID.TabIndex = 6;
-            InvoiceID.Text = "رقم الفاتورة";
+            InvoiceID.Text = "رقم الفاتورة : 5954782";
             // 
             // Header_HR
             // 
@@ -322,9 +335,9 @@
             VehicleModel.Location = new Point(27, 49);
             VehicleModel.Name = "VehicleModel";
             VehicleModel.RightToLeft = RightToLeft.Yes;
-            VehicleModel.Size = new Size(97, 20);
+            VehicleModel.Size = new Size(75, 20);
             VehicleModel.TabIndex = 6;
-            VehicleModel.Text = "موديل المركبة";
+            VehicleModel.Text = "-----------";
             // 
             // VehiclePlate
             // 
@@ -332,9 +345,9 @@
             VehiclePlate.Location = new Point(27, 80);
             VehiclePlate.Name = "VehiclePlate";
             VehiclePlate.RightToLeft = RightToLeft.Yes;
-            VehiclePlate.Size = new Size(113, 20);
+            VehiclePlate.Size = new Size(75, 20);
             VehiclePlate.TabIndex = 5;
-            VehiclePlate.Text = "رقم لوحة المركبة";
+            VehiclePlate.Text = "-----------";
             // 
             // label16
             // 
@@ -353,9 +366,9 @@
             VehicleVIN.Location = new Point(27, 112);
             VehicleVIN.Name = "VehicleVIN";
             VehicleVIN.RightToLeft = RightToLeft.Yes;
-            VehicleVIN.Size = new Size(124, 20);
+            VehicleVIN.Size = new Size(75, 20);
             VehicleVIN.TabIndex = 4;
-            VehicleVIN.Text = "رقم تعريف المركبة";
+            VehicleVIN.Text = "-----------";
             // 
             // VehicleInformation
             // 
@@ -705,19 +718,6 @@
             label23.RightToLeft = RightToLeft.Yes;
             label23.Size = new Size(1308, 2);
             label23.TabIndex = 3;
-            // 
-            // PrintInvoiceBtn
-            // 
-            PrintInvoiceBtn.BackColor = Color.FromArgb(224, 224, 224);
-            PrintInvoiceBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            PrintInvoiceBtn.ForeColor = Color.Black;
-            PrintInvoiceBtn.Location = new Point(677, 3);
-            PrintInvoiceBtn.Name = "PrintInvoiceBtn";
-            PrintInvoiceBtn.Size = new Size(172, 52);
-            PrintInvoiceBtn.TabIndex = 14;
-            PrintInvoiceBtn.Text = "طباعة";
-            PrintInvoiceBtn.UseVisualStyleBackColor = false;
-            PrintInvoiceBtn.Click += PrintInvoiceBtn_Click;
             // 
             // InvoiceForm
             // 

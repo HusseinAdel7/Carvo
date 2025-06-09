@@ -2,16 +2,8 @@
 using Carvo.Data_Access_Layer.Entities.Users;
 using Carvo.Data_Access_Layer.Enums;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualBasic.ApplicationServices;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace Carvo.User_Interface_Layer
 {
@@ -111,16 +103,24 @@ namespace Carvo.User_Interface_Layer
             int id = (int)dgvCustomers.CurrentRow.Cells["Id"].Value;
 
             var confirm = MessageBox.Show("هل أنت متأكد من حذف العميل؟", "تأكيد الحذف", MessageBoxButtons.YesNo);
-            if (confirm == DialogResult.Yes)
+            try
             {
-                await _customerService.DeleteCustomerAsync(id);
+                if (confirm == DialogResult.Yes)
+                {
+                    await _customerService.DeleteCustomerAsync(id);
 
-                DeleteAlertForm deleteAlert = _serviceProvider.GetRequiredService<DeleteAlertForm>();
-                deleteAlert.ShowDialog();
+                    DeleteAlertForm deleteAlert = _serviceProvider.GetRequiredService<DeleteAlertForm>();
+                    deleteAlert.ShowDialog();
 
-                await LoadCustomersAsync();
-                ClearInputs();
+                    await LoadCustomersAsync();
+                    ClearInputs();
+                }
             }
+            catch
+            {
+                MessageBox.Show("لا يمكن مسح هذا العميل , الرجاء مسح الفواتير الخاصة به اولا");
+            }
+            
         }
 
 
