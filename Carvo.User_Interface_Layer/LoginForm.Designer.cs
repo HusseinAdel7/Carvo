@@ -199,7 +199,7 @@
             backBtn.BackgroundImageLayout = ImageLayout.Stretch;
             backBtn.FlatAppearance.BorderSize = 0;
             backBtn.FlatStyle = FlatStyle.Flat;
-            backBtn.Location = new Point(12, 31);
+            backBtn.Location = new Point(30, 9);
             backBtn.Name = "backBtn";
             backBtn.Size = new Size(50, 50);
             backBtn.TabIndex = 12;
@@ -208,6 +208,7 @@
             // 
             // LoginForm
             // 
+            AcceptButton = loginBtn;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);

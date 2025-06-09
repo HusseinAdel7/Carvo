@@ -87,18 +87,18 @@ namespace Carvo.User_Interface_Layer
                 var dataContext = serviceProvider.GetRequiredService<CarvoDbContext>();
                 var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
 
-                //try
-                //{
-                //    await dataContext.Database.MigrateAsync();
-                //    await SeedingDataInCarvoDbContext.SeedingData(dataContext);
+                try
+                {
+                     dataContext.Database.Migrate();
+                    //await SeedingDataInCarvoDbContext.SeedingData(dataContext);
 
-                 
-                //}
-                //catch (Exception ex)
-                //{
-                //    var logger = loggerFactory.CreateLogger<Program>();
-                //    logger.LogError(ex, "There was an error during migration or seeding.");
-                //}
+
+                }
+                catch (Exception ex)
+                {
+                    var logger = loggerFactory.CreateLogger<Program>();
+                    logger.LogError(ex, "There was an error during migration or seeding.");
+                }
             }
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);

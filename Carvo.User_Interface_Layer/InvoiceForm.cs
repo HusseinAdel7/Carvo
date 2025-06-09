@@ -4,20 +4,22 @@ using QuestPDF.Helpers;
 using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
 using Document = QuestPDF.Fluent.Document;
+using Microsoft.Extensions.DependencyInjection;
 
 
 namespace Carvo.User_Interface_Layer
 {
     public partial class InvoiceForm : Form
     {
-
+        private IServiceProvider serviceProvider;
         public Vehicle Vehicle { get; set; }
         public Customer Customer { get; set; }
         public Invoice Invoice_ { get; set; }
         public decimal PaidPrice { get; set; }
         public List<DataDispalyedInGrid> ProductsList;
-        public InvoiceForm()
+        public InvoiceForm(IServiceProvider _serviceProvider)
         {
+            serviceProvider = _serviceProvider;
             InitializeComponent();
             this.Load += async (s, e) => await LoadInvoiceFormAsync();
 
@@ -29,7 +31,7 @@ namespace Carvo.User_Interface_Layer
             this.Controls.Remove(PartsAndServicesHeaderPanel);
 
             InvoiceDate.Text = Invoice_.InvoiceDate.ToString();
-            InvoiceID.Text = Invoice_.InvoiceNumber.ToString();
+            InvoiceID.Text = $"رقم الفاتورة : {Invoice_.Id}";
             InvoiceType.Text = Invoice_.InvoiceType.ToString();
             EmployeeName.Text = LoggedUser.loggedUserName;
             CustomerName.Text = Customer.Name;
@@ -107,9 +109,9 @@ namespace Carvo.User_Interface_Layer
 
         private void PrevFormBtn_Click(object sender, EventArgs e)
         {
-            //EmployeeDashboardForm employeeDashboard = serviceProvider.GetRequiredService<EmployeeDashboardForm>();
-            //employeeDashboard.Show();
-            //this.Close();
+            EmployeeDashboardForm employeeDashboard = serviceProvider.GetRequiredService<EmployeeDashboardForm>();
+            employeeDashboard.Show();
+            this.Close();
         }
 
         private void PrintInvoiceBtn_Click(object sender, EventArgs e)
@@ -129,15 +131,11 @@ namespace Carvo.User_Interface_Layer
             }
         }
 
-
-
-
-
         private void ExportToPDF(string path)
         {
             QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
 
-            var invoiceNumber = Invoice_.InvoiceNumber; // From your form
+            var invoiceNumber = Invoice_.Id; // From your form
             var invoiceType = Invoice_.InvoiceType == Data_Access_Layer.Enums.InvoiceType.Repair ? "صيانة" : "مشتريات"; // From your form
             var invoiceDate = Invoice_.InvoiceDate;
 
@@ -193,13 +191,14 @@ namespace Carvo.User_Interface_Layer
                             .AlignRight();
 
                         // Metadata / Invoice info
-                        column.Item().Text($"رقم الفاتورة: {invoiceNumber}")
+
+                        column.Item().Text($"رقم الفاتورة:            {invoiceNumber}")
                             .AlignRight();
 
-                        column.Item().Text($"نوع الفاتورة: {invoiceType}")
+                        column.Item().Text($"نوع الفاتورة:            {invoiceType}")
                             .AlignRight();
 
-                        column.Item().Text($"تاريخ الفاتورة: {invoiceDate}")
+                        column.Item().Text($"تاريخ الفاتورة:          {invoiceDate.ToString("dd/MM/yyyy HH:mm")}")
                             .AlignRight();
 
                         if(Invoice_.InvoiceType == Data_Access_Layer.Enums.InvoiceType.Repair)
@@ -207,13 +206,13 @@ namespace Carvo.User_Interface_Layer
                             column.Item().Text($"معلومات عن السيارة:")
                             .AlignRight();
 
-                            column.Item().Text($"اسم السيارة: {vehicleName}")
+                            column.Item().Text($"اسم السيارة:         {vehicleName}")
                             .AlignRight();
 
-                            column.Item().Text($"الموديل: {vehicleModel}")
+                            column.Item().Text($"الموديل:             {vehicleModel}")
                             .AlignRight();
 
-                            column.Item().Text($"رقم اللوحة: {vehiclePlate}")
+                            column.Item().Text($"رقم اللوحة:          {vehiclePlate}")
                             .AlignRight();
                         }
                         else
@@ -242,22 +241,22 @@ namespace Carvo.User_Interface_Layer
                         }
 
 
-                        column.Item().Text($"اسم العميل: {customerName}")
+                        column.Item().Text($"اسم العميل:              {customerName}")
                                 .AlignRight();
 
-                        column.Item().Text($"رقم الهاتف: {customerPhone}")
+                        column.Item().Text($"رقم الهاتف:              {customerPhone}")
                             .AlignRight();
 
-                        column.Item().Text($"المبلغ الكلي: {totalPrice}")
+                        column.Item().Text($"المبلغ الكلي:            {totalPrice}")
                             .AlignRight();
 
-                        column.Item().Text($"المبلغ المدفوع: {paidPrice}")
+                        column.Item().Text($"المبلغ المدفوع:          {paidPrice}")
                             .AlignRight();
 
-                        column.Item().Text($"المبلغ المتبقي: {remainingPrice}")
+                        column.Item().Text($"المبلغ المتبقي:          {remainingPrice}")
                             .AlignRight();
 
-                        column.Item().Text($"الموظف: {empName}")
+                        column.Item().Text($"الموظف:                  {empName}")
                             .AlignRight();
 
 
@@ -271,7 +270,6 @@ namespace Carvo.User_Interface_Layer
             })
             .GeneratePdf(path);
         }
-
         private IContainer CellStyle(IContainer container)
         {
             return container
