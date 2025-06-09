@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.ComponentModel;
 using Carvo.Business_Logic_Layer.IServices;
 using Carvo.Data_Access_Layer.Entities;
 using Carvo.Data_Access_Layer.Enums;
@@ -75,7 +68,7 @@ namespace Carvo.User_Interface_Layer
                 _invoicesBindingList = new BindingList<DisplayedInvoice>(displayedInvoices);
                 InvoicesGridView.DataSource = _invoicesBindingList;
 
-                InvoicesGridView.Columns["InvoiceId"].Visible = false;
+                InvoicesGridView.Columns["InvoiceNumer"].Visible = false;
                 InvoicesGridView.Columns[6].HeaderText = "رقم الفاتورة";
                 InvoicesGridView.Columns[5].HeaderText = "نوع الفاتورة";
                 InvoicesGridView.Columns[4].HeaderText = "السعر";
@@ -84,15 +77,6 @@ namespace Carvo.User_Interface_Layer
                 InvoicesGridView.Columns[1].HeaderText = "التاريخ";
 
 
-                // إعادة تسمية الأعمدة (مع التأكد من وجود الأعمدة)
-                //InvoicesGridView.Columns[nameof(Invoice.Id)].HeaderText = "رقم الفاتورة";
-                //InvoicesGridView.Columns[nameof(Invoice.InvoiceNumber)].HeaderText = "رقم الفاتورة الخارجي";
-                //InvoicesGridView.Columns[nameof(Invoice.InvoiceType)].HeaderText = "نوع الفاتورة";
-                //InvoicesGridView.Columns[nameof(Invoice.SaleAmount)].HeaderText = "قيمة البيع";
-                //InvoicesGridView.Columns[nameof(Invoice.RepairAmount)].HeaderText = "قيمة الصيانة";
-                //InvoicesGridView.Columns[nameof(Invoice.InvoiceDate)].HeaderText = "تاريخ الفاتورة";
-                //InvoicesGridView.Columns[nameof(Invoice.CustomerId)].HeaderText = "رقم العميل";
-                //InvoicesGridView.Columns[nameof(Invoice.UserId)].HeaderText = "رقم الموظف";
             }
             catch (Exception ex)
             {
@@ -192,17 +176,16 @@ namespace Carvo.User_Interface_Layer
 
     public class DisplayedInvoice
     {
-        public int InvoiceId { get; set; }
+        public string InvoiceNumer { get; set; }
         public DateTime InvoiceDate { get; set; }
         public string EmployeeName { get; set; }
         public string CustomerName { get; set; }
         public decimal InvoicePrice { get; set; }
         public InvoiceType InvoiceType { get; set; }
-        public string InvoiceNumer {  get; set; }
-        
-        
-        
-        
-        
+        public int InvoiceId { get; set; }
+
+
+
+
     }
 }

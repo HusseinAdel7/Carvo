@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using System.Data;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Carvo.Business_Logic_Layer.IServices;
-using Carvo.Data_Access_Layer.Entities;
 using Carvo.Data_Access_Layer.Entities.Users;
 using Carvo.Data_Access_Layer.Enums;
 using Microsoft.Extensions.DependencyInjection;
