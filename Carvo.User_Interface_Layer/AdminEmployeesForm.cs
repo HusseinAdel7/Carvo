@@ -31,9 +31,9 @@ namespace Carvo.User_Interface_Layer
 
             // Events setup for form load and input validation
             this.Load += async (s, e) => await LoadUsersAsync();
-            UserNameTxt.Leave += (s, e) => ValidateUserName();
-            UserEmailTxt.Leave += (s, e) => ValidateEmail();
-            UserpassTxt.Leave += (s, e) => ValidatePassword();
+            UserNameTxt.TextChanged += (s, e) => ValidateUserName();
+            UserEmailTxt.TextChanged += (s, e) => ValidateEmail();
+            UserpassTxt.TextChanged += (s, e) => ValidatePassword();
 
             // Load role options in Arabic for the dropdown
             var roles = Enum.GetValues(typeof(Role))
@@ -135,10 +135,7 @@ namespace Carvo.User_Interface_Layer
                     await LoadUsersAsync();
 
                     // Clear input fields
-                    UserNameTxt.Text = "";
-                    UserEmailTxt.Text = "";
-                    UserpassTxt.Text = "";
-                    UserRoleDropdownList.SelectedIndex = 0;
+                    ClearInputFields();
                 }
                 else
                 {
@@ -273,6 +270,7 @@ namespace Carvo.User_Interface_Layer
 
                 await userService.UpdateUserAsync(selectedUser);
                 await LoadUsersAsync();
+                ClearInputFields();
             }
         }
 
@@ -310,6 +308,14 @@ namespace Carvo.User_Interface_Layer
             LoggedUser.loggedUserName = "";
             LoggedUser.mainWindowForm.Show();
             this.Close();
+        }
+
+        public void ClearInputFields()
+        {
+            UserNameTxt.Text = "";
+            UserEmailTxt.Text = "";
+            UserpassTxt.Text = "";
+            UserRoleDropdownList.SelectedIndex = 0;
         }
     }
 }
