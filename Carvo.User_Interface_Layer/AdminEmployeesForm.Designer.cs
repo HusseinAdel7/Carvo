@@ -42,6 +42,9 @@
             PrevImageAsBtn = new PictureBox();
             CategoriesManagement = new Label();
             panel2 = new Panel();
+            cancelImg = new PictureBox();
+            cancelBtn = new Button();
+            checkBox1 = new CheckBox();
             userPassErrorLabel = new Label();
             userEmailErrorLabel = new Label();
             userNameErrorLabel = new Label();
@@ -67,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)LogoutBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PrevImageAsBtn).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cancelImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UpdateUserImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DeleteUserImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AddUserImg).BeginInit();
@@ -166,6 +170,9 @@
             // 
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(48, 67, 87);
+            panel2.Controls.Add(cancelImg);
+            panel2.Controls.Add(cancelBtn);
+            panel2.Controls.Add(checkBox1);
             panel2.Controls.Add(userPassErrorLabel);
             panel2.Controls.Add(userEmailErrorLabel);
             panel2.Controls.Add(userNameErrorLabel);
@@ -187,6 +194,48 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1502, 432);
             panel2.TabIndex = 1;
+            // 
+            // cancelImg
+            // 
+            cancelImg.BackgroundImageLayout = ImageLayout.Stretch;
+            cancelImg.Image = (Image)resources.GetObject("cancelImg.Image");
+            cancelImg.Location = new Point(1095, 200);
+            cancelImg.Name = "cancelImg";
+            cancelImg.Size = new Size(44, 38);
+            cancelImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            cancelImg.TabIndex = 37;
+            cancelImg.TabStop = false;
+            cancelImg.Click += cancelBtn_Click_1;
+            // 
+            // cancelBtn
+            // 
+            cancelBtn.BackColor = Color.FromArgb(244, 244, 244);
+            cancelBtn.FlatAppearance.BorderSize = 0;
+            cancelBtn.FlatStyle = FlatStyle.Flat;
+            cancelBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cancelBtn.ForeColor = Color.Black;
+            cancelBtn.Location = new Point(991, 206);
+            cancelBtn.Name = "cancelBtn";
+            cancelBtn.Size = new Size(98, 32);
+            cancelBtn.TabIndex = 36;
+            cancelBtn.Text = "اعادة تعيين";
+            cancelBtn.UseVisualStyleBackColor = false;
+            cancelBtn.Click += cancelBtn_Click_1;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            checkBox1.ForeColor = Color.White;
+            checkBox1.Location = new Point(317, 206);
+            checkBox1.Name = "checkBox1";
+            checkBox1.RightToLeft = RightToLeft.Yes;
+            checkBox1.Size = new Size(141, 24);
+            checkBox1.TabIndex = 24;
+            checkBox1.Text = "اظهار كلمة المرور";
+            checkBox1.TextAlign = ContentAlignment.MiddleRight;
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // userPassErrorLabel
             // 
@@ -231,6 +280,7 @@
             UserpassTxt.Location = new Point(85, 131);
             UserpassTxt.Multiline = true;
             UserpassTxt.Name = "UserpassTxt";
+            UserpassTxt.PasswordChar = '*';
             UserpassTxt.Size = new Size(373, 39);
             UserpassTxt.TabIndex = 5;
             UserpassTxt.TextAlign = HorizontalAlignment.Right;
@@ -453,6 +503,7 @@
             ((System.ComponentModel.ISupportInitialize)PrevImageAsBtn).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cancelImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)UpdateUserImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)DeleteUserImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)AddUserImg).EndInit();
@@ -489,5 +540,8 @@
         private Label userNameErrorLabel;
         private Label userEmailErrorLabel;
         private Label userPassErrorLabel;
+        private CheckBox checkBox1;
+        private PictureBox cancelImg;
+        private Button cancelBtn;
     }
 }

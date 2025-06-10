@@ -36,6 +36,7 @@
             loginBtn = new Button();
             passwordTxt = new TextBox();
             panel1 = new Panel();
+            checkBox1 = new CheckBox();
             errorPasswordLabel = new Label();
             errorUserLabel = new Label();
             pictureBox1 = new PictureBox();
@@ -100,7 +101,7 @@
             loginBtn.FlatStyle = FlatStyle.Flat;
             loginBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             loginBtn.ForeColor = Color.White;
-            loginBtn.Location = new Point(165, 311);
+            loginBtn.Location = new Point(170, 332);
             loginBtn.Name = "loginBtn";
             loginBtn.Size = new Size(163, 47);
             loginBtn.TabIndex = 4;
@@ -122,6 +123,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(198, 198, 198);
+            panel1.Controls.Add(checkBox1);
             panel1.Controls.Add(errorPasswordLabel);
             panel1.Controls.Add(errorUserLabel);
             panel1.Controls.Add(label2);
@@ -131,8 +133,23 @@
             panel1.Controls.Add(loginBtn);
             panel1.Location = new Point(485, 146);
             panel1.Name = "panel1";
-            panel1.Size = new Size(483, 380);
+            panel1.Size = new Size(483, 401);
             panel1.TabIndex = 8;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            checkBox1.ForeColor = Color.Black;
+            checkBox1.Location = new Point(277, 293);
+            checkBox1.Name = "checkBox1";
+            checkBox1.RightToLeft = RightToLeft.Yes;
+            checkBox1.Size = new Size(141, 24);
+            checkBox1.TabIndex = 25;
+            checkBox1.Text = "اظهار كلمة المرور";
+            checkBox1.TextAlign = ContentAlignment.MiddleRight;
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // errorPasswordLabel
             // 
@@ -246,5 +263,6 @@
         private Button backBtn;
         private Label errorPasswordLabel;
         private Label errorUserLabel;
+        private CheckBox checkBox1;
     }
 }

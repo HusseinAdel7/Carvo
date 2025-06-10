@@ -120,7 +120,7 @@ namespace Carvo.User_Interface_Layer
             {
                 MessageBox.Show("لا يمكن مسح هذا العميل , الرجاء مسح الفواتير الخاصة به اولا");
             }
-            
+
         }
 
 
@@ -191,7 +191,7 @@ namespace Carvo.User_Interface_Layer
 
         private void PrevImageAsBtn_Click(object sender, EventArgs e)
         {
-            if(LoggedUser.Role == Role.Admin)
+            if (LoggedUser.Role == Role.Admin)
             {
                 HomeDashboardForm homeDashboardForm = _serviceProvider.GetRequiredService<HomeDashboardForm>();
                 homeDashboardForm.Show();
@@ -202,6 +202,14 @@ namespace Carvo.User_Interface_Layer
                 employeeDashboardForm.Show();
             }
             this.Close();
+        }
+
+
+
+        private void cancelBtn_Click_1(object sender, EventArgs e)
+        {
+            txtCustomerName.Text = string.Empty;
+            txtPhoneNumber.Text = string.Empty;
         }
     }
 }

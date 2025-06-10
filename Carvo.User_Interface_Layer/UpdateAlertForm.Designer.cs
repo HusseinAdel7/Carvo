@@ -79,6 +79,7 @@
             Controls.Add(button3);
             Controls.Add(pictureBox5);
             Controls.Add(label3);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "UpdateAlertForm";
             RightToLeft = RightToLeft.Yes;
             RightToLeftLayout = true;

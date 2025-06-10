@@ -79,6 +79,7 @@
             Controls.Add(pictureBox4);
             Controls.Add(button1);
             Controls.Add(label2);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "DeleteAlertForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DeleteAlertForm";

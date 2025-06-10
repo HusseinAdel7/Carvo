@@ -45,6 +45,9 @@
             AddImage = new PictureBox();
             UpdateImage = new PictureBox();
             panel2 = new Panel();
+            label7 = new Label();
+            pictureBox1 = new PictureBox();
+            cancelBtn = new Button();
             label6 = new Label();
             CustomersFilterTxt = new TextBox();
             PlateErrorLabel = new Label();
@@ -64,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)AddImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UpdateImage).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DeleteImage).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoutBtn).BeginInit();
@@ -191,6 +195,9 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(cancelBtn);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(CustomersFilterTxt);
             panel2.Controls.Add(PlateErrorLabel);
@@ -212,8 +219,43 @@
             panel2.Controls.Add(AddBtn);
             panel2.Location = new Point(23, 153);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1491, 305);
+            panel2.Size = new Size(1491, 331);
             panel2.TabIndex = 23;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(1266, 287);
+            label7.Name = "label7";
+            label7.Size = new Size(0, 20);
+            label7.TabIndex = 33;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(1266, 243);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(44, 38);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 32;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += cancelBtn_Click;
+            // 
+            // cancelBtn
+            // 
+            cancelBtn.BackColor = Color.FromArgb(244, 244, 244);
+            cancelBtn.FlatAppearance.BorderSize = 0;
+            cancelBtn.FlatStyle = FlatStyle.Flat;
+            cancelBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cancelBtn.ForeColor = Color.Black;
+            cancelBtn.Location = new Point(1162, 249);
+            cancelBtn.Name = "cancelBtn";
+            cancelBtn.Size = new Size(98, 32);
+            cancelBtn.TabIndex = 31;
+            cancelBtn.Text = "اعادة تعيين";
+            cancelBtn.UseVisualStyleBackColor = false;
+            cancelBtn.Click += cancelBtn_Click;
             // 
             // label6
             // 
@@ -405,7 +447,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             VehiclesGridView.DefaultCellStyle = dataGridViewCellStyle3;
             VehiclesGridView.EnableHeadersVisualStyles = false;
-            VehiclesGridView.Location = new Point(12, 464);
+            VehiclesGridView.Location = new Point(12, 490);
             VehiclesGridView.MaximumSize = new Size(1502, 243);
             VehiclesGridView.Name = "VehiclesGridView";
             VehiclesGridView.ReadOnly = true;
@@ -423,7 +465,7 @@
             VehiclesGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             VehiclesGridView.ScrollBars = ScrollBars.Vertical;
             VehiclesGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            VehiclesGridView.Size = new Size(1502, 243);
+            VehiclesGridView.Size = new Size(1502, 217);
             VehiclesGridView.TabIndex = 29;
             VehiclesGridView.SelectionChanged += VehicleGridView_SelectionChanged;
             // 
@@ -444,6 +486,7 @@
             ((System.ComponentModel.ISupportInitialize)UpdateImage).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)DeleteImage).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -483,5 +526,8 @@
         private PictureBox PrevImageAsBtn;
         private PictureBox MinimizeBtn;
         private TextBox CustomersFilterTxt;
+        private Label label7;
+        private PictureBox pictureBox1;
+        private Button cancelBtn;
     }
 }
