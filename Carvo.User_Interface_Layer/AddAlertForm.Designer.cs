@@ -79,6 +79,7 @@
             Controls.Add(button2);
             Controls.Add(pictureBox3);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "AddAlertForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AddAlertForm";

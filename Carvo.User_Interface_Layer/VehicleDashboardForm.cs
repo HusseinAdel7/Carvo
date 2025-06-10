@@ -16,7 +16,7 @@ namespace Carvo.User_Interface_Layer
         private IServiceProvider _serviceProvider;
 
         private IEnumerable<Customer> customers;
-        public VehicleDashboardForm(IServiceProvider serviceProvider ,IVehicleService vehicleService, ICustomerService customerService)
+        public VehicleDashboardForm(IServiceProvider serviceProvider, IVehicleService vehicleService, ICustomerService customerService)
         {
             _serviceProvider = serviceProvider;
             _vehicleService = vehicleService; // initialize the service
@@ -288,6 +288,14 @@ namespace Carvo.User_Interface_Layer
                 employeeDashboardForm.Show();
             }
             this.Close();
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            CustomersFilterTxt.Text = string.Empty;
+            VehicleModelTxt.Text = string.Empty;
+            VehicleNameTxt.Text = string.Empty;
+            VehiclePlateTxt.Text = string.Empty;
         }
     }
 }

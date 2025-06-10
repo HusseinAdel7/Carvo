@@ -42,8 +42,11 @@
             PrevImageAsBtn = new PictureBox();
             CategoriesManagement = new Label();
             panel2 = new Panel();
+            label7 = new Label();
             AddVehicleBtnImg = new PictureBox();
+            pictureBox1 = new PictureBox();
             AddVehicleBtn = new Button();
+            cancelBtn = new Button();
             txtPhoneNumber = new TextBox();
             txtCustomerName = new TextBox();
             label2 = new Label();
@@ -63,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)PrevImageAsBtn).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)AddVehicleBtnImg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UpdateCustomerImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DeleteCustomerImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AddCustomerImg).BeginInit();
@@ -162,8 +166,11 @@
             // 
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(48, 67, 87);
+            panel2.Controls.Add(label7);
             panel2.Controls.Add(AddVehicleBtnImg);
+            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(AddVehicleBtn);
+            panel2.Controls.Add(cancelBtn);
             panel2.Controls.Add(txtPhoneNumber);
             panel2.Controls.Add(txtCustomerName);
             panel2.Controls.Add(label2);
@@ -179,6 +186,14 @@
             panel2.Size = new Size(1486, 341);
             panel2.TabIndex = 1;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(1127, 260);
+            label7.Name = "label7";
+            label7.Size = new Size(0, 20);
+            label7.TabIndex = 36;
+            // 
             // AddVehicleBtnImg
             // 
             AddVehicleBtnImg.Image = (Image)resources.GetObject("AddVehicleBtnImg.Image");
@@ -189,6 +204,18 @@
             AddVehicleBtnImg.TabIndex = 21;
             AddVehicleBtnImg.TabStop = false;
             AddVehicleBtnImg.Click += AddVehicleBtn_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(1127, 216);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(44, 38);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 35;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += cancelBtn_Click_1;
             // 
             // AddVehicleBtn
             // 
@@ -201,6 +228,21 @@
             AddVehicleBtn.Text = "اضافة سيارة";
             AddVehicleBtn.UseVisualStyleBackColor = false;
             AddVehicleBtn.Click += AddVehicleBtn_Click;
+            // 
+            // cancelBtn
+            // 
+            cancelBtn.BackColor = Color.FromArgb(244, 244, 244);
+            cancelBtn.FlatAppearance.BorderSize = 0;
+            cancelBtn.FlatStyle = FlatStyle.Flat;
+            cancelBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cancelBtn.ForeColor = Color.Black;
+            cancelBtn.Location = new Point(1023, 222);
+            cancelBtn.Name = "cancelBtn";
+            cancelBtn.Size = new Size(98, 32);
+            cancelBtn.TabIndex = 34;
+            cancelBtn.Text = "اعادة تعيين";
+            cancelBtn.UseVisualStyleBackColor = false;
+            cancelBtn.Click += cancelBtn_Click_1;
             // 
             // txtPhoneNumber
             // 
@@ -386,6 +428,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)AddVehicleBtnImg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)UpdateCustomerImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)DeleteCustomerImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)AddCustomerImg).EndInit();
@@ -417,5 +460,8 @@
         private PictureBox CloseFormBtn;
         private PictureBox AddVehicleBtnImg;
         private Button AddVehicleBtn;
+        private Label label7;
+        private PictureBox pictureBox1;
+        private Button cancelBtn;
     }
 }

@@ -42,6 +42,8 @@
             PrevImageAsBtn = new PictureBox();
             CategoriesManagement = new Label();
             panel2 = new Panel();
+            cancelImg = new PictureBox();
+            cancelBtn = new Button();
             SupplierCompanyFollowedTxt = new TextBox();
             SupplierPhoneTxt = new TextBox();
             SupplierAddressTxt = new TextBox();
@@ -64,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)Logoutbtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PrevImageAsBtn).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cancelImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DeleteInvoiceImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AddInvoiceImg).BeginInit();
@@ -163,6 +166,8 @@
             // 
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(48, 67, 87);
+            panel2.Controls.Add(cancelImg);
+            panel2.Controls.Add(cancelBtn);
             panel2.Controls.Add(SupplierCompanyFollowedTxt);
             panel2.Controls.Add(SupplierPhoneTxt);
             panel2.Controls.Add(SupplierAddressTxt);
@@ -181,6 +186,33 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1502, 432);
             panel2.TabIndex = 1;
+            // 
+            // cancelImg
+            // 
+            cancelImg.BackgroundImageLayout = ImageLayout.Stretch;
+            cancelImg.Image = (Image)resources.GetObject("cancelImg.Image");
+            cancelImg.Location = new Point(1177, 210);
+            cancelImg.Name = "cancelImg";
+            cancelImg.Size = new Size(44, 38);
+            cancelImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            cancelImg.TabIndex = 39;
+            cancelImg.TabStop = false;
+            cancelImg.Click += cancelBtn_Click;
+            // 
+            // cancelBtn
+            // 
+            cancelBtn.BackColor = Color.FromArgb(244, 244, 244);
+            cancelBtn.FlatAppearance.BorderSize = 0;
+            cancelBtn.FlatStyle = FlatStyle.Flat;
+            cancelBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cancelBtn.ForeColor = Color.Black;
+            cancelBtn.Location = new Point(1073, 216);
+            cancelBtn.Name = "cancelBtn";
+            cancelBtn.Size = new Size(98, 32);
+            cancelBtn.TabIndex = 38;
+            cancelBtn.Text = "اعادة تعيين";
+            cancelBtn.UseVisualStyleBackColor = false;
+            cancelBtn.Click += cancelBtn_Click;
             // 
             // SupplierCompanyFollowedTxt
             // 
@@ -408,6 +440,7 @@
             ((System.ComponentModel.ISupportInitialize)PrevImageAsBtn).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cancelImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)DeleteInvoiceImg).EndInit();
             ((System.ComponentModel.ISupportInitialize)AddInvoiceImg).EndInit();
@@ -441,5 +474,7 @@
         private PictureBox CloseFormBtn;
         private PictureBox MinimizeBtn;
         private PictureBox Logoutbtn;
+        private PictureBox cancelImg;
+        private Button cancelBtn;
     }
 }

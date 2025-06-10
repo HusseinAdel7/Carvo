@@ -290,7 +290,7 @@ namespace Carvo.User_Interface_Layer
                     DeleteAlertForm deleteAlert = new DeleteAlertForm();
                     deleteAlert.ShowDialog();
                 }
-            }        
+            }
         }
 
         // Navigate to home dashboard form
@@ -316,6 +316,26 @@ namespace Carvo.User_Interface_Layer
             UserEmailTxt.Text = "";
             UserpassTxt.Text = "";
             UserRoleDropdownList.SelectedIndex = 0;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                UserpassTxt.PasswordChar = '\0';
+            }
+            else
+            {
+                UserpassTxt.PasswordChar = '*';
+
+            }
+        }
+
+
+
+        private void cancelBtn_Click_1(object sender, EventArgs e)
+        {
+            ClearInputFields();
         }
     }
 }

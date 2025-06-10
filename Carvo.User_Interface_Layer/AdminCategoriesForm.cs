@@ -102,10 +102,10 @@ namespace Carvo.User_Interface_Layer
                 await categoryService.DeleteCategoryAsync(id);
                 await LoadCategoriesAsync();
 
-                DeleteAlertForm deleteAlert =  serviceProvider.GetRequiredService<DeleteAlertForm>();
+                DeleteAlertForm deleteAlert = serviceProvider.GetRequiredService<DeleteAlertForm>();
                 deleteAlert.ShowDialog();
             }
-                
+
         }
 
         private async Task LoadCategoriesAsync()
@@ -186,5 +186,12 @@ namespace Carvo.User_Interface_Layer
             this.Close();
         }
 
+
+
+        private void cancelBtn_Click_1(object sender, EventArgs e)
+        {
+            CategoryNameTxt.Text = string.Empty;
+            CategoryDescTxt.Text = string.Empty;
+        }
     }
 }

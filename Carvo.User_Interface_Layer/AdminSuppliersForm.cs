@@ -264,5 +264,13 @@ namespace Carvo.User_Interface_Layer
             this.Close();
             homeDashboardForm.Show();
         }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            SupplierAddressTxt.Text = string.Empty;
+            SupplierCompanyFollowedTxt.Text = string.Empty;
+            SupplierNameTxt.Text = string.Empty;
+            SupplierPhoneTxt.Text = string.Empty;
+        }
     }
 }
