@@ -130,5 +130,18 @@ namespace Carvo.User_Interface_Layer
             this.Close();
             employeeDashboardForm.Show();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                passwordTxt.PasswordChar = '\0';
+            }
+            else
+            {
+                passwordTxt.PasswordChar = '*';
+
+            }
+        }
     }
 }
