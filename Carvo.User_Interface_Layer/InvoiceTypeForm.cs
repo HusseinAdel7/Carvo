@@ -25,6 +25,7 @@ namespace Carvo.User_Interface_Layer
             _serviceProvider = serviceProvider;
             SalesImage.Click += SalesBtn_Click;
             RepairImage.Click += RepairBtn_Click;
+            this.Paint += Form1_Paint;
         }
 
 
@@ -40,6 +41,17 @@ namespace Carvo.User_Interface_Layer
             var salesInvoiceForm = _serviceProvider.GetService(typeof(SalesInvoiceForm)) as SalesInvoiceForm;
             salesInvoiceForm.Show();
             this.Hide();
+        }
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            int borderThickness = 4;
+            Color borderColor = Color.LightGray;
+
+            using (Pen pen = new Pen(borderColor, borderThickness))
+            {
+                e.Graphics.DrawRectangle(pen,
+                    new Rectangle(0, 0, this.Width - borderThickness, this.Height - borderThickness));
+            }
         }
         /// <summary>
         /// Handles the click event for the Repair button.

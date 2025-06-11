@@ -67,7 +67,7 @@
             welcomemsgLabel.AutoSize = true;
             welcomemsgLabel.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             welcomemsgLabel.ForeColor = Color.White;
-            welcomemsgLabel.Location = new Point(553, 63);
+            welcomemsgLabel.Location = new Point(605, 32);
             welcomemsgLabel.Name = "welcomemsgLabel";
             welcomemsgLabel.Size = new Size(348, 50);
             welcomemsgLabel.TabIndex = 0;
@@ -76,10 +76,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(50, 32);
+            pictureBox1.Location = new Point(49, 37);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(50, 50);
+            pictureBox1.Size = new Size(45, 45);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -88,7 +88,7 @@
             // picUsers
             // 
             picUsers.Image = (Image)resources.GetObject("picUsers.Image");
-            picUsers.Location = new Point(1120, 252);
+            picUsers.Location = new Point(1165, 255);
             picUsers.Margin = new Padding(3, 4, 3, 4);
             picUsers.Name = "picUsers";
             picUsers.Size = new Size(143, 129);
@@ -99,7 +99,7 @@
             // picCategories
             // 
             picCategories.Image = (Image)resources.GetObject("picCategories.Image");
-            picCategories.Location = new Point(818, 252);
+            picCategories.Location = new Point(863, 255);
             picCategories.Margin = new Padding(3, 4, 3, 4);
             picCategories.Name = "picCategories";
             picCategories.Size = new Size(147, 129);
@@ -110,7 +110,7 @@
             // picProducts
             // 
             picProducts.Image = (Image)resources.GetObject("picProducts.Image");
-            picProducts.Location = new Point(512, 252);
+            picProducts.Location = new Point(557, 255);
             picProducts.Margin = new Padding(3, 4, 3, 4);
             picProducts.Name = "picProducts";
             picProducts.Size = new Size(147, 129);
@@ -121,7 +121,7 @@
             // picSuppliers
             // 
             picSuppliers.Image = (Image)resources.GetObject("picSuppliers.Image");
-            picSuppliers.Location = new Point(206, 252);
+            picSuppliers.Location = new Point(251, 255);
             picSuppliers.Margin = new Padding(3, 4, 3, 4);
             picSuppliers.Name = "picSuppliers";
             picSuppliers.Size = new Size(147, 129);
@@ -133,7 +133,7 @@
             // 
             btnUsers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUsers.ForeColor = Color.Black;
-            btnUsers.Location = new Point(1120, 404);
+            btnUsers.Location = new Point(1165, 407);
             btnUsers.Margin = new Padding(3, 4, 3, 4);
             btnUsers.Name = "btnUsers";
             btnUsers.Size = new Size(147, 44);
@@ -145,7 +145,7 @@
             // 
             btnCategories.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCategories.ForeColor = Color.Black;
-            btnCategories.Location = new Point(818, 404);
+            btnCategories.Location = new Point(863, 407);
             btnCategories.Margin = new Padding(3, 4, 3, 4);
             btnCategories.Name = "btnCategories";
             btnCategories.Size = new Size(147, 44);
@@ -157,7 +157,7 @@
             // 
             btnProducts.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnProducts.ForeColor = Color.Black;
-            btnProducts.Location = new Point(512, 404);
+            btnProducts.Location = new Point(557, 407);
             btnProducts.Margin = new Padding(3, 4, 3, 4);
             btnProducts.Name = "btnProducts";
             btnProducts.Size = new Size(147, 44);
@@ -169,7 +169,7 @@
             // 
             btnSuppliers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSuppliers.ForeColor = Color.Black;
-            btnSuppliers.Location = new Point(206, 404);
+            btnSuppliers.Location = new Point(251, 407);
             btnSuppliers.Margin = new Padding(3, 4, 3, 4);
             btnSuppliers.Name = "btnSuppliers";
             btnSuppliers.Size = new Size(147, 44);
@@ -181,7 +181,7 @@
             // 
             btnCustomers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCustomers.ForeColor = Color.Black;
-            btnCustomers.Location = new Point(511, 639);
+            btnCustomers.Location = new Point(557, 707);
             btnCustomers.Margin = new Padding(3, 4, 3, 4);
             btnCustomers.Name = "btnCustomers";
             btnCustomers.Size = new Size(151, 44);
@@ -192,7 +192,7 @@
             // picCustomers
             // 
             picCustomers.Image = (Image)resources.GetObject("picCustomers.Image");
-            picCustomers.Location = new Point(511, 487);
+            picCustomers.Location = new Point(557, 555);
             picCustomers.Margin = new Padding(3, 4, 3, 4);
             picCustomers.Name = "picCustomers";
             picCustomers.Size = new Size(147, 129);
@@ -203,7 +203,7 @@
             // picreports
             // 
             picreports.Image = (Image)resources.GetObject("picreports.Image");
-            picreports.Location = new Point(1128, 487);
+            picreports.Location = new Point(1174, 555);
             picreports.Margin = new Padding(3, 4, 3, 4);
             picreports.Name = "picreports";
             picreports.Size = new Size(143, 129);
@@ -214,7 +214,7 @@
             // pictureBox11
             // 
             pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
-            pictureBox11.Location = new Point(1366, 32);
+            pictureBox11.Location = new Point(1414, 32);
             pictureBox11.Margin = new Padding(3, 4, 3, 4);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(50, 50);
@@ -226,7 +226,7 @@
             // pictureBox12
             // 
             pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
-            pictureBox12.Location = new Point(1279, 32);
+            pictureBox12.Location = new Point(1327, 32);
             pictureBox12.Margin = new Padding(3, 4, 3, 4);
             pictureBox12.Name = "pictureBox12";
             pictureBox12.Size = new Size(50, 50);
@@ -239,7 +239,7 @@
             // 
             btnVehicles.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVehicles.ForeColor = Color.Black;
-            btnVehicles.Location = new Point(818, 639);
+            btnVehicles.Location = new Point(864, 707);
             btnVehicles.Margin = new Padding(3, 4, 3, 4);
             btnVehicles.Name = "btnVehicles";
             btnVehicles.Size = new Size(147, 44);
@@ -250,7 +250,7 @@
             // picVehicles
             // 
             picVehicles.Image = (Image)resources.GetObject("picVehicles.Image");
-            picVehicles.Location = new Point(818, 487);
+            picVehicles.Location = new Point(864, 555);
             picVehicles.Margin = new Padding(3, 4, 3, 4);
             picVehicles.Name = "picVehicles";
             picVehicles.Size = new Size(147, 129);
@@ -262,7 +262,7 @@
             // 
             btnreports.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnreports.ForeColor = Color.Black;
-            btnreports.Location = new Point(1128, 639);
+            btnreports.Location = new Point(1174, 707);
             btnreports.Margin = new Padding(3, 4, 3, 4);
             btnreports.Name = "btnreports";
             btnreports.Size = new Size(147, 44);
@@ -273,7 +273,7 @@
             // InvoicesImgBtn
             // 
             InvoicesImgBtn.Image = (Image)resources.GetObject("InvoicesImgBtn.Image");
-            InvoicesImgBtn.Location = new Point(206, 487);
+            InvoicesImgBtn.Location = new Point(252, 555);
             InvoicesImgBtn.Margin = new Padding(3, 4, 3, 4);
             InvoicesImgBtn.Name = "InvoicesImgBtn";
             InvoicesImgBtn.Size = new Size(147, 129);
@@ -285,7 +285,7 @@
             // 
             InvoicesBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             InvoicesBtn.ForeColor = Color.Black;
-            InvoicesBtn.Location = new Point(206, 639);
+            InvoicesBtn.Location = new Point(252, 707);
             InvoicesBtn.Margin = new Padding(3, 4, 3, 4);
             InvoicesBtn.Name = "InvoicesBtn";
             InvoicesBtn.Size = new Size(151, 44);
@@ -298,7 +298,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
-            ClientSize = new Size(1453, 755);
+            ClientSize = new Size(1510, 829);
             Controls.Add(InvoicesImgBtn);
             Controls.Add(InvoicesBtn);
             Controls.Add(btnreports);

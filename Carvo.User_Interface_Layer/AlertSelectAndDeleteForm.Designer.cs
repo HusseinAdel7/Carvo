@@ -40,7 +40,7 @@
             button4.BackColor = Color.White;
             button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.ForeColor = Color.FromArgb(48, 67, 87);
-            button4.Location = new Point(91, 286);
+            button4.Location = new Point(153, 400);
             button4.Name = "button4";
             button4.Size = new Size(163, 46);
             button4.TabIndex = 16;
@@ -51,7 +51,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(119, 98);
+            pictureBox2.Location = new Point(177, 112);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(108, 85);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -64,7 +64,7 @@
             label4.BackColor = Color.FromArgb(48, 67, 87);
             label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 178);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(52, 205);
+            label4.Location = new Point(108, 281);
             label4.Name = "label4";
             label4.Size = new Size(254, 31);
             label4.TabIndex = 14;
@@ -75,10 +75,11 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
-            ClientSize = new Size(343, 450);
+            ClientSize = new Size(462, 586);
             Controls.Add(button4);
             Controls.Add(pictureBox2);
             Controls.Add(label4);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "AlertSelectAndDeleteForm";
             RightToLeft = RightToLeft.Yes;
             RightToLeftLayout = true;

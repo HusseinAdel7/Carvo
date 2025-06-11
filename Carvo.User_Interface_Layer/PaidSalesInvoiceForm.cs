@@ -21,6 +21,7 @@ namespace Carvo.User_Interface_Layer
             customerService = _customerService;
             InitializeComponent();
             this.Load += async (s, e) => await LoadInvoicesAsync();
+            this.Paint += Form1_Paint;
         }
 
 
@@ -28,6 +29,17 @@ namespace Carvo.User_Interface_Layer
         {
             TotalPriceNumeric.Value = Invoice.SaleAmount;
 
+        }
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            int borderThickness = 4;
+            Color borderColor = Color.LightGray;
+
+            using (Pen pen = new Pen(borderColor, borderThickness))
+            {
+                e.Graphics.DrawRectangle(pen,
+                    new Rectangle(0, 0, this.Width - borderThickness, this.Height - borderThickness));
+            }
         }
 
         private async void PrintInvoiceBtn_Click(object sender, EventArgs e)

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VehicleDashboardForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             label4 = new Label();
             VehicleNameTxt = new TextBox();
             VehicleModelTxt = new TextBox();
@@ -219,13 +219,13 @@
             panel2.Controls.Add(AddBtn);
             panel2.Location = new Point(23, 153);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1491, 331);
+            panel2.Size = new Size(1475, 331);
             panel2.TabIndex = 23;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(1266, 287);
+            label7.Location = new Point(1267, 296);
             label7.Name = "label7";
             label7.Size = new Size(0, 20);
             label7.TabIndex = 33;
@@ -234,7 +234,7 @@
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1266, 243);
+            pictureBox1.Location = new Point(1267, 252);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(44, 38);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -249,9 +249,9 @@
             cancelBtn.FlatStyle = FlatStyle.Flat;
             cancelBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cancelBtn.ForeColor = Color.Black;
-            cancelBtn.Location = new Point(1162, 249);
+            cancelBtn.Location = new Point(1139, 252);
             cancelBtn.Name = "cancelBtn";
-            cancelBtn.Size = new Size(98, 32);
+            cancelBtn.Size = new Size(122, 38);
             cancelBtn.TabIndex = 31;
             cancelBtn.Text = "اعادة تعيين";
             cancelBtn.UseVisualStyleBackColor = false;
@@ -352,13 +352,13 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(556, 36);
+            label1.Location = new Point(663, 17);
             label1.Name = "label1";
-            label1.Size = new Size(415, 38);
+            label1.Size = new Size(211, 46);
             label1.TabIndex = 0;
-            label1.Text = "مرحبا بكم في صفحة ادارة المركبات";
+            label1.Text = "ادارة المركبات";
             // 
             // panel1
             // 
@@ -367,18 +367,18 @@
             panel1.Controls.Add(CloseFormBtn);
             panel1.Controls.Add(PrevImageAsBtn);
             panel1.Controls.Add(MinimizeBtn);
-            panel1.Location = new Point(1, 10);
+            panel1.Location = new Point(12, 10);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1523, 104);
+            panel1.Size = new Size(1486, 104);
             panel1.TabIndex = 22;
             panel1.MouseDown += panel1_MouseDown;
             // 
             // LogoutBtn
             // 
             LogoutBtn.Image = (Image)resources.GetObject("LogoutBtn.Image");
-            LogoutBtn.Location = new Point(41, 13);
+            LogoutBtn.Location = new Point(17, 18);
             LogoutBtn.Name = "LogoutBtn";
-            LogoutBtn.Size = new Size(50, 50);
+            LogoutBtn.Size = new Size(45, 45);
             LogoutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogoutBtn.TabIndex = 34;
             LogoutBtn.TabStop = false;
@@ -398,9 +398,9 @@
             // PrevImageAsBtn
             // 
             PrevImageAsBtn.Image = (Image)resources.GetObject("PrevImageAsBtn.Image");
-            PrevImageAsBtn.Location = new Point(120, 13);
+            PrevImageAsBtn.Location = new Point(96, 18);
             PrevImageAsBtn.Name = "PrevImageAsBtn";
-            PrevImageAsBtn.Size = new Size(50, 50);
+            PrevImageAsBtn.Size = new Size(45, 45);
             PrevImageAsBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevImageAsBtn.TabIndex = 31;
             PrevImageAsBtn.TabStop = false;
@@ -420,52 +420,52 @@
             // VehiclesGridView
             // 
             VehiclesGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = SystemColors.ButtonFace;
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.CornflowerBlue;
-            VehiclesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = SystemColors.ButtonFace;
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.CornflowerBlue;
+            VehiclesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             VehiclesGridView.Anchor = AnchorStyles.None;
             VehiclesGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             VehiclesGridView.BorderStyle = BorderStyle.None;
             VehiclesGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 67, 87);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            VehiclesGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(48, 67, 87);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            VehiclesGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             VehiclesGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new Padding(0, 2, 2, 2);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            VehiclesGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new Padding(0, 2, 2, 2);
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            VehiclesGridView.DefaultCellStyle = dataGridViewCellStyle8;
             VehiclesGridView.EnableHeadersVisualStyles = false;
-            VehiclesGridView.Location = new Point(12, 490);
-            VehiclesGridView.MaximumSize = new Size(1502, 243);
+            VehiclesGridView.Location = new Point(4, 505);
+            VehiclesGridView.MaximumSize = new Size(1502, 320);
             VehiclesGridView.Name = "VehiclesGridView";
             VehiclesGridView.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            VehiclesGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            VehiclesGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             VehiclesGridView.RowHeadersVisible = false;
             VehiclesGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
-            VehiclesGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleRight;
+            VehiclesGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             VehiclesGridView.ScrollBars = ScrollBars.Vertical;
             VehiclesGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            VehiclesGridView.Size = new Size(1502, 217);
+            VehiclesGridView.Size = new Size(1502, 298);
             VehiclesGridView.TabIndex = 29;
             VehiclesGridView.SelectionChanged += VehicleGridView_SelectionChanged;
             // 
@@ -474,7 +474,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
-            ClientSize = new Size(1526, 736);
+            ClientSize = new Size(1510, 829);
             Controls.Add(VehiclesGridView);
             Controls.Add(panel2);
             Controls.Add(panel1);

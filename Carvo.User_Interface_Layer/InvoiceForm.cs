@@ -88,7 +88,7 @@ namespace Carvo.User_Interface_Layer
 
             ProductsServicesGrid.Height = totalHeight + 2; // 2px padding
         }
-
+       
         private void CloseFormBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -182,40 +182,48 @@ namespace Carvo.User_Interface_Layer
 
                     page.Content().Column(column =>
                     {
-                        column.Spacing(15);
+                        column.Spacing(4);
+                        // Invoice Date (Top Left Alone)
+                        column.Item().AlignLeft().Text($"{invoiceDate:dd/MM/yyyy HH:mm}");
 
-                        // Main Title
-                        column.Item().Text("فاتورة")
+                        column.Spacing(11);       
+
+                        // Header Title
+                        column.Item().Text("شركة الأستاذ للسيارات")
                             .FontSize(24)
                             .SemiBold()
-                            .AlignRight();
+                            .AlignCenter();
 
-                        // Metadata / Invoice info
+                        column.Item().Text($"فاتورة {invoiceType}")
+                            .FontSize(20)
+                            .SemiBold()
+                            .AlignCenter();
 
-                        column.Item().Text($"رقم الفاتورة:            {invoiceNumber}")
-                            .AlignRight();
+                        
 
-                        column.Item().Text($"نوع الفاتورة:            {invoiceType}")
-                            .AlignRight();
-
-                        column.Item().Text($"تاريخ الفاتورة:          {invoiceDate.ToString("dd/MM/yyyy HH:mm")}")
-                            .AlignRight();
-
-                        if(Invoice_.InvoiceType == Data_Access_Layer.Enums.InvoiceType.Repair)
+                        // Invoice Metadata (Number and Type) with spacing
+                        column.Item().Row(row =>
                         {
-                            column.Item().Text($"معلومات عن السيارة:")
-                            .AlignRight();
+                            row.RelativeItem().Text($"رقم الفاتورة:     {invoiceNumber}").AlignRight();
+                        });
 
-                            column.Item().Text($"اسم السيارة:         {vehicleName}")
-                            .AlignRight();
+                        // Conditional: Repair Invoice Details
+                        if (Invoice_.InvoiceType == Data_Access_Layer.Enums.InvoiceType.Repair)
+                        {
+                            column.Item().Text("معلومات عن السيارة:")
+                                .AlignRight()
+                                .Bold();
 
-                            column.Item().Text($"الموديل:             {vehicleModel}")
-                            .AlignRight();
-
-                            column.Item().Text($"رقم اللوحة:          {vehiclePlate}")
-                            .AlignRight();
+                            column.Item().Row(row =>
+                            {
+                                
+                                
+                                row.RelativeItem().Text($"    رقم اللوحة:   {vehiclePlate}").AlignRight();
+                                row.RelativeItem().Text($"    الموديل:  {vehicleModel}").AlignRight();
+                                row.RelativeItem().Text($"    اسم السيارة:  {vehicleName}").AlignRight();
+                            });
                         }
-                        else
+                        else // Sales Invoice with Product List
                         {
                             column.Item().Table(table =>
                             {
@@ -226,40 +234,53 @@ namespace Carvo.User_Interface_Layer
                                     columns.RelativeColumn();
                                 });
 
-                                // Header
-                                table.Cell().Element(CellStyle).Text("المنتج").AlignRight();
-                                table.Cell().Element(CellStyle).Text("الكمية").AlignRight();
-                                table.Cell().Element(CellStyle).Text("السعر").AlignRight();
+                                // Table Header
+                                table.Cell().Element(CellStyle).Text("السعر").AlignCenter();
+                                table.Cell().Element(CellStyle).Text("الكمية").AlignCenter();
+                                table.Cell().Element(CellStyle).Text("المنتج").AlignCenter();
+                                
+                                
 
-                                foreach(var product in ProductsList)
+                                // Product Rows
+                                foreach (var product in ProductsList)
                                 {
-                                    table.Cell().Element(CellStyle).Text(product.ProdName).AlignRight();
-                                    table.Cell().Element(CellStyle).Text(product.Quantity.ToString()).AlignRight();
-                                    table.Cell().Element(CellStyle).Text(product.TotalPrice.ToString()).AlignRight();
+                                    table.Cell().Element(CellStyle).Text(product.TotalPrice.ToString()).AlignCenter();
+                                    table.Cell().Element(CellStyle).Text(product.Quantity.ToString()).AlignCenter();
+                                    table.Cell().Element(CellStyle).Text(product.ProdName).AlignCenter();            
                                 }
                             });
                         }
 
+                        // Customer Info (Name right, Phone left) with spacing
+                        column.Item().Row(row =>
+                        {
+                            row.RelativeItem().Text($"     رقم الهاتف: {customerPhone}").AlignRight();
+                            row.RelativeItem().Text($"     اسم العميل: {customerName}").AlignRight();
+                        });
 
-                        column.Item().Text($"اسم العميل:              {customerName}")
-                                .AlignRight();
+                        // Price Summary (in one line) with spacing
+                        column.Item().Row(row =>
+                        { 
+                            row.RelativeItem().Text($"المبلغ المتبقي: {remainingPrice}").AlignLeft();
+                            row.RelativeItem().Text($"المبلغ المدفوع: {paidPrice}").AlignCenter();
+                            row.RelativeItem().Text($"المبلغ الكلي: {totalPrice}").AlignRight();
+                        });
 
-                        column.Item().Text($"رقم الهاتف:              {customerPhone}")
+                        // Employee Name
+                        column.Item().Text($"الموظف: {empName}")
                             .AlignRight();
 
-                        column.Item().Text($"المبلغ الكلي:            {totalPrice}")
+                        column.Spacing(10);
+
+                        // Employee Name
+                        column.Item().Text("للتواصل معنا").Bold()
                             .AlignRight();
 
-                        column.Item().Text($"المبلغ المدفوع:          {paidPrice}")
+                        column.Item().Text("الهاتف :   01001353216")
                             .AlignRight();
 
-                        column.Item().Text($"المبلغ المتبقي:          {remainingPrice}")
-                            .AlignRight();
-
-                        column.Item().Text($"الموظف:                  {empName}")
-                            .AlignRight();
-
-
+                        column.Item().Text("Email:   hatem.mostafa.hm.2000@gmail.com")
+                            .AlignLeft();
 
                         // Footer
                         column.Item().Text("شكراً لتعاملكم معنا!")
@@ -268,7 +289,7 @@ namespace Carvo.User_Interface_Layer
                     });
                 });
             })
-            .GeneratePdf(path);
+.GeneratePdf(path);
         }
         private IContainer CellStyle(IContainer container)
         {

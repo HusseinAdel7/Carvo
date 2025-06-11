@@ -26,7 +26,22 @@ namespace Carvo.User_Interface_Layer
         {
             InitializeComponent();
             provider = _provider;
+            this.Paint += Form1_Paint;
 
+        }
+
+        
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            int borderThickness = 4;
+            Color borderColor = Color.LightGray;
+
+            using (Pen pen = new Pen(borderColor, borderThickness))
+            {
+                e.Graphics.DrawRectangle(pen,
+                    new Rectangle(0, 0, this.Width - borderThickness, this.Height - borderThickness));
+            }
         }
 
         // Event handler for the close button - closes the application

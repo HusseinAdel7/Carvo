@@ -19,6 +19,7 @@ namespace Carvo.User_Interface_Layer
             InitializeComponent();
             userService = _userService;
             provider = _provider;
+            this.Paint += Form1_Paint;
 
             // Events setup for form load and input validation
             this.Load += async (s, e) => await LoadUsersAsync();
@@ -43,22 +44,16 @@ namespace Carvo.User_Interface_Layer
             UsersGridView.AllowUserToAddRows = false;
         }
 
-        // Resize DataGridView height based on its content
-        private void InvoicesGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            ResizeDataGridViewHeight();
-        }
+            int borderThickness = 4;
+            Color borderColor = Color.LightGray;
 
-        private void ResizeDataGridViewHeight()
-        {
-            int totalHeight = UsersGridView.ColumnHeadersHeight;
-
-            foreach (DataGridViewRow row in UsersGridView.Rows)
+            using (Pen pen = new Pen(borderColor, borderThickness))
             {
-                if (row.Visible) totalHeight += row.Height;
+                e.Graphics.DrawRectangle(pen,
+                    new Rectangle(0, 0, this.Width - borderThickness, this.Height - borderThickness));
             }
-
-            UsersGridView.Height = totalHeight + 2; // 2px padding
         }
 
         // Close button event handler

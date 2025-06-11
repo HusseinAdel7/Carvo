@@ -47,6 +47,7 @@ namespace Carvo.User_Interface_Layer
             invoiceService = _invoiceService;
             invoiceProductService = _invoiceProductService;
             InitializeComponent();
+            this.Paint += Form1_Paint;
             this.Load += async (s, e) => await LoadInvoicesAsync();
         }
 
@@ -60,7 +61,17 @@ namespace Carvo.User_Interface_Layer
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            int borderThickness = 4;
+            Color borderColor = Color.LightGray;
 
+            using (Pen pen = new Pen(borderColor, borderThickness))
+            {
+                e.Graphics.DrawRectangle(pen,
+                    new Rectangle(0, 0, this.Width - borderThickness, this.Height - borderThickness));
+            }
+        }
         private async Task LoadInvoicesAsync()
         {
             allProducts = await productService.GetAllProductsAsync();

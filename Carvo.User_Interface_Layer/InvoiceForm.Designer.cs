@@ -43,7 +43,6 @@
             InvoiceID = new Label();
             Header_HR = new Label();
             Invoice = new Label();
-            CompanyEmail = new Label();
             CompanyPhone = new Label();
             CompanyAddress = new Label();
             CompanyName = new Label();
@@ -82,6 +81,7 @@
             PaidAmount = new Label();
             RemainingAmount = new Label();
             label23 = new Label();
+            label6 = new Label();
             tableLayoutPanel2.SuspendLayout();
             HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
@@ -122,13 +122,14 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 143F));
-            tableLayoutPanel2.Size = new Size(1508, 800);
+            tableLayoutPanel2.Size = new Size(1510, 800);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // HeaderPanel
             // 
             HeaderPanel.BackColor = Color.FromArgb(48, 67, 87);
             tableLayoutPanel2.SetColumnSpan(HeaderPanel, 2);
+            HeaderPanel.Controls.Add(label6);
             HeaderPanel.Controls.Add(PrintInvoiceBtn);
             HeaderPanel.Controls.Add(CloseFormBtn);
             HeaderPanel.Controls.Add(MinimizeFormBtn);
@@ -139,7 +140,6 @@
             HeaderPanel.Controls.Add(InvoiceID);
             HeaderPanel.Controls.Add(Header_HR);
             HeaderPanel.Controls.Add(Invoice);
-            HeaderPanel.Controls.Add(CompanyEmail);
             HeaderPanel.Controls.Add(CompanyPhone);
             HeaderPanel.Controls.Add(CompanyAddress);
             HeaderPanel.Controls.Add(CompanyName);
@@ -148,7 +148,7 @@
             HeaderPanel.Location = new Point(3, 3);
             HeaderPanel.Name = "HeaderPanel";
             HeaderPanel.RightToLeft = RightToLeft.Yes;
-            HeaderPanel.Size = new Size(1502, 246);
+            HeaderPanel.Size = new Size(1504, 246);
             HeaderPanel.TabIndex = 1;
             // 
             // PrintInvoiceBtn
@@ -156,9 +156,9 @@
             PrintInvoiceBtn.BackColor = Color.FromArgb(224, 224, 224);
             PrintInvoiceBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
             PrintInvoiceBtn.ForeColor = Color.Black;
-            PrintInvoiceBtn.Location = new Point(520, 3);
+            PrintInvoiceBtn.Location = new Point(520, -3);
             PrintInvoiceBtn.Name = "PrintInvoiceBtn";
-            PrintInvoiceBtn.Size = new Size(519, 52);
+            PrintInvoiceBtn.Size = new Size(519, 58);
             PrintInvoiceBtn.TabIndex = 14;
             PrintInvoiceBtn.Text = "طباعة";
             PrintInvoiceBtn.UseVisualStyleBackColor = false;
@@ -167,7 +167,7 @@
             // CloseFormBtn
             // 
             CloseFormBtn.Image = (Image)resources.GetObject("CloseFormBtn.Image");
-            CloseFormBtn.Location = new Point(1449, 0);
+            CloseFormBtn.Location = new Point(1178, 5);
             CloseFormBtn.Name = "CloseFormBtn";
             CloseFormBtn.Size = new Size(50, 50);
             CloseFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -178,7 +178,7 @@
             // MinimizeFormBtn
             // 
             MinimizeFormBtn.Image = (Image)resources.GetObject("MinimizeFormBtn.Image");
-            MinimizeFormBtn.Location = new Point(1376, 0);
+            MinimizeFormBtn.Location = new Point(1105, 5);
             MinimizeFormBtn.Name = "MinimizeFormBtn";
             MinimizeFormBtn.Size = new Size(50, 50);
             MinimizeFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -189,7 +189,7 @@
             // PrevFormBtn
             // 
             PrevFormBtn.Image = (Image)resources.GetObject("PrevFormBtn.Image");
-            PrevFormBtn.Location = new Point(78, 3);
+            PrevFormBtn.Location = new Point(404, 10);
             PrevFormBtn.Name = "PrevFormBtn";
             PrevFormBtn.Size = new Size(45, 45);
             PrevFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -200,7 +200,7 @@
             // LogOutBtn
             // 
             LogOutBtn.Image = (Image)resources.GetObject("LogOutBtn.Image");
-            LogOutBtn.Location = new Point(9, 5);
+            LogOutBtn.Location = new Point(335, 12);
             LogOutBtn.Name = "LogOutBtn";
             LogOutBtn.Size = new Size(45, 45);
             LogOutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -226,7 +226,7 @@
             label1.Location = new Point(0, 241);
             label1.Name = "label1";
             label1.RightToLeft = RightToLeft.Yes;
-            label1.Size = new Size(1502, 5);
+            label1.Size = new Size(1504, 5);
             label1.TabIndex = 1;
             // 
             // InvoiceID
@@ -260,25 +260,15 @@
             Invoice.TabIndex = 4;
             Invoice.Text = "فاتورة";
             // 
-            // CompanyEmail
-            // 
-            CompanyEmail.AutoSize = true;
-            CompanyEmail.Location = new Point(1400, 148);
-            CompanyEmail.Name = "CompanyEmail";
-            CompanyEmail.RightToLeft = RightToLeft.Yes;
-            CompanyEmail.Size = new Size(87, 20);
-            CompanyEmail.TabIndex = 3;
-            CompanyEmail.Text = "ايميل الشركة";
-            // 
             // CompanyPhone
             // 
             CompanyPhone.AutoSize = true;
-            CompanyPhone.Location = new Point(1376, 128);
+            CompanyPhone.Location = new Point(1388, 142);
             CompanyPhone.Name = "CompanyPhone";
             CompanyPhone.RightToLeft = RightToLeft.Yes;
-            CompanyPhone.Size = new Size(114, 20);
+            CompanyPhone.Size = new Size(97, 20);
             CompanyPhone.TabIndex = 2;
-            CompanyPhone.Text = "رقم هاتف الشركة";
+            CompanyPhone.Text = "01001353216";
             // 
             // CompanyAddress
             // 
@@ -286,20 +276,20 @@
             CompanyAddress.Location = new Point(1400, 108);
             CompanyAddress.Name = "CompanyAddress";
             CompanyAddress.RightToLeft = RightToLeft.Yes;
-            CompanyAddress.Size = new Size(90, 20);
+            CompanyAddress.Size = new Size(85, 20);
             CompanyAddress.TabIndex = 1;
-            CompanyAddress.Text = "عنوان الشركة";
+            CompanyAddress.Text = "المنيا , ملوي";
             // 
             // CompanyName
             // 
             CompanyName.AutoSize = true;
             CompanyName.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            CompanyName.Location = new Point(1372, 63);
+            CompanyName.Location = new Point(1226, 63);
             CompanyName.Name = "CompanyName";
             CompanyName.RightToLeft = RightToLeft.Yes;
-            CompanyName.Size = new Size(121, 31);
+            CompanyName.Size = new Size(267, 31);
             CompanyName.TabIndex = 0;
-            CompanyName.Text = "اسم الشركة";
+            CompanyName.Text = "الاستاذ للاطارات والسيارات";
             // 
             // VehicleInfoPanel
             // 
@@ -314,7 +304,7 @@
             VehicleInfoPanel.Controls.Add(VehicleInformation);
             VehicleInfoPanel.Controls.Add(label17);
             VehicleInfoPanel.Controls.Add(label15);
-            VehicleInfoPanel.Location = new Point(63, 429);
+            VehicleInfoPanel.Location = new Point(64, 429);
             VehicleInfoPanel.Name = "VehicleInfoPanel";
             VehicleInfoPanel.RightToLeft = RightToLeft.Yes;
             VehicleInfoPanel.Size = new Size(1383, 141);
@@ -491,7 +481,7 @@
             InvoiceInfoPanel.Controls.Add(label8);
             InvoiceInfoPanel.Controls.Add(InvoiceInformation);
             InvoiceInfoPanel.Controls.Add(label2);
-            InvoiceInfoPanel.Location = new Point(846, 256);
+            InvoiceInfoPanel.Location = new Point(847, 256);
             InvoiceInfoPanel.Name = "InvoiceInfoPanel";
             InvoiceInfoPanel.RightToLeft = RightToLeft.Yes;
             InvoiceInfoPanel.Size = new Size(598, 161);
@@ -566,7 +556,7 @@
             PartsAndServicesHeaderPanel.Anchor = AnchorStyles.None;
             tableLayoutPanel2.SetColumnSpan(PartsAndServicesHeaderPanel, 2);
             PartsAndServicesHeaderPanel.Controls.Add(ProductsAndServices);
-            PartsAndServicesHeaderPanel.Location = new Point(60, 582);
+            PartsAndServicesHeaderPanel.Location = new Point(61, 582);
             PartsAndServicesHeaderPanel.Name = "PartsAndServicesHeaderPanel";
             PartsAndServicesHeaderPanel.RightToLeft = RightToLeft.Yes;
             PartsAndServicesHeaderPanel.Size = new Size(1389, 27);
@@ -605,7 +595,7 @@
             tableLayoutPanel2.SetColumnSpan(ProductsServicesGrid, 2);
             ProductsServicesGrid.EnableHeadersVisualStyles = false;
             ProductsServicesGrid.GridColor = Color.White;
-            ProductsServicesGrid.Location = new Point(61, 617);
+            ProductsServicesGrid.Location = new Point(62, 617);
             ProductsServicesGrid.Name = "ProductsServicesGrid";
             ProductsServicesGrid.ReadOnly = true;
             ProductsServicesGrid.RightToLeft = RightToLeft.Yes;
@@ -630,7 +620,7 @@
             panel4.Controls.Add(RemainingAmount);
             panel4.Controls.Add(label23);
             panel4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            panel4.Location = new Point(59, 637);
+            panel4.Location = new Point(60, 637);
             panel4.Name = "panel4";
             panel4.RightToLeft = RightToLeft.Yes;
             panel4.Size = new Size(1390, 156);
@@ -719,12 +709,22 @@
             label23.Size = new Size(1308, 2);
             label23.TabIndex = 3;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(25, 142);
+            label6.Name = "label6";
+            label6.RightToLeft = RightToLeft.Yes;
+            label6.Size = new Size(251, 20);
+            label6.TabIndex = 15;
+            label6.Text = "hatem.mostafa.hm.2000@gmail.com";
+            // 
             // InvoiceForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(1508, 800);
+            ClientSize = new Size(1510, 800);
             Controls.Add(tableLayoutPanel2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "InvoiceForm";
@@ -762,7 +762,6 @@
         private Label InvoiceID;
         private Label Header_HR;
         private Label Invoice;
-        private Label CompanyEmail;
         private Label CompanyPhone;
         private Label CompanyAddress;
         private Label CompanyName;
@@ -806,5 +805,6 @@
         private PictureBox PrevFormBtn;
         private PictureBox LogOutBtn;
         private Button PrintInvoiceBtn;
+        private Label label6;
     }
 }

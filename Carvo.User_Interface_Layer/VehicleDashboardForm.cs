@@ -26,6 +26,7 @@ namespace Carvo.User_Interface_Layer
             AddImage.Click += AddBtn_Click;
             UpdateImage.Click += UpdateBtn_Click;
             DeleteImage.Click += DeleteBtn_Click;
+            this.Paint += Form1_Paint;
 
             this.Load += async (s, e) => await LoadDataVehicles(); // load vehicles when the form loads
 
@@ -104,7 +105,17 @@ namespace Carvo.User_Interface_Layer
                 MessageBox.Show("الرجاء التأكد من صحة البيانات المدخلة.", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            int borderThickness = 4;
+            Color borderColor = Color.LightGray;
 
+            using (Pen pen = new Pen(borderColor, borderThickness))
+            {
+                e.Graphics.DrawRectangle(pen,
+                    new Rectangle(0, 0, this.Width - borderThickness, this.Height - borderThickness));
+            }
+        }
         private async void DeleteBtn_Click(object sender, EventArgs e)
         {
             if (VehiclesGridView.SelectedRows.Count == 0)

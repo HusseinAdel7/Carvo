@@ -73,7 +73,7 @@
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20.166666F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 79.8333359F));
-            tableLayoutPanel1.Size = new Size(1518, 600);
+            tableLayoutPanel1.Size = new Size(1510, 829);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -81,16 +81,16 @@
             panel1.Controls.Add(ManageInvoicesBtn);
             panel1.Controls.Add(ManageInvoicesImgBtn);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(3, 124);
+            panel1.Location = new Point(3, 170);
             panel1.Name = "panel1";
-            panel1.Size = new Size(500, 473);
+            panel1.Size = new Size(497, 656);
             panel1.TabIndex = 0;
             // 
             // ManageInvoicesBtn
             // 
             ManageInvoicesBtn.BackColor = Color.FromArgb(224, 224, 224);
             ManageInvoicesBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            ManageInvoicesBtn.Location = new Point(155, 336);
+            ManageInvoicesBtn.Location = new Point(104, 474);
             ManageInvoicesBtn.Name = "ManageInvoicesBtn";
             ManageInvoicesBtn.Size = new Size(249, 52);
             ManageInvoicesBtn.TabIndex = 17;
@@ -101,7 +101,7 @@
             // ManageInvoicesImgBtn
             // 
             ManageInvoicesImgBtn.Image = (Image)resources.GetObject("ManageInvoicesImgBtn.Image");
-            ManageInvoicesImgBtn.Location = new Point(155, 27);
+            ManageInvoicesImgBtn.Location = new Point(104, 165);
             ManageInvoicesImgBtn.Name = "ManageInvoicesImgBtn";
             ManageInvoicesImgBtn.Size = new Size(249, 223);
             ManageInvoicesImgBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -114,16 +114,16 @@
             panel2.Controls.Add(ManageCustomersBtn);
             panel2.Controls.Add(ManageCustomersImgBtn);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(509, 124);
+            panel2.Location = new Point(506, 170);
             panel2.Name = "panel2";
-            panel2.Size = new Size(499, 473);
+            panel2.Size = new Size(497, 656);
             panel2.TabIndex = 1;
             // 
             // ManageCustomersBtn
             // 
             ManageCustomersBtn.BackColor = Color.FromArgb(224, 224, 224);
             ManageCustomersBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            ManageCustomersBtn.Location = new Point(131, 336);
+            ManageCustomersBtn.Location = new Point(131, 474);
             ManageCustomersBtn.Name = "ManageCustomersBtn";
             ManageCustomersBtn.Size = new Size(249, 52);
             ManageCustomersBtn.TabIndex = 18;
@@ -134,7 +134,7 @@
             // ManageCustomersImgBtn
             // 
             ManageCustomersImgBtn.Image = (Image)resources.GetObject("ManageCustomersImgBtn.Image");
-            ManageCustomersImgBtn.Location = new Point(131, 27);
+            ManageCustomersImgBtn.Location = new Point(131, 165);
             ManageCustomersImgBtn.Name = "ManageCustomersImgBtn";
             ManageCustomersImgBtn.Size = new Size(249, 223);
             ManageCustomersImgBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -147,16 +147,16 @@
             panel3.Controls.Add(ManageVehiclesBtn);
             panel3.Controls.Add(ManageVehiclesImgBtn);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(1014, 124);
+            panel3.Location = new Point(1009, 170);
             panel3.Name = "panel3";
-            panel3.Size = new Size(501, 473);
+            panel3.Size = new Size(498, 656);
             panel3.TabIndex = 2;
             // 
             // ManageVehiclesBtn
             // 
             ManageVehiclesBtn.BackColor = Color.FromArgb(224, 224, 224);
             ManageVehiclesBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            ManageVehiclesBtn.Location = new Point(118, 336);
+            ManageVehiclesBtn.Location = new Point(118, 474);
             ManageVehiclesBtn.Name = "ManageVehiclesBtn";
             ManageVehiclesBtn.Size = new Size(249, 52);
             ManageVehiclesBtn.TabIndex = 19;
@@ -167,7 +167,7 @@
             // ManageVehiclesImgBtn
             // 
             ManageVehiclesImgBtn.Image = (Image)resources.GetObject("ManageVehiclesImgBtn.Image");
-            ManageVehiclesImgBtn.Location = new Point(118, 27);
+            ManageVehiclesImgBtn.Location = new Point(118, 165);
             ManageVehiclesImgBtn.Name = "ManageVehiclesImgBtn";
             ManageVehiclesImgBtn.Size = new Size(249, 223);
             ManageVehiclesImgBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -185,7 +185,7 @@
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(3, 3);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1512, 115);
+            panel4.Size = new Size(1504, 161);
             panel4.TabIndex = 3;
             // 
             // WelcomeMsgLabel
@@ -193,7 +193,7 @@
             WelcomeMsgLabel.AutoSize = true;
             WelcomeMsgLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             WelcomeMsgLabel.ForeColor = Color.White;
-            WelcomeMsgLabel.Location = new Point(569, 31);
+            WelcomeMsgLabel.Location = new Point(576, 31);
             WelcomeMsgLabel.Name = "WelcomeMsgLabel";
             WelcomeMsgLabel.Size = new Size(317, 41);
             WelcomeMsgLabel.TabIndex = 4;
@@ -224,9 +224,9 @@
             // LogoutBtn
             // 
             LogoutBtn.Image = (Image)resources.GetObject("LogoutBtn.Image");
-            LogoutBtn.Location = new Point(38, 22);
+            LogoutBtn.Location = new Point(44, 27);
             LogoutBtn.Name = "LogoutBtn";
-            LogoutBtn.Size = new Size(50, 50);
+            LogoutBtn.Size = new Size(45, 45);
             LogoutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogoutBtn.TabIndex = 0;
             LogoutBtn.TabStop = false;
@@ -237,7 +237,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
-            ClientSize = new Size(1518, 600);
+            ClientSize = new Size(1510, 829);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);

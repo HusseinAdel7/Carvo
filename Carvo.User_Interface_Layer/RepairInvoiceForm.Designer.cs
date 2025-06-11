@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RepairInvoiceForm));
             panel2 = new Panel();
+            PrintErrorMsg = new Label();
             PaidPriceErrorMsg = new Label();
             label11 = new Label();
             PaidMoneyNumeric = new NumericUpDown();
@@ -66,7 +67,6 @@
             PrevFormBtn = new PictureBox();
             LogOutBtn = new PictureBox();
             label1 = new Label();
-            PrintErrorMsg = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PaidMoneyNumeric).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -108,15 +108,27 @@
             panel2.Controls.Add(CustomerDropdowwnList);
             panel2.Location = new Point(0, 119);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1508, 524);
+            panel2.Size = new Size(1508, 712);
             panel2.TabIndex = 6;
+            // 
+            // PrintErrorMsg
+            // 
+            PrintErrorMsg.AutoSize = true;
+            PrintErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PrintErrorMsg.ForeColor = Color.FromArgb(255, 220, 80);
+            PrintErrorMsg.Location = new Point(1007, 425);
+            PrintErrorMsg.Name = "PrintErrorMsg";
+            PrintErrorMsg.Size = new Size(201, 28);
+            PrintErrorMsg.TabIndex = 46;
+            PrintErrorMsg.Text = "يجب اضافة الفاتورة اولا";
+            PrintErrorMsg.Visible = false;
             // 
             // PaidPriceErrorMsg
             // 
             PaidPriceErrorMsg.AutoSize = true;
             PaidPriceErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            PaidPriceErrorMsg.ForeColor = Color.Red;
-            PaidPriceErrorMsg.Location = new Point(142, 198);
+            PaidPriceErrorMsg.ForeColor = Color.FromArgb(255, 220, 80);
+            PaidPriceErrorMsg.Location = new Point(141, 268);
             PaidPriceErrorMsg.Name = "PaidPriceErrorMsg";
             PaidPriceErrorMsg.Size = new Size(435, 28);
             PaidPriceErrorMsg.TabIndex = 45;
@@ -128,7 +140,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
             label11.ForeColor = Color.FromArgb(244, 244, 244);
-            label11.Location = new Point(622, 168);
+            label11.Location = new Point(621, 218);
             label11.Name = "label11";
             label11.Size = new Size(145, 28);
             label11.TabIndex = 44;
@@ -136,10 +148,11 @@
             // 
             // PaidMoneyNumeric
             // 
-            PaidMoneyNumeric.Location = new Point(268, 168);
+            PaidMoneyNumeric.Font = new Font("Segoe UI", 12F);
+            PaidMoneyNumeric.Location = new Point(267, 218);
             PaidMoneyNumeric.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
             PaidMoneyNumeric.Name = "PaidMoneyNumeric";
-            PaidMoneyNumeric.Size = new Size(309, 27);
+            PaidMoneyNumeric.Size = new Size(309, 34);
             PaidMoneyNumeric.TabIndex = 43;
             // 
             // tableLayoutPanel1
@@ -161,7 +174,7 @@
             tableLayoutPanel1.Controls.Add(VehicleNameLabel, 1, 1);
             tableLayoutPanel1.Controls.Add(label8, 2, 0);
             tableLayoutPanel1.Controls.Add(CustomerNameLabel, 0, 1);
-            tableLayoutPanel1.Location = new Point(97, 372);
+            tableLayoutPanel1.Location = new Point(97, 566);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -279,7 +292,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
             label2.ForeColor = Color.FromArgb(244, 244, 244);
-            label2.Location = new Point(1083, 9);
+            label2.Location = new Point(1083, 51);
             label2.Name = "label2";
             label2.Size = new Size(187, 28);
             label2.TabIndex = 31;
@@ -287,9 +300,10 @@
             // 
             // CustomersFilterTxt
             // 
-            CustomersFilterTxt.Location = new Point(961, 50);
+            CustomersFilterTxt.Font = new Font("Segoe UI", 12F);
+            CustomersFilterTxt.Location = new Point(961, 92);
             CustomersFilterTxt.Name = "CustomersFilterTxt";
-            CustomersFilterTxt.Size = new Size(309, 27);
+            CustomersFilterTxt.Size = new Size(309, 34);
             CustomersFilterTxt.TabIndex = 30;
             CustomersFilterTxt.TextChanged += CustomersFilterTxt_TextChanged;
             // 
@@ -298,7 +312,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
             label5.ForeColor = Color.FromArgb(244, 244, 244);
-            label5.Location = new Point(640, 105);
+            label5.Location = new Point(640, 133);
             label5.Name = "label5";
             label5.Size = new Size(127, 28);
             label5.TabIndex = 29;
@@ -309,7 +323,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 178);
             label7.ForeColor = Color.FromArgb(244, 244, 244);
-            label7.Location = new Point(1359, 101);
+            label7.Location = new Point(1359, 143);
             label7.Name = "label7";
             label7.Size = new Size(79, 28);
             label7.TabIndex = 28;
@@ -329,7 +343,7 @@
             // DeleteCustomerImg
             // 
             DeleteCustomerImg.Image = (Image)resources.GetObject("DeleteCustomerImg.Image");
-            DeleteCustomerImg.Location = new Point(233, 273);
+            DeleteCustomerImg.Location = new Point(233, 414);
             DeleteCustomerImg.Name = "DeleteCustomerImg";
             DeleteCustomerImg.Size = new Size(64, 52);
             DeleteCustomerImg.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -341,7 +355,7 @@
             // 
             DeleteInvoiceBtn.BackColor = Color.FromArgb(224, 224, 224);
             DeleteInvoiceBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            DeleteInvoiceBtn.Location = new Point(97, 273);
+            DeleteInvoiceBtn.Location = new Point(97, 414);
             DeleteInvoiceBtn.Name = "DeleteInvoiceBtn";
             DeleteInvoiceBtn.Size = new Size(130, 52);
             DeleteInvoiceBtn.TabIndex = 25;
@@ -352,7 +366,7 @@
             // PrintInvoiceImg
             // 
             PrintInvoiceImg.Image = (Image)resources.GetObject("PrintInvoiceImg.Image");
-            PrintInvoiceImg.Location = new Point(1350, 273);
+            PrintInvoiceImg.Location = new Point(1350, 414);
             PrintInvoiceImg.Name = "PrintInvoiceImg";
             PrintInvoiceImg.Size = new Size(64, 52);
             PrintInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -363,7 +377,7 @@
             // 
             PrintInvoice.BackColor = Color.FromArgb(224, 224, 224);
             PrintInvoice.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            PrintInvoice.Location = new Point(1214, 273);
+            PrintInvoice.Location = new Point(1214, 414);
             PrintInvoice.Name = "PrintInvoice";
             PrintInvoice.Size = new Size(130, 52);
             PrintInvoice.TabIndex = 23;
@@ -374,7 +388,7 @@
             // UpdateInvoiceImg
             // 
             UpdateInvoiceImg.Image = (Image)resources.GetObject("UpdateInvoiceImg.Image");
-            UpdateInvoiceImg.Location = new Point(512, 273);
+            UpdateInvoiceImg.Location = new Point(512, 414);
             UpdateInvoiceImg.Name = "UpdateInvoiceImg";
             UpdateInvoiceImg.Size = new Size(64, 52);
             UpdateInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -386,7 +400,7 @@
             // 
             UpdateInvoiceBtn.BackColor = Color.FromArgb(224, 224, 224);
             UpdateInvoiceBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            UpdateInvoiceBtn.Location = new Point(376, 273);
+            UpdateInvoiceBtn.Location = new Point(376, 414);
             UpdateInvoiceBtn.Name = "UpdateInvoiceBtn";
             UpdateInvoiceBtn.Size = new Size(130, 52);
             UpdateInvoiceBtn.TabIndex = 21;
@@ -397,7 +411,7 @@
             // AddInvoiceImg
             // 
             AddInvoiceImg.Image = (Image)resources.GetObject("AddInvoiceImg.Image");
-            AddInvoiceImg.Location = new Point(782, 273);
+            AddInvoiceImg.Location = new Point(782, 414);
             AddInvoiceImg.Name = "AddInvoiceImg";
             AddInvoiceImg.Size = new Size(64, 52);
             AddInvoiceImg.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -409,7 +423,7 @@
             // 
             AddInvoiceBtn.BackColor = Color.FromArgb(224, 224, 224);
             AddInvoiceBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            AddInvoiceBtn.Location = new Point(646, 273);
+            AddInvoiceBtn.Location = new Point(646, 414);
             AddInvoiceBtn.Name = "AddInvoiceBtn";
             AddInvoiceBtn.Size = new Size(130, 52);
             AddInvoiceBtn.TabIndex = 19;
@@ -419,32 +433,35 @@
             // 
             // RepairPriceNumeric
             // 
-            RepairPriceNumeric.Location = new Point(268, 106);
+            RepairPriceNumeric.Font = new Font("Segoe UI", 12F);
+            RepairPriceNumeric.Location = new Point(268, 134);
             RepairPriceNumeric.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             RepairPriceNumeric.Name = "RepairPriceNumeric";
-            RepairPriceNumeric.Size = new Size(309, 27);
+            RepairPriceNumeric.Size = new Size(309, 34);
             RepairPriceNumeric.TabIndex = 17;
             // 
             // VehicleDropDownList
             // 
             VehicleDropDownList.BackColor = SystemColors.ActiveCaption;
             VehicleDropDownList.DropDownStyle = ComboBoxStyle.DropDownList;
+            VehicleDropDownList.Font = new Font("Segoe UI", 12F);
             VehicleDropDownList.FormattingEnabled = true;
             VehicleDropDownList.Items.AddRange(new object[] { "عربية ", "موتوسيكل ", "عجلة" });
             VehicleDropDownList.Location = new Point(268, 50);
             VehicleDropDownList.Name = "VehicleDropDownList";
-            VehicleDropDownList.Size = new Size(309, 28);
+            VehicleDropDownList.Size = new Size(309, 36);
             VehicleDropDownList.TabIndex = 1;
             // 
             // CustomerDropdowwnList
             // 
             CustomerDropdowwnList.BackColor = SystemColors.ActiveCaption;
             CustomerDropdowwnList.DropDownStyle = ComboBoxStyle.DropDownList;
+            CustomerDropdowwnList.Font = new Font("Segoe UI", 12F);
             CustomerDropdowwnList.FormattingEnabled = true;
             CustomerDropdowwnList.Items.AddRange(new object[] { "Customer1", "Customer2", "Customer3", "Customer4", "Customer5", "" });
-            CustomerDropdowwnList.Location = new Point(961, 105);
+            CustomerDropdowwnList.Location = new Point(961, 147);
             CustomerDropdowwnList.Name = "CustomerDropdowwnList";
-            CustomerDropdowwnList.Size = new Size(309, 28);
+            CustomerDropdowwnList.Size = new Size(309, 36);
             CustomerDropdowwnList.TabIndex = 0;
             CustomerDropdowwnList.SelectedIndexChanged += CustomerDropdowwnList_SelectedIndexChanged;
             // 
@@ -459,7 +476,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1508, 113);
+            panel1.Size = new Size(1510, 113);
             panel1.TabIndex = 5;
             // 
             // CloseFormBtn
@@ -487,9 +504,9 @@
             // PrevFormBtn
             // 
             PrevFormBtn.Image = (Image)resources.GetObject("PrevFormBtn.Image");
-            PrevFormBtn.Location = new Point(130, 29);
+            PrevFormBtn.Location = new Point(119, 34);
             PrevFormBtn.Name = "PrevFormBtn";
-            PrevFormBtn.Size = new Size(50, 50);
+            PrevFormBtn.Size = new Size(45, 45);
             PrevFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevFormBtn.TabIndex = 11;
             PrevFormBtn.TabStop = false;
@@ -498,9 +515,9 @@
             // LogOutBtn
             // 
             LogOutBtn.Image = (Image)resources.GetObject("LogOutBtn.Image");
-            LogOutBtn.Location = new Point(32, 29);
+            LogOutBtn.Location = new Point(33, 34);
             LogOutBtn.Name = "LogOutBtn";
-            LogOutBtn.Size = new Size(50, 50);
+            LogOutBtn.Size = new Size(45, 45);
             LogOutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogOutBtn.TabIndex = 10;
             LogOutBtn.TabStop = false;
@@ -511,30 +528,18 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 178);
             label1.ForeColor = Color.FromArgb(244, 244, 244);
-            label1.Location = new Point(666, 29);
+            label1.Location = new Point(633, 25);
             label1.Name = "label1";
             label1.Size = new Size(238, 54);
             label1.TabIndex = 9;
             label1.Text = "فاتورة صيانة ";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // PrintErrorMsg
-            // 
-            PrintErrorMsg.AutoSize = true;
-            PrintErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            PrintErrorMsg.ForeColor = Color.Red;
-            PrintErrorMsg.Location = new Point(1007, 284);
-            PrintErrorMsg.Name = "PrintErrorMsg";
-            PrintErrorMsg.Size = new Size(201, 28);
-            PrintErrorMsg.TabIndex = 46;
-            PrintErrorMsg.Text = "يجب اضافة الفاتورة اولا";
-            PrintErrorMsg.Visible = false;
-            // 
             // RepairInvoiceForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1508, 626);
+            ClientSize = new Size(1510, 829);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;

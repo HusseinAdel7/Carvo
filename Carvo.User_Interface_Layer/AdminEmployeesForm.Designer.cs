@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminEmployeesForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
             CloseFormBtn = new PictureBox();
@@ -93,7 +93,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 133F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 438F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(1508, 829);
+            tableLayoutPanel1.Size = new Size(1510, 829);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -109,7 +109,7 @@
             panel1.ForeColor = Color.White;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1502, 127);
+            panel1.Size = new Size(1504, 127);
             panel1.TabIndex = 0;
             // 
             // CloseFormBtn
@@ -137,9 +137,9 @@
             // LogoutBtn
             // 
             LogoutBtn.Image = (Image)resources.GetObject("LogoutBtn.Image");
-            LogoutBtn.Location = new Point(61, 23);
+            LogoutBtn.Location = new Point(59, 28);
             LogoutBtn.Name = "LogoutBtn";
-            LogoutBtn.Size = new Size(50, 50);
+            LogoutBtn.Size = new Size(45, 45);
             LogoutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogoutBtn.TabIndex = 2;
             LogoutBtn.TabStop = false;
@@ -148,9 +148,9 @@
             // PrevImageAsBtn
             // 
             PrevImageAsBtn.Image = (Image)resources.GetObject("PrevImageAsBtn.Image");
-            PrevImageAsBtn.Location = new Point(151, 23);
+            PrevImageAsBtn.Location = new Point(149, 28);
             PrevImageAsBtn.Name = "PrevImageAsBtn";
-            PrevImageAsBtn.Size = new Size(50, 50);
+            PrevImageAsBtn.Size = new Size(45, 45);
             PrevImageAsBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevImageAsBtn.TabIndex = 1;
             PrevImageAsBtn.TabStop = false;
@@ -160,7 +160,7 @@
             // 
             CategoriesManagement.AutoSize = true;
             CategoriesManagement.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CategoriesManagement.Location = new Point(707, 35);
+            CategoriesManagement.Location = new Point(674, 35);
             CategoriesManagement.Name = "CategoriesManagement";
             CategoriesManagement.Size = new Size(215, 38);
             CategoriesManagement.TabIndex = 0;
@@ -190,7 +190,7 @@
             panel2.Controls.Add(AddUserImg);
             panel2.Controls.Add(AddUserBtn);
             panel2.Controls.Add(DeleteUserBtn);
-            panel2.Location = new Point(3, 136);
+            panel2.Location = new Point(4, 136);
             panel2.Name = "panel2";
             panel2.Size = new Size(1502, 432);
             panel2.TabIndex = 1;
@@ -199,7 +199,7 @@
             // 
             cancelImg.BackgroundImageLayout = ImageLayout.Stretch;
             cancelImg.Image = (Image)resources.GetObject("cancelImg.Image");
-            cancelImg.Location = new Point(1095, 200);
+            cancelImg.Location = new Point(1091, 234);
             cancelImg.Name = "cancelImg";
             cancelImg.Size = new Size(44, 38);
             cancelImg.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -214,9 +214,9 @@
             cancelBtn.FlatStyle = FlatStyle.Flat;
             cancelBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cancelBtn.ForeColor = Color.Black;
-            cancelBtn.Location = new Point(991, 206);
+            cancelBtn.Location = new Point(956, 234);
             cancelBtn.Name = "cancelBtn";
-            cancelBtn.Size = new Size(98, 32);
+            cancelBtn.Size = new Size(129, 38);
             cancelBtn.TabIndex = 36;
             cancelBtn.Text = "اعادة تعيين";
             cancelBtn.UseVisualStyleBackColor = false;
@@ -227,7 +227,7 @@
             checkBox1.AutoSize = true;
             checkBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             checkBox1.ForeColor = Color.White;
-            checkBox1.Location = new Point(317, 206);
+            checkBox1.Location = new Point(317, 234);
             checkBox1.Name = "checkBox1";
             checkBox1.RightToLeft = RightToLeft.Yes;
             checkBox1.Size = new Size(141, 24);
@@ -241,8 +241,8 @@
             // 
             userPassErrorLabel.AutoSize = true;
             userPassErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            userPassErrorLabel.ForeColor = Color.Red;
-            userPassErrorLabel.Location = new Point(-31, 173);
+            userPassErrorLabel.ForeColor = Color.FromArgb(255, 220, 80);
+            userPassErrorLabel.Location = new Point(24, 196);
             userPassErrorLabel.Name = "userPassErrorLabel";
             userPassErrorLabel.Size = new Size(489, 20);
             userPassErrorLabel.TabIndex = 23;
@@ -253,8 +253,8 @@
             // 
             userEmailErrorLabel.AutoSize = true;
             userEmailErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            userEmailErrorLabel.ForeColor = Color.Red;
-            userEmailErrorLabel.Location = new Point(592, 172);
+            userEmailErrorLabel.ForeColor = Color.FromArgb(255, 220, 80);
+            userEmailErrorLabel.Location = new Point(618, 196);
             userEmailErrorLabel.Name = "userEmailErrorLabel";
             userEmailErrorLabel.RightToLeft = RightToLeft.Yes;
             userEmailErrorLabel.Size = new Size(543, 20);
@@ -266,8 +266,8 @@
             // 
             userNameErrorLabel.AutoSize = true;
             userNameErrorLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            userNameErrorLabel.ForeColor = Color.Red;
-            userNameErrorLabel.Location = new Point(682, 95);
+            userNameErrorLabel.ForeColor = Color.FromArgb(255, 220, 80);
+            userNameErrorLabel.Location = new Point(706, 95);
             userNameErrorLabel.Name = "userNameErrorLabel";
             userNameErrorLabel.Size = new Size(453, 20);
             userNameErrorLabel.TabIndex = 21;
@@ -276,12 +276,12 @@
             // 
             // UserpassTxt
             // 
-            UserpassTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UserpassTxt.Location = new Point(85, 131);
+            UserpassTxt.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            UserpassTxt.Location = new Point(85, 143);
             UserpassTxt.Multiline = true;
             UserpassTxt.Name = "UserpassTxt";
             UserpassTxt.PasswordChar = '*';
-            UserpassTxt.Size = new Size(373, 39);
+            UserpassTxt.Size = new Size(373, 50);
             UserpassTxt.TabIndex = 5;
             UserpassTxt.TextAlign = HorizontalAlignment.Right;
             // 
@@ -290,7 +290,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(527, 131);
+            label5.Location = new Point(527, 154);
             label5.Name = "label5";
             label5.Size = new Size(117, 25);
             label5.TabIndex = 20;
@@ -298,11 +298,11 @@
             // 
             // UserEmailTxt
             // 
-            UserEmailTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UserEmailTxt.Location = new Point(762, 130);
+            UserEmailTxt.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            UserEmailTxt.Location = new Point(762, 143);
             UserEmailTxt.Multiline = true;
             UserEmailTxt.Name = "UserEmailTxt";
-            UserEmailTxt.Size = new Size(373, 39);
+            UserEmailTxt.Size = new Size(373, 50);
             UserEmailTxt.TabIndex = 3;
             UserEmailTxt.TextAlign = HorizontalAlignment.Right;
             // 
@@ -320,20 +320,20 @@
             // 
             // UserRoleDropdownList
             // 
-            UserRoleDropdownList.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UserRoleDropdownList.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             UserRoleDropdownList.FormattingEnabled = true;
             UserRoleDropdownList.Location = new Point(85, 61);
             UserRoleDropdownList.Name = "UserRoleDropdownList";
-            UserRoleDropdownList.Size = new Size(373, 31);
+            UserRoleDropdownList.Size = new Size(373, 36);
             UserRoleDropdownList.TabIndex = 4;
             // 
             // UserNameTxt
             // 
-            UserNameTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UserNameTxt.Location = new Point(762, 53);
+            UserNameTxt.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            UserNameTxt.Location = new Point(762, 42);
             UserNameTxt.Multiline = true;
             UserNameTxt.Name = "UserNameTxt";
-            UserNameTxt.Size = new Size(373, 39);
+            UserNameTxt.Size = new Size(373, 50);
             UserNameTxt.TabIndex = 1;
             UserNameTxt.TextAlign = HorizontalAlignment.Right;
             // 
@@ -342,7 +342,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(1170, 131);
+            label2.Location = new Point(1170, 155);
             label2.Name = "label2";
             label2.Size = new Size(152, 25);
             label2.TabIndex = 8;
@@ -431,54 +431,53 @@
             // UsersGridView
             // 
             UsersGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = SystemColors.ButtonFace;
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.CornflowerBlue;
-            UsersGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = SystemColors.ButtonFace;
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.CornflowerBlue;
+            UsersGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             UsersGridView.Anchor = AnchorStyles.None;
             UsersGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             UsersGridView.BorderStyle = BorderStyle.None;
             UsersGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 67, 87);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            UsersGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(48, 67, 87);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            UsersGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             UsersGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new Padding(0, 2, 2, 2);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            UsersGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new Padding(0, 2, 2, 2);
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            UsersGridView.DefaultCellStyle = dataGridViewCellStyle8;
             UsersGridView.EnableHeadersVisualStyles = false;
-            UsersGridView.Location = new Point(3, 583);
+            UsersGridView.Location = new Point(4, 583);
             UsersGridView.MaximumSize = new Size(1502, 234);
             UsersGridView.Name = "UsersGridView";
             UsersGridView.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            UsersGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            UsersGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             UsersGridView.RowHeadersVisible = false;
             UsersGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
-            UsersGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleRight;
+            UsersGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             UsersGridView.ScrollBars = ScrollBars.Vertical;
             UsersGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             UsersGridView.Size = new Size(1502, 234);
             UsersGridView.TabIndex = 2;
-            UsersGridView.DataBindingComplete += InvoicesGridView_DataBindingComplete;
             UsersGridView.SelectionChanged += UsersGridView_SelectionChanged;
             // 
             // AdminEmployeesForm
@@ -487,7 +486,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1508, 829);
+            ClientSize = new Size(1510, 829);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(1526, 885);

@@ -38,6 +38,7 @@
             CloseFormBtn = new PictureBox();
             MinimizeFormBtn = new PictureBox();
             panel1 = new Panel();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)RepairImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)SalesImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PrevFormBtn).BeginInit();
@@ -50,10 +51,10 @@
             // RepairImage
             // 
             RepairImage.Image = (Image)resources.GetObject("RepairImage.Image");
-            RepairImage.Location = new Point(666, 141);
+            RepairImage.Location = new Point(877, 257);
             RepairImage.Margin = new Padding(4);
             RepairImage.Name = "RepairImage";
-            RepairImage.Size = new Size(247, 196);
+            RepairImage.Size = new Size(381, 327);
             RepairImage.SizeMode = PictureBoxSizeMode.Zoom;
             RepairImage.TabIndex = 0;
             RepairImage.TabStop = false;
@@ -62,10 +63,10 @@
             // SalesImage
             // 
             SalesImage.Image = (Image)resources.GetObject("SalesImage.Image");
-            SalesImage.Location = new Point(227, 141);
+            SalesImage.Location = new Point(269, 257);
             SalesImage.Margin = new Padding(4);
             SalesImage.Name = "SalesImage";
-            SalesImage.Size = new Size(247, 196);
+            SalesImage.Size = new Size(381, 327);
             SalesImage.SizeMode = PictureBoxSizeMode.Zoom;
             SalesImage.TabIndex = 1;
             SalesImage.TabStop = false;
@@ -77,10 +78,10 @@
             RepairBtn.Cursor = Cursors.Hand;
             RepairBtn.FlatStyle = FlatStyle.Flat;
             RepairBtn.ForeColor = Color.FromArgb(48, 67, 87);
-            RepairBtn.Location = new Point(666, 390);
+            RepairBtn.Location = new Point(877, 637);
             RepairBtn.Margin = new Padding(4);
             RepairBtn.Name = "RepairBtn";
-            RepairBtn.Size = new Size(247, 51);
+            RepairBtn.Size = new Size(381, 51);
             RepairBtn.TabIndex = 2;
             RepairBtn.Text = "صيانة";
             RepairBtn.UseVisualStyleBackColor = false;
@@ -93,10 +94,10 @@
             SalesBtn.FlatStyle = FlatStyle.Flat;
             SalesBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SalesBtn.ForeColor = Color.FromArgb(48, 67, 87);
-            SalesBtn.Location = new Point(227, 390);
+            SalesBtn.Location = new Point(269, 637);
             SalesBtn.Margin = new Padding(4);
             SalesBtn.Name = "SalesBtn";
-            SalesBtn.Size = new Size(247, 51);
+            SalesBtn.Size = new Size(381, 51);
             SalesBtn.TabIndex = 3;
             SalesBtn.Text = "مشتريات";
             SalesBtn.UseVisualStyleBackColor = false;
@@ -105,9 +106,9 @@
             // PrevFormBtn
             // 
             PrevFormBtn.Image = (Image)resources.GetObject("PrevFormBtn.Image");
-            PrevFormBtn.Location = new Point(113, 0);
+            PrevFormBtn.Location = new Point(113, 8);
             PrevFormBtn.Name = "PrevFormBtn";
-            PrevFormBtn.Size = new Size(50, 50);
+            PrevFormBtn.Size = new Size(45, 45);
             PrevFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevFormBtn.TabIndex = 13;
             PrevFormBtn.TabStop = false;
@@ -116,9 +117,9 @@
             // LogOutBtn
             // 
             LogOutBtn.Image = (Image)resources.GetObject("LogOutBtn.Image");
-            LogOutBtn.Location = new Point(33, 0);
+            LogOutBtn.Location = new Point(33, 8);
             LogOutBtn.Name = "LogOutBtn";
-            LogOutBtn.Size = new Size(50, 50);
+            LogOutBtn.Size = new Size(45, 45);
             LogOutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogOutBtn.TabIndex = 12;
             LogOutBtn.TabStop = false;
@@ -127,7 +128,7 @@
             // CloseFormBtn
             // 
             CloseFormBtn.Image = (Image)resources.GetObject("CloseFormBtn.Image");
-            CloseFormBtn.Location = new Point(1044, 3);
+            CloseFormBtn.Location = new Point(1399, 3);
             CloseFormBtn.Name = "CloseFormBtn";
             CloseFormBtn.Size = new Size(50, 50);
             CloseFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -138,7 +139,7 @@
             // MinimizeFormBtn
             // 
             MinimizeFormBtn.Image = (Image)resources.GetObject("MinimizeFormBtn.Image");
-            MinimizeFormBtn.Location = new Point(963, 3);
+            MinimizeFormBtn.Location = new Point(1318, 3);
             MinimizeFormBtn.Name = "MinimizeFormBtn";
             MinimizeFormBtn.Size = new Size(50, 50);
             MinimizeFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -148,23 +149,35 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(PrevFormBtn);
             panel1.Controls.Add(CloseFormBtn);
             panel1.Controls.Add(LogOutBtn);
             panel1.Controls.Add(MinimizeFormBtn);
             panel1.Location = new Point(12, 27);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1119, 63);
+            panel1.Size = new Size(1486, 63);
             panel1.TabIndex = 16;
             panel1.Paint += panel1_Paint;
             panel1.MouseDown += panel1_MouseDown;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(644, -1);
+            label1.Name = "label1";
+            label1.Size = new Size(210, 54);
+            label1.TabIndex = 17;
+            label1.Text = "نوع الفاتورة";
             // 
             // InvoiceTypeForm
             // 
             AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
-            ClientSize = new Size(1143, 547);
+            ClientSize = new Size(1510, 829);
             ControlBox = false;
             Controls.Add(panel1);
             Controls.Add(SalesBtn);
@@ -186,6 +199,7 @@
             ((System.ComponentModel.ISupportInitialize)CloseFormBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)MinimizeFormBtn).EndInit();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -200,5 +214,6 @@
         private PictureBox CloseFormBtn;
         private PictureBox MinimizeFormBtn;
         private Panel panel1;
+        private Label label1;
     }
 }

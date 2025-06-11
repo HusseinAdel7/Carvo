@@ -20,6 +20,7 @@ namespace Carvo.User_Interface_Layer
             serviceProvider = _serviceProvider;
             InitializeComponent();
             this.Load += async (s, e) => LoadEmployeeDashboard();
+            this.Paint += Form1_Paint;
         }
 
 
@@ -31,6 +32,17 @@ namespace Carvo.User_Interface_Layer
         private void CloseFormBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            int borderThickness = 4;
+            Color borderColor = Color.LightGray;
+
+            using (Pen pen = new Pen(borderColor, borderThickness))
+            {
+                e.Graphics.DrawRectangle(pen,
+                    new Rectangle(0, 0, this.Width - borderThickness, this.Height - borderThickness));
+            }
         }
 
         private void MinimizeFormBtn_Click(object sender, EventArgs e)

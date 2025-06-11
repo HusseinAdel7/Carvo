@@ -27,6 +27,7 @@ namespace Carvo.User_Interface_Layer
             vehicleService = _vehicleService;
             serviceProvider = _serviceProvider;
             InitializeComponent();
+            this.Paint += Form1_Paint;
             this.Load += async (s, e) => await LoadInvoicesAsync();
         }
 
@@ -50,7 +51,17 @@ namespace Carvo.User_Interface_Layer
             CustomerDropdowwnList.DataSource = allCustomers;
 
         }
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            int borderThickness = 4;
+            Color borderColor = Color.LightGray;
 
+            using (Pen pen = new Pen(borderColor, borderThickness))
+            {
+                e.Graphics.DrawRectangle(pen,
+                    new Rectangle(0, 0, this.Width - borderThickness, this.Height - borderThickness));
+            }
+        }
         private async void CustomerDropdowwnList_SelectedIndexChanged(object sender, EventArgs e)
         {
             int customerId = (int)CustomerDropdowwnList.SelectedValue;

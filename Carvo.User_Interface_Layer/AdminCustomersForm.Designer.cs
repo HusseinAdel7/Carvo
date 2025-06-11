@@ -89,7 +89,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 133F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 347F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(1494, 724);
+            tableLayoutPanel1.Size = new Size(1510, 829);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -105,7 +105,7 @@
             panel1.ForeColor = Color.White;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1488, 127);
+            panel1.Size = new Size(1504, 127);
             panel1.TabIndex = 0;
             // 
             // CloseFormBtn
@@ -133,9 +133,9 @@
             // LogoutBtn
             // 
             LogoutBtn.Image = (Image)resources.GetObject("LogoutBtn.Image");
-            LogoutBtn.Location = new Point(50, 23);
+            LogoutBtn.Location = new Point(50, 29);
             LogoutBtn.Name = "LogoutBtn";
-            LogoutBtn.Size = new Size(50, 51);
+            LogoutBtn.Size = new Size(45, 45);
             LogoutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogoutBtn.TabIndex = 2;
             LogoutBtn.TabStop = false;
@@ -144,9 +144,9 @@
             // PrevImageAsBtn
             // 
             PrevImageAsBtn.Image = (Image)resources.GetObject("PrevImageAsBtn.Image");
-            PrevImageAsBtn.Location = new Point(138, 23);
+            PrevImageAsBtn.Location = new Point(132, 29);
             PrevImageAsBtn.Name = "PrevImageAsBtn";
-            PrevImageAsBtn.Size = new Size(50, 51);
+            PrevImageAsBtn.Size = new Size(45, 45);
             PrevImageAsBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevImageAsBtn.TabIndex = 1;
             PrevImageAsBtn.TabStop = false;
@@ -181,9 +181,9 @@
             panel2.Controls.Add(AddCustomerImg);
             panel2.Controls.Add(btnAddCustomer);
             panel2.Controls.Add(btnDeleteCustomer);
-            panel2.Location = new Point(4, 136);
+            panel2.Location = new Point(7, 136);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1486, 341);
+            panel2.Size = new Size(1495, 341);
             panel2.TabIndex = 1;
             // 
             // label7
@@ -209,7 +209,7 @@
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1127, 216);
+            pictureBox1.Location = new Point(1127, 222);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(44, 38);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -236,9 +236,9 @@
             cancelBtn.FlatStyle = FlatStyle.Flat;
             cancelBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cancelBtn.ForeColor = Color.Black;
-            cancelBtn.Location = new Point(1023, 222);
+            cancelBtn.Location = new Point(999, 222);
             cancelBtn.Name = "cancelBtn";
-            cancelBtn.Size = new Size(98, 32);
+            cancelBtn.Size = new Size(122, 38);
             cancelBtn.TabIndex = 34;
             cancelBtn.Text = "اعادة تعيين";
             cancelBtn.UseVisualStyleBackColor = false;
@@ -246,21 +246,21 @@
             // 
             // txtPhoneNumber
             // 
-            txtPhoneNumber.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtPhoneNumber.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             txtPhoneNumber.Location = new Point(768, 147);
             txtPhoneNumber.Multiline = true;
             txtPhoneNumber.Name = "txtPhoneNumber";
-            txtPhoneNumber.Size = new Size(401, 39);
+            txtPhoneNumber.Size = new Size(401, 49);
             txtPhoneNumber.TabIndex = 18;
             txtPhoneNumber.TextAlign = HorizontalAlignment.Right;
             // 
             // txtCustomerName
             // 
-            txtCustomerName.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtCustomerName.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             txtCustomerName.Location = new Point(768, 69);
             txtCustomerName.Multiline = true;
             txtCustomerName.Name = "txtCustomerName";
-            txtCustomerName.Size = new Size(401, 39);
+            txtCustomerName.Size = new Size(401, 51);
             txtCustomerName.TabIndex = 9;
             txtCustomerName.TextAlign = HorizontalAlignment.Right;
             // 
@@ -382,8 +382,8 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvCustomers.DefaultCellStyle = dataGridViewCellStyle3;
             dgvCustomers.EnableHeadersVisualStyles = false;
-            dgvCustomers.Location = new Point(5, 484);
-            dgvCustomers.MaximumSize = new Size(1502, 235);
+            dgvCustomers.Location = new Point(8, 494);
+            dgvCustomers.MaximumSize = new Size(1502, 320);
             dgvCustomers.Name = "dgvCustomers";
             dgvCustomers.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -400,9 +400,8 @@
             dgvCustomers.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvCustomers.ScrollBars = ScrollBars.Vertical;
             dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCustomers.Size = new Size(1484, 235);
+            dgvCustomers.Size = new Size(1494, 320);
             dgvCustomers.TabIndex = 2;
-            dgvCustomers.DataBindingComplete += InvoicesGridView_DataBindingComplete;
             dgvCustomers.SelectionChanged += dgvCustomers_SelectionChanged;
             // 
             // AdminCustomersForm
@@ -411,7 +410,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1494, 724);
+            ClientSize = new Size(1510, 829);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(1526, 885);

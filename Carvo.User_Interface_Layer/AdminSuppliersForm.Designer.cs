@@ -89,7 +89,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 133F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 438F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(1508, 829);
+            tableLayoutPanel1.Size = new Size(1510, 829);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -105,13 +105,13 @@
             panel1.ForeColor = Color.White;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1502, 127);
+            panel1.Size = new Size(1504, 127);
             panel1.TabIndex = 0;
             // 
             // CloseFormBtn
             // 
             CloseFormBtn.Image = (Image)resources.GetObject("CloseFormBtn.Image");
-            CloseFormBtn.Location = new Point(1387, 23);
+            CloseFormBtn.Location = new Point(1397, 23);
             CloseFormBtn.Name = "CloseFormBtn";
             CloseFormBtn.Size = new Size(50, 50);
             CloseFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -122,7 +122,7 @@
             // MinimizeBtn
             // 
             MinimizeBtn.Image = (Image)resources.GetObject("MinimizeBtn.Image");
-            MinimizeBtn.Location = new Point(1290, 23);
+            MinimizeBtn.Location = new Point(1307, 23);
             MinimizeBtn.Name = "MinimizeBtn";
             MinimizeBtn.Size = new Size(50, 50);
             MinimizeBtn.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -133,9 +133,9 @@
             // Logoutbtn
             // 
             Logoutbtn.Image = (Image)resources.GetObject("Logoutbtn.Image");
-            Logoutbtn.Location = new Point(63, 23);
+            Logoutbtn.Location = new Point(51, 28);
             Logoutbtn.Name = "Logoutbtn";
-            Logoutbtn.Size = new Size(50, 50);
+            Logoutbtn.Size = new Size(45, 45);
             Logoutbtn.SizeMode = PictureBoxSizeMode.StretchImage;
             Logoutbtn.TabIndex = 2;
             Logoutbtn.TabStop = false;
@@ -144,9 +144,9 @@
             // PrevImageAsBtn
             // 
             PrevImageAsBtn.Image = (Image)resources.GetObject("PrevImageAsBtn.Image");
-            PrevImageAsBtn.Location = new Point(155, 23);
+            PrevImageAsBtn.Location = new Point(136, 28);
             PrevImageAsBtn.Name = "PrevImageAsBtn";
-            PrevImageAsBtn.Size = new Size(50, 50);
+            PrevImageAsBtn.Size = new Size(45, 45);
             PrevImageAsBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevImageAsBtn.TabIndex = 1;
             PrevImageAsBtn.TabStop = false;
@@ -156,7 +156,7 @@
             // 
             CategoriesManagement.AutoSize = true;
             CategoriesManagement.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CategoriesManagement.Location = new Point(707, 35);
+            CategoriesManagement.Location = new Point(658, 35);
             CategoriesManagement.Name = "CategoriesManagement";
             CategoriesManagement.Size = new Size(175, 38);
             CategoriesManagement.TabIndex = 0;
@@ -182,7 +182,7 @@
             panel2.Controls.Add(AddInvoiceImg);
             panel2.Controls.Add(AddSupplierBtn);
             panel2.Controls.Add(DeleteSupplierBtn);
-            panel2.Location = new Point(3, 136);
+            panel2.Location = new Point(4, 136);
             panel2.Name = "panel2";
             panel2.Size = new Size(1502, 432);
             panel2.TabIndex = 1;
@@ -191,7 +191,7 @@
             // 
             cancelImg.BackgroundImageLayout = ImageLayout.Stretch;
             cancelImg.Image = (Image)resources.GetObject("cancelImg.Image");
-            cancelImg.Location = new Point(1177, 210);
+            cancelImg.Location = new Point(1168, 227);
             cancelImg.Name = "cancelImg";
             cancelImg.Size = new Size(44, 38);
             cancelImg.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -206,9 +206,9 @@
             cancelBtn.FlatStyle = FlatStyle.Flat;
             cancelBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cancelBtn.ForeColor = Color.Black;
-            cancelBtn.Location = new Point(1073, 216);
+            cancelBtn.Location = new Point(1030, 227);
             cancelBtn.Name = "cancelBtn";
-            cancelBtn.Size = new Size(98, 32);
+            cancelBtn.Size = new Size(132, 38);
             cancelBtn.TabIndex = 38;
             cancelBtn.Text = "اعادة تعيين";
             cancelBtn.UseVisualStyleBackColor = false;
@@ -216,31 +216,31 @@
             // 
             // SupplierCompanyFollowedTxt
             // 
-            SupplierCompanyFollowedTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SupplierCompanyFollowedTxt.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             SupplierCompanyFollowedTxt.Location = new Point(85, 143);
             SupplierCompanyFollowedTxt.Multiline = true;
             SupplierCompanyFollowedTxt.Name = "SupplierCompanyFollowedTxt";
-            SupplierCompanyFollowedTxt.Size = new Size(373, 39);
+            SupplierCompanyFollowedTxt.Size = new Size(373, 47);
             SupplierCompanyFollowedTxt.TabIndex = 20;
             SupplierCompanyFollowedTxt.TextAlign = HorizontalAlignment.Right;
             // 
             // SupplierPhoneTxt
             // 
-            SupplierPhoneTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SupplierPhoneTxt.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             SupplierPhoneTxt.Location = new Point(85, 52);
             SupplierPhoneTxt.Multiline = true;
             SupplierPhoneTxt.Name = "SupplierPhoneTxt";
-            SupplierPhoneTxt.Size = new Size(373, 39);
+            SupplierPhoneTxt.Size = new Size(373, 50);
             SupplierPhoneTxt.TabIndex = 19;
             SupplierPhoneTxt.TextAlign = HorizontalAlignment.Right;
             // 
             // SupplierAddressTxt
             // 
-            SupplierAddressTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SupplierAddressTxt.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             SupplierAddressTxt.Location = new Point(839, 141);
             SupplierAddressTxt.Multiline = true;
             SupplierAddressTxt.Name = "SupplierAddressTxt";
-            SupplierAddressTxt.Size = new Size(373, 39);
+            SupplierAddressTxt.Size = new Size(373, 49);
             SupplierAddressTxt.TabIndex = 18;
             SupplierAddressTxt.TextAlign = HorizontalAlignment.Right;
             // 
@@ -269,11 +269,11 @@
             // 
             // SupplierNameTxt
             // 
-            SupplierNameTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SupplierNameTxt.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             SupplierNameTxt.Location = new Point(839, 52);
             SupplierNameTxt.Multiline = true;
             SupplierNameTxt.Name = "SupplierNameTxt";
-            SupplierNameTxt.Size = new Size(373, 39);
+            SupplierNameTxt.Size = new Size(373, 50);
             SupplierNameTxt.TabIndex = 9;
             SupplierNameTxt.TextAlign = HorizontalAlignment.Right;
             // 
@@ -395,7 +395,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             SuppliersGridView.DefaultCellStyle = dataGridViewCellStyle3;
             SuppliersGridView.EnableHeadersVisualStyles = false;
-            SuppliersGridView.Location = new Point(3, 578);
+            SuppliersGridView.Location = new Point(4, 578);
             SuppliersGridView.MaximumSize = new Size(1502, 243);
             SuppliersGridView.Name = "SuppliersGridView";
             SuppliersGridView.ReadOnly = true;
@@ -415,7 +415,6 @@
             SuppliersGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             SuppliersGridView.Size = new Size(1502, 243);
             SuppliersGridView.TabIndex = 2;
-            SuppliersGridView.DataBindingComplete += InvoicesGridView_DataBindingComplete;
             SuppliersGridView.SelectionChanged += SuppliersGridView_SelectionChanged;
             // 
             // AdminSuppliersForm
@@ -424,7 +423,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1508, 829);
+            ClientSize = new Size(1510, 829);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(1526, 885);

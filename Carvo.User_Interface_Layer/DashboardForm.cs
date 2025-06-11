@@ -25,6 +25,7 @@ namespace Carvo.User_Interface_Layer
         public DashboardForm(IServiceProvider serviceProvider,ICustomerService customerService, ISupplierService supplierService, IInvoiceService invoiceService, IProductService productService, ICategoryService categoryService, IUserService userService)
         {
             InitializeComponent();
+            this.Paint += Form1_Paint;
             _customerService = customerService;
             _supplierService = supplierService;
             _invoiceService = invoiceService;
@@ -39,7 +40,17 @@ namespace Carvo.User_Interface_Layer
         {
             Application.Exit();
         }
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            int borderThickness = 4;
+            Color borderColor = Color.LightGray;
 
+            using (Pen pen = new Pen(borderColor, borderThickness))
+            {
+                e.Graphics.DrawRectangle(pen,
+                    new Rectangle(0, 0, this.Width - borderThickness, this.Height - borderThickness));
+            }
+        }
         private void minimizebtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;

@@ -38,6 +38,7 @@ namespace Carvo.User_Interface_Layer
         public LoginForm(IServiceProvider _provider, IUserService _userService)
         {
             InitializeComponent();
+            this.Paint += Form1_Paint;
             userService = _userService;
             provider = _provider;
         }
@@ -47,6 +48,17 @@ namespace Carvo.User_Interface_Layer
         {
             LoggedUser.mainWindowForm.Show();
             this.Close();
+        }
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            int borderThickness = 4;
+            Color borderColor = Color.LightGray;
+
+            using (Pen pen = new Pen(borderColor, borderThickness))
+            {
+                e.Graphics.DrawRectangle(pen,
+                    new Rectangle(0, 0, this.Width - borderThickness, this.Height - borderThickness));
+            }
         }
 
         // Minimizes the login form window when the "minimize" button is clicked
@@ -142,6 +154,11 @@ namespace Carvo.User_Interface_Layer
                 passwordTxt.PasswordChar = '*';
 
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

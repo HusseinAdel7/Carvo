@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminCategoriesForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
             LogoutBtn = new PictureBox();
@@ -88,7 +88,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 28.90625F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 71.09375F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(1508, 766);
+            tableLayoutPanel1.Size = new Size(1510, 829);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -104,7 +104,7 @@
             panel1.ForeColor = Color.White;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1502, 139);
+            panel1.Size = new Size(1504, 157);
             panel1.TabIndex = 0;
             // 
             // LogoutBtn
@@ -180,15 +180,15 @@
             panel2.Controls.Add(AddCategoryImg);
             panel2.Controls.Add(AddCategoryBtn);
             panel2.Controls.Add(DeleteCategoryBtn);
-            panel2.Location = new Point(3, 148);
+            panel2.Location = new Point(4, 166);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1502, 351);
+            panel2.Size = new Size(1502, 396);
             panel2.TabIndex = 1;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(1107, 304);
+            label7.Location = new Point(1109, 326);
             label7.Name = "label7";
             label7.Size = new Size(0, 20);
             label7.TabIndex = 36;
@@ -197,7 +197,7 @@
             // 
             cancelImg.BackgroundImageLayout = ImageLayout.Stretch;
             cancelImg.Image = (Image)resources.GetObject("cancelImg.Image");
-            cancelImg.Location = new Point(1107, 260);
+            cancelImg.Location = new Point(1110, 282);
             cancelImg.Name = "cancelImg";
             cancelImg.Size = new Size(44, 38);
             cancelImg.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -212,9 +212,9 @@
             cancelBtn.FlatStyle = FlatStyle.Flat;
             cancelBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cancelBtn.ForeColor = Color.Black;
-            cancelBtn.Location = new Point(1003, 266);
+            cancelBtn.Location = new Point(976, 282);
             cancelBtn.Name = "cancelBtn";
-            cancelBtn.Size = new Size(98, 32);
+            cancelBtn.Size = new Size(127, 38);
             cancelBtn.TabIndex = 34;
             cancelBtn.Text = "اعادة تعيين";
             cancelBtn.UseVisualStyleBackColor = false;
@@ -224,7 +224,7 @@
             // 
             DescErrorMsg.AutoSize = true;
             DescErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DescErrorMsg.ForeColor = Color.Red;
+            DescErrorMsg.ForeColor = Color.FromArgb(255, 220, 80);
             DescErrorMsg.Location = new Point(512, 136);
             DescErrorMsg.Name = "DescErrorMsg";
             DescErrorMsg.Size = new Size(156, 28);
@@ -236,7 +236,7 @@
             // 
             NameErrorMsg.AutoSize = true;
             NameErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NameErrorMsg.ForeColor = Color.Red;
+            NameErrorMsg.ForeColor = Color.FromArgb(255, 220, 80);
             NameErrorMsg.Location = new Point(528, 60);
             NameErrorMsg.Name = "NameErrorMsg";
             NameErrorMsg.Size = new Size(140, 28);
@@ -246,7 +246,7 @@
             // 
             // CategoryDescTxt
             // 
-            CategoryDescTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CategoryDescTxt.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CategoryDescTxt.Location = new Point(674, 124);
             CategoryDescTxt.Multiline = true;
             CategoryDescTxt.Name = "CategoryDescTxt";
@@ -256,11 +256,11 @@
             // 
             // CategoryNameTxt
             // 
-            CategoryNameTxt.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CategoryNameTxt.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CategoryNameTxt.Location = new Point(674, 49);
             CategoryNameTxt.Multiline = true;
             CategoryNameTxt.Name = "CategoryNameTxt";
-            CategoryNameTxt.Size = new Size(480, 39);
+            CategoryNameTxt.Size = new Size(480, 53);
             CategoryNameTxt.TabIndex = 9;
             CategoryNameTxt.TextAlign = HorizontalAlignment.Right;
             // 
@@ -289,7 +289,7 @@
             // UpdateCategoryImg
             // 
             UpdateCategoryImg.Image = (Image)resources.GetObject("UpdateCategoryImg.Image");
-            UpdateCategoryImg.Location = new Point(323, 112);
+            UpdateCategoryImg.Location = new Point(300, 169);
             UpdateCategoryImg.Name = "UpdateCategoryImg";
             UpdateCategoryImg.Size = new Size(64, 52);
             UpdateCategoryImg.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -301,7 +301,7 @@
             // 
             UpdateCategoryBtn.BackColor = Color.FromArgb(224, 224, 224);
             UpdateCategoryBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            UpdateCategoryBtn.Location = new Point(187, 112);
+            UpdateCategoryBtn.Location = new Point(164, 169);
             UpdateCategoryBtn.Name = "UpdateCategoryBtn";
             UpdateCategoryBtn.Size = new Size(130, 52);
             UpdateCategoryBtn.TabIndex = 5;
@@ -312,7 +312,7 @@
             // DeleteCategoryImg
             // 
             DeleteCategoryImg.Image = (Image)resources.GetObject("DeleteCategoryImg.Image");
-            DeleteCategoryImg.Location = new Point(323, 202);
+            DeleteCategoryImg.Location = new Point(300, 259);
             DeleteCategoryImg.Name = "DeleteCategoryImg";
             DeleteCategoryImg.Size = new Size(64, 52);
             DeleteCategoryImg.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -323,7 +323,7 @@
             // AddCategoryImg
             // 
             AddCategoryImg.Image = (Image)resources.GetObject("AddCategoryImg.Image");
-            AddCategoryImg.Location = new Point(323, 26);
+            AddCategoryImg.Location = new Point(300, 83);
             AddCategoryImg.Name = "AddCategoryImg";
             AddCategoryImg.Size = new Size(64, 52);
             AddCategoryImg.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -335,7 +335,7 @@
             // 
             AddCategoryBtn.BackColor = Color.FromArgb(224, 224, 224);
             AddCategoryBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            AddCategoryBtn.Location = new Point(187, 26);
+            AddCategoryBtn.Location = new Point(164, 83);
             AddCategoryBtn.Name = "AddCategoryBtn";
             AddCategoryBtn.Size = new Size(130, 52);
             AddCategoryBtn.TabIndex = 2;
@@ -347,7 +347,7 @@
             // 
             DeleteCategoryBtn.BackColor = Color.FromArgb(224, 224, 224);
             DeleteCategoryBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold);
-            DeleteCategoryBtn.Location = new Point(187, 202);
+            DeleteCategoryBtn.Location = new Point(164, 259);
             DeleteCategoryBtn.Name = "DeleteCategoryBtn";
             DeleteCategoryBtn.Size = new Size(130, 52);
             DeleteCategoryBtn.TabIndex = 1;
@@ -358,53 +358,52 @@
             // CategoryGridView
             // 
             CategoryGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = SystemColors.ButtonFace;
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.CornflowerBlue;
-            CategoryGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = SystemColors.ButtonFace;
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.CornflowerBlue;
+            CategoryGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             CategoryGridView.Anchor = AnchorStyles.None;
             CategoryGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             CategoryGridView.BorderStyle = BorderStyle.None;
             CategoryGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 67, 87);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            CategoryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(48, 67, 87);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            CategoryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             CategoryGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new Padding(0, 2, 2, 2);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            CategoryGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new Padding(0, 2, 2, 2);
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            CategoryGridView.DefaultCellStyle = dataGridViewCellStyle8;
             CategoryGridView.EnableHeadersVisualStyles = false;
-            CategoryGridView.Location = new Point(3, 505);
+            CategoryGridView.Location = new Point(4, 568);
             CategoryGridView.Name = "CategoryGridView";
             CategoryGridView.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            CategoryGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            CategoryGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             CategoryGridView.RowHeadersVisible = false;
             CategoryGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
-            CategoryGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleRight;
+            CategoryGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             CategoryGridView.ScrollBars = ScrollBars.Vertical;
             CategoryGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CategoryGridView.Size = new Size(1502, 257);
             CategoryGridView.TabIndex = 2;
-            CategoryGridView.DataBindingComplete += InvoicesGridView_DataBindingComplete;
             CategoryGridView.SelectionChanged += CategoryGridView_SelectionChanged;
             // 
             // AdminCategoriesForm
@@ -413,7 +412,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1508, 766);
+            ClientSize = new Size(1510, 829);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AdminCategoriesForm";

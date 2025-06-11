@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesInvoiceForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             label1 = new Label();
             panel1 = new Panel();
             CloseFormBtn = new PictureBox();
@@ -41,6 +41,7 @@
             PrevFormBtn = new PictureBox();
             LogOutBtn = new PictureBox();
             panel2 = new Panel();
+            quantityErrorMsg = new Label();
             PrintErrorMsg = new Label();
             TotalPriceNumeric = new NumericUpDown();
             DeleteCustomerImg = new PictureBox();
@@ -58,7 +59,6 @@
             CustomersDropdownList = new ComboBox();
             sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             SalesInvoiceGridView = new DataGridView();
-            quantityErrorMsg = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CloseFormBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MinimizeFormBtn).BeginInit();
@@ -78,7 +78,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 178);
             label1.ForeColor = Color.FromArgb(244, 244, 244);
-            label1.Location = new Point(671, 22);
+            label1.Location = new Point(617, 18);
             label1.Name = "label1";
             label1.Size = new Size(261, 54);
             label1.TabIndex = 0;
@@ -97,7 +97,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1526, 117);
+            panel1.Size = new Size(1510, 117);
             panel1.TabIndex = 3;
             // 
             // CloseFormBtn
@@ -125,9 +125,9 @@
             // PrevFormBtn
             // 
             PrevFormBtn.Image = (Image)resources.GetObject("PrevFormBtn.Image");
-            PrevFormBtn.Location = new Point(135, 22);
+            PrevFormBtn.Location = new Point(135, 27);
             PrevFormBtn.Name = "PrevFormBtn";
-            PrevFormBtn.Size = new Size(50, 50);
+            PrevFormBtn.Size = new Size(45, 45);
             PrevFormBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             PrevFormBtn.TabIndex = 6;
             PrevFormBtn.TabStop = false;
@@ -136,9 +136,9 @@
             // LogOutBtn
             // 
             LogOutBtn.Image = (Image)resources.GetObject("LogOutBtn.Image");
-            LogOutBtn.Location = new Point(37, 22);
+            LogOutBtn.Location = new Point(37, 27);
             LogOutBtn.Name = "LogOutBtn";
-            LogOutBtn.Size = new Size(50, 50);
+            LogOutBtn.Size = new Size(45, 45);
             LogOutBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             LogOutBtn.TabIndex = 5;
             LogOutBtn.TabStop = false;
@@ -166,14 +166,26 @@
             panel2.Controls.Add(CustomersDropdownList);
             panel2.Location = new Point(0, 123);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1526, 408);
+            panel2.Size = new Size(1510, 408);
             panel2.TabIndex = 4;
+            // 
+            // quantityErrorMsg
+            // 
+            quantityErrorMsg.AutoSize = true;
+            quantityErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            quantityErrorMsg.ForeColor = Color.FromArgb(255, 220, 80);
+            quantityErrorMsg.Location = new Point(1065, 207);
+            quantityErrorMsg.Name = "quantityErrorMsg";
+            quantityErrorMsg.Size = new Size(172, 28);
+            quantityErrorMsg.TabIndex = 48;
+            quantityErrorMsg.Text = "الكمية المتاحة حاليا ";
+            quantityErrorMsg.Visible = false;
             // 
             // PrintErrorMsg
             // 
             PrintErrorMsg.AutoSize = true;
             PrintErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            PrintErrorMsg.ForeColor = Color.Red;
+            PrintErrorMsg.ForeColor = Color.FromArgb(255, 220, 80);
             PrintErrorMsg.Location = new Point(943, 307);
             PrintErrorMsg.Name = "PrintErrorMsg";
             PrintErrorMsg.Size = new Size(201, 28);
@@ -185,10 +197,11 @@
             // 
             TotalPriceNumeric.DecimalPlaces = 2;
             TotalPriceNumeric.Enabled = false;
-            TotalPriceNumeric.Location = new Point(356, 179);
+            TotalPriceNumeric.Font = new Font("Segoe UI", 12F);
+            TotalPriceNumeric.Location = new Point(251, 174);
             TotalPriceNumeric.Maximum = new decimal(new int[] { 1410065408, 2, 0, 0 });
             TotalPriceNumeric.Name = "TotalPriceNumeric";
-            TotalPriceNumeric.Size = new Size(150, 27);
+            TotalPriceNumeric.Size = new Size(242, 34);
             TotalPriceNumeric.TabIndex = 15;
             // 
             // DeleteCustomerImg
@@ -284,9 +297,10 @@
             // ProductQuantityNumeric
             // 
             ProductQuantityNumeric.BackColor = Color.FromArgb(244, 244, 244);
+            ProductQuantityNumeric.Font = new Font("Segoe UI", 12F);
             ProductQuantityNumeric.Location = new Point(995, 165);
             ProductQuantityNumeric.Name = "ProductQuantityNumeric";
-            ProductQuantityNumeric.Size = new Size(242, 27);
+            ProductQuantityNumeric.Size = new Size(242, 34);
             ProductQuantityNumeric.TabIndex = 4;
             // 
             // label3
@@ -316,92 +330,82 @@
             // 
             ProductsDropdownList.BackColor = SystemColors.ActiveCaption;
             ProductsDropdownList.DropDownStyle = ComboBoxStyle.DropDownList;
+            ProductsDropdownList.Font = new Font("Segoe UI", 12F);
             ProductsDropdownList.FormattingEnabled = true;
             ProductsDropdownList.Items.AddRange(new object[] { "Product1", "Product2", "Product3" });
             ProductsDropdownList.Location = new Point(995, 73);
             ProductsDropdownList.Name = "ProductsDropdownList";
-            ProductsDropdownList.Size = new Size(242, 28);
+            ProductsDropdownList.Size = new Size(242, 36);
             ProductsDropdownList.TabIndex = 1;
             // 
             // CustomersDropdownList
             // 
             CustomersDropdownList.BackColor = SystemColors.ActiveCaption;
             CustomersDropdownList.DropDownStyle = ComboBoxStyle.DropDownList;
+            CustomersDropdownList.Font = new Font("Segoe UI", 12F);
             CustomersDropdownList.FormattingEnabled = true;
             CustomersDropdownList.Items.AddRange(new object[] { "Customer1", "Customer2", "Customer3", "Customer4", "Customer5", "" });
-            CustomersDropdownList.Location = new Point(306, 73);
+            CustomersDropdownList.Location = new Point(251, 73);
             CustomersDropdownList.Name = "CustomersDropdownList";
-            CustomersDropdownList.Size = new Size(242, 28);
+            CustomersDropdownList.Size = new Size(242, 36);
             CustomersDropdownList.TabIndex = 0;
             // 
             // SalesInvoiceGridView
             // 
             SalesInvoiceGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = SystemColors.ButtonFace;
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.CornflowerBlue;
-            SalesInvoiceGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = SystemColors.ButtonFace;
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.CornflowerBlue;
+            SalesInvoiceGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             SalesInvoiceGridView.Anchor = AnchorStyles.None;
             SalesInvoiceGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             SalesInvoiceGridView.BorderStyle = BorderStyle.None;
             SalesInvoiceGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(48, 67, 87);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            SalesInvoiceGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(48, 67, 87);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            SalesInvoiceGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             SalesInvoiceGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new Padding(0, 2, 2, 2);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            SalesInvoiceGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new Padding(0, 2, 2, 2);
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            SalesInvoiceGridView.DefaultCellStyle = dataGridViewCellStyle8;
             SalesInvoiceGridView.EnableHeadersVisualStyles = false;
-            SalesInvoiceGridView.Location = new Point(12, 537);
-            SalesInvoiceGridView.MaximumSize = new Size(1502, 243);
+            SalesInvoiceGridView.Location = new Point(4, 537);
+            SalesInvoiceGridView.MaximumSize = new Size(1502, 350);
             SalesInvoiceGridView.Name = "SalesInvoiceGridView";
             SalesInvoiceGridView.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            SalesInvoiceGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            SalesInvoiceGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             SalesInvoiceGridView.RowHeadersVisible = false;
             SalesInvoiceGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
-            SalesInvoiceGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleRight;
+            SalesInvoiceGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             SalesInvoiceGridView.ScrollBars = ScrollBars.Vertical;
             SalesInvoiceGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            SalesInvoiceGridView.Size = new Size(1502, 243);
+            SalesInvoiceGridView.Size = new Size(1502, 270);
             SalesInvoiceGridView.TabIndex = 16;
-            // 
-            // quantityErrorMsg
-            // 
-            quantityErrorMsg.AutoSize = true;
-            quantityErrorMsg.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            quantityErrorMsg.ForeColor = Color.Red;
-            quantityErrorMsg.Location = new Point(1065, 207);
-            quantityErrorMsg.Name = "quantityErrorMsg";
-            quantityErrorMsg.Size = new Size(172, 28);
-            quantityErrorMsg.TabIndex = 48;
-            quantityErrorMsg.Text = "الكمية المتاحة حاليا ";
-            quantityErrorMsg.Visible = false;
             // 
             // SalesInvoiceForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1526, 774);
+            ClientSize = new Size(1510, 829);
             Controls.Add(SalesInvoiceGridView);
             Controls.Add(panel2);
             Controls.Add(panel1);

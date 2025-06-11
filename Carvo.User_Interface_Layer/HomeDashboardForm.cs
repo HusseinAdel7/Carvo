@@ -22,6 +22,7 @@ namespace Carvo.User_Interface_Layer
         {
             _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
             InitializeComponent();
+            this.Paint += Form1_Paint;
             this.Load += async (s, e) => LoadHomeDashboard();
             RegisterControlEvents();
         }
@@ -66,7 +67,17 @@ namespace Carvo.User_Interface_Layer
 
         }
 
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            int borderThickness = 4;
+            Color borderColor = Color.LightGray;
 
+            using (Pen pen = new Pen(borderColor, borderThickness))
+            {
+                e.Graphics.DrawRectangle(pen,
+                    new Rectangle(0, 0, this.Width - borderThickness, this.Height - borderThickness));
+            }
+        }
         private void OpenSuppliersForm(object? sender, EventArgs e) => ShowChildForm<AdminSuppliersForm>();
         private void OpenProductsForm(object? sender, EventArgs e) => ShowChildForm<AdminProductsForm>();
         private void OpenCategoriesForm(object? sender, EventArgs e) => ShowChildForm<AdminCategoriesForm>();

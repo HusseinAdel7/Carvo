@@ -20,6 +20,7 @@ namespace Carvo.User_Interface_Layer
         public AdminInvoicesForm(IServiceProvider serviceProvider, IInvoiceService invoiceService, IUserService userService, ICustomerService customerService)
         {
             InitializeComponent();
+            this.Paint += Form1_Paint;
             _invoiceService = invoiceService;
             _customerService = customerService;
             _userService = userService;
@@ -33,6 +34,18 @@ namespace Carvo.User_Interface_Layer
         private async void AdminInvoicesForm_Load(object? sender, EventArgs e)
         {
             await LoadInvoicesAsync();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            int borderThickness = 4;
+            Color borderColor = Color.LightGray;
+
+            using (Pen pen = new Pen(borderColor, borderThickness))
+            {
+                e.Graphics.DrawRectangle(pen,
+                    new Rectangle(0, 0, this.Width - borderThickness, this.Height - borderThickness));
+            }
         }
 
         // ✅ أصبح Task وليس void
@@ -128,23 +141,6 @@ namespace Carvo.User_Interface_Layer
                 }
                 
             }
-        }
-
-        private void InvoicesGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            ResizeDataGridViewHeight();
-        }
-
-        private void ResizeDataGridViewHeight()
-        {
-            int totalHeight = InvoicesGridView.ColumnHeadersHeight;
-
-            foreach (DataGridViewRow row in InvoicesGridView.Rows)
-            {
-                if (row.Visible) totalHeight += row.Height;
-            }
-
-            InvoicesGridView.Height = totalHeight + 2; // 2px padding
         }
 
         private void CloseFormBtn_Click(object sender, EventArgs e)

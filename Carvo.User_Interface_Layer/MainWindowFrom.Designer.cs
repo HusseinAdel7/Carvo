@@ -70,7 +70,7 @@
             // employeePictureBox
             // 
             employeePictureBox.Image = (Image)resources.GetObject("employeePictureBox.Image");
-            employeePictureBox.Location = new Point(298, 130);
+            employeePictureBox.Location = new Point(296, 189);
             employeePictureBox.Margin = new Padding(3, 4, 3, 4);
             employeePictureBox.Name = "employeePictureBox";
             employeePictureBox.Size = new Size(197, 193);
@@ -83,7 +83,7 @@
             // adminPictureBox
             // 
             adminPictureBox.Image = (Image)resources.GetObject("adminPictureBox.Image");
-            adminPictureBox.Location = new Point(882, 130);
+            adminPictureBox.Location = new Point(889, 189);
             adminPictureBox.Margin = new Padding(3, 4, 3, 4);
             adminPictureBox.Name = "adminPictureBox";
             adminPictureBox.Size = new Size(197, 193);
@@ -96,7 +96,7 @@
             // adminBtn
             // 
             adminBtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            adminBtn.Location = new Point(882, 344);
+            adminBtn.Location = new Point(889, 403);
             adminBtn.Margin = new Padding(3, 4, 3, 4);
             adminBtn.Name = "adminBtn";
             adminBtn.Size = new Size(197, 53);
@@ -109,7 +109,7 @@
             // employeeBtn
             // 
             employeeBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            employeeBtn.Location = new Point(298, 344);
+            employeeBtn.Location = new Point(296, 403);
             employeeBtn.Margin = new Padding(3, 4, 3, 4);
             employeeBtn.Name = "employeeBtn";
             employeeBtn.Size = new Size(197, 53);
@@ -165,7 +165,7 @@
             panel2.Controls.Add(employeePictureBox);
             panel2.Location = new Point(68, 187);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1371, 433);
+            panel2.Size = new Size(1371, 587);
             panel2.TabIndex = 11;
             // 
             // MainWindowFrom
@@ -173,7 +173,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
-            ClientSize = new Size(1526, 632);
+            ClientSize = new Size(1510, 829);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;

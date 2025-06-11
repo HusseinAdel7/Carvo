@@ -53,7 +53,7 @@
             label1.BackColor = Color.FromArgb(48, 67, 87);
             label1.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(247, 9);
+            label1.Location = new Point(516, 9);
             label1.Name = "label1";
             label1.Size = new Size(484, 81);
             label1.TabIndex = 0;
@@ -65,11 +65,12 @@
             label2.BackColor = Color.FromArgb(198, 198, 198);
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(242, 33);
+            label2.Location = new Point(489, 28);
             label2.Name = "label2";
             label2.Size = new Size(181, 38);
             label2.TabIndex = 1;
             label2.Text = "اسم المستخدم";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -77,7 +78,7 @@
             label3.BackColor = Color.FromArgb(198, 198, 198);
             label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(277, 168);
+            label3.Location = new Point(524, 163);
             label3.Name = "label3";
             label3.Size = new Size(146, 38);
             label3.TabIndex = 2;
@@ -87,11 +88,11 @@
             // 
             userNameTxt.BackColor = Color.White;
             userNameTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            userNameTxt.Location = new Point(44, 74);
+            userNameTxt.Location = new Point(109, 83);
             userNameTxt.Multiline = true;
             userNameTxt.Name = "userNameTxt";
             userNameTxt.RightToLeft = RightToLeft.Yes;
-            userNameTxt.Size = new Size(379, 45);
+            userNameTxt.Size = new Size(561, 45);
             userNameTxt.TabIndex = 0;
             // 
             // loginBtn
@@ -101,9 +102,9 @@
             loginBtn.FlatStyle = FlatStyle.Flat;
             loginBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             loginBtn.ForeColor = Color.White;
-            loginBtn.Location = new Point(170, 332);
+            loginBtn.Location = new Point(299, 352);
             loginBtn.Name = "loginBtn";
-            loginBtn.Size = new Size(163, 47);
+            loginBtn.Size = new Size(219, 47);
             loginBtn.TabIndex = 4;
             loginBtn.Text = "دخول";
             loginBtn.UseVisualStyleBackColor = false;
@@ -112,12 +113,12 @@
             // passwordTxt
             // 
             passwordTxt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passwordTxt.Location = new Point(44, 209);
+            passwordTxt.Location = new Point(109, 218);
             passwordTxt.Multiline = true;
             passwordTxt.Name = "passwordTxt";
             passwordTxt.PasswordChar = '*';
             passwordTxt.RightToLeft = RightToLeft.Yes;
-            passwordTxt.Size = new Size(379, 45);
+            passwordTxt.Size = new Size(561, 45);
             passwordTxt.TabIndex = 1;
             // 
             // panel1
@@ -129,22 +130,22 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(passwordTxt);
-            panel1.Controls.Add(userNameTxt);
             panel1.Controls.Add(loginBtn);
-            panel1.Location = new Point(485, 146);
+            panel1.Controls.Add(userNameTxt);
+            panel1.Location = new Point(679, 255);
             panel1.Name = "panel1";
-            panel1.Size = new Size(483, 401);
+            panel1.Size = new Size(736, 424);
             panel1.TabIndex = 8;
             // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            checkBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             checkBox1.ForeColor = Color.Black;
-            checkBox1.Location = new Point(277, 293);
+            checkBox1.Location = new Point(492, 304);
             checkBox1.Name = "checkBox1";
             checkBox1.RightToLeft = RightToLeft.Yes;
-            checkBox1.Size = new Size(141, 24);
+            checkBox1.Size = new Size(178, 32);
             checkBox1.TabIndex = 25;
             checkBox1.Text = "اظهار كلمة المرور";
             checkBox1.TextAlign = ContentAlignment.MiddleRight;
@@ -156,7 +157,7 @@
             errorPasswordLabel.AutoSize = true;
             errorPasswordLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             errorPasswordLabel.ForeColor = Color.Red;
-            errorPasswordLabel.Location = new Point(271, 257);
+            errorPasswordLabel.Location = new Point(518, 278);
             errorPasswordLabel.Name = "errorPasswordLabel";
             errorPasswordLabel.RightToLeft = RightToLeft.Yes;
             errorPasswordLabel.Size = new Size(0, 23);
@@ -167,7 +168,7 @@
             errorUserLabel.AutoSize = true;
             errorUserLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             errorUserLabel.ForeColor = Color.Red;
-            errorUserLabel.Location = new Point(170, 122);
+            errorUserLabel.Location = new Point(417, 141);
             errorUserLabel.Name = "errorUserLabel";
             errorUserLabel.RightToLeft = RightToLeft.Yes;
             errorUserLabel.Size = new Size(0, 23);
@@ -177,9 +178,9 @@
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(47, 209);
+            pictureBox1.Location = new Point(142, 283);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(326, 244);
+            pictureBox1.Size = new Size(397, 327);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
@@ -190,7 +191,7 @@
             closeBtn.BackgroundImageLayout = ImageLayout.Stretch;
             closeBtn.FlatAppearance.BorderSize = 0;
             closeBtn.FlatStyle = FlatStyle.Flat;
-            closeBtn.Location = new Point(938, 9);
+            closeBtn.Location = new Point(1410, 25);
             closeBtn.Name = "closeBtn";
             closeBtn.Size = new Size(50, 50);
             closeBtn.TabIndex = 10;
@@ -203,7 +204,7 @@
             minimizeBtn.BackgroundImageLayout = ImageLayout.Stretch;
             minimizeBtn.FlatAppearance.BorderSize = 0;
             minimizeBtn.FlatStyle = FlatStyle.Flat;
-            minimizeBtn.Location = new Point(873, 9);
+            minimizeBtn.Location = new Point(1338, 25);
             minimizeBtn.Name = "minimizeBtn";
             minimizeBtn.Size = new Size(50, 50);
             minimizeBtn.TabIndex = 11;
@@ -216,9 +217,9 @@
             backBtn.BackgroundImageLayout = ImageLayout.Stretch;
             backBtn.FlatAppearance.BorderSize = 0;
             backBtn.FlatStyle = FlatStyle.Flat;
-            backBtn.Location = new Point(30, 9);
+            backBtn.Location = new Point(33, 25);
             backBtn.Name = "backBtn";
-            backBtn.Size = new Size(50, 50);
+            backBtn.Size = new Size(45, 45);
             backBtn.TabIndex = 12;
             backBtn.UseVisualStyleBackColor = true;
             backBtn.Click += closeBtn_Click;
@@ -230,7 +231,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(991, 582);
+            ClientSize = new Size(1510, 829);
             Controls.Add(backBtn);
             Controls.Add(minimizeBtn);
             Controls.Add(closeBtn);

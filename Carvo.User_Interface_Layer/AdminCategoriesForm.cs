@@ -23,25 +23,9 @@ namespace Carvo.User_Interface_Layer
             categoryService = _categoryService;
             serviceProvider = _serviceProvider;
             InitializeComponent();
+            this.Paint += Form1_Paint;
             this.Load += async (s, e) => await LoadCategoriesAsync();
             this.serviceProvider = serviceProvider;
-        }
-
-        private void InvoicesGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            ResizeDataGridViewHeight();
-        }
-
-        private void ResizeDataGridViewHeight()
-        {
-            int totalHeight = CategoryGridView.ColumnHeadersHeight;
-
-            foreach (DataGridViewRow row in CategoryGridView.Rows)
-            {
-                if (row.Visible) totalHeight += row.Height;
-            }
-
-            CategoryGridView.Height = totalHeight + 2; // 2px padding
         }
 
         private void CloseFormBtn_Click(object sender, EventArgs e)
@@ -49,6 +33,17 @@ namespace Carvo.User_Interface_Layer
             Application.Exit();
         }
 
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            int borderThickness = 4;
+            Color borderColor = Color.LightGray;
+
+            using (Pen pen = new Pen(borderColor, borderThickness))
+            {
+                e.Graphics.DrawRectangle(pen,
+                    new Rectangle(0, 0, this.Width - borderThickness, this.Height - borderThickness));
+            }
+        }
         private void MinimizeBtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;

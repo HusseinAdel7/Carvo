@@ -57,6 +57,7 @@
             label11 = new Label();
             ProductNum = new Label();
             pictureBox10 = new PictureBox();
+            CategoriesManagement = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -80,7 +81,7 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(CustomersNum);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(-2, 81);
+            panel1.Location = new Point(65, 155);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(408, 257);
@@ -111,10 +112,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(103, 52);
+            pictureBox1.Location = new Point(70, 21);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(166, 97);
+            pictureBox1.Size = new Size(220, 150);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -122,10 +123,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(14, 7);
+            pictureBox2.Location = new Point(29, 30);
             pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(50, 50);
+            pictureBox2.Size = new Size(45, 45);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -134,10 +135,10 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(78, 7);
+            pictureBox3.Location = new Point(105, 30);
             pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(50, 50);
+            pictureBox3.Size = new Size(45, 45);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
@@ -146,7 +147,7 @@
             // closebtn
             // 
             closebtn.Image = (Image)resources.GetObject("closebtn.Image");
-            closebtn.Location = new Point(1121, 7);
+            closebtn.Location = new Point(1426, 25);
             closebtn.Margin = new Padding(3, 4, 3, 4);
             closebtn.Name = "closebtn";
             closebtn.Size = new Size(50, 50);
@@ -158,7 +159,7 @@
             // minimizebtn
             // 
             minimizebtn.Image = (Image)resources.GetObject("minimizebtn.Image");
-            minimizebtn.Location = new Point(1057, 7);
+            minimizebtn.Location = new Point(1347, 25);
             minimizebtn.Margin = new Padding(3, 4, 3, 4);
             minimizebtn.Name = "minimizebtn";
             minimizebtn.Size = new Size(50, 50);
@@ -172,7 +173,7 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(supplierNum);
             panel2.Controls.Add(pictureBox6);
-            panel2.Location = new Point(413, 81);
+            panel2.Location = new Point(552, 155);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
             panel2.Size = new Size(408, 257);
@@ -183,7 +184,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(144, 175);
+            label3.Location = new Point(160, 175);
             label3.Name = "label3";
             label3.Size = new Size(82, 28);
             label3.TabIndex = 2;
@@ -202,10 +203,10 @@
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(103, 52);
+            pictureBox6.Location = new Point(103, 21);
             pictureBox6.Margin = new Padding(3, 4, 3, 4);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(166, 97);
+            pictureBox6.Size = new Size(220, 150);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 0;
             pictureBox6.TabStop = false;
@@ -215,7 +216,7 @@
             panel3.Controls.Add(label5);
             panel3.Controls.Add(InvoiceNum);
             panel3.Controls.Add(pictureBox7);
-            panel3.Location = new Point(827, 81);
+            panel3.Location = new Point(1036, 155);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
             panel3.Size = new Size(408, 257);
@@ -226,7 +227,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(158, 174);
+            label5.Location = new Point(188, 175);
             label5.Name = "label5";
             label5.Size = new Size(71, 28);
             label5.TabIndex = 2;
@@ -245,10 +246,10 @@
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(103, 52);
+            pictureBox7.Location = new Point(103, 20);
             pictureBox7.Margin = new Padding(3, 4, 3, 4);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(166, 97);
+            pictureBox7.Size = new Size(223, 150);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 0;
             pictureBox7.TabStop = false;
@@ -258,7 +259,7 @@
             panel4.Controls.Add(label7);
             panel4.Controls.Add(UserNum);
             panel4.Controls.Add(pictureBox8);
-            panel4.Location = new Point(827, 393);
+            panel4.Location = new Point(1036, 467);
             panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
             panel4.Size = new Size(408, 257);
@@ -269,7 +270,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(153, 175);
+            label7.Location = new Point(175, 191);
             label7.Name = "label7";
             label7.Size = new Size(93, 28);
             label7.TabIndex = 2;
@@ -288,10 +289,10 @@
             // pictureBox8
             // 
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(103, 52);
+            pictureBox8.Location = new Point(103, 21);
             pictureBox8.Margin = new Padding(3, 4, 3, 4);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(166, 97);
+            pictureBox8.Size = new Size(223, 150);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox8.TabIndex = 0;
             pictureBox8.TabStop = false;
@@ -301,7 +302,7 @@
             panel5.Controls.Add(label9);
             panel5.Controls.Add(CategoryNum);
             panel5.Controls.Add(pictureBox9);
-            panel5.Location = new Point(402, 393);
+            panel5.Location = new Point(552, 467);
             panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
             panel5.Size = new Size(408, 257);
@@ -312,7 +313,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(144, 175);
+            label9.Location = new Point(160, 191);
             label9.Name = "label9";
             label9.Size = new Size(98, 28);
             label9.TabIndex = 2;
@@ -331,10 +332,10 @@
             // pictureBox9
             // 
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(103, 52);
+            pictureBox9.Location = new Point(103, 21);
             pictureBox9.Margin = new Padding(3, 4, 3, 4);
             pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(166, 97);
+            pictureBox9.Size = new Size(220, 150);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox9.TabIndex = 0;
             pictureBox9.TabStop = false;
@@ -344,7 +345,7 @@
             panel6.Controls.Add(label11);
             panel6.Controls.Add(ProductNum);
             panel6.Controls.Add(pictureBox10);
-            panel6.Location = new Point(-2, 393);
+            panel6.Location = new Point(65, 467);
             panel6.Margin = new Padding(3, 4, 3, 4);
             panel6.Name = "panel6";
             panel6.Size = new Size(408, 257);
@@ -355,7 +356,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(144, 175);
+            label11.Location = new Point(127, 191);
             label11.Name = "label11";
             label11.Size = new Size(85, 28);
             label11.TabIndex = 2;
@@ -374,21 +375,33 @@
             // pictureBox10
             // 
             pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(103, 52);
+            pictureBox10.Location = new Point(70, 21);
             pictureBox10.Margin = new Padding(3, 4, 3, 4);
             pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(166, 97);
+            pictureBox10.Size = new Size(220, 150);
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox10.TabIndex = 0;
             pictureBox10.TabStop = false;
+            // 
+            // CategoriesManagement
+            // 
+            CategoriesManagement.AutoSize = true;
+            CategoriesManagement.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CategoriesManagement.ForeColor = SystemColors.ControlLightLight;
+            CategoriesManagement.Location = new Point(687, 29);
+            CategoriesManagement.Name = "CategoriesManagement";
+            CategoriesManagement.Size = new Size(174, 46);
+            CategoriesManagement.TabIndex = 10;
+            CategoriesManagement.Text = "الاحصائيات";
             // 
             // DashboardForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(48, 67, 87);
-            ClientSize = new Size(1192, 759);
+            ClientSize = new Size(1510, 829);
             ControlBox = false;
+            Controls.Add(CategoriesManagement);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel4);
@@ -427,6 +440,7 @@
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -459,5 +473,6 @@
         private Label label11;
         private Label ProductNum;
         private PictureBox pictureBox10;
+        private Label CategoriesManagement;
     }
 }
